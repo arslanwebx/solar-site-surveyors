@@ -13,7 +13,7 @@ const { activeNav = '' } = Astro.props;
     <div class="container-wide header-inner">
       <!-- Brand Logo -->
       <a href="/" class="brand-logo" aria-label="Solar Site Surveys Home">
-        <Logo isDark={false} height={48} />
+        <Logo isDark={false} height={46} />
       </a>
 
       <!-- Desktop Navigation -->
@@ -40,10 +40,10 @@ const { activeNav = '' } = Astro.props;
       <!-- Header Actions -->
       <div class="header-actions">
         <a href="/join-us" class={`btn btn-outline btn-sm header-join-btn ${activeNav === 'join-us' ? 'active' : ''}`}>
-          <span>Join Us</span>
+          <span>Partner With Us</span>
         </a>
         <a href="/schedule" class="btn btn-primary btn-sm header-cta" id="header-dispatch-cta">
-          <span>Schedule a Survey</span>
+          <span>Schedule a Site Survey</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
 
@@ -62,15 +62,15 @@ const { activeNav = '' } = Astro.props;
     <div class="mobile-drawer-content">
       <ul class="mobile-nav-list">
         <li><a href="/service-areas" class="mobile-nav-link">Service Areas (Top 20 Texas Cities)</a></li>
-        <li><a href="/blog" class="mobile-nav-link">Blog & Resources</a></li>
+        <li><a href="/blog" class="mobile-nav-link">Blog & Operations Hub</a></li>
         <li><a href="/services" class="mobile-nav-link">Our Services</a></li>
         <li><a href="/about" class="mobile-nav-link">About Us</a></li>
         <li><a href="/contact" class="mobile-nav-link">Contact Operations</a></li>
-        <li><a href="/join-us" class="mobile-nav-link" style="color: var(--accent-amber-dark); font-weight: 700;">Join Us (EPCs & Surveyors)</a></li>
+        <li><a href="/join-us" class="mobile-nav-link" style="color: var(--primary); font-weight: 700;">Partner With Us</a></li>
       </ul>
       <div class="mobile-drawer-actions">
         <a href="/schedule" class="btn btn-primary btn-lg" style="width: 100%;">Schedule a Site Survey</a>
-        <a href="/join-us" class="btn btn-outline btn-lg" style="width: 100%; margin-top: 0.75rem;">Join as EPC or Surveyor</a>
+        <a href="/join-us" class="btn btn-outline btn-lg" style="width: 100%; margin-top: 0.75rem;">Partner With Us</a>
       </div>
     </div>
   </div>
@@ -111,7 +111,7 @@ const { activeNav = '' } = Astro.props;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--bg-surface);
+    background-color: var(--bg-page);
     border-bottom: 1px solid var(--border-light);
     transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
   }
@@ -122,7 +122,7 @@ const { activeNav = '' } = Astro.props;
   }
 
   .header-main {
-    padding: 0.85rem 0;
+    padding: 1rem 0;
   }
 
   .header-inner {
@@ -159,18 +159,19 @@ const { activeNav = '' } = Astro.props;
     font-weight: 600;
     color: var(--text-secondary);
     padding: 0.5rem 0.85rem;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     transition: color var(--transition-fast), background-color var(--transition-fast);
   }
 
   .nav-link:hover {
-    color: var(--text-primary);
-    background-color: var(--bg-subtle);
+    color: var(--primary);
+    background-color: var(--bg-secondary);
   }
 
   .nav-link.active {
-    color: var(--accent-amber-dark);
-    background-color: var(--accent-amber-subtle);
+    color: var(--primary);
+    background-color: var(--bg-secondary);
+    font-weight: 700;
   }
 
   /* Header Actions */
@@ -204,7 +205,7 @@ const { activeNav = '' } = Astro.props;
   .toggle-bar {
     width: 20px;
     height: 2px;
-    background-color: var(--text-primary);
+    background-color: var(--text-main);
     border-radius: 2px;
     transition: transform var(--transition-fast), opacity var(--transition-fast);
   }
@@ -216,8 +217,8 @@ const { activeNav = '' } = Astro.props;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--bg-surface);
-    border-bottom: 2px solid var(--accent-amber);
+    background-color: var(--bg-page);
+    border-bottom: 2px solid var(--primary);
     box-shadow: var(--shadow-xl);
     padding: 1.5rem var(--space-6);
   }
@@ -239,7 +240,7 @@ const { activeNav = '' } = Astro.props;
     font-family: var(--font-heading);
     font-size: 1.125rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text-main);
     padding: 0.625rem 0.5rem;
     border-bottom: 1px solid var(--border-light);
   }
