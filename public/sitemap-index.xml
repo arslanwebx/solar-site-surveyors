@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://solarsitesurveyors.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://solarsitesurveyors.com/service-areas</loc><priority>0.9</priority></url>
+  <url><loc>https://solarsitesurveyors.com/blog</loc><priority>0.9</priority></url>
+  <url><loc>https://solarsitesurveyors.com/blog/solar-site-survey-checklist</loc><priority>0.8</priority></url>
+  <url><loc>https://solarsitesurveyors.com/blog/required-solar-site-survey-photos</loc><priority>0.8</priority></url>
+  <url><loc>https://solarsitesurveyors.com/blog/electrical-panel-survey-guide-120-percent-rule</loc><priority>0.8</priority></url>
+  <url><loc>https://solarsitesurveyors.com/blog/what-solar-designers-need-from-site-surveys</loc><priority>0.8</priority></url>
+  <url><loc>https://solarsitesurveyors.com/blog/solar-permitting-ahj-requirements-guide</loc><priority>0.8</priority></url>
+  <url><loc>https://solarsitesurveyors.com/blog/from-ntp-to-pto-solar-operations-lifecycle</loc><priority>0.8</priority></url>
+  <url><loc>https://solarsitesurveyors.com/blog/utility-interconnection-process-and-meter-requirements</loc><priority>0.8</priority></url>
+  <url><loc>https://solarsitesurveyors.com/blog/battery-storage-site-survey-guide-clearances-routing</loc><priority>0.8</priority></url>
   <url><loc>https://solarsitesurveyors.com/services</loc><priority>0.9</priority></url>
-  <url><loc>https://solarsitesurveyors.com/for-epcs</loc><priority>0.9</priority></url>
+  <url><loc>https://solarsitesurveyors.com/join-us</loc><priority>0.9</priority></url>
   <url><loc>https://solarsitesurveyors.com/schedule</loc><priority>0.9</priority></url>
-  <url><loc>https://solarsitesurveyors.com/surveyors</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/resources</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/resources/solar-site-survey-checklist</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/resources/required-solar-site-survey-photos</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/resources/electrical-panel-survey-guide-120-percent-rule</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/resources/what-solar-designers-need-from-site-surveys</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/resources/solar-permitting-ahj-requirements-guide</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/resources/from-ntp-to-pto-solar-operations-lifecycle</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/resources/utility-interconnection-process-and-meter-requirements</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/resources/battery-storage-site-survey-guide-clearances-routing</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/glossary</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/service-areas</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/service-areas/california</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/service-areas/texas</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/service-areas/florida</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/service-areas/arizona</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/service-areas/colorado</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/service-areas/nevada</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/service-areas/new-york</loc><priority>0.8</priority></url>
-  <url><loc>https://solarsitesurveyors.com/service-areas/north-carolina</loc><priority>0.8</priority></url>
   <url><loc>https://solarsitesurveyors.com/about</loc><priority>0.7</priority></url>
   <url><loc>https://solarsitesurveyors.com/contact</loc><priority>0.7</priority></url>
   <url><loc>https://solarsitesurveyors.com/privacy</loc><priority>0.5</priority></url>

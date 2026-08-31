@@ -1,87 +1,85 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProcessTimeline from '../components/ProcessTimeline.astro';
-import SurveyCalculator from '../components/SurveyCalculator.astro';
-import CTASection from '../components/CTASection.astro';
-import { resourcesData } from '../data/resources';
-import { serviceAreasData } from '../data/serviceAreas';
+import { top20TexasCities } from '../data/texasCities';
 
-const recentArticles = resourcesData.slice(0, 3);
+const featuredTexasCities = top20TexasCities.slice(0, 10);
 ---
 
 <BaseLayout 
-  title="SolarSite Co. | Solar Site Surveys Coordinated for EPCs & Installers"
-  description="Nationwide solar site survey coordination for Solar EPCs, installers, dealers, and engineering operations teams. Roof, electrical MSP, and battery surveys delivered in 48–72 hours."
+  title="SolarSite Texas | Statewide Solar Site Survey Coordination for EPCs"
+  description="Coordinating professional solar site surveys across all Texas cities. 24–48hr turnaround, standardized 36-photo CAD packages, and complete ERCOT utility alignment for Solar EPCs and installers."
   activeNav="home"
 >
-  <!-- HERO SECTION -->
-  <section class="hero-section section-dark">
+  <!-- SECTION 1: HERO SECTION -->
+  <section class="section section-dark hero-section">
     <div class="container-wide">
       <div class="hero-grid">
         <!-- Hero Content -->
         <div class="hero-content">
           <div class="hero-badge-row">
-            <span class="badge-tech badge-dark"><span class="status-dot"></span> NATIONWIDE OPERATIONAL DISPATCH</span>
-            <span class="hero-sla-label font-mono">48–72HR SLA</span>
+            <span class="badge-tech badge-dark"><span class="status-dot"></span> 100% TEXAS STATEWIDE FIELD NETWORK</span>
+            <span class="hero-sla-label font-mono">24–48HR SLA</span>
           </div>
 
           <h1 class="hero-title">
-            Solar Site Surveys, <br/>
-            <span class="text-amber">Scheduled Without</span> the Headache.
+            Precision Solar Site Surveys <br/>
+            Across Texas, <span class="text-amber">Scheduled in Seconds.</span>
           </h1>
 
           <p class="hero-subtitle lead">
-            We help Solar EPCs, installers, and contractors coordinate professional residential and commercial site surveys across 14+ states—providing the accurate field dimensions, electrical nameplates, and 36-photo packages your engineering team needs for one-touch CAD design and immediate permit approval.
+            We coordinate verified local site surveyors across every city and county in Texas. From Houston to El Paso, our network delivers standardized 36-photo CAD-ready survey packages to Solar EPCs and installers within 24–48 hours.
           </p>
 
+          <!-- TWO PRIMARY BUTTONS AS REQUESTED -->
           <div class="hero-actions">
-            <a href="/schedule" class="btn btn-primary btn-lg" id="hero-primary-cta">
-              <span>Schedule a Site Survey</span>
+            <a href="/schedule" class="btn btn-primary btn-lg" id="hero-schedule-btn">
+              <span>Schedule a Survey</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="/for-epcs" class="btn btn-outline-white btn-lg" id="hero-partner-cta">
-              <span>Partner With Us (For EPCs)</span>
+            <a href="/join-us" class="btn btn-outline-white btn-lg" id="hero-join-btn">
+              <span>Join Us</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </a>
           </div>
 
-          <!-- Hero Metrics / Trust Points -->
+          <!-- Operational Trust Metrics -->
           <div class="hero-metrics-grid">
             <div class="metric-item">
-              <span class="metric-val font-mono">48–72h</span>
-              <span class="metric-lbl">Standard Survey Turnaround</span>
+              <span class="metric-val font-mono">24–48h</span>
+              <span class="metric-lbl">Texas Average SLA</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-val font-mono">254</span>
+              <span class="metric-lbl">Texas Counties Covered</span>
             </div>
             <div class="metric-item">
               <span class="metric-val font-mono">99.4%</span>
-              <span class="metric-lbl">First-Pass QA Approval</span>
+              <span class="metric-lbl">First-Pass QA Rate</span>
             </div>
             <div class="metric-item">
-              <span class="metric-val font-mono">14+</span>
-              <span class="metric-lbl">States with Active Network</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-val font-mono">&lt; 3%</span>
-              <span class="metric-lbl">CAD Revision Rate</span>
+              <span class="metric-val font-mono">$0</span>
+              <span class="metric-lbl">Travel Surcharges</span>
             </div>
           </div>
         </div>
 
-        <!-- Hero Visual: Documentary Commercial Photography with Technical Overlay -->
+        <!-- Hero Visual: Authentic Documentary Photography with Technical Annotation -->
         <div class="hero-visual-col">
           <div class="hero-image-wrapper card-dark tech-grid-border">
             <img 
               src="/images/hero_surveyor_field.jpg" 
-              alt="Professional solar site surveyor inspecting residential roof pitch and structural condition with digital gauge and tablet" 
+              alt="Professional solar site surveyor inspecting residential roof pitch and structural condition in Texas" 
               width="1200" 
               height="675" 
               class="hero-img"
               loading="eager"
             />
             
-            <!-- Technical Overlay Callouts -->
             <div class="tech-annotation top-left">
               <span class="ann-icon">📐</span>
               <div class="ann-data">
-                <span class="ann-label font-mono">ROOF PLANE AZIMUTH / PITCH</span>
+                <span class="ann-label font-mono">ROOF PITCH & AZIMUTH</span>
                 <span class="ann-val font-mono">185° SSW • 34.8° SLOPE</span>
               </div>
             </div>
@@ -89,13 +87,13 @@ const recentArticles = resourcesData.slice(0, 3);
             <div class="tech-annotation bottom-right">
               <span class="ann-icon">⚡</span>
               <div class="ann-data">
-                <span class="ann-label font-mono">MSP AUDIT STATUS</span>
-                <span class="ann-val font-mono">225A BUS • 200A MAIN (120% OK)</span>
+                <span class="ann-label font-mono">TEXAS MSP AUDIT</span>
+                <span class="ann-val font-mono">225A BUS • 200A MAIN (ONCOR OK)</span>
               </div>
             </div>
 
-            <div class="tech-badge-overlay">
-              <span class="font-mono">GEO-REF: 30.2672° N, 97.7431° W • 36-PHOTO STANDARD</span>
+            <div class="tech-badge-overlay font-mono">
+              TEXAS FIELD DISPATCH • 36-PHOTO CAD STANDARD • ALL 254 COUNTIES
             </div>
           </div>
         </div>
@@ -103,120 +101,146 @@ const recentArticles = resourcesData.slice(0, 3);
     </div>
   </section>
 
-  <!-- TRUST & VALUE SECTION: BUILT FOR SOLAR OPERATIONS TEAMS -->
+  <!-- SECTION 2: BUILT FOR TEXAS SOLAR OPERATIONS -->
   <section class="section section-warm">
     <div class="container">
       <div class="section-header center">
-        <span class="badge-tech badge-amber">OPERATIONAL FIT</span>
-        <h2>Built for Solar Operations Teams</h2>
+        <span class="badge-tech badge-amber">OPERATIONAL ADVANTAGE</span>
+        <h2>Built Specifically for Texas Solar Operations</h2>
         <p class="lead">
-          Designed specifically to solve the logistical headaches of field surveying for growing solar companies, high-volume EPCs, and distributed sales dealers.
+          We eliminate the friction of scheduling, managing in-house field fleets, and navigating regional Texas utility nuances.
         </p>
       </div>
 
-      <!-- Categories Served -->
-      <div class="audience-grid">
-        <div class="audience-card card-technical">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12M9 20v-6h6v6"/></svg>
+      <div class="grid-3" style="margin-top: var(--space-8);">
+        <div class="advantage-card card-technical tech-grid-border">
+          <div class="adv-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <h4>Solar EPCs</h4>
-          <p>Eliminate regional surveyor payroll and expand territory overnight with zero fixed overhead.</p>
+          <h4>Full ERCOT & Texas Utility Proficiency</h4>
+          <p>
+            Our surveyors understand the exact meter socket, disconnect, and labeling requirements for Oncor, CenterPoint Energy, AEP Texas, CPS Energy, Austin Energy, and TNMP.
+          </p>
         </div>
 
-        <div class="audience-card card-technical">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <div class="advantage-card card-technical tech-grid-border">
+          <div class="adv-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <h4>Solar Installers</h4>
-          <p>Prevent expensive installation-day surprises like undersized busbars or dry-rotted rafters.</p>
+          <h4>One-Touch CAD Deliverables</h4>
+          <p>
+            Every survey delivers standardized 36-photo packages, verified digital pitch readings, rafter spans, and single-line parameters ready for immediate AutoCAD, HelioScope, or Aurora import.
+          </p>
         </div>
 
-        <div class="audience-card card-technical">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7.5" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        <div class="advantage-card card-technical tech-grid-border">
+          <div class="adv-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           </div>
-          <h4>Solar Dealers</h4>
-          <p>Move closed sales into engineering in 48 hours to lock in customer momentum and slash cancellations.</p>
-        </div>
-
-        <div class="audience-card card-technical">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <h4>Roof + Solar Contractors</h4>
-          <p>Receive comprehensive roof layer analysis, condition reports, and remaining lifespan assessments.</p>
-        </div>
-
-        <div class="audience-card card-technical">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-          </div>
-          <h4>Design & CAD Teams</h4>
-          <p>Receive standardized single-line parameters, 36-photo packages, and clear obstruction offsets.</p>
-        </div>
-      </div>
-
-      <!-- Major Operational Benefits -->
-      <div class="benefits-panel card-technical tech-grid-border" style="margin-top: var(--space-10);">
-        <div class="benefits-header">
-          <span class="badge-tech badge-amber">OPERATIONAL ADVANTAGE</span>
-          <h3>Why Solar Operations Leaders Choose SolarSite Co.</h3>
-        </div>
-        <div class="benefits-grid">
-          <div class="benefit-item">
-            <div class="benefit-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div>
-              <strong>Reliable Survey Scheduling</strong>
-              <p>Direct customer coordination with zero scheduling back-and-forth for your project managers.</p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div>
-              <strong>Standardized 36-Photo Packages</strong>
-              <p>Every surveyor follows an identical photo checklist so draftspersons never guess.</p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div>
-              <strong>Faster CAD Turnaround</strong>
-              <p>Clear, dimensioned data reduces drafting cycle times from days to hours.</p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div>
-              <strong>Fewer Missing Photos & Revisits</strong>
-              <p>Our internal QA team verifies every photo before deliverable release, eliminating 2nd truck rolls.</p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div>
-              <strong>Reduced Redesigns & Change Orders</strong>
-              <p>Accurate busbar and rafter data prevents costly plan revisions after municipal submission.</p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div>
-              <strong>Multi-Market Scalability</strong>
-              <p>Enter new states and utility territories instantly without recruiting or managing local staff.</p>
-            </div>
-          </div>
+          <h4>Zero Payroll Overhead & No Travel Fees</h4>
+          <p>
+            Pay on-demand per completed, QA-verified survey. Expand your sales into Dallas, Houston, Austin, San Antonio, or West Texas overnight without hiring regional staff.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS: THE 4-STEP OPERATIONAL PIPELINE -->
+  <!-- SECTION 3: OUR CORE FIELD SURVEY DISCIPLINES -->
   <section class="section">
     <div class="container">
+      <div class="section-header">
+        <span class="badge-tech badge-amber">COMPREHENSIVE FIELD AUDIT</span>
+        <h2>Standardized Texas Survey Disciplines</h2>
+        <p class="lead">
+          Our surveyors capture every critical physical, electrical, and structural parameter required for solar engineering stamps and municipal AHJ permits.
+        </p>
+      </div>
+
+      <div class="grid-2" style="margin-top: var(--space-8);">
+        <!-- Roof Discipline -->
+        <div class="discipline-block card-technical tech-grid-border">
+          <div class="discipline-header">
+            <span class="badge-tech badge-amber">DISCIPLINE 01</span>
+            <h3>Roof Geometry & Condition Audit</h3>
+          </div>
+          <p>
+            Physical verification of all roof planes, digital pitch gauge readings, shingle/tile layer counts, granular condition, and millimeter-accurate obstruction coordinates (vents, pipes, skylights).
+          </p>
+          <div class="discipline-tags">
+            <span>Digital Pitch Verification</span>
+            <span>Attic Rafter & Truss Spacing</span>
+            <span>IFC 36" Fire Setbacks</span>
+            <span>Obstruction X/Y Offsets</span>
+          </div>
+        </div>
+
+        <!-- Electrical Discipline -->
+        <div class="discipline-block card-technical tech-grid-border">
+          <div class="discipline-header">
+            <span class="badge-tech badge-amber">DISCIPLINE 02</span>
+            <h3>Electrical MSP & 120% Busbar Rule</h3>
+          </div>
+          <p>
+            Full interior dead-front removal to photograph manufacturer labels, busbar ampacity ratings, main breaker sizes, grounding electrode conductors, and spare breaker slots.
+          </p>
+          <div class="discipline-tags">
+            <span>Busbar Nameplate Audit</span>
+            <span>NEC 705.12 Calculations</span>
+            <span>Utility Meter & Socket Spec</span>
+            <span>Subpanel Load Verification</span>
+          </div>
+        </div>
+
+        <!-- Battery Storage Discipline -->
+        <div class="discipline-block card-technical tech-grid-border">
+          <div class="discipline-header">
+            <span class="badge-tech badge-amber">DISCIPLINE 03</span>
+            <h3>Battery Storage & Gateway Clearances</h3>
+          </div>
+          <p>
+            Specialized energy storage checks verifying NFPA 855 boundaries (3ft from doors/windows), system controller/gateway placement, and continuous conduit routing to the main electrical service.
+          </p>
+          <div class="discipline-tags">
+            <span>NFPA 855 Clearances</span>
+            <span>Gateway & Transfer Switch</span>
+            <span>Conduit Pathway Distance</span>
+            <span>Critical Loads Audit</span>
+          </div>
+        </div>
+
+        <!-- Site Documentation Discipline -->
+        <div class="discipline-block card-technical tech-grid-border">
+          <div class="discipline-header">
+            <span class="badge-tech badge-amber">DISCIPLINE 04</span>
+            <h3>36-Photo Georeferenced Package</h3>
+          </div>
+          <p>
+            High-resolution 4K photographs covering 4 exterior building elevations, street access, utility meter context, attic structural ties, and optional FAA Part 107 drone photogrammetry.
+          </p>
+          <div class="discipline-tags">
+            <span>4 Building Elevations</span>
+            <span>Attic Rafter Macro Shots</span>
+            <span>Geotagged & Timestamped</span>
+            <span>Cloud Portal Download</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-8);">
+        <a href="/services" class="btn btn-dark btn-md">
+          <span>View Complete Service Specifications & SLAs →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: THE 4-STEP TEXAS DISPATCH WORKFLOW -->
+  <section class="section section-warm">
+    <div class="container">
       <div class="section-header center">
-        <span class="badge-tech badge-amber">OPERATIONAL WORKFLOW</span>
-        <h2>How Project Coordination Works</h2>
+        <span class="badge-tech badge-amber">SEAMLESS COORDINATION</span>
+        <h2>How Texas Survey Coordination Works</h2>
         <p class="lead">
           A friction-free four-stage pipeline connecting your sales intake directly to CAD drafting.
         </p>
@@ -226,264 +250,55 @@ const recentArticles = resourcesData.slice(0, 3);
     </div>
   </section>
 
-  <!-- SITE SURVEY SERVICES (DETAILED TECHNICAL SCOPE) -->
-  <section class="section section-subtle" id="services-overview">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge-tech badge-amber">FIELD AUDIT SCOPE</span>
-        <h2>Comprehensive Site Survey Disciplines</h2>
-        <p class="lead">
-          Our coordinated field surveyors execute exhaustive inspections across all physical, structural, and electrical parameters required for solar permitting and installation.
-        </p>
-      </div>
-
-      <div class="services-detail-grid">
-        <!-- Service 1: Roof Survey -->
-        <div class="service-block card-technical tech-grid-border">
-          <div class="service-block-header">
-            <span class="badge-tech badge-amber">ROOF & STRUCTURAL</span>
-            <h3>Roof Geometry & Condition Audit</h3>
-          </div>
-          <p class="service-block-desc">
-            Physical validation of aerial models. We document every roof plane, pitch angle, material layer, and obstruction coordinate to give CAD designers total spatial confidence.
-          </p>
-          <div class="service-features-list">
-            <span class="feat-tag">Roof Dimensions & Pitch Gauges</span>
-            <span class="feat-tag">Shingle / Tile Layer Count</span>
-            <span class="feat-tag">Attic Rafter & Truss Spacing</span>
-            <span class="feat-tag">Obstruction X/Y Offsets</span>
-            <span class="feat-tag">Chimney & Skylight Clearances</span>
-            <span class="feat-tag">Shading & Horizon Factors</span>
-          </div>
-        </div>
-
-        <!-- Service 2: Electrical Survey -->
-        <div class="service-block card-technical tech-grid-border">
-          <div class="service-block-header">
-            <span class="badge-tech badge-amber">ELECTRICAL & MSP</span>
-            <h3>Electrical Service & Interconnection</h3>
-          </div>
-          <p class="service-block-desc">
-            Complete electrical nameplate documentation. We remove panel dead-fronts to verify busbar ratings, main breaker capacity, and NEC 705.12 interconnection viability.
-          </p>
-          <div class="service-features-list">
-            <span class="feat-tag">Main Service Panel (MSP) Model</span>
-            <span class="feat-tag">Busbar Amp Rating Verification</span>
-            <span class="feat-tag">Main Disconnect Amperage</span>
-            <span class="feat-tag">120% Rule Calculation Data</span>
-            <span class="feat-tag">Utility Meter Serial & Socket Type</span>
-            <span class="feat-tag">Grounding Electrode Verification</span>
-          </div>
-        </div>
-
-        <!-- Service 3: Battery & Storage Survey -->
-        <div class="service-block card-technical tech-grid-border">
-          <div class="service-block-header">
-            <span class="badge-tech badge-amber">STORAGE & BESS</span>
-            <h3>Battery & Gateway Spatial Clearances</h3>
-          </div>
-          <p class="service-block-desc">
-            Specialized storage site checks. We verify NFPA 855 wall clearances, gateway locations, and conduit pathways for Tesla Powerwall, Enphase, and SolarEdge systems.
-          </p>
-          <div class="service-features-list">
-            <span class="feat-tag">NFPA 855 Window/Door Offsets</span>
-            <span class="feat-tag">Microgrid Gateway Placement</span>
-            <span class="feat-tag">Critical Loads Subpanel Audit</span>
-            <span class="feat-tag">Conduit Routing Path & Distance</span>
-            <span class="feat-tag">Wall Framing & Stud Capacity</span>
-            <span class="feat-tag">Garage Vehicle Impact Checks</span>
-          </div>
-        </div>
-
-        <!-- Service 4: Site Documentation -->
-        <div class="service-block card-technical tech-grid-border">
-          <div class="service-block-header">
-            <span class="badge-tech badge-amber">SITE DOCUMENTATION</span>
-            <h3>Complete Geotagged Visual Package</h3>
-          </div>
-          <p class="service-block-desc">
-            High-resolution documentary photography. Every property angle, street elevation, meter context, and attic framing connection delivered in a structured digital package.
-          </p>
-          <div class="service-features-list">
-            <span class="feat-tag">4 Exterior Building Elevations</span>
-            <span class="feat-tag">High-Resolution Macro Labels</span>
-            <span class="feat-tag">Geotagged & Timestamped</span>
-            <span class="feat-tag">Drone Thermal / RGB (Optional)</span>
-            <span class="feat-tag">Cloud Portal Download ZIP</span>
-            <span class="feat-tag">One-Touch CAD Compatibility</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="services-cta-row" style="margin-top: var(--space-8); text-align: center;">
-        <a href="/services" class="btn btn-dark btn-md">
-          <span>Explore Complete Technical Service Scopes & Deliverables →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTERACTIVE ESTIMATOR SECTION -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header center">
-        <span class="badge-tech badge-amber">INSTANT ESTIMATE</span>
-        <h2>Calculate Turnaround & Deliverable Scope</h2>
-        <p class="lead">
-          Select your project parameters to preview target SLA turnarounds and standard deliverable inclusions.
-        </p>
-      </div>
-
-      <SurveyCalculator />
-    </div>
-  </section>
-
-  <!-- EPC SPOTLIGHT: "YOU SELL AND INSTALL SOLAR. WE HANDLE THE FIELD VERIFICATION." -->
+  <!-- SECTION 5: TEXAS COVERAGE SUMMARY & FINAL DUAL-CTA -->
   <section class="section section-dark">
     <div class="container">
-      <div class="epc-spotlight-grid">
-        <div class="epc-text-col">
-          <span class="badge-tech badge-dark">ENGINEERED FOR SCALE</span>
-          <h2 class="epc-title">You Sell & Install Solar.<br/><span class="text-amber">We Handle the Field Verification.</span></h2>
-          <p class="lead" style="color: #CBD5E1; margin-bottom: 1.5rem;">
-            Managing an in-house fleet of site surveyors means dealing with vehicle maintenance, ladder liability, regional dead zones, scheduling call-outs, and unpredictable payroll overhead.
-          </p>
-          <p style="color: #94A3B8; margin-bottom: 2rem;">
-            SolarSite Co. acts as your dedicated regional field operations department. You dispatch projects on demand through our portal, and we deliver QA-verified survey packages directly into your engineering pipeline within 48–72 hours.
-          </p>
+      <div class="texas-coverage-banner">
+        <span class="badge-tech badge-dark"><span class="status-dot"></span> TOP 20 TEXAS CITIES COVERED</span>
+        <h2 style="color: #FFFFFF; font-size: clamp(2rem, 3.5vw, 2.75rem); margin-top: 0.5rem; margin-bottom: 1rem;">
+          Active Dispatch Across Every Major Texas Market
+        </h2>
+        <p class="lead" style="color: #94A3B8; max-width: 780px; margin: 0 auto 2rem;">
+          Houston, San Antonio, Dallas, Austin, Fort Worth, El Paso, Arlington, Corpus Christi, Plano, Lubbock, and all surrounding submarkets.
+        </p>
 
-          <div class="epc-checklist">
-            <div class="epc-check-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Zero surveyor payroll during seasonal market fluctuations</span>
-            </div>
-            <div class="epc-check-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Consistent 36-photo deliverables across all geographic regions</span>
-            </div>
-            <div class="epc-check-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Direct webhook / API delivery into your CRM or CAD software</span>
-            </div>
-          </div>
-
-          <div class="epc-actions" style="margin-top: 2rem;">
-            <a href="/for-epcs" class="btn btn-primary btn-lg">Become an EPC Partner</a>
-          </div>
-        </div>
-
-        <div class="epc-visual-col">
-          <div class="epc-image-card card-dark tech-grid-border">
-            <img 
-              src="/images/electrical_panel_survey.jpg" 
-              alt="Licensed solar technician inspecting electrical main service panel with multimeter" 
-              width="900" 
-              height="506" 
-              class="epc-img"
-              loading="lazy"
-            />
-            <div class="epc-image-caption">
-              <div class="caption-title font-mono">FIELD VERIFICATION STANDARD</div>
-              <div class="caption-desc">MSP interior inspection, busbar rating verification, and backfeed compliance audit.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RESOURCE HUB PREVIEW (EDITORIAL AUTHORITY) -->
-  <section class="section section-warm">
-    <div class="container">
-      <div class="section-top-row">
-        <div class="section-header" style="margin-bottom: 0;">
-          <span class="badge-tech badge-amber">SOLAR OPERATIONS RESOURCES</span>
-          <h2>Field & Engineering Knowledge Hub</h2>
-          <p class="lead">
-            Authoritative technical guides on site survey checklists, electrical busbars, AHJ permitting rules, and NTP-to-PTO operational workflows.
-          </p>
-        </div>
-        <a href="/resources" class="btn btn-outline btn-sm">View All Resources →</a>
-      </div>
-
-      <div class="resources-grid" style="margin-top: var(--space-8);">
-        {recentArticles.map(article => (
-          <article class="resource-card card-technical tech-grid-border">
-            <div class="card-top-meta">
-              <span class="badge-tech badge-amber">{article.category}</span>
-              <span class="read-time font-mono">{article.readTime}</span>
-            </div>
-            <h3 class="resource-title">
-              <a href={`/resources/${article.slug}`}>{article.title}</a>
-            </h3>
-            <p class="resource-summary">{article.summary}</p>
-            <div class="card-footer-meta">
-              <span class="author-byline">By {article.author} • {article.authorRole}</span>
-              <a href={`/resources/${article.slug}`} class="read-more-link">
-                <span>Read Guide</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- COVERAGE QUICK SELECTOR & GLOSSARY CALLOUT -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-2">
-        <!-- Service Areas Quick Box -->
-        <div class="coverage-callout card-technical tech-grid-border">
-          <span class="badge-tech badge-amber">GEOGRAPHIC COVERAGE</span>
-          <h3>Active State Service Network</h3>
-          <p>
-            We maintain certified surveyor coverage across major solar markets with established turnaround SLAs.
-          </p>
-          <div class="state-pills-row">
-            {serviceAreasData.map(st => (
-              <a href={`/service-areas/${st.slug}`} class="state-pill">
-                <strong>{st.code}</strong> {st.name}
-              </a>
-            ))}
-          </div>
-          <a href="/service-areas" class="btn btn-outline btn-sm" style="margin-top: 1.5rem;">
-            Explore All State Turnarounds & Utility Profiles →
-          </a>
-        </div>
-
-        <!-- Glossary Quick Box -->
-        <div class="glossary-callout card-technical tech-grid-border">
-          <span class="badge-tech badge-amber">INDUSTRY TERMINOLOGY</span>
-          <h3>Solar Operations Glossary</h3>
-          <p>
-            Searchable definitions and operational context for 25+ essential solar terms including AHJ, PTO, NTP, MSP, 120% Rule, and Backfeed Breakers.
-          </p>
-          <div class="glossary-sample-tags">
-            <a href="/glossary" class="gloss-tag">120% Rule (NEC 705.12)</a>
-            <a href="/glossary" class="gloss-tag">Main Service Panel (MSP)</a>
-            <a href="/glossary" class="gloss-tag">AHJ Compliance</a>
-            <a href="/glossary" class="gloss-tag">PTO & NTP Milestones</a>
-            <a href="/glossary" class="gloss-tag">PE Engineering Stamps</a>
-          </div>
-          <a href="/glossary" class="btn btn-outline btn-sm" style="margin-top: 1.5rem;">
-            Access Searchable Glossary (25+ Terms) →
+        <div class="texas-city-pills-row">
+          {featuredTexasCities.map(c => (
+            <a href="/service-areas" class="texas-city-pill">
+              <strong>{c.name}</strong> • {c.majorUtility.split(' ')[0]}
+            </a>
+          ))}
+          <a href="/service-areas" class="texas-city-pill explore-more">
+            View All 20 Cities →
           </a>
         </div>
       </div>
+
+      <!-- Final Dual CTA Box -->
+      <div class="final-dual-cta-box tech-grid-border" style="margin-top: var(--space-12);">
+        <div class="final-cta-content">
+          <span class="badge-tech badge-amber">GET STARTED IN TEXAS</span>
+          <h2 style="color: #FFFFFF; font-size: clamp(1.875rem, 3vw, 2.5rem); margin-top: 0.5rem; margin-bottom: 1rem;">
+            Ready to Dispatch Your Next Texas Solar Site Survey?
+          </h2>
+          <p style="color: #CBD5E1; font-size: 1.0625rem; max-width: 680px; margin: 0 auto 2rem;">
+            Submit your project address or join our statewide network as an EPC partner or local site surveyor.
+          </p>
+
+          <div class="final-cta-buttons">
+            <a href="/schedule" class="btn btn-primary btn-lg">
+              <span>Schedule a Survey</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/join-us" class="btn btn-outline-white btn-lg">
+              <span>Join Us (EPCs & Surveyors)</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-
-  <!-- FINAL CTA SECTION -->
-  <CTASection 
-    title="Need a Site Survey for Your Next Project?"
-    subtitle="Submit the project address and requirements. Our operations desk coordinates the surveyor and delivers an organized, CAD-ready survey package in 48–72 hours."
-    primaryCtaText="Schedule a Site Survey"
-    primaryCtaLink="/schedule"
-    secondaryCtaText="Become an EPC Partner"
-    secondaryCtaLink="/for-epcs"
-  />
 </BaseLayout>
 
 <style>
@@ -641,321 +456,123 @@ const recentArticles = resourcesData.slice(0, 3);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  /* Audience Grid */
-  .audience-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: var(--space-4);
-  }
-
-  .audience-card {
-    padding: var(--space-6);
-    background-color: #FFFFFF;
-  }
-
-  .card-icon {
-    margin-bottom: var(--space-3);
-  }
-
-  .audience-card h4 {
-    margin-bottom: var(--space-2);
-    font-size: 1.0625rem;
-  }
-
-  .audience-card p {
-    font-size: 0.875rem;
-    line-height: 1.45;
-  }
-
-  /* Benefits Panel */
-  .benefits-panel {
+  /* Advantage Cards */
+  .advantage-card {
     background-color: #FFFFFF;
     padding: var(--space-8);
   }
 
-  .benefits-header {
-    margin-bottom: var(--space-6);
-  }
-
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
-  }
-
-  .benefit-item {
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-  }
-
-  .benefit-check {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: var(--status-green-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 0.15rem;
-  }
-
-  .benefit-item strong {
-    display: block;
-    font-size: 0.9375rem;
-    color: var(--text-primary);
-    margin-bottom: 0.2rem;
-  }
-
-  .benefit-item p {
-    font-size: 0.875rem;
-    line-height: 1.45;
-  }
-
-  /* Services Detail Grid */
-  .services-detail-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-6);
-  }
-
-  .service-block {
-    background-color: #FFFFFF;
-    padding: var(--space-8);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .service-block-header {
-    margin-bottom: var(--space-3);
-  }
-
-  .service-block-header h3 {
-    margin-top: var(--space-2);
-    font-size: 1.375rem;
-  }
-
-  .service-block-desc {
-    font-size: 0.9375rem;
-    line-height: 1.55;
-    margin-bottom: var(--space-6);
-  }
-
-  .service-features-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: auto;
-  }
-
-  .feat-tag {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    background-color: var(--bg-subtle);
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border-light);
-    color: var(--text-primary);
-  }
-
-  /* EPC Spotlight */
-  .epc-spotlight-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    gap: var(--space-12);
-    align-items: center;
-  }
-
-  .epc-title {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
-    line-height: 1.15;
-    color: #FFFFFF;
-    margin-top: var(--space-2);
+  .adv-icon {
     margin-bottom: var(--space-4);
   }
 
-  .epc-checklist {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .epc-check-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 0.9375rem;
-    color: #E2E8F0;
-  }
-
-  .epc-image-card {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-  }
-
-  .epc-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-  }
-
-  .epc-image-caption {
-    background-color: #1E293B;
-    padding: var(--space-4) var(--space-6);
-  }
-
-  .caption-title {
-    font-size: 0.75rem;
-    color: #F59E0B;
-    font-weight: 600;
-  }
-
-  .caption-desc {
-    font-size: 0.8125rem;
-    color: #CBD5E1;
-    margin-top: 0.2rem;
-  }
-
-  /* Resource Hub Preview */
-  .section-top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .resources-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
-  }
-
-  .resource-card {
-    background-color: #FFFFFF;
-    padding: var(--space-6);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .card-top-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--space-3);
-  }
-
-  .read-time {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-  }
-
-  .resource-title {
+  .advantage-card h4 {
     font-size: 1.1875rem;
-    line-height: 1.35;
+    margin-bottom: var(--space-2);
+  }
+
+  .advantage-card p {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  /* Discipline Blocks */
+  .discipline-block {
+    background-color: #FFFFFF;
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .discipline-header {
     margin-bottom: var(--space-3);
   }
 
-  .resource-title a:hover {
-    color: var(--accent-amber);
+  .discipline-header h3 {
+    margin-top: var(--space-2);
+    font-size: 1.3125rem;
   }
 
-  .resource-summary {
-    font-size: 0.875rem;
+  .discipline-block p {
+    font-size: 0.9375rem;
     line-height: 1.55;
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-5);
     flex-grow: 1;
   }
 
-  .card-footer-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    border-top: 1px solid var(--border-light);
-    padding-top: var(--space-4);
-    margin-top: auto;
-  }
-
-  .author-byline {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-  }
-
-  .read-more-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-family: var(--font-heading);
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--accent-amber-dark);
-  }
-
-  .read-more-link:hover {
-    color: var(--text-primary);
-  }
-
-  /* Coverage & Glossary Quick Boxes */
-  .coverage-callout, .glossary-callout {
-    background-color: #FFFFFF;
-    padding: var(--space-8);
-  }
-
-  .coverage-callout h3, .glossary-callout h3 {
-    margin-top: var(--space-2);
-    margin-bottom: var(--space-3);
-    font-size: 1.375rem;
-  }
-
-  .state-pills-row, .glossary-sample-tags {
+  .discipline-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: var(--space-4);
+    gap: 0.35rem;
   }
 
-  .state-pill {
-    font-size: 0.8125rem;
+  .discipline-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     background-color: var(--bg-subtle);
-    border: 1px solid var(--border-medium);
-    padding: 0.35rem 0.65rem;
+    border: 1px solid var(--border-light);
+    padding: 0.2rem 0.5rem;
     border-radius: var(--radius-sm);
     color: var(--text-primary);
+  }
+
+  /* Texas Coverage Banner */
+  .texas-coverage-banner {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .texas-city-pills-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .texas-city-pill {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8125rem;
+    color: #E2E8F0;
     transition: all var(--transition-fast);
   }
 
-  .state-pill strong {
-    font-family: var(--font-mono);
-    color: var(--accent-amber-dark);
+  .texas-city-pill strong {
+    color: #F59E0B;
   }
 
-  .state-pill:hover {
-    border-color: var(--accent-amber);
-    background-color: var(--accent-amber-subtle);
+  .texas-city-pill:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #F59E0B;
   }
 
-  .gloss-tag {
-    font-size: 0.8125rem;
-    background-color: var(--bg-subtle);
-    border: 1px solid var(--border-light);
-    padding: 0.35rem 0.65rem;
-    border-radius: var(--radius-sm);
-    color: var(--text-secondary);
+  .texas-city-pill.explore-more {
+    background-color: var(--accent-amber);
+    color: #FFFFFF;
+    border-color: var(--accent-amber-dark);
   }
 
-  .gloss-tag:hover {
-    color: var(--text-primary);
-    border-color: var(--border-medium);
+  .final-dual-cta-box {
+    background-color: #111827;
+    border: 1px solid #1F2937;
+    border-radius: var(--radius-lg);
+    padding: var(--space-12) var(--space-8);
+    text-align: center;
+    box-shadow: var(--shadow-xl);
   }
 
-  /* Responsive Rules */
-  @media (max-width: 1100px) {
-    .audience-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .hero-grid, .epc-spotlight-grid {
+  .final-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-grid {
       grid-template-columns: 1fr;
       gap: var(--space-8);
     }
@@ -965,11 +582,8 @@ const recentArticles = resourcesData.slice(0, 3);
     .hero-metrics-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-    .audience-grid {
-      grid-template-columns: 1fr;
-    }
-    .benefits-grid, .services-detail-grid, .resources-grid {
-      grid-template-columns: 1fr;
+    .final-cta-buttons {
+      flex-direction: column;
     }
     .tech-annotation {
       position: static;

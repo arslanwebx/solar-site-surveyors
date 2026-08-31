@@ -1,1 +1,0 @@
-import"./hoisted.BgrOq1MJ.js";const e=document.getElementById("epc-partner-intake-form"),t=document.getElementById("partner-confirmation");e&&t&&e.addEventListener("submit",n=>{n.preventDefault(),e.style.display="none",t.style.display="block",t.scrollIntoView({behavior:"smooth",block:"center"})});

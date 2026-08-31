@@ -1,62 +1,85 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTASection from '../../components/CTASection.astro';
-import { serviceAreasData } from '../../data/serviceAreas';
+import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
 ---
 
 <BaseLayout 
-  title="Solar Site Survey Service Areas | Nationwide Coverage | SolarSite Co."
-  description="Nationwide solar site survey coordination across major solar states: California, Texas, Florida, Arizona, Colorado, Nevada, New York, North Carolina, and expanding territories."
+  title="Texas Solar Site Survey Coverage | Top 20 Cities & Statewide Network | SolarSite Texas"
+  description="Statewide solar site survey coordination across Texas. Active surveyor coverage in Houston, Dallas, San Antonio, Austin, Fort Worth, and all top 20 Texas cities with 24–48hr turnaround SLAs."
   activeNav="service-areas"
 >
+  <!-- Page Hero -->
   <section class="section section-dark page-hero">
     <div class="container">
       <div class="page-hero-content">
-        <span class="badge-tech badge-dark">GEOGRAPHIC DISPATCH NETWORK</span>
-        <h1 class="page-title">Service Areas & Regional Coverage</h1>
+        <span class="badge-tech badge-dark"><span class="status-dot"></span> 100% TEXAS STATEWIDE COVERAGE</span>
+        <h1 class="page-title">Texas Service Areas & City Coverage</h1>
         <p class="lead" style="color: #94A3B8; max-width: 820px;">
-          Active field surveyor networks with guaranteed 48–72 hour dispatch SLAs across the highest volume solar and storage markets in the United States.
+          From the Rio Grande Valley to the Panhandle, SolarSite Texas coordinates vetted local site surveyors across all 254 Texas counties—delivering CAD-ready photo packages in 24–48 hours.
         </p>
+
+        <!-- Texas Operational Stats -->
+        <div class="texas-hero-stats">
+          <div class="stat-pill">
+            <span class="pill-num font-mono">20+</span>
+            <span class="pill-text">Primary Texas Metro Hubs</span>
+          </div>
+          <div class="stat-pill">
+            <span class="pill-num font-mono">254</span>
+            <span class="pill-text">Texas Counties Covered</span>
+          </div>
+          <div class="stat-pill">
+            <span class="pill-num font-mono">24–48h</span>
+            <span class="pill-text">Standard Turnaround SLA</span>
+          </div>
+          <div class="stat-pill">
+            <span class="pill-num font-mono">ERCOT</span>
+            <span class="pill-text">100% TDU & Muni Alignment</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Top 20 Texas Cities Directory -->
   <section class="section">
     <div class="container">
-      <div class="state-cards-grid">
-        {serviceAreasData.map(st => (
-          <div class="state-card card-technical tech-grid-border">
-            <div class="state-card-top">
-              <div class="state-code-badge font-mono">{st.code}</div>
-              <span class="badge-tech badge-amber">{st.turnaroundSla}</span>
+      <div class="section-header">
+        <span class="badge-tech badge-amber">TOP 20 TEXAS METROS & CITIES</span>
+        <h2>Active City Dispatch Directory</h2>
+        <p class="lead">
+          Our distributed field surveyor list covers every major municipality and surrounding suburban submarkets across Texas.
+        </p>
+      </div>
+
+      <div class="cities-grid">
+        {top20TexasCities.map((city, index) => (
+          <div class="city-card card-technical tech-grid-border">
+            <div class="city-card-header">
+              <div class="city-rank font-mono">{String(index + 1).padStart(2, '0')}</div>
+              <span class="badge-tech badge-amber font-mono">{city.turnaroundSla}</span>
             </div>
 
-            <h2 class="state-name">
-              <a href={`/service-areas/${st.slug}`}>{st.name}</a>
-            </h2>
+            <h3 class="city-name">{city.name}</h3>
+            <div class="city-sub font-mono">{city.county} • {city.metro}</div>
 
-            <p class="state-summary">{st.summary}</p>
-
-            <div class="state-meta-block">
-              <span class="meta-label font-mono">PRIMARY METRO REGIONS:</span>
-              <div class="metro-tags">
-                {st.metroAreas.slice(0, 3).map(metro => (
-                  <span class="metro-tag">{metro}</span>
-                ))}
-                {st.metroAreas.length > 3 && (
-                  <span class="metro-tag">+{st.metroAreas.length - 3} more</span>
-                )}
-              </div>
+            <div class="city-meta-block">
+              <span class="city-meta-label font-mono">PRIMARY ELECTRIC UTILITY:</span>
+              <span class="utility-badge">{city.majorUtility}</span>
             </div>
 
-            <div class="state-meta-block">
-              <span class="meta-label font-mono">MAJOR UTILITIES COVERED:</span>
-              <p class="utilities-text">{st.majorUtilities.slice(0, 3).join(', ')}</p>
+            <p class="city-notes">{city.keyCoverageNotes}</p>
+
+            <div class="city-capabilities">
+              {city.surveyTypes.map(type => (
+                <span class="cap-tag">{type}</span>
+              ))}
             </div>
 
-            <div class="state-card-footer">
-              <a href={`/service-areas/${st.slug}`} class="btn btn-outline btn-sm" style="width: 100%;">
-                <span>View {st.name} Coverage & Utility Specs →</span>
+            <div class="city-card-cta">
+              <a href="/schedule" class="btn btn-outline btn-sm" style="width: 100%;">
+                <span>Dispatch {city.name} Survey →</span>
               </a>
             </div>
           </div>
@@ -65,13 +88,42 @@ import { serviceAreasData } from '../../data/serviceAreas';
     </div>
   </section>
 
+  <!-- Texas Electric Grid & Utility Coverage Breakdown -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tech badge-amber">REGULATORY & GRID PROFICIENCY</span>
+        <h2>Full Texas Utility & TDU Integration</h2>
+        <p class="lead">
+          Our surveyors are trained on the exact meter socket, disconnect, and labeling standards required across Texas electric territories.
+        </p>
+      </div>
+
+      <div class="grid-2" style="margin-top: var(--space-8);">
+        {texasUtilityCoverage.map(util => (
+          <div class="utility-card card-technical tech-grid-border">
+            <div class="util-top">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <h4>{util.name}</h4>
+            </div>
+            <div class="util-meta">
+              <div><strong class="font-mono">Territory:</strong> {util.territory}</div>
+              <div><strong class="font-mono">Grid Structure:</strong> {util.share}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
   <CTASection 
-    title="Need a Site Survey in One of These States?"
-    subtitle="Submit your project address to schedule a certified field surveyor with local utility expertise."
-    primaryCtaText="Schedule a Site Survey"
+    title="Need a Solar Site Survey Anywhere in Texas?"
+    subtitle="Submit your project address today. We assign the closest certified Texas surveyor and deliver an organized CAD-ready package within 24–48 hours."
+    primaryCtaText="Schedule a Texas Survey"
     primaryCtaLink="/schedule"
-    secondaryCtaText="Become an EPC Partner"
-    secondaryCtaLink="/for-epcs"
+    secondaryCtaText="Join Our Texas Network"
+    secondaryCtaLink="/join-us"
   />
 </BaseLayout>
 
@@ -89,87 +141,162 @@ import { serviceAreasData } from '../../data/serviceAreas';
     margin-bottom: var(--space-4);
   }
 
-  .state-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-8);
+  .texas-hero-stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
   }
 
-  .state-card {
+  .stat-pill {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .pill-num {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-amber-light);
+  }
+
+  .pill-text {
+    font-size: 0.8125rem;
+    color: #CBD5E1;
+  }
+
+  /* Top 20 Cities Grid */
+  .cities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .city-card {
     background-color: #FFFFFF;
-    padding: var(--space-8);
+    padding: var(--space-6);
     display: flex;
     flex-direction: column;
   }
 
-  .state-card-top {
+  .city-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--space-3);
-  }
-
-  .state-code-badge {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-  }
-
-  .state-name {
-    font-size: 1.5rem;
     margin-bottom: var(--space-2);
   }
 
-  .state-name a:hover {
-    color: var(--accent-amber);
+  .city-rank {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-amber-dark);
   }
 
-  .state-summary {
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    color: var(--text-secondary);
-    margin-bottom: var(--space-6);
-  }
-
-  .state-meta-block {
-    margin-bottom: var(--space-4);
-  }
-
-  .meta-label {
-    display: block;
-    font-size: 0.6875rem;
-    color: var(--text-muted);
-    font-weight: 600;
-    margin-bottom: 0.35rem;
-  }
-
-  .metro-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-  }
-
-  .metro-tag {
-    font-size: 0.75rem;
-    background-color: var(--bg-subtle);
-    padding: 0.2rem 0.5rem;
-    border-radius: var(--radius-sm);
+  .city-name {
+    font-size: 1.375rem;
+    margin-bottom: 0.15rem;
     color: var(--text-primary);
   }
 
-  .utilities-text {
-    font-size: 0.8125rem;
-    color: var(--text-secondary);
-    margin: 0;
+  .city-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
   }
 
-  .state-card-footer {
+  .city-meta-block {
+    background-color: var(--bg-subtle);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .city-meta-label {
+    display: block;
+    font-size: 0.625rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+
+  .utility-badge {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .city-notes {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+    flex-grow: 1;
+  }
+
+  .city-capabilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: var(--space-5);
+  }
+
+  .cap-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    background-color: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    padding: 0.15rem 0.45rem;
+    border-radius: 2px;
+    color: var(--text-secondary);
+  }
+
+  .city-card-cta {
     margin-top: auto;
+    border-top: 1px solid var(--border-light);
     padding-top: var(--space-4);
   }
 
-  @media (max-width: 900px) {
-    .state-cards-grid {
+  /* Utility Grid */
+  .utility-card {
+    background-color: #FFFFFF;
+    padding: var(--space-6);
+  }
+
+  .util-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .util-top h4 {
+    font-size: 1.1875rem;
+  }
+
+  .util-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  .util-meta strong {
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 1100px) {
+    .cities-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .cities-grid, .grid-2 {
       grid-template-columns: 1fr;
     }
   }

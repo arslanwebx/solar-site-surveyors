@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SurveyorApplyForm from '../components/SurveyorApplyForm.astro';
+---
+
+<BaseLayout 
+  title="Join Us | Partner as an EPC or Texas Site Surveyor | SolarSite Texas"
+  description="Join SolarSite Texas. Choose your path: Partner as a Solar EPC/Installer for on-demand Texas field surveys, or join our vetted network of local Texas site surveyors."
+  activeNav="join-us"
+>
+  <!-- Page Hero -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content center-text">
+        <span class="badge-tech badge-dark">PARTNERSHIP & NETWORK INTAKE</span>
+        <h1 class="page-title">Join SolarSite Texas</h1>
+        <p class="lead" style="color: #94A3B8; max-width: 760px; margin: 0 auto 2rem;">
+          Whether you are a Solar EPC scaling installations across Texas or an experienced local site surveyor looking for steady project dispatches, choose your path below.
+        </p>
+
+        <!-- Two Primary Selector Buttons -->
+        <div class="join-type-selector-buttons" id="join-path-selector">
+          <button type="button" class="join-path-btn active" data-target="epc-panel" id="btn-epc-path">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12M9 20v-6h6v6"/></svg>
+            <span>I am a Solar EPC / Installer</span>
+          </button>
+          
+          <button type="button" class="join-path-btn" data-target="surveyor-panel" id="btn-surveyor-path">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <span>I am a Texas Site Surveyor</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Panel 1: For Solar EPCs & Installers -->
+  <section class="section join-panel" id="epc-panel">
+    <div class="container-narrow">
+      <div class="card-technical tech-grid-border join-card">
+        <div class="panel-header">
+          <span class="badge-tech badge-amber">FOR SOLAR EPCS & CONTRACTORS</span>
+          <h2>Partner with SolarSite Texas</h2>
+          <p class="lead" style="margin-top: 0.5rem; margin-bottom: 1.5rem;">
+            Eliminate surveyor payroll, ladder liability, and travel fees across Texas. We coordinate vetted local surveyors in all 254 Texas counties with guaranteed 24–48 hour turnaround SLAs.
+          </p>
+
+          <div class="epc-benefits-mini-grid">
+            <div class="mini-benefit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>100% Variable Cost (Pay per completed survey)</span>
+            </div>
+            <div class="mini-benefit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>AutoCAD, HelioScope, & Aurora CAD-ready files</span>
+            </div>
+            <div class="mini-benefit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Full coverage across ERCOT & Texas Municipal utilities</span>
+            </div>
+          </div>
+        </div>
+
+        <form id="epc-join-form" class="project-form" style="margin-top: var(--space-8);">
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label" for="epc-company-name">Company / EPC Name <span class="required">*</span></label>
+              <input type="text" id="epc-company-name" name="company" class="form-input" placeholder="e.g. Lone Star Solar EPC" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="epc-contact-person">Operations Contact / Title <span class="required">*</span></label>
+              <input type="text" id="epc-contact-person" name="contact" class="form-input" placeholder="e.g. Brandon Davis (VP of Operations)" required />
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label" for="epc-biz-email">Work Email <span class="required">*</span></label>
+              <input type="email" id="epc-biz-email" name="email" class="form-input" placeholder="e.g. operations@lonestarsolar.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="epc-biz-phone">Direct Phone <span class="required">*</span></label>
+              <input type="tel" id="epc-biz-phone" name="phone" class="form-input" placeholder="e.g. (512) 555-0199" required />
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label" for="epc-est-volume">Estimated Monthly Texas Survey Volume <span class="required">*</span></label>
+              <select id="epc-est-volume" name="volume" class="form-select" required>
+                <option value="5-15">5–15 Surveys / Month</option>
+                <option value="16-50" selected>16–50 Surveys / Month (Standard Partner)</option>
+                <option value="51-150">51–150 Surveys / Month (High Volume)</option>
+                <option value="150+">150+ Surveys / Month (Enterprise)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="epc-target-metros">Primary Texas Metro Areas <span class="required">*</span></label>
+              <input type="text" id="epc-target-metros" name="metros" class="form-input" placeholder="e.g. Houston, DFW, Austin, San Antonio" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="epc-special-notes">CAD Software & Specific Requirements</label>
+            <textarea id="epc-special-notes" name="notes" class="form-textarea" placeholder="Mention your CAD software (AutoCAD, HelioScope, Aurora), battery storage requirements, or immediate project needs..."></textarea>
+          </div>
+
+          <div class="submit-action-row">
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <span>Submit EPC Partnership Application</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </button>
+          </div>
+        </form>
+
+        <div class="confirmation-box" id="epc-conf-box" style="display: none;">
+          <div class="conf-icon-box">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="badge-tech badge-amber">EPC INTAKE RECEIVED</span>
+          <h3>Welcome to SolarSite Texas</h3>
+          <p>
+            Your partnership request has been received. Our Texas Operations Director will reach out within 2 business hours to set up your dispatch account and volume pricing schedule.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Panel 2: For Texas Site Surveyors -->
+  <section class="section join-panel" id="surveyor-panel" style="display: none;">
+    <div class="container-narrow">
+      <SurveyorApplyForm />
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const btnEpc = document.getElementById('btn-epc-path');
+  const btnSurv = document.getElementById('btn-surveyor-path');
+  const panelEpc = document.getElementById('epc-panel');
+  const panelSurv = document.getElementById('surveyor-panel');
+
+  if (btnEpc && btnSurv && panelEpc && panelSurv) {
+    btnEpc.addEventListener('click', () => {
+      btnEpc.classList.add('active');
+      btnSurv.classList.remove('active');
+      panelEpc.style.display = 'block';
+      panelSurv.style.display = 'none';
+      panelEpc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    btnSurv.addEventListener('click', () => {
+      btnSurv.classList.add('active');
+      btnEpc.classList.remove('active');
+      panelSurv.style.display = 'block';
+      panelEpc.style.display = 'none';
+      panelSurv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  // Check URL hash for direct tab selection (#surveyor or #epc)
+  if (window.location.hash === '#surveyor') {
+    btnSurv?.click();
+  }
+
+  // EPC Form Submission
+  const epcForm = document.getElementById('epc-join-form') as HTMLFormElement;
+  const epcConf = document.getElementById('epc-conf-box');
+  if (epcForm && epcConf) {
+    epcForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      epcForm.style.display = 'none';
+      epcConf.style.display = 'block';
+    });
+  }
+</script>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--border-dark-subtle);
+  }
+
+  .center-text {
+    text-align: center;
+  }
+
+  .page-title {
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-3);
+  }
+
+  .join-type-selector-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .join-path-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-heading);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    padding: 1rem 1.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .join-path-btn:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .join-path-btn.active {
+    background-color: var(--accent-amber);
+    color: #FFFFFF;
+    border-color: var(--accent-amber-dark);
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.25);
+  }
+
+  .join-card {
+    background-color: #FFFFFF;
+    padding: var(--space-10) var(--space-8);
+  }
+
+  .panel-header {
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: var(--space-6);
+  }
+
+  .panel-header h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    margin-top: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .epc-benefits-mini-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mini-benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .confirmation-box {
+    text-align: center;
+    padding: var(--space-10) var(--space-4);
+  }
+
+  .conf-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--status-green-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+  }
+
+  .confirmation-box h3 {
+    font-size: 1.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .confirmation-box p {
+    font-size: 1.0625rem;
+    color: var(--text-secondary);
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .join-path-btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .join-card {
+      padding: var(--space-6) var(--space-4);
+    }
+  }
+</style>
