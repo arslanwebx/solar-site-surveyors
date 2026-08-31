@@ -1,4 +1,6 @@
 ---
+import Logo from './Logo.astro';
+
 const currentYear = new Date().getFullYear();
 ---
 
@@ -7,20 +9,8 @@ const currentYear = new Date().getFullYear();
     <div class="footer-main-grid">
       <!-- Company Brand Column -->
       <div class="footer-brand-col">
-        <a href="/" class="footer-logo">
-          <div class="logo-mark">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-              <rect width="32" height="32" rx="4" fill="#1E293B"/>
-              <path d="M4 16H28M16 4V28" stroke="#475569" stroke-width="0.75" stroke-dasharray="2 2"/>
-              <circle cx="16" cy="16" r="9" stroke="#94A3B8" stroke-width="1.5"/>
-              <circle cx="16" cy="16" r="3.5" fill="#F59E0B"/>
-              <path d="M16 4V9M16 23V28M4 16H9M23 16H28" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="logo-text">
-            <span class="brand-name">SOLARSITE<span class="brand-accent">TEXAS</span></span>
-            <span class="brand-tagline">STATEWIDE FIELD SURVEY COORDINATION</span>
-          </div>
+        <a href="/" class="footer-logo" aria-label="Solar Site Surveys Home">
+          <Logo isDark={true} height={42} />
         </a>
 
         <p class="footer-desc">
@@ -83,7 +73,7 @@ const currentYear = new Date().getFullYear();
     <!-- Footer Bottom Bar -->
     <div class="footer-bottom">
       <div class="footer-legal">
-        <p>© {currentYear} SolarSite Texas. All rights reserved. Texas Solar Site Survey Coordination Platform.</p>
+        <p>© {currentYear} Solar Site Surveys. All rights reserved. Professional Solar Site Survey Coordination Platform.</p>
         <div class="footer-legal-links">
           <a href="/privacy">Privacy Policy</a>
           <span class="dot">•</span>
@@ -93,7 +83,7 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
       <div class="footer-tagline-right font-mono">
-        Texas Field Operations & Survey Coordination
+        Field Operations & Survey Coordination
       </div>
     </div>
   </div>
@@ -120,28 +110,9 @@ const currentYear = new Date().getFullYear();
   .footer-logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
     text-decoration: none;
     margin-bottom: var(--space-4);
-  }
-
-  .footer-logo .brand-name {
-    color: #FFFFFF;
-    font-family: var(--font-heading);
-    font-size: 1.1875rem;
-    font-weight: 700;
-    line-height: 1.1;
-  }
-
-  .footer-logo .brand-accent {
-    color: var(--accent-amber);
-  }
-
-  .footer-logo .brand-tagline {
-    font-family: var(--font-mono);
-    font-size: 0.625rem;
-    color: #94A3B8;
-    letter-spacing: 0.08em;
+    line-height: 0;
   }
 
   .footer-desc {

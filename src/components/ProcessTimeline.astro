@@ -4,29 +4,25 @@ const steps = [
     stepNum: "01",
     label: "PROJECT INTAKE",
     title: "Submit Project & Requirements",
-    description: "Provide the property address, prelim CAD/proposal, utility bill, and specific survey scope (roof planes, electrical panel, battery storage, attic access) via our fast intake portal.",
-    specs: ["Address & Geo-coordinates", "Utility Information & Notes", "Prelim Proposal / Layout", "Special Access Instructions"]
+    description: "Provide the property address, prelim CAD/proposal, utility bill, and specific survey scope (roof planes, electrical panel, battery storage, attic access) via our fast intake portal."
   },
   {
     stepNum: "02",
     label: "DISPATCH & COORDINATION",
     title: "Surveyor Matched & Scheduled",
-    description: "Our operations dispatch team assigns a vetted local site surveyor equipped with certified safety gear, digital pitch gauges, multimeters, and drones, and confirms site access directly.",
-    specs: ["Vetted Field Network", "Availability Confirmation", "Customer Access Coordination", "Safety & PPE Compliance"]
+    description: "Our operations dispatch team assigns a vetted local site surveyor equipped with certified safety gear, digital pitch gauges, multimeters, and drones, and confirms site access directly."
   },
   {
     stepNum: "03",
     label: "FIELD EXECUTION",
     title: "Comprehensive Field Survey",
-    description: "The surveyor performs an exhaustive on-site audit: 36-photo standard, MSP dead-front busbar verification, rafter dimensions, pitch measurements, obstruction coordinates, and battery clearances.",
-    specs: ["36-Photo Geotagged Set", "MSP Dead-Front Inspection", "Rafter & Truss Measurement", "Obstruction Offsets (X/Y)"]
+    description: "The surveyor performs an exhaustive on-site audit: 36-photo standard, MSP dead-front busbar verification, rafter dimensions, pitch measurements, obstruction coordinates, and battery clearances."
   },
   {
     stepNum: "04",
     label: "QA & DELIVERY",
     title: "CAD-Ready Package Delivered",
-    description: "Every photo, measurement, and electrical reading undergoes internal triple-check QA before release. Your engineering and drafting team receives an organized, CAD-ready package.",
-    specs: ["One-Touch CAD Formatting", "Single-Line Diagram Ready", "Defect-Free Guarantee", "Encrypted Cloud Delivery"]
+    description: "Every photo, measurement, and electrical reading undergoes internal triple-check QA before release. Your engineering and drafting team receives an organized, CAD-ready package."
   }
 ];
 ---
@@ -41,18 +37,6 @@ const steps = [
         </div>
         <h3 class="step-title">{step.title}</h3>
         <p class="step-desc">{step.description}</p>
-        
-        <div class="step-specs-box">
-          <span class="specs-header">FIELD VERIFICATIONS:</span>
-          <ul class="specs-list">
-            {step.specs.map(spec => (
-              <li>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>{spec}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     ))}
   </div>
@@ -78,7 +62,7 @@ const steps = [
     background-color: var(--bg-surface);
     border: 1px solid var(--border-medium);
     border-radius: var(--radius-md);
-    padding: var(--space-6);
+    padding: var(--space-8) var(--space-6);
     position: relative;
     transition: all var(--transition-fast);
   }
@@ -92,12 +76,12 @@ const steps = [
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-4);
   }
 
   .step-number {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 2.25rem;
     font-weight: 700;
     color: var(--accent-amber-dark);
     line-height: 1;
@@ -113,51 +97,16 @@ const steps = [
 
   .step-title {
     font-size: 1.1875rem;
-    line-height: 1.25;
+    line-height: 1.3;
     margin-bottom: var(--space-3);
     color: var(--text-primary);
   }
 
   .step-desc {
     font-size: 0.9375rem;
-    line-height: 1.55;
+    line-height: 1.6;
     color: var(--text-secondary);
-    margin-bottom: var(--space-6);
-    flex-grow: 1;
-  }
-
-  .step-specs-box {
-    background-color: var(--bg-subtle);
-    border-top: 1px solid var(--border-light);
-    border-radius: var(--radius-sm);
-    padding: var(--space-3) var(--space-4);
-    margin-top: auto;
-  }
-
-  .specs-header {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    letter-spacing: 0.06em;
-    margin-bottom: 0.35rem;
-  }
-
-  .specs-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  .specs-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.8125rem;
-    color: var(--text-primary);
-    font-weight: 500;
+    margin-bottom: 0;
   }
 
   @media (max-width: 1024px) {
