@@ -4,46 +4,41 @@ const steps = [
     stepNum: "01",
     label: "PROJECT INTAKE",
     title: "Submit Project & Requirements",
-    description: "Provide the property address, prelim CAD/proposal, utility bill, and specific survey scope (roof planes, electrical panel, battery storage, attic access) via our fast dispatch portal or API.",
-    specs: ["Address & Geo-coordinates", "Utility Bill & Meter ID", "Prelim Proposal / Layout", "Special Access Notes"],
-    badge: "1-Minute Dispatch"
+    description: "Provide the property address, prelim CAD/proposal, utility bill, and specific survey scope (roof planes, electrical panel, battery storage, attic access) via our fast intake portal.",
+    specs: ["Address & Geo-coordinates", "Utility Information & Notes", "Prelim Proposal / Layout", "Special Access Instructions"]
   },
   {
     stepNum: "02",
     label: "DISPATCH & COORDINATION",
     title: "Surveyor Matched & Scheduled",
-    description: "Our operations dispatch team immediately assigns a vetted local site surveyor equipped with certified safety gear, digital pitch gauges, multimeters, and drones. We confirm site access directly.",
-    specs: ["Vetted Field Network", "SLA Dispatch Notice", "Customer Access Coordination", "Safety & PPE Compliance"],
-    badge: "< 4hr Dispatch"
+    description: "Our operations dispatch team assigns a vetted local site surveyor equipped with certified safety gear, digital pitch gauges, multimeters, and drones, and confirms site access directly.",
+    specs: ["Vetted Field Network", "Availability Confirmation", "Customer Access Coordination", "Safety & PPE Compliance"]
   },
   {
     stepNum: "03",
     label: "FIELD EXECUTION",
     title: "Comprehensive Field Survey",
     description: "The surveyor performs an exhaustive on-site audit: 36-photo standard, MSP dead-front busbar verification, rafter dimensions, pitch measurements, obstruction coordinates, and battery clearances.",
-    specs: ["36-Photo Geotagged Set", "MSP Dead-Front Inspection", "Rafter & Truss Measurement", "Obstruction Offsets (X/Y)"],
-    badge: "Strict QA Checklist"
+    specs: ["36-Photo Geotagged Set", "MSP Dead-Front Inspection", "Rafter & Truss Measurement", "Obstruction Offsets (X/Y)"]
   },
   {
     stepNum: "04",
     label: "QA & DELIVERY",
     title: "CAD-Ready Package Delivered",
-    description: "Every photo, measurement, and electrical reading undergoes internal triple-check QA before release. Your engineering and drafting team receives an organized, categorized CAD-ready package.",
-    specs: ["One-Touch CAD Formatting", "Single-Line Diagram Ready", "Defect-Free Guarantee", "Cloud Storage / Webhook"],
-    badge: "48–72hr Turnaround"
+    description: "Every photo, measurement, and electrical reading undergoes internal triple-check QA before release. Your engineering and drafting team receives an organized, CAD-ready package.",
+    specs: ["One-Touch CAD Formatting", "Single-Line Diagram Ready", "Defect-Free Guarantee", "Encrypted Cloud Delivery"]
   }
 ];
 ---
 
 <div class="process-timeline-container">
   <div class="timeline-grid">
-    {steps.map((step, index) => (
+    {steps.map((step) => (
       <div class="timeline-step card-technical tech-grid-border">
         <div class="step-top-row">
           <span class="step-number">{step.stepNum}</span>
-          <span class="badge-tech badge-amber">{step.badge}</span>
+          <span class="step-label-mono">{step.label}</span>
         </div>
-        <div class="step-label-mono">{step.label}</div>
         <h3 class="step-title">{step.title}</h3>
         <p class="step-desc">{step.description}</p>
         
@@ -85,6 +80,7 @@ const steps = [
     border-radius: var(--radius-md);
     padding: var(--space-6);
     position: relative;
+    transition: all var(--transition-fast);
   }
 
   .timeline-step:hover {
@@ -101,19 +97,18 @@ const steps = [
 
   .step-number {
     font-family: var(--font-heading);
-    font-size: 2.25rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: var(--accent-amber-dark);
     line-height: 1;
   }
 
   .step-label-mono {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 600;
     color: var(--text-muted);
     letter-spacing: 0.08em;
-    margin-bottom: var(--space-2);
   }
 
   .step-title {

@@ -6,17 +6,16 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
 
 <BaseLayout 
   title="Texas Solar Site Survey Coverage | Top 20 Cities & Statewide Network | SolarSite Texas"
-  description="Statewide solar site survey coordination across Texas. Active surveyor coverage in Houston, Dallas, San Antonio, Austin, Fort Worth, and all top 20 Texas cities with 24–48hr turnaround SLAs."
+  description="Statewide solar site survey coordination across Texas. Active surveyor coverage in Houston, Dallas, San Antonio, Austin, Fort Worth, and all top 20 Texas cities with flexible scheduling."
   activeNav="service-areas"
 >
   <!-- Page Hero -->
   <section class="section section-dark page-hero">
     <div class="container">
       <div class="page-hero-content">
-        <span class="badge-tech badge-dark"><span class="status-dot"></span> 100% TEXAS STATEWIDE COVERAGE</span>
         <h1 class="page-title">Texas Service Areas & City Coverage</h1>
         <p class="lead" style="color: #94A3B8; max-width: 820px;">
-          From the Rio Grande Valley to the Panhandle, SolarSite Texas coordinates vetted local site surveyors across all 254 Texas counties—delivering CAD-ready photo packages in 24–48 hours.
+          From the Rio Grande Valley to the Panhandle, SolarSite Texas coordinates vetted local site surveyors across all 254 Texas counties—delivering CAD-ready photo packages for your engineering and permitting teams.
         </p>
 
         <!-- Texas Operational Stats -->
@@ -30,12 +29,12 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
             <span class="pill-text">Texas Counties Covered</span>
           </div>
           <div class="stat-pill">
-            <span class="pill-num font-mono">24–48h</span>
-            <span class="pill-text">Standard Turnaround SLA</span>
+            <span class="pill-num font-mono">Real-Time</span>
+            <span class="pill-text">Slot Availability & Scheduling</span>
           </div>
           <div class="stat-pill">
-            <span class="pill-num font-mono">ERCOT</span>
-            <span class="pill-text">100% TDU & Muni Alignment</span>
+            <span class="pill-num font-mono">100%</span>
+            <span class="pill-text">Statewide Field Alignment</span>
           </div>
         </div>
       </div>
@@ -46,7 +45,6 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <span class="badge-tech badge-amber">TOP 20 TEXAS METROS & CITIES</span>
         <h2>Active City Dispatch Directory</h2>
         <p class="lead">
           Our distributed field surveyor list covers every major municipality and surrounding suburban submarkets across Texas.
@@ -55,19 +53,14 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
 
       <div class="cities-grid">
         {top20TexasCities.map((city, index) => (
-          <div class="city-card card-technical tech-grid-border">
+          <div class="city-card card-technical tech-grid-border" id={city.slug}>
             <div class="city-card-header">
               <div class="city-rank font-mono">{String(index + 1).padStart(2, '0')}</div>
-              <span class="badge-tech badge-amber font-mono">{city.turnaroundSla}</span>
+              <span class="city-county-tag font-mono">{city.county}</span>
             </div>
 
             <h3 class="city-name">{city.name}</h3>
-            <div class="city-sub font-mono">{city.county} • {city.metro}</div>
-
-            <div class="city-meta-block">
-              <span class="city-meta-label font-mono">PRIMARY ELECTRIC UTILITY:</span>
-              <span class="utility-badge">{city.majorUtility}</span>
-            </div>
+            <div class="city-sub font-mono">{city.metro}</div>
 
             <p class="city-notes">{city.keyCoverageNotes}</p>
 
@@ -78,8 +71,8 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
             </div>
 
             <div class="city-card-cta">
-              <a href="/schedule" class="btn btn-outline btn-sm" style="width: 100%;">
-                <span>Dispatch {city.name} Survey →</span>
+              <a href={`/schedule?city=${city.slug}`} class="btn btn-outline btn-sm city-action-btn">
+                <span>Request Availability →</span>
               </a>
             </div>
           </div>
@@ -92,8 +85,7 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
   <section class="section section-warm">
     <div class="container">
       <div class="section-header">
-        <span class="badge-tech badge-amber">REGULATORY & GRID PROFICIENCY</span>
-        <h2>Full Texas Utility & TDU Integration</h2>
+        <h2>Texas Utility & Grid Integration</h2>
         <p class="lead">
           Our surveyors are trained on the exact meter socket, disconnect, and labeling standards required across Texas electric territories.
         </p>
@@ -119,7 +111,7 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
   <!-- Final CTA -->
   <CTASection 
     title="Need a Solar Site Survey Anywhere in Texas?"
-    subtitle="Submit your project address today. We assign the closest certified Texas surveyor and deliver an organized CAD-ready package within 24–48 hours."
+    subtitle="Submit your project address today to check real-time surveyor availability and see open time slots in your market."
     primaryCtaText="Schedule a Texas Survey"
     primaryCtaLink="/schedule"
     secondaryCtaText="Join Our Texas Network"
@@ -137,7 +129,6 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
   .page-title {
     color: #FFFFFF;
     font-size: clamp(2.25rem, 4vw, 3.25rem);
-    margin-top: var(--space-2);
     margin-bottom: var(--space-4);
   }
 
@@ -181,6 +172,7 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
     padding: var(--space-6);
     display: flex;
     flex-direction: column;
+    border-radius: var(--radius-md);
   }
 
   .city-card-header {
@@ -191,9 +183,18 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
   }
 
   .city-rank {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     font-weight: 700;
     color: var(--accent-amber-dark);
+  }
+
+  .city-county-tag {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background-color: var(--bg-subtle);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
   }
 
   .city-name {
@@ -206,27 +207,6 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
     font-size: 0.75rem;
     color: var(--text-muted);
     margin-bottom: var(--space-4);
-  }
-
-  .city-meta-block {
-    background-color: var(--bg-subtle);
-    padding: 0.5rem 0.75rem;
-    border-radius: var(--radius-sm);
-    margin-bottom: var(--space-3);
-  }
-
-  .city-meta-label {
-    display: block;
-    font-size: 0.625rem;
-    color: var(--text-muted);
-    font-weight: 600;
-    margin-bottom: 0.15rem;
-  }
-
-  .utility-badge {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--text-primary);
   }
 
   .city-notes {
@@ -258,6 +238,16 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
     margin-top: auto;
     border-top: 1px solid var(--border-light);
     padding-top: var(--space-4);
+  }
+
+  .city-action-btn {
+    width: 100%;
+  }
+
+  .city-action-btn:hover {
+    background-color: var(--accent-amber);
+    color: #FFFFFF;
+    border-color: var(--accent-amber-dark);
   }
 
   /* Utility Grid */

@@ -3,10 +3,6 @@
 
 <div class="dispatch-form-card card-technical tech-grid-border" id="dispatch-form-wrapper">
   <div class="form-header">
-    <div class="form-badge-row">
-      <span class="badge-tech badge-amber">OPERATIONAL DISPATCH INTAKE</span>
-      <span class="sla-pill font-mono">GUARANTEED 48HR SLA DISPATCH</span>
-    </div>
     <h2 class="form-heading">Schedule a Site Survey</h2>
     <p class="form-subheading">
       Submit your project address, utility information, and scope requirements. Our operations desk coordinates the certified local surveyor and confirms the scheduled appointment.
@@ -87,10 +83,10 @@
       <div class="grid-2">
         <div class="form-group">
           <label class="form-label" for="utility-company">Electric Utility Company <span class="required">*</span></label>
-          <input type="text" id="utility-company" name="utilityCompany" class="form-input" placeholder="e.g. Oncor, PG&E, FPL, Duke Energy" required />
+          <input type="text" id="utility-company" name="utilityCompany" class="form-input" placeholder="e.g. Oncor, CenterPoint, AEP Texas, CPS Energy" required />
         </div>
         <div class="form-group">
-          <label class="form-label" for="preferred-date">Preferred Survey Date Target</label>
+          <label class="form-label" for="preferred-date">Preferred Date / Time Slot Target</label>
           <input type="date" id="preferred-date" name="preferredDate" class="form-input" />
         </div>
       </div>
@@ -237,14 +233,13 @@
     <div class="conf-icon-box">
       <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
     </div>
-    <span class="badge-tech badge-amber">DISPATCH TICKET ISSUED</span>
     <h3 class="conf-title">Survey Request Received</h3>
     <p class="conf-desc">
-      Your project details have been assigned reference tracking ticket <strong class="font-mono" id="conf-ticket-id">SS-8942-TX</strong>. Our regional operations team is assigning the surveyor and will send calendar confirmation within 4 hours.
+      Your project details have been assigned reference tracking ticket <strong class="font-mono" id="conf-ticket-id">SS-8942-TX</strong>. Our regional operations team is coordinating the closest surveyor and confirming your appointment window.
     </p>
 
     <div class="conf-summary-box">
-      <div class="conf-row"><span>Target SLA:</span> <strong>48 Hours (Standard Deliverable)</strong></div>
+      <div class="conf-row"><span>Status:</span> <strong>Checking Next Available Slot & Assigning Surveyor</strong></div>
       <div class="conf-row"><span>Deliverable Format:</span> <strong>AutoCAD / HelioScope 36-Photo Package</strong></div>
       <div class="conf-row"><span>Dispatch Contact:</span> <strong>dispatch@solarsitesurveyors.com</strong></div>
     </div>
@@ -286,7 +281,7 @@
       e.preventDefault();
       
       // Generate random ticket ID
-      const stateVal = (document.getElementById('project-state') as HTMLSelectElement)?.value || 'US';
+      const stateVal = (document.getElementById('project-state') as HTMLSelectElement)?.value || 'TX';
       const randomNum = Math.floor(1000 + Math.random() * 9000);
       const ticketId = `SS-${randomNum}-${stateVal}`;
 
@@ -326,23 +321,6 @@
     margin-bottom: var(--space-10);
     border-bottom: 1px solid var(--border-light);
     padding-bottom: var(--space-6);
-  }
-
-  .form-badge-row {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: var(--space-2);
-    flex-wrap: wrap;
-  }
-
-  .sla-pill {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-amber-dark);
-    background-color: var(--accent-amber-subtle);
-    padding: 0.2rem 0.5rem;
-    border-radius: var(--radius-sm);
   }
 
   .form-heading {

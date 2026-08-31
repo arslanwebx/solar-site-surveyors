@@ -14,8 +14,8 @@ interface Props {
 }
 
 const {
-  title = 'SolarSite Co. | Solar Site Survey Coordination for EPCs & Contractors',
-  description = 'Nationwide solar site survey coordination platform for Solar EPCs, installers, dealers, and engineering teams. Standardized roof, electrical, and battery site surveys delivered in 48–72 hours.',
+  title = 'SolarSite Texas | Solar Site Survey Coordination for EPCs & Contractors',
+  description = 'Statewide solar site survey coordination platform for Solar EPCs, installers, dealers, and engineering teams across Texas. Standardized roof, electrical, and battery site surveys delivered with prompt QA release.',
   activeNav = '',
   canonical = Astro.url.href,
   ogImage = '/images/hero_surveyor_field.jpg',
@@ -30,7 +30,7 @@ const fullOgImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogIma
 const baseSchema = {
   '@context': 'https://schema.org',
   '@type': schemaType,
-  'name': 'SolarSite Co.',
+  'name': 'SolarSite Texas',
   'legalName': 'SolarSite Operations LLC',
   'url': siteUrl,
   'logo': `${siteUrl}/favicon.svg`,
@@ -38,7 +38,7 @@ const baseSchema = {
   'description': description,
   'telephone': '+1-800-555-7878',
   'email': 'dispatch@solarsitesurveyors.com',
-  'areaServed': 'United States',
+  'areaServed': 'Texas, United States',
   'serviceType': [
     'Solar Site Surveys',
     'Residential Solar Site Survey',
@@ -71,7 +71,7 @@ const baseSchema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={fullOgImageUrl} />
-    <meta property="og:site_name" content="SolarSite Co." />
+    <meta property="og:site_name" content="SolarSite Texas" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />

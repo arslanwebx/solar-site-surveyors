@@ -1,203 +1,182 @@
 export interface TexasCity {
+  slug: string;
   name: string;
   county: string;
   metro: string;
-  majorUtility: string;
-  turnaroundSla: string;
-  surveyTypes: string[];
   keyCoverageNotes: string;
+  surveyTypes: string[];
 }
 
 export const top20TexasCities: TexasCity[] = [
   {
+    slug: 'houston',
     name: 'Houston',
     county: 'Harris County',
     metro: 'Greater Houston',
-    majorUtility: 'CenterPoint Energy',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential', 'Commercial C&I', 'Battery ESS', 'Drone RGB'],
-    keyCoverageNotes: 'Full coverage across Harris, Fort Bend, Montgomery, and Brazoria counties. CenterPoint meter socket and flood-zone elevation checks.'
+    keyCoverageNotes: 'Comprehensive field coverage across Harris, Fort Bend, Montgomery, and Brazoria counties.',
+    surveyTypes: ['Residential', 'Commercial C&I', 'Battery ESS', 'Drone Aerial']
   },
   {
+    slug: 'san-antonio',
     name: 'San Antonio',
     county: 'Bexar County',
     metro: 'San Antonio Metro',
-    majorUtility: 'CPS Energy',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential', 'Commercial Flat Roof', 'Battery Storage', 'Attic Rafters'],
-    keyCoverageNotes: 'Complete CPS Energy municipal utility alignment, historic district roof checks, and hill country ground-mount layouts.'
+    keyCoverageNotes: 'Active surveyor coverage across Bexar, Comal, and Guadalupe counties with ground-mount and rooftop audits.',
+    surveyTypes: ['Residential', 'Commercial Flat Roof', 'Battery Storage', 'Attic Rafters']
   },
   {
+    slug: 'dallas',
     name: 'Dallas',
     county: 'Dallas County',
     metro: 'Dallas-Fort Worth Metroplex',
-    majorUtility: 'Oncor Electric Delivery',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential', 'Commercial C&I', 'Battery ESS', 'Attic Framing'],
-    keyCoverageNotes: 'Deep network throughout Dallas County. Fast-track Oncor interconnection photo standards and steep-pitch shingle audits.'
+    keyCoverageNotes: 'Dense surveyor dispatch across Dallas County, steep-pitch shingle audits, and multi-story structural checks.',
+    surveyTypes: ['Residential', 'Commercial C&I', 'Battery ESS', 'Attic Framing']
   },
   {
+    slug: 'austin',
     name: 'Austin',
     county: 'Travis County',
     metro: 'Austin Metropolitan Area',
-    majorUtility: 'Austin Energy / Bluebonnet Electric',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential', 'Commercial C&I', 'Whole-Home Backup', 'Drone Photogrammetry'],
-    keyCoverageNotes: 'Austin Energy solar rebate documentation standards, complex multi-plane architectural roofs, and battery gateway clearances.'
+    keyCoverageNotes: 'Complete coverage across Travis, Williamson, and Hays counties, including complex multi-plane roof audits.',
+    surveyTypes: ['Residential', 'Commercial C&I', 'Whole-Home Backup', 'Drone Photogrammetry']
   },
   {
+    slug: 'fort-worth',
     name: 'Fort Worth',
     county: 'Tarrant County',
     metro: 'Dallas-Fort Worth Metroplex',
-    majorUtility: 'Oncor Electric Delivery',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential', 'Commercial Industrial', 'Battery Storage', 'Ground Mount'],
-    keyCoverageNotes: 'Extensive coverage across Tarrant, Parker, and Johnson counties. Oncor dead-front MSP busbar verification.'
+    keyCoverageNotes: 'Extensive coverage across Tarrant, Parker, and Johnson counties with complete electrical and structural audits.',
+    surveyTypes: ['Residential', 'Commercial Industrial', 'Battery Storage', 'Ground Mount']
   },
   {
+    slug: 'el-paso',
     name: 'El Paso',
     county: 'El Paso County',
     metro: 'Borderplex Metro',
-    majorUtility: 'El Paso Electric (EPE)',
-    turnaroundSla: '48 Hours',
-    surveyTypes: ['Residential', 'Commercial Flat/Tile', 'Battery Storage', 'Attic Verification'],
-    keyCoverageNotes: 'Dedicated West Texas surveyors experienced with EPE interconnection rules, tile underlayment, and stucco MSP penetrations.'
+    keyCoverageNotes: 'Dedicated West Texas field surveyors experienced with tile underlayment, flat roofs, and stucco penetrations.',
+    surveyTypes: ['Residential', 'Commercial Flat/Tile', 'Battery Storage', 'Attic Verification']
   },
   {
+    slug: 'arlington',
     name: 'Arlington',
     county: 'Tarrant County',
     metro: 'DFW Mid-Cities',
-    majorUtility: 'Oncor Electric Delivery',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential', 'Commercial C&I', 'Battery Backup', 'Drone Thermal'],
-    keyCoverageNotes: 'Rapid dispatch across Arlington, Grand Prairie, and Mansfield with complete rafter spacing and electrical audits.'
+    keyCoverageNotes: 'Rapid dispatch across Arlington, Grand Prairie, and Mansfield with full rafter spacing and electrical checks.',
+    surveyTypes: ['Residential', 'Commercial C&I', 'Battery Backup', 'Drone Thermal']
   },
   {
+    slug: 'corpus-christi',
     name: 'Corpus Christi',
     county: 'Nueces County',
     metro: 'Coastal Bend',
-    majorUtility: 'AEP Texas (Central)',
-    turnaroundSla: '48 Hours',
-    surveyTypes: ['Residential High-Wind', 'Commercial', 'Battery Storage', 'Corrosion Checks'],
-    keyCoverageNotes: 'Coastal Texas windstorm framing checks (TDI certified rafter anchors) and AEP Texas meter documentation.'
+    keyCoverageNotes: 'Coastal Texas windstorm framing checks, hurricane rafter anchor inspections, and corrosion assessments.',
+    surveyTypes: ['Residential High-Wind', 'Commercial', 'Battery Storage', 'Corrosion Checks']
   },
   {
+    slug: 'plano',
     name: 'Plano',
     county: 'Collin County',
     metro: 'North Dallas Metro',
-    majorUtility: 'Oncor Electric Delivery',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential', 'Commercial Roof/Carport', 'Battery ESS', 'Attic Framing'],
-    keyCoverageNotes: 'Collin County high-end residential estates, 200A/400A split service panels, and multi-inverter battery routing.'
+    keyCoverageNotes: 'Collin County high-end residential estates, 200A/400A split service panels, and multi-inverter battery routing.',
+    surveyTypes: ['Residential', 'Commercial Roof/Carport', 'Battery ESS', 'Attic Framing']
   },
   {
+    slug: 'lubbock',
     name: 'Lubbock',
     county: 'Lubbock County',
     metro: 'South Plains / West Texas',
-    majorUtility: 'Lubbock Power & Light (LP&L / ERCOT)',
-    turnaroundSla: '48 Hours',
-    surveyTypes: ['Residential', 'Commercial Ag/Industrial', 'Battery Storage', 'Ground Mount'],
-    keyCoverageNotes: 'Full LP&L retail choice transition compliance, high-wind shingle audits, and rural West Texas acreage surveys.'
+    keyCoverageNotes: 'High-wind shingle audits, agricultural solar arrays, and rural West Texas acreage site surveys.',
+    surveyTypes: ['Residential', 'Commercial Ag/Industrial', 'Battery Storage', 'Ground Mount']
   },
   {
+    slug: 'laredo',
     name: 'Laredo',
     county: 'Webb County',
     metro: 'South Texas Border',
-    majorUtility: 'AEP Texas',
-    turnaroundSla: '48 Hours',
-    surveyTypes: ['Residential', 'Commercial Logistics/Warehouses', 'Battery Storage'],
-    keyCoverageNotes: 'South Texas logistics hubs, large commercial flat roofs (TPO/EPDM), and residential tile/stucco audits.'
+    keyCoverageNotes: 'South Texas logistics hubs, large commercial flat roofs (TPO/EPDM), and residential tile/stucco audits.',
+    surveyTypes: ['Residential', 'Commercial Logistics/Warehouses', 'Battery Storage']
   },
   {
+    slug: 'irving',
     name: 'Irving',
     county: 'Dallas County',
     metro: 'DFW Metroplex (Las Colinas)',
-    majorUtility: 'Oncor Electric Delivery',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential', 'Commercial C&I', 'Battery ESS', 'Attic Rafters'],
-    keyCoverageNotes: 'Same-day scheduling capability for Las Colinas and Irving commercial parks and residential developments.'
+    keyCoverageNotes: 'Prompt scheduling across Las Colinas, Irving commercial parks, and residential master-planned developments.',
+    surveyTypes: ['Residential', 'Commercial C&I', 'Battery ESS', 'Attic Rafters']
   },
   {
+    slug: 'garland',
     name: 'Garland',
     county: 'Dallas County',
     metro: 'East DFW Metro',
-    majorUtility: 'Garland Power & Light (GP&L) / Oncor',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential', 'Commercial', 'Battery Storage', 'MSP Audits'],
-    keyCoverageNotes: 'Municipal GP&L and Oncor split-territory expertise with verified main breaker de-rating feasibility.'
+    keyCoverageNotes: 'East Dallas County coverage with verified main breaker de-rating checks and attic framing measurements.',
+    surveyTypes: ['Residential', 'Commercial', 'Battery Storage', 'MSP Audits']
   },
   {
+    slug: 'frisco',
     name: 'Frisco',
     county: 'Collin / Denton County',
     metro: 'North Platinum Corridor',
-    majorUtility: 'Oncor / CoServ Electric',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential High-End', 'Commercial C&I', 'Battery Storage', 'Drone RGB'],
-    keyCoverageNotes: 'CoServ cooperative and Oncor territory coverage with strict HOA setback measurements and multi-battery wall audits.'
+    keyCoverageNotes: 'North Texas master-planned communities with strict setback measurements and multi-battery wall audits.',
+    surveyTypes: ['Residential High-End', 'Commercial C&I', 'Battery Storage', 'Drone RGB']
   },
   {
+    slug: 'mckinney',
     name: 'McKinney',
     county: 'Collin County',
     metro: 'North DFW Metro',
-    majorUtility: 'Oncor / CoServ Electric',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential', 'Commercial Rooftop', 'Battery Backup', 'Attic Framing'],
-    keyCoverageNotes: 'Historical downtown and modern master-planned communities. Complete rafter spans and subpanel documentation.'
+    keyCoverageNotes: 'Historical downtown and modern residential subdivisions with complete rafter spans and subpanel documentation.',
+    surveyTypes: ['Residential', 'Commercial Rooftop', 'Battery Backup', 'Attic Framing']
   },
   {
+    slug: 'amarillo',
     name: 'Amarillo',
     county: 'Potter / Randall County',
     metro: 'Texas Panhandle',
-    majorUtility: 'Xcel Energy (SPS)',
-    turnaroundSla: '48 Hours',
-    surveyTypes: ['Residential', 'Commercial Ag/Industrial', 'Battery ESS', 'High-Wind Checks'],
-    keyCoverageNotes: 'Panhandle high-wind and heavy hail roof assessments with Xcel Southwestern Public Service interconnection standards.'
+    keyCoverageNotes: 'Panhandle high-wind and hail roof assessments with comprehensive structural framing documentation.',
+    surveyTypes: ['Residential', 'Commercial Ag/Industrial', 'Battery ESS', 'High-Wind Checks']
   },
   {
+    slug: 'grand-prairie',
     name: 'Grand Prairie',
     county: 'Dallas / Tarrant County',
     metro: 'DFW Central Corridor',
-    majorUtility: 'Oncor Electric Delivery',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential', 'Commercial Industrial', 'Battery Storage', 'Attic Framing'],
-    keyCoverageNotes: 'Industrial warehouse flat roofs, residential retrofits, and 120% rule calculations on legacy 100A/200A panels.'
+    keyCoverageNotes: 'Industrial warehouse flat roofs, residential retrofits, and electrical service audits on legacy 100A/200A panels.',
+    surveyTypes: ['Residential', 'Commercial Industrial', 'Battery Storage', 'Attic Framing']
   },
   {
+    slug: 'brownsville',
     name: 'Brownsville',
     county: 'Cameron County',
     metro: 'Rio Grande Valley (RGV)',
-    majorUtility: 'Brownsville PUB / AEP Texas',
-    turnaroundSla: '48 Hours',
-    surveyTypes: ['Residential', 'Commercial C&I', 'Battery Storage', 'Hurricane Setbacks'],
-    keyCoverageNotes: 'Deep South Texas and coastal RGV coverage. High-humidity electrical connection and windstorm roof inspections.'
+    keyCoverageNotes: 'Deep South Texas and coastal RGV coverage with high-humidity electrical checks and windstorm roof inspections.',
+    surveyTypes: ['Residential', 'Commercial C&I', 'Battery Storage', 'Hurricane Setbacks']
   },
   {
+    slug: 'killeen',
     name: 'Killeen',
     county: 'Bell County',
     metro: 'Central Texas (Fort Cavazos)',
-    majorUtility: 'Oncor / Bartlett Electric Coop',
-    turnaroundSla: '48 Hours',
-    surveyTypes: ['Residential', 'Commercial Rooftop', 'Battery ESS', 'Attic Verification'],
-    keyCoverageNotes: 'Central Texas military and suburban residential corridors with rapid turnarounds for local solar installers.'
+    keyCoverageNotes: 'Central Texas residential and commercial corridors with reliable scheduling for regional solar installers.',
+    surveyTypes: ['Residential', 'Commercial Rooftop', 'Battery ESS', 'Attic Verification']
   },
   {
+    slug: 'denton',
     name: 'Denton',
     county: 'Denton County',
     metro: 'North DFW Metro',
-    majorUtility: 'Denton Municipal Electric (DME) / CoServ',
-    turnaroundSla: '24–48 Hours',
-    surveyTypes: ['Residential', 'Commercial Flat/Shingle', 'Battery Storage', 'Attic Framing'],
-    keyCoverageNotes: 'DME municipal interconnection documentation, university corridor commercial audits, and CoServ residential territory.'
+    keyCoverageNotes: 'University corridor commercial audits and northern DFW residential rooftop and ground-mount surveys.',
+    surveyTypes: ['Residential', 'Commercial Flat/Shingle', 'Battery Storage', 'Attic Framing']
   }
 ];
 
 export const texasUtilityCoverage = [
-  { name: 'Oncor Electric Delivery', territory: 'DFW, North & Central Texas', share: 'Deregulated / Largest ERCOT TDU' },
-  { name: 'CenterPoint Energy', territory: 'Greater Houston & Gulf Coast', share: 'Deregulated / Major Metro TDU' },
-  { name: 'AEP Texas (North & Central)', territory: 'South Texas, Corpus Christi, West Texas', share: 'Deregulated TDU' },
-  { name: 'Texas-New Mexico Power (TNMP)', territory: 'Gulf Coast, North Texas, West Texas', share: 'Deregulated TDU' },
-  { name: 'CPS Energy', territory: 'San Antonio & Bexar County', share: 'Largest Municipal Electric Utility' },
+  { name: 'Oncor Electric Delivery', territory: 'DFW, North & Central Texas', share: 'Largest ERCOT TDU' },
+  { name: 'CenterPoint Energy', territory: 'Greater Houston & Gulf Coast', share: 'Major Metro TDU' },
+  { name: 'AEP Texas (North & Central)', territory: 'South Texas, Corpus Christi, West Texas', share: 'Statewide TDU' },
+  { name: 'Texas-New Mexico Power (TNMP)', territory: 'Gulf Coast, North Texas, West Texas', share: 'Regional TDU' },
+  { name: 'CPS Energy', territory: 'San Antonio & Bexar County', share: 'Municipal Electric Utility' },
   { name: 'Austin Energy', territory: 'Austin & Travis County', share: 'Municipal Electric Utility' },
-  { name: 'El Paso Electric (EPE)', territory: 'El Paso & Far West Texas', share: 'Investor-Owned Utility (WECC)' },
+  { name: 'El Paso Electric (EPE)', territory: 'El Paso & Far West Texas', share: 'Investor-Owned Utility' },
   { name: 'CoServ Electric', territory: 'North Texas (Denton, Collin)', share: 'Electric Cooperative' }
 ];
