@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<BaseLayout 
+  title="About SolarSite Co. | Solar Field Operations & Survey Coordination"
+  description="Learn about SolarSite Co., our field-to-desk engineering philosophy, our rigorous 36-photo quality assurance protocol, and how we help solar EPCs scale nationwide."
+  activeNav="about"
+>
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="badge-tech badge-dark">COMPANY & MISSION</span>
+        <h1 class="page-title">The Operational Bridge Between Field Reality & Solar Engineering</h1>
+        <p class="lead" style="color: #94A3B8; max-width: 820px;">
+          We founded SolarSite Co. to solve the single largest operational friction point in distributed solar execution: the costly gap between the physical roof/electrical panel and the engineering plan set.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Philosophy -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items: center;">
+        <div>
+          <span class="badge-tech badge-amber">OPERATIONAL PHILOSOPHY</span>
+          <h2>Why High-Volume Solar EPCs Rely on Us</h2>
+          <p class="lead" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+            In solar project management, the site survey is not a routine task—it is the foundation upon which structural calculations, electrical single-line diagrams, utility interconnection requests, and municipal building permits depend.
+          </p>
+          <p style="margin-bottom: 1.5rem;">
+            When a field surveyor misses a panel busbar rating, overlooks a cracked clay tile, or records an ambiguous obstruction offset, the downstream cost is severe: drafting revisions, delayed permits, angry customers, and expensive installation-day truck rolls.
+          </p>
+          <p>
+            We established a nationwide, coordinated field network governed by strict SOPs, digital pitch verification, and our internal triple-check QA protocol to guarantee that every survey package delivered is immediately CAD-ready.
+          </p>
+        </div>
+
+        <div>
+          <div class="about-stats-card card-technical tech-grid-border">
+            <div class="stat-row">
+              <span class="stat-number font-mono">99.4%</span>
+              <div class="stat-text">
+                <strong>First-Pass QA Approval</strong>
+                <p>Every photo set is inspected by our desk before engineering release.</p>
+              </div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-number font-mono">48.2h</span>
+              <div class="stat-text">
+                <strong>Average Turnaround SLA</strong>
+                <p>From project submission to deliverable download link.</p>
+              </div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-number font-mono">&lt; 3%</span>
+              <div class="stat-text">
+                <strong>CAD Revision Rate</strong>
+                <p>Compared to the 22%–28% industry average for in-house teams.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Triple-Check Quality Assurance Protocol -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <span class="badge-tech badge-amber">QA STANDARD</span>
+        <h2>Our Triple-Check Quality Assurance Protocol</h2>
+        <p class="lead">
+          How we eliminate missing photos, unreadable busbars, and drafting surprises before release.
+        </p>
+      </div>
+
+      <div class="grid-3" style="margin-top: var(--space-8);">
+        <div class="qa-step-card card-technical tech-grid-border">
+          <div class="qa-step-num font-mono">STAGE 01</div>
+          <h4>In-Field Checklist Validation</h4>
+          <p>Field surveyors cannot submit jobs without completing all 36 mandatory photo checkpoints, digital pitch readings, and MSP interior dead-front macros.</p>
+        </div>
+
+        <div class="qa-step-card card-technical tech-grid-border">
+          <div class="qa-step-num font-mono">STAGE 02</div>
+          <h4>Engineering Desk Audit</h4>
+          <p>Our internal technical review desk verifies photo clarity, validates the 120% busbar math, and checks rafter spans against IRC structural tables.</p>
+        </div>
+
+        <div class="qa-step-card card-technical tech-grid-border">
+          <div class="qa-step-num font-mono">STAGE 03</div>
+          <h4>One-Touch CAD Packaging</h4>
+          <p>Data is compiled into standardized dimensional reports, labeled photo directories, and SLD parameter sheets ready for direct AutoCAD or HelioScope import.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection 
+    title="Ready to Partner with an Operations-First Survey Team?"
+    subtitle="Submit your next project or schedule an onboarding call to integrate our coordinated field network into your operations."
+    primaryCtaText="Schedule a Site Survey"
+    primaryCtaLink="/schedule"
+    secondaryCtaText="Become an EPC Partner"
+    secondaryCtaLink="/for-epcs"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--border-dark-subtle);
+  }
+
+  .page-title {
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+
+  .about-stats-card {
+    background-color: #FFFFFF;
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .stat-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .stat-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .stat-number {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--accent-amber);
+    min-width: 110px;
+  }
+
+  .stat-text strong {
+    display: block;
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+  }
+
+  .stat-text p {
+    font-size: 0.875rem;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .qa-step-card {
+    background-color: #FFFFFF;
+    padding: var(--space-8);
+  }
+
+  .qa-step-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-amber-dark);
+    margin-bottom: var(--space-3);
+  }
+
+  .qa-step-card h4 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .qa-step-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 768px) {
+    .stat-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+</style>

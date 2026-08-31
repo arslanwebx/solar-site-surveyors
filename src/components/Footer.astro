@@ -1,0 +1,282 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container-wide">
+    <div class="footer-main-grid">
+      <!-- Company Brand Column -->
+      <div class="footer-brand-col">
+        <a href="/" class="footer-logo">
+          <div class="logo-mark">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" rx="4" fill="#1E293B"/>
+              <path d="M4 16H28M16 4V28" stroke="#475569" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <circle cx="16" cy="16" r="9" stroke="#94A3B8" stroke-width="1.5"/>
+              <circle cx="16" cy="16" r="3.5" fill="#F59E0B"/>
+              <path d="M16 4V9M16 23V28M4 16H9M23 16H28" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="brand-name">SOLARSITE<span class="brand-accent">CO</span></span>
+            <span class="brand-tagline">FIELD SURVEY COORDINATION</span>
+          </div>
+        </a>
+
+        <p class="footer-desc">
+          The nationwide operational site-survey coordination partner for Solar EPCs, installers, dealers, and engineering teams. Standardized field data, zero missing photos, and rapid CAD-ready turnarounds.
+        </p>
+
+        <div class="footer-ops-status">
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span class="status-label">Network Status: Dispatch Active</span>
+          </div>
+          <div class="status-meta">
+            <span>Average Survey SLA: <strong>48.2 Hours</strong></span>
+            <span>QA Pass Rate: <strong>99.4%</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links Column 1: Services -->
+      <div class="footer-links-col">
+        <h4 class="footer-heading">Survey Services</h4>
+        <ul class="footer-links">
+          <li><a href="/services#roof">Roof & Structural Survey</a></li>
+          <li><a href="/services#electrical">Electrical & MSP Survey</a></li>
+          <li><a href="/services#battery">Battery & Storage Clearances</a></li>
+          <li><a href="/services#commercial">Commercial & Industrial (C&I)</a></li>
+          <li><a href="/services#drone">Drone Aerial Photogrammetry</a></li>
+          <li><a href="/services#package">CAD-Ready Deliverable Spec</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Solutions -->
+      <div class="footer-links-col">
+        <h4 class="footer-heading">For Solar Ops</h4>
+        <ul class="footer-links">
+          <li><a href="/for-epcs">Built for Solar EPCs</a></li>
+          <li><a href="/for-epcs#comparison">In-House vs Coordinated</a></li>
+          <li><a href="/for-epcs#cad">CAD & Drafting Integration</a></li>
+          <li><a href="/surveyors">Become a Field Surveyor</a></li>
+          <li><a href="/schedule">Schedule a Survey</a></li>
+          <li><a href="/contact">Operations Support</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3: Resource Hub -->
+      <div class="footer-links-col">
+        <h4 class="footer-heading">Knowledge & Rules</h4>
+        <ul class="footer-links">
+          <li><a href="/resources">Operations Resource Hub</a></li>
+          <li><a href="/resources/solar-site-survey-checklist">Site Survey Checklist</a></li>
+          <li><a href="/resources/required-solar-site-survey-photos">36-Photo Field Standard</a></li>
+          <li><a href="/resources/electrical-panel-survey-guide-120-percent-rule">120% Busbar Rule Guide</a></li>
+          <li><a href="/resources/from-ntp-to-pto-solar-operations-lifecycle">NTP to PTO Lifecycle</a></li>
+          <li><a href="/glossary">Solar Operations Glossary</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 4: Coverage -->
+      <div class="footer-links-col">
+        <h4 class="footer-heading">Service Areas</h4>
+        <ul class="footer-links">
+          <li><a href="/service-areas/california">California (PG&E / SCE)</a></li>
+          <li><a href="/service-areas/texas">Texas (ERCOT / Oncor)</a></li>
+          <li><a href="/service-areas/florida">Florida (FPL / Duke)</a></li>
+          <li><a href="/service-areas/arizona">Arizona (APS / SRP)</a></li>
+          <li><a href="/service-areas/colorado">Colorado (Xcel Energy)</a></li>
+          <li><a href="/service-areas/new-york">New York (ConEd / PSEG)</a></li>
+          <li><a href="/service-areas">View All 14 States →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <p>© {currentYear} SolarSite Co. All rights reserved. Solar Site Survey Coordination Platform.</p>
+        <div class="footer-legal-links">
+          <a href="/privacy">Privacy Policy</a>
+          <span class="dot">•</span>
+          <a href="/terms">Terms of Service</a>
+          <span class="dot">•</span>
+          <a href="/accessibility">Accessibility</a>
+          <span class="dot">•</span>
+          <a href="/sitemap-index.xml">XML Sitemap</a>
+        </div>
+      </div>
+      <div class="footer-badge">
+        <span class="badge-tech badge-dark">OPERATIONAL INFRASTRUCTURE • USA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light-muted);
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-8);
+    border-top: 1px solid var(--border-dark-subtle);
+    margin-top: auto;
+  }
+
+  .footer-main-grid {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr 1fr 1.2fr 1fr;
+    gap: var(--space-10);
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-logo .brand-name {
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: 1.1875rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .footer-logo .brand-accent {
+    color: var(--accent-amber);
+  }
+
+  .footer-logo .brand-tagline {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    color: #94A3B8;
+    letter-spacing: 0.08em;
+  }
+
+  .footer-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #94A3B8;
+    margin-bottom: var(--space-6);
+    max-width: 380px;
+  }
+
+  .footer-ops-status {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 0.875rem 1rem;
+    max-width: 380px;
+  }
+
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #F8FAFC;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .status-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: #94A3B8;
+  }
+
+  .status-meta strong {
+    color: #F8FAFC;
+    font-family: var(--font-mono);
+  }
+
+  .footer-heading {
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .footer-links a {
+    font-size: 0.875rem;
+    color: #94A3B8;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-links a:hover {
+    color: var(--accent-amber-light);
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-8);
+    font-size: 0.8125rem;
+    color: #64748B;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.35rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-legal-links a {
+    color: #94A3B8;
+  }
+
+  .footer-legal-links a:hover {
+    color: #FFFFFF;
+  }
+
+  .dot {
+    color: #475569;
+  }
+
+  @media (max-width: 1100px) {
+    .footer-main-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+    }
+    .footer-brand-col {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .footer-main-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    .footer-brand-col {
+      grid-column: span 1;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

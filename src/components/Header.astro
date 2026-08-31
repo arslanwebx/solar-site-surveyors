@@ -1,0 +1,372 @@
+---
+interface Props {
+  activeNav?: string;
+}
+
+const { activeNav = '' } = Astro.props;
+---
+
+<header class="site-header" id="site-header">
+  <div class="header-top-bar">
+    <div class="container-wide top-bar-inner">
+      <div class="top-bar-left">
+        <span class="status-live"><span class="status-dot"></span> Field Network Active Across 14 States</span>
+        <span class="top-bar-divider">|</span>
+        <span class="top-bar-item"><strong class="text-mono">SLA:</strong> 48–72hr Standard • 24hr Expedited</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+18005557878" class="top-bar-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Dispatch Hotline: (800) 555-7878</a>
+        <span class="top-bar-divider">|</span>
+        <a href="/contact" class="top-bar-link">Support & Ops</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="container-wide header-inner">
+      <!-- Brand Logo -->
+      <a href="/" class="brand-logo" aria-label="SolarSite Surveyors Home">
+        <div class="logo-mark">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="4" fill="#0F172A"/>
+            <path d="M4 16H28M16 4V28" stroke="#334155" stroke-width="0.75" stroke-dasharray="2 2"/>
+            <circle cx="16" cy="16" r="9" stroke="#E2E8F0" stroke-width="1.5"/>
+            <circle cx="16" cy="16" r="3.5" fill="#F59E0B"/>
+            <path d="M16 4V9M16 23V28M4 16H9M23 16H28" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">SOLARSITE<span class="brand-accent">CO</span></span>
+          <span class="brand-tagline">FIELD SURVEY COORDINATION</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li>
+            <a href="/services" class={`nav-link ${activeNav === 'services' ? 'active' : ''}`}>Services</a>
+          </li>
+          <li>
+            <a href="/for-epcs" class={`nav-link ${activeNav === 'for-epcs' ? 'active' : ''}`}>For EPCs</a>
+          </li>
+          <li>
+            <a href="/surveyors" class={`nav-link ${activeNav === 'surveyors' ? 'active' : ''}`}>Surveyors</a>
+          </li>
+          <li>
+            <a href="/resources" class={`nav-link ${activeNav === 'resources' ? 'active' : ''}`}>Resources</a>
+          </li>
+          <li>
+            <a href="/glossary" class={`nav-link ${activeNav === 'glossary' ? 'active' : ''}`}>Glossary</a>
+          </li>
+          <li>
+            <a href="/service-areas" class={`nav-link ${activeNav === 'service-areas' ? 'active' : ''}`}>Service Areas</a>
+          </li>
+          <li>
+            <a href="/about" class={`nav-link ${activeNav === 'about' ? 'active' : ''}`}>About</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="/schedule" class="btn btn-primary btn-sm header-cta" id="header-dispatch-cta">
+          <span>Schedule a Survey</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-content">
+      <ul class="mobile-nav-list">
+        <li><a href="/services" class="mobile-nav-link">Services & Scope</a></li>
+        <li><a href="/for-epcs" class="mobile-nav-link">For EPCs & Installers</a></li>
+        <li><a href="/surveyors" class="mobile-nav-link">Become a Field Surveyor</a></li>
+        <li><a href="/resources" class="mobile-nav-link">Operations Resources</a></li>
+        <li><a href="/glossary" class="mobile-nav-link">Solar Glossary</a></li>
+        <li><a href="/service-areas" class="mobile-nav-link">Service Areas</a></li>
+        <li><a href="/about" class="mobile-nav-link">About Us</a></li>
+        <li><a href="/contact" class="mobile-nav-link">Contact & Dispatch</a></li>
+      </ul>
+      <div class="mobile-drawer-actions">
+        <a href="/schedule" class="btn btn-primary btn-lg" style="width: 100%;">Schedule a Site Survey</a>
+        <a href="tel:+18005557878" class="btn btn-outline btn-lg" style="width: 100%; margin-top: 0.75rem;">Call Dispatch: (800) 555-7878</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile Menu Toggle
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const drawer = document.getElementById('mobile-drawer');
+
+  if (toggleBtn && drawer) {
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+      drawer.classList.toggle('is-open');
+    });
+
+    // Close on navigation link click
+    const mobileLinks = drawer.querySelectorAll('.mobile-nav-link');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        drawer.classList.remove('is-open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Header Scroll Elevation
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header?.classList.add('is-scrolled');
+    } else {
+      header?.classList.remove('is-scrolled');
+    }
+  }, { passive: true });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-light);
+    transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .site-header.is-scrolled {
+    box-shadow: var(--shadow-sm);
+    border-color: var(--border-medium);
+  }
+
+  /* Top Bar */
+  .header-top-bar {
+    background-color: var(--bg-dark);
+    color: var(--text-light-muted);
+    font-size: 0.75rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .top-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .top-bar-left, .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .status-live {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #E2E8F0;
+    font-weight: 500;
+  }
+
+  .top-bar-divider {
+    color: #475569;
+  }
+
+  .top-bar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--text-light-muted);
+  }
+
+  .top-bar-link:hover {
+    color: #FFFFFF;
+  }
+
+  .text-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* Main Header */
+  .header-main {
+    padding: 0.85rem 0;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  /* Brand Logo */
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-name {
+    font-family: var(--font-heading);
+    font-size: 1.1875rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    line-height: 1.1;
+  }
+
+  .brand-accent {
+    color: var(--accent-amber);
+    margin-left: 1px;
+  }
+
+  .brand-tagline {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+
+  /* Navigation */
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .nav-link {
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .nav-link:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-subtle);
+  }
+
+  .nav-link.active {
+    color: var(--accent-amber-dark);
+    background-color: var(--accent-amber-subtle);
+  }
+
+  /* Actions */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* Mobile Toggle */
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    gap: 5px;
+    padding: 0;
+  }
+
+  .toggle-bar {
+    width: 20px;
+    height: 2px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+  }
+
+  /* Mobile Drawer */
+  .mobile-drawer {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-surface);
+    border-bottom: 2px solid var(--accent-amber);
+    box-shadow: var(--shadow-xl);
+    padding: 1.5rem var(--space-6);
+  }
+
+  .mobile-drawer.is-open {
+    display: block;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    padding: 0.625rem 0.5rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  @media (max-width: 1024px) {
+    .desktop-nav {
+      display: none;
+    }
+    .header-top-bar .top-bar-left span:nth-child(2),
+    .header-top-bar .top-bar-left span:nth-child(3) {
+      display: none;
+    }
+    .mobile-toggle {
+      display: flex;
+    }
+    .header-cta {
+      display: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .header-top-bar .top-bar-right {
+      display: none;
+    }
+  }
+</style>

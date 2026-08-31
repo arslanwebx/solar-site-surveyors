@@ -1,0 +1,291 @@
+---
+import { glossaryData } from '../data/glossary';
+
+const categories = ['All', 'Electrical', 'Permitting & AHJ', 'Solar Operations', 'Design & Engineering', 'Financial & Utility'];
+---
+
+<div class="glossary-component" id="glossary-explorer">
+  <!-- Search & Category Filters -->
+  <div class="glossary-filter-bar card-technical">
+    <div class="search-input-wrapper">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" id="glossary-search-input" class="glossary-search-input" placeholder="Search solar terms (e.g., MSP, 120% Rule, AHJ, PTO, NTP, Backfeed)..." />
+    </div>
+
+    <div class="category-pills" id="glossary-category-pills">
+      {categories.map((cat, i) => (
+        <button type="button" class={`pill-btn ${i === 0 ? 'active' : ''}`} data-cat={cat}>{cat}</button>
+      ))}
+    </div>
+  </div>
+
+  <!-- Term Results Grid -->
+  <div class="terms-grid" id="glossary-terms-grid">
+    {glossaryData.map(term => (
+      <div class="term-card card-technical tech-grid-border" data-category={term.category} data-search={`${term.term} ${term.shortDefinition} ${term.fullDefinition} ${term.operationalContext}`.toLowerCase()}>
+        <div class="term-top">
+          <span class="badge-tech badge-amber">{term.category}</span>
+          <span class="term-code font-mono">{term.slug.toUpperCase()}</span>
+        </div>
+        <h3 class="term-title">{term.term}</h3>
+        <p class="term-short-def">{term.shortDefinition}</p>
+        
+        <div class="term-details">
+          <div class="detail-block">
+            <span class="detail-label">OPERATIONAL CONTEXT:</span>
+            <p class="detail-text">{term.operationalContext}</p>
+          </div>
+
+          <div class="detail-block">
+            <span class="detail-label">TECHNICAL DEFINITION:</span>
+            <p class="detail-text">{term.fullDefinition}</p>
+          </div>
+        </div>
+
+        {term.relatedTerms && (
+          <div class="related-terms-bar">
+            <span class="related-label">RELATED:</span>
+            <div class="related-tags">
+              {term.relatedTerms.map(rel => (
+                <span class="related-tag">{rel}</span>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+
+  <div class="no-results" id="glossary-no-results" style="display: none;">
+    <p>No matching solar operations terms found. Try searching for terms like "MSP", "Busbar", "AHJ", "PTO", or "NTP".</p>
+  </div>
+</div>
+
+<script>
+  const searchInput = document.getElementById('glossary-search-input') as HTMLInputElement;
+  const categoryPills = document.querySelectorAll('#glossary-category-pills .pill-btn');
+  const termCards = document.querySelectorAll('#glossary-terms-grid .term-card');
+  const noResults = document.getElementById('glossary-no-results');
+
+  let activeCategory = 'All';
+  let searchTerm = '';
+
+  function filterGlossary() {
+    let visibleCount = 0;
+    termCards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category') || '';
+      const cardSearchText = card.getAttribute('data-search') || '';
+
+      const matchesCat = activeCategory === 'All' || cardCategory === activeCategory;
+      const matchesSearch = searchTerm === '' || cardSearchText.includes(searchTerm);
+
+      if (matchesCat && matchesSearch) {
+        (card as HTMLElement).style.display = 'flex';
+        visibleCount++;
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+
+    if (noResults) {
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchTerm = (e.target as HTMLInputElement).value.trim().toLowerCase();
+      filterGlossary();
+    });
+  }
+
+  categoryPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      categoryPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeCategory = pill.getAttribute('data-cat') || 'All';
+      filterGlossary();
+    });
+  });
+</script>
+
+<style>
+  .glossary-component {
+    margin-top: var(--space-8);
+  }
+
+  .glossary-filter-bar {
+    padding: var(--space-6);
+    margin-bottom: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    color: var(--text-muted);
+  }
+
+  .glossary-search-input {
+    width: 100%;
+    padding: 0.875rem 1rem 0.875rem 2.75rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .glossary-search-input:focus {
+    border-color: var(--accent-amber);
+    box-shadow: 0 0 0 3px var(--accent-amber-bg);
+  }
+
+  .category-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .pill-btn {
+    font-family: var(--font-heading);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.4rem 0.875rem;
+    border: 1px solid var(--border-medium);
+    background-color: var(--bg-surface);
+    color: var(--text-secondary);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .pill-btn:hover {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+  }
+
+  .pill-btn.active {
+    background-color: var(--text-primary);
+    color: #FFFFFF;
+    border-color: var(--text-primary);
+  }
+
+  .terms-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .term-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6);
+  }
+
+  .term-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-3);
+  }
+
+  .term-code {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .term-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .term-short-def {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: var(--space-4);
+  }
+
+  .term-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: var(--bg-subtle);
+    padding: var(--space-4);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-4);
+  }
+
+  .detail-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+  }
+
+  .detail-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .related-terms-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .related-label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+  }
+
+  .related-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .related-tag {
+    font-size: 0.75rem;
+    background-color: var(--bg-subtle);
+    padding: 0.15rem 0.45rem;
+    border-radius: 2px;
+    color: var(--text-secondary);
+  }
+
+  .no-results {
+    text-align: center;
+    padding: var(--space-12) var(--space-6);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .terms-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import { serviceAreasData } from '../../data/serviceAreas';
+---
+
+<BaseLayout 
+  title="Solar Site Survey Service Areas | Nationwide Coverage | SolarSite Co."
+  description="Nationwide solar site survey coordination across major solar states: California, Texas, Florida, Arizona, Colorado, Nevada, New York, North Carolina, and expanding territories."
+  activeNav="service-areas"
+>
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="badge-tech badge-dark">GEOGRAPHIC DISPATCH NETWORK</span>
+        <h1 class="page-title">Service Areas & Regional Coverage</h1>
+        <p class="lead" style="color: #94A3B8; max-width: 820px;">
+          Active field surveyor networks with guaranteed 48–72 hour dispatch SLAs across the highest volume solar and storage markets in the United States.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="state-cards-grid">
+        {serviceAreasData.map(st => (
+          <div class="state-card card-technical tech-grid-border">
+            <div class="state-card-top">
+              <div class="state-code-badge font-mono">{st.code}</div>
+              <span class="badge-tech badge-amber">{st.turnaroundSla}</span>
+            </div>
+
+            <h2 class="state-name">
+              <a href={`/service-areas/${st.slug}`}>{st.name}</a>
+            </h2>
+
+            <p class="state-summary">{st.summary}</p>
+
+            <div class="state-meta-block">
+              <span class="meta-label font-mono">PRIMARY METRO REGIONS:</span>
+              <div class="metro-tags">
+                {st.metroAreas.slice(0, 3).map(metro => (
+                  <span class="metro-tag">{metro}</span>
+                ))}
+                {st.metroAreas.length > 3 && (
+                  <span class="metro-tag">+{st.metroAreas.length - 3} more</span>
+                )}
+              </div>
+            </div>
+
+            <div class="state-meta-block">
+              <span class="meta-label font-mono">MAJOR UTILITIES COVERED:</span>
+              <p class="utilities-text">{st.majorUtilities.slice(0, 3).join(', ')}</p>
+            </div>
+
+            <div class="state-card-footer">
+              <a href={`/service-areas/${st.slug}`} class="btn btn-outline btn-sm" style="width: 100%;">
+                <span>View {st.name} Coverage & Utility Specs →</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection 
+    title="Need a Site Survey in One of These States?"
+    subtitle="Submit your project address to schedule a certified field surveyor with local utility expertise."
+    primaryCtaText="Schedule a Site Survey"
+    primaryCtaLink="/schedule"
+    secondaryCtaText="Become an EPC Partner"
+    secondaryCtaLink="/for-epcs"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--border-dark-subtle);
+  }
+
+  .page-title {
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+
+  .state-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  .state-card {
+    background-color: #FFFFFF;
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .state-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-3);
+  }
+
+  .state-code-badge {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .state-name {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .state-name a:hover {
+    color: var(--accent-amber);
+  }
+
+  .state-summary {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+  }
+
+  .state-meta-block {
+    margin-bottom: var(--space-4);
+  }
+
+  .meta-label {
+    display: block;
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+
+  .metro-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .metro-tag {
+    font-size: 0.75rem;
+    background-color: var(--bg-subtle);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+  }
+
+  .utilities-text {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .state-card-footer {
+    margin-top: auto;
+    padding-top: var(--space-4);
+  }
+
+  @media (max-width: 900px) {
+    .state-cards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

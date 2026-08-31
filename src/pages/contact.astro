@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Contact Operations & Dispatch | SolarSite Co."
+  description="Contact SolarSite Co. operations desk, dispatch hotlines, and EPC partner support. Speak with a live field coordinator or submit an operational inquiry."
+  activeNav="contact"
+>
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="badge-tech badge-dark">DIRECT OPERATIONS DESK</span>
+        <h1 class="page-title">Contact Field Dispatch & Support</h1>
+        <p class="lead" style="color: #94A3B8; max-width: 780px;">
+          Have questions about field coverage, rush turnaround SLAs, custom CAD deliverable formats, or active project tracking? Reach our dispatch team directly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Info Side -->
+        <div class="contact-info-col">
+          <div class="contact-card card-technical tech-grid-border">
+            <span class="badge-tech badge-amber">DISPATCH HOTLINES</span>
+            <h3>Operations Contact Channels</h3>
+            
+            <div class="channel-list" style="margin-top: 1.5rem;">
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div class="channel-detail">
+                  <span class="channel-label font-mono">DISPATCH PHONE</span>
+                  <a href="tel:+18005557878" class="channel-val font-mono">(800) 555-7878</a>
+                  <span class="channel-sub">Mon–Sat: 6:00 AM – 7:00 PM CST</span>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="channel-detail">
+                  <span class="channel-label font-mono">PROJECT SUBMISSIONS & DELIVERABLES</span>
+                  <a href="mailto:dispatch@solarsitesurveyors.com" class="channel-val font-mono">dispatch@solarsitesurveyors.com</a>
+                  <span class="channel-sub">Encrypted deliverable packages & project tickets</span>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="channel-detail">
+                  <span class="channel-label font-mono">EPC PARTNERSHIPS</span>
+                  <a href="mailto:partners@solarsitesurveyors.com" class="channel-val font-mono">partners@solarsitesurveyors.com</a>
+                  <span class="channel-sub">Volume agreements, API integration & SLA configuration</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Side -->
+        <div class="contact-form-col">
+          <div class="contact-form-card card-technical tech-grid-border">
+            <span class="badge-tech badge-amber">OPERATIONAL INQUIRY</span>
+            <h3 style="margin-top: 0.5rem; margin-bottom: 1.5rem; font-size: 1.375rem;">Send a Message to Operations</h3>
+
+            <form id="contact-inquiry-form" class="project-form">
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="c-name">Your Name <span class="required">*</span></label>
+                  <input type="text" id="c-name" name="name" class="form-input" placeholder="e.g. David Miller" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="c-company">Company Name <span class="required">*</span></label>
+                  <input type="text" id="c-company" name="company" class="form-input" placeholder="e.g. Apex Solar Energy" required />
+                </div>
+              </div>
+
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="c-email">Work Email <span class="required">*</span></label>
+                  <input type="email" id="c-email" name="email" class="form-input" placeholder="e.g. david@apexsolar.com" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="c-phone">Phone Number</label>
+                  <input type="tel" id="c-phone" name="phone" class="form-input" placeholder="e.g. (555) 234-5678" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c-topic">Inquiry Topic <span class="required">*</span></label>
+                <select id="c-topic" name="topic" class="form-select" required>
+                  <option value="Dispatch Schedule Status">Active Project Dispatch Status</option>
+                  <option value="New EPC Partnership">New EPC Partnership & Volume Pricing</option>
+                  <option value="Custom CAD Deliverable Scope">Custom CAD Deliverable Scope</option>
+                  <option value="Surveyor Network Inquiry">Surveyor Network & Contracting</option>
+                  <option value="General Question">General Operations Question</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c-message">Message / Details <span class="required">*</span></label>
+                <textarea id="c-message" name="message" class="form-textarea" placeholder="How can our operations team help you today?" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                <span>Send Operations Inquiry</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+
+            <div class="inquiry-confirmation" id="inquiry-confirmation" style="display: none; text-align: center; padding: 2rem 1rem;">
+              <div class="conf-icon-box" style="margin: 0 auto 1rem; width: 48px; height: 48px; border-radius: 50%; background: var(--status-green-bg); display: flex; align-items: center; justify-content: center;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Message Received</h4>
+              <p style="font-size: 0.9375rem; color: var(--text-secondary);">
+                Our operations team will review your message and respond within 2 business hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const contactForm = document.getElementById('contact-inquiry-form') as HTMLFormElement;
+  const contactConf = document.getElementById('inquiry-confirmation');
+
+  if (contactForm && contactConf) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      contactForm.style.display = 'none';
+      contactConf.style.display = 'block';
+    });
+  }
+</script>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--border-dark-subtle);
+  }
+
+  .page-title {
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: var(--space-8);
+  }
+
+  .contact-card, .contact-form-card {
+    background-color: #FFFFFF;
+    padding: var(--space-8);
+  }
+
+  .channel-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .channel-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .channel-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .channel-detail {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .channel-label {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .channel-val {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0.15rem 0;
+  }
+
+  .channel-val:hover {
+    color: var(--accent-amber);
+  }
+
+  .channel-sub {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

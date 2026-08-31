@@ -1,0 +1,612 @@
+---
+---
+
+<div class="dispatch-form-card card-technical tech-grid-border" id="dispatch-form-wrapper">
+  <div class="form-header">
+    <div class="form-badge-row">
+      <span class="badge-tech badge-amber">OPERATIONAL DISPATCH INTAKE</span>
+      <span class="sla-pill font-mono">GUARANTEED 48HR SLA DISPATCH</span>
+    </div>
+    <h2 class="form-heading">Schedule a Site Survey</h2>
+    <p class="form-subheading">
+      Submit your project address, utility information, and scope requirements. Our operations desk coordinates the certified local surveyor and confirms the scheduled appointment.
+    </p>
+  </div>
+
+  <form id="project-dispatch-form" class="project-form">
+    <!-- Section 1: Contractor / EPC Information -->
+    <div class="form-section-block">
+      <h3 class="section-title"><span class="section-num font-mono">01</span> Solar Contractor / EPC Information</h3>
+      
+      <div class="grid-2">
+        <div class="form-group">
+          <label class="form-label" for="company-name">Company / EPC Name <span class="required">*</span></label>
+          <input type="text" id="company-name" name="companyName" class="form-input" placeholder="e.g. Apex Solar Energy Operations" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="contact-name">Project Manager / Contact Name <span class="required">*</span></label>
+          <input type="text" id="contact-name" name="contactName" class="form-input" placeholder="e.g. Rachel Adams" required />
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <label class="form-label" for="business-email">Business Email (for survey package delivery) <span class="required">*</span></label>
+          <input type="email" id="business-email" name="businessEmail" class="form-input" placeholder="e.g. operations@apexsolar.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="business-phone">Direct Phone Number <span class="required">*</span></label>
+          <input type="tel" id="business-phone" name="businessPhone" class="form-input" placeholder="e.g. (555) 342-8900" required />
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Property & Customer Information -->
+    <div class="form-section-block">
+      <h3 class="section-title"><span class="section-num font-mono">02</span> Property & Site Details</h3>
+      
+      <div class="grid-2">
+        <div class="form-group">
+          <label class="form-label" for="customer-name">Homeowner / Property Owner Name <span class="required">*</span></label>
+          <input type="text" id="customer-name" name="customerName" class="form-input" placeholder="e.g. Michael Henderson" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="customer-phone">Customer Contact Phone (for appointment notification)</label>
+          <input type="tel" id="customer-phone" name="customerPhone" class="form-input" placeholder="e.g. (555) 789-1234" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="project-address">Street Address <span class="required">*</span></label>
+        <input type="text" id="project-address" name="projectAddress" class="form-input" placeholder="e.g. 1428 Evergreen Terrace" required />
+      </div>
+
+      <div class="grid-3">
+        <div class="form-group">
+          <label class="form-label" for="project-city">City <span class="required">*</span></label>
+          <input type="text" id="project-city" name="projectCity" class="form-input" placeholder="e.g. Austin" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="project-state">State <span class="required">*</span></label>
+          <select id="project-state" name="projectState" class="form-select" required>
+            <option value="">Select State</option>
+            <option value="CA">California</option>
+            <option value="TX">Texas</option>
+            <option value="FL">Florida</option>
+            <option value="AZ">Arizona</option>
+            <option value="CO">Colorado</option>
+            <option value="NV">Nevada</option>
+            <option value="NY">New York</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NC">North Carolina</option>
+            <option value="GA">Georgia</option>
+            <option value="IL">Illinois</option>
+            <option value="OH">Ohio</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="MA">Massachusetts</option>
+            <option value="OTHER">Other State</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="project-zip">ZIP Code <span class="required">*</span></label>
+          <input type="text" id="project-zip" name="projectZip" class="form-input" placeholder="e.g. 78701" required />
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <label class="form-label" for="utility-company">Electric Utility Company <span class="required">*</span></label>
+          <input type="text" id="utility-company" name="utilityCompany" class="form-input" placeholder="e.g. Oncor, PG&E, FPL, Duke Energy" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="preferred-date">Preferred Survey Date Target</label>
+          <input type="date" id="preferred-date" name="preferredDate" class="form-input" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Technical Project Scope -->
+    <div class="form-section-block">
+      <h3 class="section-title"><span class="section-num font-mono">03</span> Technical Scope & Equipment</h3>
+      
+      <div class="grid-3">
+        <div class="form-group">
+          <label class="form-label">Project Type <span class="required">*</span></label>
+          <div class="radio-card-group">
+            <label class="radio-card">
+              <input type="radio" name="projectType" value="Residential" checked />
+              <span>Residential</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="projectType" value="Commercial" />
+              <span>Commercial (C&I)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="roof-type">Roof Material <span class="required">*</span></label>
+          <select id="roof-type" name="roofType" class="form-select" required>
+            <option value="Asphalt Shingle">Asphalt Shingle (Architectural / 3-Tab)</option>
+            <option value="Clay / Concrete Tile">Clay or Concrete Tile</option>
+            <option value="Metal">Standing Seam / Corrugated Metal</option>
+            <option value="Flat Membrane">Flat Membrane (TPO / EPDM / Torch)</option>
+            <option value="Ground Mount">Ground Mount Only</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Battery Storage Included? <span class="required">*</span></label>
+          <div class="radio-card-group">
+            <label class="radio-card">
+              <input type="radio" name="batteryIncluded" value="Yes" checked />
+              <span>Yes (Battery ESS)</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="batteryIncluded" value="No" />
+              <span>No (Solar Only)</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scope Checkboxes -->
+      <div class="form-group">
+        <label class="form-label">Survey Requirements & Scope Inclusions</label>
+        <div class="checkbox-grid">
+          <label class="checkbox-label">
+            <input type="checkbox" name="requirements" value="Roof Measurements & Pitch" checked />
+            <span>Complete Roof Geometry & Pitch Gauge Verification</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="requirements" value="MSP Interior Dead-Front" checked />
+            <span>MSP Dead-Front Interior & Busbar Nameplate Audit</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="requirements" value="Attic Structural Rafters" checked />
+            <span>Attic Structural Framing & Rafter Spacing Verification</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="requirements" value="Battery Gateway Pathway" checked />
+            <span>NFPA 855 Battery Wall Clearance & Conduit Pathway</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="requirements" value="Drone Aerial Survey" />
+            <span>Drone Photogrammetry (FAA Part 107 Pilot)</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="requirements" value="Subpanel Load Schedule" />
+            <span>Critical Loads Subpanel Breaker Schedule Audit</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="special-instructions">Special Instructions & Access Notes</label>
+        <textarea id="special-instructions" name="specialInstructions" class="form-textarea" placeholder="Provide gate codes, pet warnings, steep roof notes, ladder access locations, or specific designer requirements..."></textarea>
+      </div>
+    </div>
+
+    <!-- Section 4: File Uploads -->
+    <div class="form-section-block">
+      <h3 class="section-title"><span class="section-num font-mono">04</span> Project Documents & Attachments</h3>
+      <p class="section-desc">Upload existing project documents to assist the surveyor and engineering team.</p>
+
+      <div class="grid-3">
+        <!-- Utility Bill -->
+        <div class="upload-box">
+          <svg class="upload-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span class="upload-title">Utility Electric Bill</span>
+          <span class="upload-hint">PDF / PNG / JPG</span>
+          <input type="file" class="file-input" id="upload-bill" accept=".pdf,.png,.jpg,.jpeg" />
+          <label for="upload-bill" class="upload-btn">Browse File</label>
+          <span class="file-status" id="status-bill">No file chosen</span>
+        </div>
+
+        <!-- Proposal / Layout -->
+        <div class="upload-box">
+          <svg class="upload-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          <span class="upload-title">Proposal / Prelim CAD</span>
+          <span class="upload-hint">PDF / HelioScope / Aurora</span>
+          <input type="file" class="file-input" id="upload-proposal" accept=".pdf,.png,.jpg,.jpeg,.dwg" />
+          <label for="upload-proposal" class="upload-btn">Browse File</label>
+          <span class="file-status" id="status-proposal">No file chosen</span>
+        </div>
+
+        <!-- Additional Docs -->
+        <div class="upload-box">
+          <svg class="upload-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          <span class="upload-title">Additional Site Docs</span>
+          <span class="upload-hint">HOA rules, photos, notes</span>
+          <input type="file" class="file-input" id="upload-additional" accept=".pdf,.png,.jpg,.jpeg,.zip" />
+          <label for="upload-additional" class="upload-btn">Browse File</label>
+          <span class="file-status" id="status-additional">No file chosen</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confidentiality Notice & Submit -->
+    <div class="form-submit-footer">
+      <div class="confidentiality-notice">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <p><strong>Operational Confidentiality Guarantee:</strong> All project addresses, customer records, and utility documents are strictly encrypted and used solely for dispatching certified site surveyors and generating engineering deliverables.</p>
+      </div>
+
+      <div class="submit-action-row">
+        <button type="submit" class="btn btn-primary btn-lg" id="submit-dispatch-btn">
+          <span>Submit Survey Request</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Instant Confirmation State (Shown upon submission) -->
+  <div class="submission-confirmation" id="submission-confirmation" style="display: none;">
+    <div class="conf-icon-box">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <span class="badge-tech badge-amber">DISPATCH TICKET ISSUED</span>
+    <h3 class="conf-title">Survey Request Received</h3>
+    <p class="conf-desc">
+      Your project details have been assigned reference tracking ticket <strong class="font-mono" id="conf-ticket-id">SS-8942-TX</strong>. Our regional operations team is assigning the surveyor and will send calendar confirmation within 4 hours.
+    </p>
+
+    <div class="conf-summary-box">
+      <div class="conf-row"><span>Target SLA:</span> <strong>48 Hours (Standard Deliverable)</strong></div>
+      <div class="conf-row"><span>Deliverable Format:</span> <strong>AutoCAD / HelioScope 36-Photo Package</strong></div>
+      <div class="conf-row"><span>Dispatch Contact:</span> <strong>dispatch@solarsitesurveyors.com</strong></div>
+    </div>
+
+    <button type="button" class="btn btn-dark btn-md" id="reset-form-btn" style="margin-top: 1.5rem;">
+      Submit Another Project
+    </button>
+  </div>
+</div>
+
+<script>
+  // Handle file name displays
+  const fileInputs = [
+    { input: document.getElementById('upload-bill') as HTMLInputElement, status: document.getElementById('status-bill') },
+    { input: document.getElementById('upload-proposal') as HTMLInputElement, status: document.getElementById('status-proposal') },
+    { input: document.getElementById('upload-additional') as HTMLInputElement, status: document.getElementById('status-additional') }
+  ];
+
+  fileInputs.forEach(({ input, status }) => {
+    if (input && status) {
+      input.addEventListener('change', () => {
+        if (input.files && input.files[0]) {
+          status.textContent = input.files[0].name;
+          status.style.color = '#0F172A';
+          status.style.fontWeight = '600';
+        }
+      });
+    }
+  });
+
+  // Handle Form Submission
+  const form = document.getElementById('project-dispatch-form') as HTMLFormElement;
+  const confirmation = document.getElementById('submission-confirmation');
+  const ticketDisplay = document.getElementById('conf-ticket-id');
+  const resetBtn = document.getElementById('reset-form-btn');
+
+  if (form && confirmation) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Generate random ticket ID
+      const stateVal = (document.getElementById('project-state') as HTMLSelectElement)?.value || 'US';
+      const randomNum = Math.floor(1000 + Math.random() * 9000);
+      const ticketId = `SS-${randomNum}-${stateVal}`;
+
+      if (ticketDisplay) ticketDisplay.textContent = ticketId;
+
+      form.style.display = 'none';
+      confirmation.style.display = 'block';
+      confirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        form.reset();
+        fileInputs.forEach(({ status }) => {
+          if (status) {
+            status.textContent = 'No file chosen';
+            status.style.color = '';
+            status.style.fontWeight = '';
+          }
+        });
+        confirmation.style.display = 'none';
+        form.style.display = 'block';
+      });
+    }
+  }
+</script>
+
+<style>
+  .dispatch-form-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-lg);
+    padding: var(--space-10) var(--space-8);
+  }
+
+  .form-header {
+    margin-bottom: var(--space-10);
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: var(--space-6);
+  }
+
+  .form-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .sla-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-amber-dark);
+    background-color: var(--accent-amber-subtle);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .form-heading {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .form-subheading {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+  }
+
+  .form-section-block {
+    margin-bottom: var(--space-10);
+    padding-bottom: var(--space-8);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .section-title {
+    font-size: 1.1875rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-5);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .section-num {
+    color: var(--accent-amber);
+    font-size: 0.9375rem;
+    background-color: var(--accent-amber-bg);
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .section-desc {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-top: -0.75rem;
+    margin-bottom: var(--space-5);
+  }
+
+  .radio-card-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .radio-card {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #FFFFFF;
+  }
+
+  .radio-card:hover {
+    border-color: var(--accent-amber);
+  }
+
+  .radio-card input {
+    accent-color: var(--accent-amber);
+  }
+
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.625rem;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    background-color: var(--bg-subtle);
+    padding: 0.625rem 0.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+  }
+
+  .checkbox-label:hover {
+    border-color: var(--border-medium);
+    color: var(--text-primary);
+  }
+
+  .checkbox-label input {
+    accent-color: var(--accent-amber);
+  }
+
+  /* File Uploads */
+  .upload-box {
+    border: 2px dashed var(--border-medium);
+    border-radius: var(--radius-md);
+    padding: var(--space-6) var(--space-4);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: #FFFFFF;
+    position: relative;
+  }
+
+  .upload-icon {
+    color: var(--accent-amber);
+    margin-bottom: 0.25rem;
+  }
+
+  .upload-title {
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .upload-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .file-input {
+    display: none;
+  }
+
+  .upload-btn {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    background-color: var(--bg-subtle);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+  }
+
+  .upload-btn:hover {
+    background-color: #E2E8F0;
+  }
+
+  .file-status {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 0.25rem;
+  }
+
+  /* Footer Actions */
+  .form-submit-footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .confidentiality-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background-color: var(--bg-subtle);
+    border-left: 3px solid #64748B;
+    padding: 0.875rem 1rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .confidentiality-notice p {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .submit-action-row {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Confirmation */
+  .submission-confirmation {
+    text-align: center;
+    padding: var(--space-12) var(--space-6);
+  }
+
+  .conf-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--status-green-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+  }
+
+  .conf-title {
+    font-size: 1.875rem;
+    color: var(--text-primary);
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-3);
+  }
+
+  .conf-desc {
+    font-size: 1.0625rem;
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin: 0 auto var(--space-8);
+  }
+
+  .conf-summary-box {
+    background-color: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    max-width: 500px;
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  .conf-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  .conf-row strong {
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 768px) {
+    .dispatch-form-card {
+      padding: var(--space-6) var(--space-4);
+    }
+    .checkbox-grid {
+      grid-template-columns: 1fr;
+    }
+    .submit-action-row button {
+      width: 100%;
+    }
+  }
+</style>

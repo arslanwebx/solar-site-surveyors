@@ -1,0 +1,293 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import { serviceAreasData, type StateServiceArea } from '../../data/serviceAreas';
+
+export async function getStaticPaths() {
+  return serviceAreasData.map(state => ({
+    params: { state: state.slug },
+    props: { stateData: state }
+  }));
+}
+
+interface Props {
+  stateData: StateServiceArea;
+}
+
+const { stateData } = Astro.props;
+---
+
+<BaseLayout 
+  title={`Solar Site Surveys in ${stateData.name} | 48-Hour Field Coordination | SolarSite Co.`}
+  description={`Professional solar site survey coordination in ${stateData.name}. Turnaround SLA: ${stateData.turnaroundSla}. Full coverage for ${stateData.majorUtilities.join(', ')}.`}
+  activeNav="service-areas"
+>
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb-nav">
+          <a href="/service-areas" class="back-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>All Service Areas</span>
+          </a>
+          <span class="badge-tech badge-amber">{stateData.status}</span>
+        </div>
+
+        <h1 class="page-title">Solar Site Surveys in {stateData.name}</h1>
+        <p class="lead" style="color: #94A3B8; max-width: 820px;">
+          {stateData.summary}
+        </p>
+
+        <div class="hero-state-metrics">
+          <div class="state-metric">
+            <span class="state-metric-lbl font-mono">STATE CODE</span>
+            <span class="state-metric-val font-mono">{stateData.code}</span>
+          </div>
+          <div class="state-metric">
+            <span class="state-metric-lbl font-mono">TURNAROUND SLA</span>
+            <span class="state-metric-val font-mono">{stateData.turnaroundSla}</span>
+          </div>
+          <div class="state-metric">
+            <span class="state-metric-lbl font-mono">DELIVERABLE STANDARD</span>
+            <span class="state-metric-val font-mono">36-Photo 4K CAD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- State Details -->
+  <section class="section">
+    <div class="container">
+      <div class="state-layout-grid">
+        <!-- Left Content -->
+        <div class="state-main-col">
+          <div class="state-section-block card-technical tech-grid-border">
+            <span class="badge-tech badge-amber">REGIONAL EXPERTISE</span>
+            <h2>{stateData.name} Solar & Storage Overview</h2>
+            <p style="margin-top: 1rem; margin-bottom: 1.5rem; line-height: 1.65;">
+              Operating in {stateData.name} requires deep familiarity with local utility interconnection tariffs, municipal AHJ amendments, and regional roofing styles. Our local field network is trained to capture the exact requirements needed for immediate permit signoff.
+            </p>
+
+            <h4 style="margin-bottom: 0.5rem; font-size: 1.125rem;">Key AHJ & Permitting Nuances:</h4>
+            <div class="nuance-callout">
+              <p><strong>{stateData.ahjNuances}</strong></p>
+            </div>
+          </div>
+
+          <!-- Survey Capabilities in State -->
+          <div class="state-section-block card-technical tech-grid-border" style="margin-top: var(--space-8);">
+            <span class="badge-tech badge-amber">FIELD SCOPE</span>
+            <h2>Available Survey Capabilities in {stateData.name}</h2>
+            
+            <div class="capabilities-grid" style="margin-top: 1rem;">
+              {stateData.surveyCapabilities.map(cap => (
+                <div class="cap-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>{cap}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Covered Metros & Cities -->
+          <div class="state-section-block card-technical tech-grid-border" style="margin-top: var(--space-8);">
+            <span class="badge-tech badge-amber">METROPOLITAN REGIONS</span>
+            <h2>Active Coverage Areas in {stateData.name}</h2>
+            <p style="margin-bottom: 1rem;">Our surveyors provide active dispatch across all major metropolitan centers and surrounding suburban counties:</p>
+            <ul class="metros-bullet-list">
+              {stateData.metroAreas.map(metro => (
+                <li>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>{metro}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Sidebar: Utility Interconnection Specs -->
+        <div class="state-sidebar-col">
+          <div class="sidebar-box card-dark tech-grid-border">
+            <span class="badge-tech badge-dark">UTILITY INTERCONNECTION</span>
+            <h3 style="color: #FFFFFF; font-size: 1.25rem; margin-top: 0.5rem; margin-bottom: 1rem;">Major Utilities in {stateData.name}</h3>
+            <p style="font-size: 0.875rem; color: #94A3B8; margin-bottom: 1rem;">Our surveyors are trained on specific meter and disconnect requirements for:</p>
+            
+            <ul class="utility-sidebar-list">
+              {stateData.majorUtilities.map(util => (
+                <li>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                  <span>{util}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="sidebar-cta-block" style="margin-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1.5rem;">
+              <a href="/schedule" class="btn btn-primary btn-md" style="width: 100%;">
+                <span>Schedule Survey in {stateData.code}</span>
+              </a>
+              <a href="/for-epcs" class="btn btn-outline-white btn-sm" style="width: 100%; margin-top: 0.5rem;">
+                <span>EPC Partner Inquiries</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection 
+    title={`Dispatch a Site Survey in ${stateData.name} Today`}
+    subtitle={`Submit your project address. We coordinate the local certified surveyor and deliver CAD-ready packages in ${stateData.turnaroundSla}.`}
+    primaryCtaText={`Schedule ${stateData.name} Survey`}
+    primaryCtaLink="/schedule"
+    secondaryCtaText="View All Service Areas"
+    secondaryCtaLink="/service-areas"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--border-dark-subtle);
+  }
+
+  .breadcrumb-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-3);
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--accent-amber-light);
+  }
+
+  .back-link:hover {
+    color: #FFFFFF;
+  }
+
+  .page-title {
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-3);
+  }
+
+  .hero-state-metrics {
+    display: flex;
+    gap: var(--space-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--space-4);
+    margin-top: var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .state-metric {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .state-metric-lbl {
+    font-size: 0.6875rem;
+    color: #94A3B8;
+  }
+
+  .state-metric-val {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  .state-layout-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .state-section-block {
+    background-color: #FFFFFF;
+    padding: var(--space-8);
+  }
+
+  .nuance-callout {
+    background-color: var(--bg-subtle-warm);
+    border-left: 3px solid var(--accent-amber);
+    padding: var(--space-4);
+    border-radius: var(--radius-sm);
+  }
+
+  .nuance-callout p {
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .cap-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    background-color: var(--bg-subtle);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .metros-bullet-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .metros-bullet-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  .sidebar-box {
+    background-color: #0F172A;
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+  }
+
+  .utility-sidebar-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .utility-sidebar-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #CBD5E1;
+  }
+
+  @media (max-width: 900px) {
+    .state-layout-grid {
+      grid-template-columns: 1fr;
+    }
+    .capabilities-grid, .metros-bullet-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

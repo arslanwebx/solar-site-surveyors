@@ -1,0 +1,133 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  primaryCtaText?: string;
+  primaryCtaLink?: string;
+  secondaryCtaText?: string;
+  secondaryCtaLink?: string;
+}
+
+const {
+  title = "Ready to Eliminate Survey Bottlenecks from Your Solar Pipeline?",
+  subtitle = "Submit your project details today. We coordinate the vetted field surveyor, complete the physical inspection, and deliver an organized, CAD-ready survey package in 48–72 hours.",
+  primaryCtaText = "Schedule a Site Survey",
+  primaryCtaLink = "/schedule",
+  secondaryCtaText = "Talk to Our Operations Team",
+  secondaryCtaLink = "/contact"
+} = Astro.props;
+---
+
+<section class="section section-dark cta-section">
+  <div class="container">
+    <div class="cta-inner-box tech-grid-border">
+      <div class="cta-header">
+        <span class="badge-tech badge-dark">OPERATIONAL READINESS • 48HR SLA</span>
+        <h2 class="cta-title">{title}</h2>
+        <p class="cta-desc">{subtitle}</p>
+      </div>
+
+      <div class="cta-actions">
+        <a href={primaryCtaLink} class="btn btn-primary btn-lg">
+          <span>{primaryCtaText}</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href={secondaryCtaLink} class="btn btn-outline-white btn-lg">
+          <span>{secondaryCtaText}</span>
+        </a>
+      </div>
+
+      <div class="cta-guarantees">
+        <div class="guarantee-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Triple-Check QA Guarantee</span>
+        </div>
+        <div class="guarantee-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span>Standard 48–72hr Turnaround</span>
+        </div>
+        <div class="guarantee-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>AutoCAD & HelioScope Ready</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-inner-box {
+    background-color: #111827;
+    border: 1px solid #1F2937;
+    border-radius: var(--radius-lg);
+    padding: var(--space-16) var(--space-10);
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .cta-header {
+    max-width: 800px;
+    margin: 0 auto var(--space-8);
+  }
+
+  .cta-title {
+    color: #FFFFFF;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+  }
+
+  .cta-desc {
+    color: #94A3B8;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: var(--space-10);
+    flex-wrap: wrap;
+  }
+
+  .cta-guarantees {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .guarantee-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: #CBD5E1;
+  }
+
+  @media (max-width: 768px) {
+    .cta-inner-box {
+      padding: var(--space-10) var(--space-5);
+    }
+    .cta-actions {
+      flex-direction: column;
+    }
+    .cta-guarantees {
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+  }
+</style>

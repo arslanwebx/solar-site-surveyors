@@ -1,0 +1,379 @@
+---
+---
+
+<div class="calculator-wrapper card-technical tech-grid-border" id="survey-calculator">
+  <div class="calc-header">
+    <div class="calc-header-badge">
+      <span class="badge-tech badge-amber">OPERATIONAL ESTIMATOR</span>
+    </div>
+    <h3 class="calc-title">Survey Turnaround & Scope Calculator</h3>
+    <p class="calc-subtitle">Configure your project specifications to preview survey SLA timelines and required deliverable package scopes.</p>
+  </div>
+
+  <div class="calc-grid">
+    <!-- Controls Column -->
+    <div class="calc-controls">
+      <!-- Project Type -->
+      <div class="form-group">
+        <label class="form-label" for="calc-project-type">Project Sector / Type</label>
+        <div class="toggle-button-group" id="calc-project-type-toggle">
+          <button type="button" class="toggle-btn active" data-type="residential">Residential (1–3 Stories)</button>
+          <button type="button" class="toggle-btn" data-type="commercial">Commercial / Industrial (C&I)</button>
+        </div>
+      </div>
+
+      <!-- State Selection -->
+      <div class="form-group">
+        <label class="form-label" for="calc-state">Project Location / State</label>
+        <select id="calc-state" class="form-select">
+          <option value="CA" selected>California (NEM 3.0 / PG&E / SCE / SDG&E)</option>
+          <option value="TX">Texas (ERCOT / Oncor / CenterPoint)</option>
+          <option value="FL">Florida (HVHZ / FPL / Duke Energy)</option>
+          <option value="AZ">Arizona (APS / SRP / TEP)</option>
+          <option value="CO">Colorado (Xcel Energy / CORE)</option>
+          <option value="NV">Nevada (NV Energy / Clark County)</option>
+          <option value="NY">New York (ConEd / PSEG-LI / NYSEG)</option>
+          <option value="NC">North Carolina (Duke Energy Carolinas)</option>
+          <option value="OTHER">Other US Territory (Inquire)</option>
+        </select>
+      </div>
+
+      <!-- Roof Construction -->
+      <div class="form-group">
+        <label class="form-label" for="calc-roof">Roof Type & Material</label>
+        <select id="calc-roof" class="form-select">
+          <option value="shingle" selected>Composition Asphalt Shingle</option>
+          <option value="tile">Concrete / Clay Tile (S-Tile / Flat)</option>
+          <option value="metal">Standing Seam / Corrugated Metal</option>
+          <option value="flat">Flat Membrane (TPO / EPDM / Torch Down)</option>
+        </select>
+      </div>
+
+      <!-- Battery Storage Addon -->
+      <div class="form-group">
+        <label class="form-label">Battery Energy Storage Included?</label>
+        <div class="radio-pill-group">
+          <label class="radio-pill">
+            <input type="radio" name="calc-battery" value="yes" checked />
+            <span>Yes (ESS / Backup Gateway)</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="calc-battery" value="no" />
+            <span>No (PV Grid-Tied Only)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Turnaround Speed Tier -->
+      <div class="form-group">
+        <label class="form-label">Service Turnaround SLA</label>
+        <div class="radio-pill-group">
+          <label class="radio-pill">
+            <input type="radio" name="calc-speed" value="standard" checked />
+            <span>Standard (48–72 Hours)</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="calc-speed" value="expedited" />
+            <span>Expedited (24–36 Hours)</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Output Summary Column -->
+    <div class="calc-results card-dark">
+      <div class="results-top">
+        <span class="results-tag">PROJECT ESTIMATION BREAKDOWN</span>
+        <div class="sla-metric-box">
+          <span class="sla-metric-title">TARGET SURVEY TURNAROUND</span>
+          <span class="sla-metric-val" id="calc-result-sla">48–72 Hours</span>
+        </div>
+      </div>
+
+      <div class="results-checklist-box">
+        <span class="checklist-heading">INCLUDED DELIVERABLES & CHECKS:</span>
+        <ul class="results-list" id="calc-deliverables-list">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>36+ High-Res Georeferenced Field Photos</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>MSP Dead-Front Busbar & Breaker Verification</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Attic Rafter Spacing & Decking Verification</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span id="calc-battery-deliverable">NFPA 855 Battery Clearance & Gateway Pathway</span>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>AutoCAD / HelioScope Dimensioned Package</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="results-cta-block">
+        <a href="/schedule" class="btn btn-primary btn-lg" style="width: 100%;">
+          <span>Proceed to Project Dispatch</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="results-note">No credit card required for initial project intake. Invoiced on deliverable release.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Calculator Interactivity
+  const calcContainer = document.getElementById('survey-calculator');
+  if (calcContainer) {
+    let projectType = 'residential';
+    let battery = 'yes';
+    let speed = 'standard';
+
+    const typeButtons = calcContainer.querySelectorAll('#calc-project-type-toggle .toggle-btn');
+    const batteryRadios = calcContainer.querySelectorAll('input[name="calc-battery"]');
+    const speedRadios = calcContainer.querySelectorAll('input[name="calc-speed"]');
+    const slaDisplay = document.getElementById('calc-result-sla');
+    const batteryDeliverable = document.getElementById('calc-battery-deliverable');
+
+    function updateEstimation() {
+      // SLA calculation
+      if (speed === 'expedited') {
+        if (projectType === 'residential') {
+          if (slaDisplay) slaDisplay.textContent = '24–36 Hours (Rush)';
+        } else {
+          if (slaDisplay) slaDisplay.textContent = '36–48 Hours (Commercial)';
+        }
+      } else {
+        if (projectType === 'residential') {
+          if (slaDisplay) slaDisplay.textContent = '48–72 Hours (Standard)';
+        } else {
+          if (slaDisplay) slaDisplay.textContent = '48–96 Hours (C&I Standard)';
+        }
+      }
+
+      // Battery deliverable
+      if (batteryDeliverable) {
+        if (battery === 'yes') {
+          batteryDeliverable.textContent = 'NFPA 855 Battery Clearance & Gateway Pathway Audit';
+          (batteryDeliverable.parentElement as HTMLElement).style.display = 'flex';
+        } else {
+          batteryDeliverable.textContent = 'Standard PV-Only Inverter & AC Disconnect Clearance';
+        }
+      }
+    }
+
+    typeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        typeButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        projectType = btn.getAttribute('data-type') || 'residential';
+        updateEstimation();
+      });
+    });
+
+    batteryRadios.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        const target = e.target as HTMLInputElement;
+        battery = target.value;
+        updateEstimation();
+      });
+    });
+
+    speedRadios.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        const target = e.target as HTMLInputElement;
+        speed = target.value;
+        updateEstimation();
+      });
+    });
+  }
+</script>
+
+<style>
+  .calculator-wrapper {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+  }
+
+  .calc-header {
+    margin-bottom: var(--space-8);
+    max-width: 680px;
+  }
+
+  .calc-title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+
+  .calc-subtitle {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+  }
+
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .toggle-button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    background-color: var(--bg-subtle);
+    padding: 0.35rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+  }
+
+  .toggle-btn {
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.625rem 0.5rem;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .toggle-btn.active {
+    background-color: #FFFFFF;
+    color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-medium);
+  }
+
+  .radio-pill-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .radio-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+    background-color: #FFFFFF;
+  }
+
+  .radio-pill:hover {
+    border-color: var(--accent-amber);
+  }
+
+  .radio-pill input {
+    accent-color: var(--accent-amber);
+  }
+
+  /* Results Column */
+  .calc-results {
+    background-color: #0F172A;
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .results-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #94A3B8;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .sla-metric-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .sla-metric-title {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: #CBD5E1;
+    margin-bottom: 0.25rem;
+  }
+
+  .sla-metric-val {
+    font-family: var(--font-heading);
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: #F59E0B;
+    line-height: 1.1;
+  }
+
+  .results-checklist-box {
+    margin-bottom: 1.5rem;
+  }
+
+  .checklist-heading {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #E2E8F0;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+
+  .results-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .results-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #CBD5E1;
+    line-height: 1.4;
+  }
+
+  .results-note {
+    font-size: 0.75rem;
+    color: #94A3B8;
+    text-align: center;
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 900px) {
+    .calc-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .radio-pill-group {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

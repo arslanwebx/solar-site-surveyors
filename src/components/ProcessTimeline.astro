@@ -1,0 +1,179 @@
+---
+const steps = [
+  {
+    stepNum: "01",
+    label: "PROJECT INTAKE",
+    title: "Submit Project & Requirements",
+    description: "Provide the property address, prelim CAD/proposal, utility bill, and specific survey scope (roof planes, electrical panel, battery storage, attic access) via our fast dispatch portal or API.",
+    specs: ["Address & Geo-coordinates", "Utility Bill & Meter ID", "Prelim Proposal / Layout", "Special Access Notes"],
+    badge: "1-Minute Dispatch"
+  },
+  {
+    stepNum: "02",
+    label: "DISPATCH & COORDINATION",
+    title: "Surveyor Matched & Scheduled",
+    description: "Our operations dispatch team immediately assigns a vetted local site surveyor equipped with certified safety gear, digital pitch gauges, multimeters, and drones. We confirm site access directly.",
+    specs: ["Vetted Field Network", "SLA Dispatch Notice", "Customer Access Coordination", "Safety & PPE Compliance"],
+    badge: "< 4hr Dispatch"
+  },
+  {
+    stepNum: "03",
+    label: "FIELD EXECUTION",
+    title: "Comprehensive Field Survey",
+    description: "The surveyor performs an exhaustive on-site audit: 36-photo standard, MSP dead-front busbar verification, rafter dimensions, pitch measurements, obstruction coordinates, and battery clearances.",
+    specs: ["36-Photo Geotagged Set", "MSP Dead-Front Inspection", "Rafter & Truss Measurement", "Obstruction Offsets (X/Y)"],
+    badge: "Strict QA Checklist"
+  },
+  {
+    stepNum: "04",
+    label: "QA & DELIVERY",
+    title: "CAD-Ready Package Delivered",
+    description: "Every photo, measurement, and electrical reading undergoes internal triple-check QA before release. Your engineering and drafting team receives an organized, categorized CAD-ready package.",
+    specs: ["One-Touch CAD Formatting", "Single-Line Diagram Ready", "Defect-Free Guarantee", "Cloud Storage / Webhook"],
+    badge: "48–72hr Turnaround"
+  }
+];
+---
+
+<div class="process-timeline-container">
+  <div class="timeline-grid">
+    {steps.map((step, index) => (
+      <div class="timeline-step card-technical tech-grid-border">
+        <div class="step-top-row">
+          <span class="step-number">{step.stepNum}</span>
+          <span class="badge-tech badge-amber">{step.badge}</span>
+        </div>
+        <div class="step-label-mono">{step.label}</div>
+        <h3 class="step-title">{step.title}</h3>
+        <p class="step-desc">{step.description}</p>
+        
+        <div class="step-specs-box">
+          <span class="specs-header">FIELD VERIFICATIONS:</span>
+          <ul class="specs-list">
+            {step.specs.map(spec => (
+              <li>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>{spec}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .process-timeline-container {
+    position: relative;
+    margin-top: var(--space-8);
+  }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    position: relative;
+  }
+
+  .timeline-step {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    position: relative;
+  }
+
+  .timeline-step:hover {
+    border-color: var(--accent-amber);
+    transform: translateY(-2px);
+  }
+
+  .step-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-3);
+  }
+
+  .step-number {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+  }
+
+  .step-label-mono {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-2);
+  }
+
+  .step-title {
+    font-size: 1.1875rem;
+    line-height: 1.25;
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+  }
+
+  .step-desc {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+    flex-grow: 1;
+  }
+
+  .step-specs-box {
+    background-color: var(--bg-subtle);
+    border-top: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3) var(--space-4);
+    margin-top: auto;
+  }
+
+  .specs-header {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.35rem;
+  }
+
+  .specs-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .specs-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8125rem;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  @media (max-width: 1024px) {
+    .timeline-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .timeline-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

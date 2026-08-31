@@ -1,0 +1,97 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  activeNav?: string;
+  canonical?: string;
+  ogImage?: string;
+  schemaType?: string;
+  schemaData?: Record<string, any>;
+}
+
+const {
+  title = 'SolarSite Co. | Solar Site Survey Coordination for EPCs & Contractors',
+  description = 'Nationwide solar site survey coordination platform for Solar EPCs, installers, dealers, and engineering teams. Standardized roof, electrical, and battery site surveys delivered in 48–72 hours.',
+  activeNav = '',
+  canonical = Astro.url.href,
+  ogImage = '/images/hero_surveyor_field.jpg',
+  schemaType = 'ProfessionalService',
+  schemaData = {}
+} = Astro.props;
+
+const siteUrl = 'https://solarsitesurveyors.com';
+const fullCanonicalUrl = canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`;
+const fullOgImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+const baseSchema = {
+  '@context': 'https://schema.org',
+  '@type': schemaType,
+  'name': 'SolarSite Co.',
+  'legalName': 'SolarSite Operations LLC',
+  'url': siteUrl,
+  'logo': `${siteUrl}/favicon.svg`,
+  'image': fullOgImageUrl,
+  'description': description,
+  'telephone': '+1-800-555-7878',
+  'email': 'dispatch@solarsitesurveyors.com',
+  'areaServed': 'United States',
+  'serviceType': [
+    'Solar Site Surveys',
+    'Residential Solar Site Survey',
+    'Commercial Solar Site Survey',
+    'Electrical Main Service Panel Survey',
+    'Battery Energy Storage Clearance Survey',
+    'Drone Photogrammetry Roof Inspection'
+  ],
+  'priceRange': '$$',
+  ...schemaData
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={fullCanonicalUrl} />
+
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0F172A" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={fullCanonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullOgImageUrl} />
+    <meta property="og:site_name" content="SolarSite Co." />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={fullCanonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullOgImageUrl} />
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- JSON-LD Structured Data Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
+  </head>
+  <body>
+    <Header activeNav={activeNav} />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

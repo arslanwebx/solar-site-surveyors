@@ -1,0 +1,1 @@
+import"./hoisted.BgrOq1MJ.js";const t=document.getElementById("contact-inquiry-form"),n=document.getElementById("inquiry-confirmation");t&&n&&t.addEventListener("submit",e=>{e.preventDefault(),t.style.display="none",n.style.display="block"});
