@@ -52,20 +52,14 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
       </div>
 
       <div class="cities-grid">
-        {top20TexasCities.map((city, index) => (
+        {top20TexasCities.map((city) => (
           <div class="city-card card-technical tech-grid-border" id={city.slug}>
-            <div class="city-card-header">
-              <div class="city-rank font-mono">{String(index + 1).padStart(2, '0')}</div>
-            </div>
-
             <h3 class="city-name">{city.name}</h3>
-            <div class="city-sub">{city.county} • {city.metro}</div>
-
             <p class="city-notes">{city.keyCoverageNotes}</p>
 
             <div class="city-card-cta">
               <a href={`/schedule?city=${city.slug}`} class="btn btn-outline btn-sm city-action-btn">
-                <span>Request Availability →</span>
+                <span>Explore</span>
               </a>
             </div>
           </div>
@@ -168,29 +162,10 @@ import { top20TexasCities, texasUtilityCoverage } from '../../data/texasCities';
     border-radius: var(--radius-md);
   }
 
-  .city-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--space-2);
-  }
-
-  .city-rank {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--accent-amber-dark);
-  }
-
   .city-name {
     font-size: 1.375rem;
-    margin-bottom: 0.2rem;
+    margin-bottom: var(--space-3);
     color: var(--text-primary);
-  }
-
-  .city-sub {
-    font-size: 0.8125rem;
-    color: var(--text-muted);
-    margin-bottom: var(--space-4);
   }
 
   .city-notes {

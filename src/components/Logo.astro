@@ -5,124 +5,29 @@ interface Props {
   class?: string;
 }
 
-const { isDark = false, height = 36, class: className = '' } = Astro.props;
-const roofColor = isDark ? '#FFFFFF' : '#0A2540';
-const sunColor = '#FFAE00';
-const pinColor = isDark ? '#FFFFFF' : '#0A2540';
-const pinHole = isDark ? '#0F172A' : '#FFFFFF';
-const textColor = isDark ? '#FFFFFF' : '#0A2540';
+const { isDark = false, height = 40, class: className = '' } = Astro.props;
+const logoSrc = isDark ? '/images/logo-white.png' : '/images/logo.png';
 ---
 
-<div class={`brand-logo-wrap ${isDark ? 'is-dark' : 'is-light'} ${className}`} style={`--logo-h: ${height}px;`}>
-  <!-- SVG Icon Symbol -->
-  <div class="logo-symbol-box">
-    <svg 
-      viewBox="0 0 130 84" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg"
-      class="logo-svg-mark"
-      aria-hidden="true"
-    >
-      <!-- Sun & Rays -->
-      <g class="sun-group">
-        <line x1="36" y1="6" x2="36" y2="13" stroke={sunColor} stroke-width="3.5" stroke-linecap="round"/>
-        <line x1="18" y1="14" x2="23" y2="19" stroke={sunColor} stroke-width="3.5" stroke-linecap="round"/>
-        <line x1="10" y1="32" x2="17" y2="32" stroke={sunColor} stroke-width="3.5" stroke-linecap="round"/>
-        <line x1="54" y1="14" x2="49" y2="19" stroke={sunColor} stroke-width="3.5" stroke-linecap="round"/>
-        <line x1="18" y1="50" x2="23" y2="45" stroke={sunColor} stroke-width="3.5" stroke-linecap="round"/>
-        <circle cx="36" cy="32" r="14" fill={sunColor}/>
-      </g>
-
-      <!-- Roof & Solar Panels -->
-      <g class="roof-group">
-        <!-- 3 Solar Panel Rows on Left Slope -->
-        <polygon points="70,32 58,43 45,43 57,32" fill={roofColor}/>
-        <polygon points="55,45 43,56 30,56 42,45" fill={roofColor}/>
-        <polygon points="40,58 28,69 15,69 27,58" fill={roofColor}/>
-
-        <!-- Roof Ridge Beams -->
-        <line x1="78" y1="30" x2="36" y2="69" stroke={roofColor} stroke-width="7.5" stroke-linecap="round"/>
-        <line x1="78" y1="30" x2="118" y2="68" stroke={roofColor} stroke-width="7.5" stroke-linecap="round"/>
-      </g>
-
-      <!-- Location Pin & Base -->
-      <g class="pin-group">
-        <ellipse cx="78" cy="74" rx="14" ry="4.5" fill={sunColor}/>
-        <path 
-          d="M78 40 C72.5 40 68 44.5 68 50 C68 57.5 78 68 78 68 C78 68 88 57.5 88 50 C88 44.5 83.5 40 78 40 Z" 
-          fill={pinColor}
-        />
-        <circle cx="78" cy="50" r="3.2" fill={pinHole}/>
-      </g>
-    </svg>
-  </div>
-
-  <!-- Crisp Semantic Text with Zero Clipping -->
-  <div class="logo-typography">
-    <span class="logo-solar">Solar</span>
-    <span class="logo-surveys">Site Surveys</span>
-  </div>
+<div class={`brand-logo-img-wrap ${className}`} style={`height: ${height}px; display: inline-flex; align-items: center; line-height: 0;`}>
+  <img 
+    src={logoSrc} 
+    alt="Solar Site Surveys" 
+    height={height}
+    style={`height: ${height}px; width: auto; max-width: 100%; object-fit: contain; display: block;`}
+    loading="eager"
+  />
 </div>
 
 <style>
-  .brand-logo-wrap {
+  .brand-logo-img-wrap {
     display: inline-flex;
     align-items: center;
-    gap: 0.65rem;
-    height: var(--logo-h, 36px);
     text-decoration: none;
     user-select: none;
-    vertical-align: middle;
   }
-
-  .logo-symbol-box {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-  }
-
-  .logo-svg-mark {
+  .brand-logo-img-wrap img {
     height: 100%;
     width: auto;
-    display: block;
-    overflow: visible;
-  }
-
-  .logo-typography {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.35rem;
-    white-space: nowrap;
-    line-height: 1;
-    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
-  }
-
-  .logo-solar {
-    font-size: calc(var(--logo-h, 36px) * 0.72);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: var(--text-color, #0A2540);
-  }
-
-  .logo-surveys {
-    font-size: calc(var(--logo-h, 36px) * 0.72);
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: var(--text-color, #0A2540);
-  }
-
-  .brand-logo-wrap.is-light {
-    --text-color: #0A2540;
-  }
-
-  .brand-logo-wrap.is-dark {
-    --text-color: #FFFFFF;
-  }
-
-  @media (max-width: 480px) {
-    .brand-logo-wrap {
-      gap: 0.45rem;
-    }
   }
 </style>
