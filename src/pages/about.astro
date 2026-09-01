@@ -5,59 +5,72 @@ import CTASection from '../components/CTASection.astro';
 
 <BaseLayout 
   title="About SolarSite Texas | Solar Field Operations & Survey Coordination"
-  description="Learn about SolarSite Texas, our field-to-desk engineering philosophy, our rigorous 36-photo quality assurance protocol, and how we help solar EPCs scale across Texas."
+  description="Learn about SolarSite Texas, our field-to-desk engineering philosophy, our rigorous quality assurance protocol, and how we help solar EPCs scale across Texas."
   activeNav="about"
 >
   <section class="section section-dark page-hero">
     <div class="container">
       <div class="page-hero-content">
         <h1 class="page-title">The Operational Bridge Between Field Reality & Solar Engineering</h1>
-        <p class="lead" style="color: #94A3B8; max-width: 820px;">
+        <p class="lead" style="color: #9FB3C8; max-width: 820px;">
           We founded SolarSite Texas to solve the single largest operational friction point in distributed solar execution: the costly gap between the physical roof/electrical panel and the engineering plan set.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Mission & Philosophy -->
+  <!-- Mission & Philosophy Section (Refined Luxury Layout) -->
   <section class="section">
     <div class="container">
-      <div class="grid-2" style="align-items: center;">
-        <div>
-          <h2>Why High-Volume Solar EPCs Rely on Us</h2>
-          <p class="lead" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+      <div class="about-main-grid">
+        <!-- Left Content Column -->
+        <div class="about-content-col">
+          <h2 class="about-heading">Why High-Volume Solar EPCs Rely on Us</h2>
+          <p class="lead about-lead">
             In solar project management, the site survey is not a routine task—it is the foundation upon which structural calculations, electrical single-line diagrams, utility interconnection requests, and municipal building permits depend.
           </p>
-          <p style="margin-bottom: 1.5rem;">
+          <p class="about-body">
             When a field surveyor misses a panel busbar rating, overlooks a cracked clay tile, or records an ambiguous obstruction offset, the downstream cost is severe: drafting revisions, delayed permits, and expensive installation-day truck rolls.
           </p>
-          <p>
-            We established a statewide, coordinated field network governed by strict SOPs, digital pitch verification, and our internal triple-check QA protocol to guarantee that every survey package delivered is immediately CAD-ready.
+          <p class="about-body">
+            We established a statewide, coordinated field network governed by strict SOPs, digital pitch verification, and internal desk QA to guarantee that every survey package delivered is immediately CAD-ready.
           </p>
+          
+          <div class="about-highlight-card">
+            <span class="highlight-bar"></span>
+            <p><strong>Core Objective:</strong> Eliminating drafting revisions, permit delays, and truck rolls before plan sets reach the engineering desk.</p>
+          </div>
         </div>
 
-        <div>
-          <div class="about-stats-card card-technical tech-grid-border">
-            <div class="stat-row">
-              <span class="stat-number font-mono">99.4%</span>
-              <div class="stat-text">
-                <strong>First-Pass QA Approval</strong>
-                <p>Every photo set is inspected by our desk before engineering release.</p>
-              </div>
+        <!-- Right Pillar Showcase Column (Qualitative & Professional) -->
+        <div class="about-stats-col">
+          <div class="pillar-card card-technical">
+            <div class="pillar-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#102A43" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <div class="stat-row">
-              <span class="stat-number font-mono">Real-Time</span>
-              <div class="stat-text">
-                <strong>Slot Availability & Scheduling</strong>
-                <p>Fast-track scheduling directly in your project market.</p>
-              </div>
+            <div class="pillar-info">
+              <h4 class="pillar-title">Pre-Drafting Desk Audit</h4>
+              <p class="pillar-desc">Every photo set and electrical reading is inspected by our desk before engineering release.</p>
             </div>
-            <div class="stat-row">
-              <span class="stat-number font-mono">&lt; 3%</span>
-              <div class="stat-text">
-                <strong>CAD Revision Rate</strong>
-                <p>Compared to the 22%–28% industry average for in-house teams.</p>
-              </div>
+          </div>
+
+          <div class="pillar-card card-technical">
+            <div class="pillar-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#102A43" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="pillar-info">
+              <h4 class="pillar-title">Flexible Dispatch & Scheduling</h4>
+              <p class="pillar-desc">Fast-track scheduling directly in your project market with zero internal fleet overhead.</p>
+            </div>
+          </div>
+
+          <div class="pillar-card card-technical">
+            <div class="pillar-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#102A43" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="pillar-info">
+              <h4 class="pillar-title">CAD-Ready Deliverable Integrity</h4>
+              <p class="pillar-desc">Standardized dimensional reports, high-res photos, and SLD parameters ready for direct AutoCAD import.</p>
             </div>
           </div>
         </div>
@@ -65,30 +78,30 @@ import CTASection from '../components/CTASection.astro';
     </div>
   </section>
 
-  <!-- The Triple-Check Quality Assurance Protocol -->
+  <!-- The Quality Assurance Protocol -->
   <section class="section section-warm">
     <div class="container">
       <div class="section-header center">
-        <h2>Our Triple-Check Quality Assurance Protocol</h2>
+        <h2>Our Quality Assurance Protocol</h2>
         <p class="lead">
           How we eliminate missing photos, unreadable busbars, and drafting surprises before release.
         </p>
       </div>
 
       <div class="grid-3" style="margin-top: var(--space-8);">
-        <div class="qa-step-card card-technical tech-grid-border">
+        <div class="qa-step-card card-technical">
           <div class="qa-step-num font-mono">STAGE 01</div>
           <h4>In-Field Checklist Validation</h4>
-          <p>Field surveyors cannot submit jobs without completing all 36 mandatory photo checkpoints, digital pitch readings, and MSP interior dead-front macros.</p>
+          <p>Field surveyors cannot submit jobs without completing all mandatory photo checkpoints, digital pitch readings, and MSP interior dead-front macros.</p>
         </div>
 
-        <div class="qa-step-card card-technical tech-grid-border">
+        <div class="qa-step-card card-technical">
           <div class="qa-step-num font-mono">STAGE 02</div>
           <h4>Engineering Desk Audit</h4>
           <p>Our internal technical review desk verifies photo clarity, validates the 120% busbar math, and checks rafter spans against IRC structural tables.</p>
         </div>
 
-        <div class="qa-step-card card-technical tech-grid-border">
+        <div class="qa-step-card card-technical">
           <div class="qa-step-num font-mono">STAGE 03</div>
           <h4>One-Touch CAD Packaging</h4>
           <p>Data is compiled into standardized dimensional reports, labeled photo directories, and SLD parameter sheets ready for direct AutoCAD or HelioScope import.</p>
@@ -121,47 +134,116 @@ import CTASection from '../components/CTASection.astro';
     margin-bottom: var(--space-4);
   }
 
-  .about-stats-card {
-    background-color: #FFFFFF;
-    padding: var(--space-8);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-  }
-
-  .stat-row {
-    display: flex;
+  /* About Main Section Grid */
+  .about-main-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: var(--space-12);
     align-items: center;
-    gap: 1.5rem;
-    padding-bottom: var(--space-4);
-    border-bottom: 1px solid var(--border-light);
   }
 
-  .stat-row:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+  .about-heading {
+    color: var(--h1-color, #102A43);
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
   }
 
-  .stat-number {
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: var(--accent-amber);
-    min-width: 110px;
+  .about-lead {
+    color: #334E68;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
   }
 
-  .stat-text strong {
-    display: block;
-    font-size: 1.0625rem;
-    color: var(--text-primary);
-    margin-bottom: 0.2rem;
+  .about-body {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
   }
 
-  .stat-text p {
-    font-size: 0.875rem;
-    line-height: 1.45;
+  .about-highlight-card {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .highlight-bar {
+    width: 4px;
+    background-color: var(--accent-gold);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .about-highlight-card p {
+    font-size: 0.9375rem;
+    color: var(--text-main);
+    line-height: 1.5;
     margin: 0;
   }
 
+  /* Pillar Showcase Column */
+  .about-stats-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .pillar-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+  }
+
+  .pillar-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .pillar-icon-wrap {
+    background-color: var(--bg-secondary);
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .pillar-info {
+    flex-grow: 1;
+  }
+
+  .pillar-title {
+    font-family: var(--font-heading);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+  }
+
+  .pillar-desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  /* QA Step Cards */
   .qa-step-card {
     background-color: #FFFFFF;
     padding: var(--space-8);
@@ -170,8 +252,9 @@ import CTASection from '../components/CTASection.astro';
   .qa-step-num {
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--accent-amber-dark);
+    color: var(--primary);
     margin-bottom: var(--space-3);
+    letter-spacing: 0.05em;
   }
 
   .qa-step-card h4 {
@@ -182,13 +265,22 @@ import CTASection from '../components/CTASection.astro';
   .qa-step-card p {
     font-size: 0.875rem;
     line-height: 1.55;
+    margin: 0;
   }
 
-  @media (max-width: 768px) {
-    .stat-row {
+  @media (max-width: 1024px) {
+    .about-main-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .pillar-card {
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.5rem;
+      gap: 0.75rem;
+      padding: 1.25rem;
     }
   }
 </style>

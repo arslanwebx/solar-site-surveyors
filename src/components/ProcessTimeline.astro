@@ -2,27 +2,27 @@
 const steps = [
   {
     stepNum: "01",
-    label: "PROJECT INTAKE",
-    title: "Submit Project & Requirements",
-    description: "Provide the property address, prelim CAD/proposal, utility bill, and specific survey scope (roof planes, electrical panel, battery storage, attic access) via our fast intake portal."
+    phase: "Project Intake",
+    title: "Submit Project & Scope",
+    description: "Provide the property address, proposal notes, utility bill, and specific survey scope (roof planes, electrical MSP, battery storage) via our streamlined intake."
   },
   {
     stepNum: "02",
-    label: "DISPATCH & COORDINATION",
+    phase: "Local Dispatch",
     title: "Surveyor Matched & Scheduled",
-    description: "Our operations dispatch team assigns a vetted local site surveyor equipped with certified safety gear, digital pitch gauges, multimeters, and drones, and confirms site access directly."
+    description: "Our operations team coordinates with a vetted local site surveyor equipped with certified safety gear, digital pitch gauges, and multimeters to confirm site access."
   },
   {
     stepNum: "03",
-    label: "FIELD EXECUTION",
+    phase: "Field Execution",
     title: "Comprehensive Field Survey",
-    description: "The surveyor performs an exhaustive on-site audit: 36-photo standard, MSP dead-front busbar verification, rafter dimensions, pitch measurements, obstruction coordinates, and battery clearances."
+    description: "The surveyor performs an exhaustive on-site audit: complete photo package, MSP dead-front busbar verification, rafter dimensions, pitch measurements, and battery clearances."
   },
   {
     stepNum: "04",
-    label: "QA & DELIVERY",
+    phase: "QA & Release",
     title: "CAD-Ready Package Delivered",
-    description: "Every photo, measurement, and electrical reading undergoes internal triple-check QA before release. Your engineering and drafting team receives an organized, CAD-ready package."
+    description: "Every photo, measurement, and electrical reading undergoes desk QA verification before release. Your engineering team receives an organized, CAD-ready package."
   }
 ];
 ---
@@ -30,10 +30,12 @@ const steps = [
 <div class="process-timeline-container">
   <div class="timeline-grid">
     {steps.map((step) => (
-      <div class="timeline-step card-technical tech-grid-border">
-        <div class="step-top-row">
-          <span class="step-number">{step.stepNum}</span>
-          <span class="step-label-mono">{step.label}</span>
+      <div class="timeline-step card-technical">
+        <div class="step-header">
+          <div class="step-number-badge">
+            <span class="badge-num font-mono">{step.stepNum}</span>
+          </div>
+          <span class="step-phase-tag">{step.phase}</span>
         </div>
         <h3 class="step-title">{step.title}</h3>
         <p class="step-desc">{step.description}</p>
@@ -52,66 +54,87 @@ const steps = [
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-6);
-    position: relative;
   }
 
   .timeline-step {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: var(--bg-surface);
-    border: 1px solid var(--border-medium);
-    border-radius: var(--radius-md);
-    padding: var(--space-8) var(--space-6);
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.75rem;
     position: relative;
-    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
   }
 
   .timeline-step:hover {
-    border-color: var(--accent-amber);
-    transform: translateY(-2px);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
   }
 
-  .step-top-row {
+  .step-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--space-4);
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--border-light);
   }
 
-  .step-number {
-    font-family: var(--font-heading);
-    font-size: 2.25rem;
+  .step-number-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .badge-num {
+    font-size: 0.9375rem;
     font-weight: 700;
-    color: var(--accent-amber-dark);
+    color: #FFFFFF;
     line-height: 1;
   }
 
-  .step-label-mono {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
+  .step-phase-tag {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
     font-weight: 600;
-    color: var(--text-muted);
-    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
   }
 
   .step-title {
-    font-size: 1.1875rem;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
     line-height: 1.3;
+    color: var(--primary);
     margin-bottom: var(--space-3);
-    color: var(--text-primary);
   }
 
   .step-desc {
+    font-family: var(--font-body);
     font-size: 0.9375rem;
     line-height: 1.6;
     color: var(--text-secondary);
-    margin-bottom: 0;
+    margin: 0;
+    flex-grow: 1;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1100px) {
     .timeline-grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
     }
   }
 

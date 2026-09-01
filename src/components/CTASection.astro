@@ -35,21 +35,6 @@ const {
           <span>{secondaryCtaText}</span>
         </a>
       </div>
-
-      <div class="cta-guarantees">
-        <div class="guarantee-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F4B942" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span>Triple-Check QA Guarantee</span>
-        </div>
-        <div class="guarantee-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F4B942" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <span>Real-Time Slot Availability</span>
-        </div>
-        <div class="guarantee-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F4B942" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>AutoCAD & HelioScope Ready</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -93,27 +78,8 @@ const {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: var(--space-10);
+    margin-bottom: 0;
     flex-wrap: wrap;
-  }
-
-  .cta-guarantees {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-8);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: var(--space-6);
-    flex-wrap: wrap;
-  }
-
-  .guarantee-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    color: #CBD2D9;
   }
 
   @media (max-width: 768px) {
@@ -122,11 +88,6 @@ const {
     }
     .cta-actions {
       flex-direction: column;
-    }
-    .cta-guarantees {
-      flex-direction: column;
-      gap: 0.75rem;
-      align-items: flex-start;
     }
   }
 </style>
