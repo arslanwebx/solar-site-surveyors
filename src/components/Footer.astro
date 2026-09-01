@@ -1,5 +1,8 @@
 ---
 import Logo from './Logo.astro';
+import { getWhatsAppLink } from '../data/whatsapp';
+
+const whatsappLink = getWhatsAppLink('Hi, I would like to inquire about solar site surveys and CAD designs in Texas.');
 ---
 
 <footer class="site-footer">
@@ -16,19 +19,52 @@ import Logo from './Logo.astro';
         </p>
       </div>
 
-      <!-- Column 2: Placeholder for future menu -->
+      <!-- Column 2: Navigation Links -->
       <div class="footer-col">
-        <!-- Ready for navigation items -->
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-links-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/service-areas">Service Areas</a></li>
+          <li><a href="/join-us">Join Our Network</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
       </div>
 
-      <!-- Column 3: Placeholder for future services -->
+      <!-- Column 3: Core Disciplines -->
       <div class="footer-col">
-        <!-- Ready for service items -->
+        <h4 class="footer-col-title">Core Services</h4>
+        <ul class="footer-links-list">
+          <li><a href="/services#site-surveys">Precision Solar Site Surveys</a></li>
+          <li><a href="/services#cad-designs">Permit-Ready CAD Designs</a></li>
+          <li><a href="/services#matrix">Deliverables Matrix</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/accessibility">Accessibility</a></li>
+        </ul>
       </div>
 
-      <!-- Column 4: Placeholder for future resources/contact -->
-      <div class="footer-col">
-        <!-- Ready for resource/contact items -->
+      <!-- Column 4: Operations & Contact Desk -->
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-title">Operations Desk</h4>
+        <div class="footer-contact-items">
+          <div class="contact-item">
+            <span class="contact-label">DIRECT PHONE</span>
+            <a href="tel:+16823960543" class="contact-link phone-link">+1 (682) 396-0543</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">WHATSAPP DISPATCH</span>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="contact-link whatsapp-link">
+              <span>+1 (682) 396-0543</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">OPERATING HOURS</span>
+            <span class="contact-text">Mon–Sat: 6:00 AM – 7:00 PM CST</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -51,7 +87,7 @@ import Logo from './Logo.astro';
 
   .footer-grid-4 {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    grid-template-columns: 1.4fr 0.9fr 1.1fr 1.2fr;
     gap: var(--space-8);
     padding-bottom: var(--space-12);
   }
@@ -76,6 +112,81 @@ import Logo from './Logo.astro';
     color: #9FB3C8;
     max-width: 380px;
     margin: 0;
+  }
+
+  .footer-col-title {
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links-list a {
+    color: #9FB3C8;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-links-list a:hover {
+    color: var(--accent-gold);
+  }
+
+  .footer-contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .contact-label {
+    font-family: var(--font-heading);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .contact-link {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color var(--transition-fast);
+  }
+
+  .contact-link:hover {
+    color: var(--accent-gold);
+  }
+
+  .contact-text {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    color: #9FB3C8;
+    line-height: 1.4;
   }
 
   .footer-bottom {
