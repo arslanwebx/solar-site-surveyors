@@ -1,90 +1,10 @@
 ---
-import Logo from './Logo.astro';
-
-const currentYear = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
-  <div class="container-wide">
-    <div class="footer-main-grid">
-      <!-- Company Brand Column -->
-      <div class="footer-brand-col">
-        <a href="/" class="footer-logo" aria-label="Solar Site Surveys Home">
-          <Logo isDark={true} height={60} />
-        </a>
-
-        <p class="footer-desc">
-          Statewide solar site survey coordination platform covering all Texas cities and counties. Standardized 36-photo packages, zero surveyor payroll overhead, and prompt CAD-ready deliverables.
-        </p>
-
-        <div class="footer-ops-status">
-          <div class="status-indicator">
-            <span class="status-dot"></span>
-            <span class="status-label">Texas Dispatch Status: Active Statewide</span>
-          </div>
-          <div class="status-meta">
-            <span>Scheduling: <strong>Real-Time Slot Availability</strong></span>
-            <span>Counties Covered: <strong>All 254 Texas Counties</strong></span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Links Column 1: Navigation -->
-      <div class="footer-links-col">
-        <h4 class="footer-heading">Navigation</h4>
-        <ul class="footer-links">
-          <li><a href="/service-areas">Service Areas (Top 20 Cities)</a></li>
-          <li><a href="/blog">Operations Blog</a></li>
-          <li><a href="/services">Our Services</a></li>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/contact">Contact Operations</a></li>
-          <li><a href="/join-us">Partner With Us</a></li>
-          <li><a href="/schedule">Schedule a Site Survey</a></li>
-        </ul>
-      </div>
-
-      <!-- Links Column 2: Texas Services -->
-      <div class="footer-links-col">
-        <h4 class="footer-heading">Our Services</h4>
-        <ul class="footer-links">
-          <li><a href="/services#roof">Roof & Structural Survey</a></li>
-          <li><a href="/services#electrical">Electrical & MSP 120% Rule</a></li>
-          <li><a href="/services#battery">Battery & Storage Clearances</a></li>
-          <li><a href="/services#commercial">Commercial C&I & Industrial</a></li>
-          <li><a href="/services#package">CAD-Ready Deliverable Spec</a></li>
-        </ul>
-      </div>
-
-      <!-- Links Column 3: Top Texas Metros -->
-      <div class="footer-links-col">
-        <h4 class="footer-heading">Top Texas Metros</h4>
-        <ul class="footer-links">
-          <li><a href="/service-areas#houston">Houston Area</a></li>
-          <li><a href="/service-areas#dallas">Dallas-Fort Worth</a></li>
-          <li><a href="/service-areas#san-antonio">San Antonio</a></li>
-          <li><a href="/service-areas#austin">Austin Metro</a></li>
-          <li><a href="/service-areas#el-paso">El Paso</a></li>
-          <li><a href="/service-areas#corpus-christi">Corpus Christi</a></li>
-          <li><a href="/service-areas">View All 20 Texas Cities →</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Footer Bottom Bar -->
-    <div class="footer-bottom">
-      <div class="footer-legal">
-        <p>© {currentYear} Solar Site Surveys. All rights reserved. Professional Solar Site Survey Coordination Platform.</p>
-        <div class="footer-legal-links">
-          <a href="/privacy">Privacy Policy</a>
-          <span class="dot">•</span>
-          <a href="/terms">Terms of Service</a>
-          <span class="dot">•</span>
-          <a href="/accessibility">Accessibility</a>
-        </div>
-      </div>
-      <div class="footer-tagline-right font-mono">
-        Field Operations & Survey Coordination
-      </div>
+  <div class="container">
+    <div class="footer-credits">
+      <p>© 2026 SolarSiteSurveyors.com | All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -93,151 +13,20 @@ const currentYear = new Date().getFullYear();
   .site-footer {
     background-color: var(--bg-dark);
     color: var(--text-light-muted);
-    padding-top: var(--space-16);
-    padding-bottom: var(--space-8);
+    padding: var(--space-8) var(--space-6);
     border-top: 1px solid var(--border-dark-subtle);
     margin-top: auto;
   }
 
-  .footer-main-grid {
-    display: grid;
-    grid-template-columns: 2.2fr 1fr 1.2fr 1.2fr;
-    gap: var(--space-10);
-    padding-bottom: var(--space-12);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  .footer-credits {
+    text-align: center;
   }
 
-  .footer-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    margin-bottom: var(--space-4);
-    line-height: 0;
-  }
-
-  .footer-desc {
-    font-size: 0.875rem;
-    line-height: 1.6;
-    color: var(--text-light-muted);
-    margin-bottom: var(--space-6);
-    max-width: 380px;
-  }
-
-  .footer-ops-status {
-    background-color: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-md);
-    padding: 0.875rem 1rem;
-    max-width: 380px;
-  }
-
-  .status-indicator {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: #FAFAF7;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-
-  .status-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    font-size: 0.75rem;
-    color: var(--text-light-muted);
-  }
-
-  .status-meta strong {
-    color: #FAFAF7;
-    font-family: var(--font-mono);
-  }
-
-  .footer-heading {
-    color: #FFFFFF;
-    font-family: var(--font-heading);
+  .footer-credits p {
+    font-family: var(--font-body);
     font-size: 0.9375rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    margin-bottom: var(--space-4);
-  }
-
-  .footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-  }
-
-  .footer-links a {
-    font-size: 0.875rem;
-    color: var(--text-light-muted);
-    transition: color var(--transition-fast);
-  }
-
-  .footer-links a:hover {
-    color: var(--accent-gold);
-  }
-
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: var(--space-8);
-    font-size: 0.8125rem;
-    color: var(--text-light-muted);
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-legal-links {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-top: 0.35rem;
-    flex-wrap: wrap;
-  }
-
-  .footer-legal-links a {
-    color: var(--text-light-muted);
-  }
-
-  .footer-legal-links a:hover {
-    color: #FFFFFF;
-  }
-
-  .dot {
-    color: rgba(255, 255, 255, 0.2);
-  }
-
-  .footer-tagline-right {
-    font-size: 0.75rem;
-    color: var(--text-light-muted);
-  }
-
-  @media (max-width: 1024px) {
-    .footer-main-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-8);
-    }
-    .footer-brand-col {
-      grid-column: span 2;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .footer-main-grid {
-      grid-template-columns: 1fr;
-      gap: var(--space-6);
-    }
-    .footer-brand-col {
-      grid-column: span 1;
-    }
-    .footer-bottom {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+    color: #9FB3C8;
+    margin: 0;
+    letter-spacing: 0.01em;
   }
 </style>
