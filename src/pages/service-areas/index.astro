@@ -2,10 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTASection from '../../components/CTASection.astro';
 import { allTexasCities } from '../../data/texasCities';
+import { getWhatsAppLink } from '../../data/whatsapp';
 
 // First 100 cities are pre-rendered statically for ultra-fast initial load & SEO
 const initialCities = allTexasCities.slice(0, 100);
 const remainingCities = allTexasCities.slice(100);
+const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedule a custom solar site survey in Texas.');
 ---
 
 <BaseLayout 
@@ -54,7 +56,12 @@ const remainingCities = allTexasCities.slice(100);
             <p class="city-notes">{city.keyCoverageNotes}</p>
 
             <div class="city-card-cta">
-              <a href={`/schedule?city=${city.slug}`} class="btn btn-city-explore">
+              <a 
+                href={getWhatsAppLink(`Hi, I would like to schedule a solar site survey in ${city.name}, Texas.`)} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-city-explore"
+              >
                 <span>Explore</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
@@ -72,7 +79,7 @@ const remainingCities = allTexasCities.slice(100);
       </div>
       
       <div id="no-cities-msg" class="no-results-box" style="display: none;">
-        <p>No Texas cities matching your search. We coordinate surveys across all 254 counties statewide—<a href="/schedule" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Schedule a Custom Survey</a>.</p>
+        <p>No Texas cities matching your search. We coordinate surveys across all 254 counties statewide—<a href={defaultCustomSurveyWhatsApp} target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Schedule a Custom Survey via WhatsApp</a>.</p>
       </div>
     </div>
   </section>
@@ -80,9 +87,8 @@ const remainingCities = allTexasCities.slice(100);
   <!-- Final CTA -->
   <CTASection 
     title="Need a Solar Site Survey Anywhere in Texas?"
-    subtitle="Submit your project address today to check real-time surveyor availability and see open time slots in your market."
+    subtitle="Contact our dispatch desk via WhatsApp to check real-time surveyor availability and coordinate your next survey."
     primaryCtaText="Schedule a Texas Survey"
-    primaryCtaLink="/schedule"
     secondaryCtaText="Join Our Texas Network"
     secondaryCtaLink="/join-us"
   />
@@ -98,17 +104,19 @@ const remainingCities = allTexasCities.slice(100);
   const searchInput = document.getElementById('city-search');
   const noResults = document.getElementById('no-cities-msg');
 
-  // Helper to create a city card DOM element
+  // Helper to create a city card DOM element with WhatsApp link
   function createCardElement(city) {
     const card = document.createElement('div');
     card.className = 'city-card card-technical';
     card.id = city.slug;
     card.setAttribute('data-name', city.name.toLowerCase());
+    const waText = encodeURIComponent('Hi, I would like to schedule a solar site survey in ' + city.name + ', Texas.');
+    const waUrl = 'https://wa.me/16823960543?text=' + waText;
     card.innerHTML = `
       <h3 class="city-name">${city.name}</h3>
       <p class="city-notes">${city.keyCoverageNotes}</p>
       <div class="city-card-cta">
-        <a href="/schedule?city=${city.slug}" class="btn btn-city-explore">
+        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-city-explore">
           <span>Explore</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>

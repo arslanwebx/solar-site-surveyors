@@ -1,4 +1,6 @@
 ---
+import { getWhatsAppLink } from '../data/whatsapp';
+
 interface Props {
   title?: string;
   subtitle?: string;
@@ -10,12 +12,14 @@ interface Props {
 
 const {
   title = "Ready to Eliminate Survey Bottlenecks from Your Solar Pipeline?",
-  subtitle = "Submit your project details today to request surveyor availability and see open time slots across Texas.",
+  subtitle = "Contact us today via WhatsApp to check real-time surveyor availability and coordinate your next Texas site survey.",
   primaryCtaText = "Schedule a Site Survey",
-  primaryCtaLink = "/schedule",
+  primaryCtaLink = getWhatsAppLink('Hi, I would like to schedule a solar site survey in Texas.'),
   secondaryCtaText = "Partner With Us",
   secondaryCtaLink = "/join-us"
 } = Astro.props;
+
+const isExternal = primaryCtaLink.startsWith('http');
 ---
 
 <section class="section section-dark cta-section">
@@ -27,7 +31,13 @@ const {
       </div>
 
       <div class="cta-actions">
-        <a href={primaryCtaLink} class="btn btn-primary btn-lg" style="background-color: var(--primary); border-color: var(--primary);">
+        <a 
+          href={primaryCtaLink} 
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          class="btn btn-primary btn-lg" 
+          style="background-color: var(--primary); border-color: var(--primary);"
+        >
           <span>{primaryCtaText}</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
