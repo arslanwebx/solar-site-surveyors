@@ -11,12 +11,12 @@ const { activeNav = '' } = Astro.props;
 <header class="site-header" id="site-header">
   <div class="header-main">
     <div class="container-wide header-inner">
-      <!-- Brand Logo -->
+      <!-- Brand Logo (Centered) -->
       <a href="/" class="brand-logo" aria-label="Solar Site Surveys Home">
-        <Logo isDark={false} height={58} />
+        <Logo isDark={false} height={52} />
       </a>
 
-      <!-- Desktop Navigation -->
+      <!-- Desktop Navigation (Centered) -->
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-list">
           <li>
@@ -37,7 +37,7 @@ const { activeNav = '' } = Astro.props;
         </ul>
       </nav>
 
-      <!-- Header Actions -->
+      <!-- Header Actions (Centered) -->
       <div class="header-actions">
         <a href="/join-us" class={`btn btn-outline btn-sm header-join-btn ${activeNav === 'join-us' ? 'active' : ''}`}>
           <span>Partner With Us</span>
@@ -158,45 +158,58 @@ const { activeNav = '' } = Astro.props;
   }
 
   .header-main {
-    padding: 0.85rem 0;
+    padding: 0.65rem 0;
+    display: flex;
+    align-items: center;
   }
 
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.25rem;
+    gap: 1.5rem;
+    min-height: 54px;
   }
 
-  /* Brand Logo */
+  /* Brand Logo - Perfectly Centered */
   .brand-logo {
     display: flex;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
     line-height: 0;
     flex-shrink: 0;
   }
 
-  /* Desktop Navigation */
+  /* Desktop Navigation - Perfectly Centered */
   .desktop-nav {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .nav-list {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
   }
 
   .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: var(--font-heading);
     font-size: 0.9375rem;
     font-weight: 600;
     color: var(--text-secondary);
-    padding: 0.5rem 0.85rem;
+    height: 38px;
+    padding: 0 0.9rem;
     border-radius: var(--radius-md);
+    line-height: 1;
     transition: color var(--transition-fast), background-color var(--transition-fast);
   }
 
@@ -211,23 +224,37 @@ const { activeNav = '' } = Astro.props;
     font-weight: 700;
   }
 
-  /* Header Actions */
+  /* Header Actions - Perfectly Centered & Uniform Heights */
   .header-actions {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 0.75rem;
   }
 
   .header-cta {
-    padding: 0.55rem 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    height: 38px;
+    padding: 0 1.15rem;
     font-size: 0.875rem;
+    line-height: 1;
     white-space: nowrap;
+    border-radius: var(--radius-md);
   }
 
   .header-join-btn {
-    padding: 0.55rem 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 1rem;
     font-size: 0.875rem;
+    line-height: 1;
     white-space: nowrap;
+    border-radius: var(--radius-md);
   }
 
   /* Mobile Toggle */
@@ -236,8 +263,8 @@ const { activeNav = '' } = Astro.props;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     background: transparent;
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
