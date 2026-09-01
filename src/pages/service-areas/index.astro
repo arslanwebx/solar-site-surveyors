@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTASection from '../../components/CTASection.astro';
-import { allTexasCities, texasUtilityCoverage } from '../../data/texasCities';
+import { allTexasCities } from '../../data/texasCities';
 ---
 
 <BaseLayout 
@@ -65,33 +65,6 @@ import { allTexasCities, texasUtilityCoverage } from '../../data/texasCities';
     </div>
   </section>
 
-  <!-- Texas Electric Grid & Utility Coverage Breakdown -->
-  <section class="section section-warm">
-    <div class="container">
-      <div class="section-header center">
-        <h2>Texas Utility & Grid Integration</h2>
-        <p class="lead">
-          Our surveyors are trained on the exact meter socket, disconnect, and labeling standards required across Texas electric territories.
-        </p>
-      </div>
-
-      <div class="grid-2" style="margin-top: var(--space-8);">
-        {texasUtilityCoverage.map(util => (
-          <div class="utility-card card-technical">
-            <div class="util-top">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#102A43" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              <h4>{util.name}</h4>
-            </div>
-            <div class="util-meta">
-              <div><strong>Territory:</strong> {util.territory}</div>
-              <div><strong>Grid Structure:</strong> {util.share}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- Final CTA -->
   <CTASection 
     title="Need a Solar Site Survey Anywhere in Texas?"
@@ -142,34 +115,6 @@ import { allTexasCities, texasUtilityCoverage } from '../../data/texasCities';
     color: #FFFFFF;
     font-size: clamp(2.25rem, 4vw, 3.25rem);
     margin-bottom: var(--space-4);
-  }
-
-  .texas-hero-stats {
-    display: flex;
-    gap: 1rem;
-    margin-top: var(--space-8);
-    flex-wrap: wrap;
-  }
-
-  .stat-pill {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: var(--radius-sm);
-    padding: 0.6rem 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .pill-num {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--accent-gold);
-  }
-
-  .pill-text {
-    font-size: 0.8125rem;
-    color: #CBD2D9;
   }
 
   /* Search Bar */
@@ -292,35 +237,6 @@ import { allTexasCities, texasUtilityCoverage } from '../../data/texasCities';
     margin-top: var(--space-6);
   }
 
-  /* Utility Grid */
-  .utility-card {
-    background-color: #FFFFFF;
-    padding: var(--space-6);
-  }
-
-  .util-top {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: var(--space-3);
-  }
-
-  .util-top h4 {
-    font-size: 1.1875rem;
-  }
-
-  .util-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-  }
-
-  .util-meta strong {
-    color: var(--text-main);
-  }
-
   @media (max-width: 1200px) {
     .cities-grid {
       grid-template-columns: repeat(3, 1fr);
@@ -334,7 +250,7 @@ import { allTexasCities, texasUtilityCoverage } from '../../data/texasCities';
   }
 
   @media (max-width: 600px) {
-    .cities-grid, .grid-2 {
+    .cities-grid {
       grid-template-columns: 1fr;
     }
   }
