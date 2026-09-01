@@ -377,18 +377,6 @@ const cadWhatsAppLink = getWhatsAppLink('Hi, I would like to inquire about solar
             </div>
           </div>
 
-          <!-- Software Compatibility Badges -->
-          <div class="software-compatibility-wrap">
-            <span class="deliverable-label">SUPPORTED CAD PLATFORMS:</span>
-            <div class="software-badges">
-              <span class="soft-badge">AutoCAD (.DWG)</span>
-              <span class="soft-badge">Vector PDF</span>
-              <span class="soft-badge">HelioScope</span>
-              <span class="soft-badge">Aurora Solar</span>
-              <span class="soft-badge">PVsyst</span>
-            </div>
-          </div>
-
           <div class="action-row">
             <a href={cadWhatsAppLink} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-md">
               <span>Request CAD Plan Sets</span>
@@ -1155,9 +1143,8 @@ const cadWhatsAppLink = getWhatsAppLink('Hi, I would like to inquire about solar
     color: var(--text-secondary);
   }
 
-  /* Deliverables & Software Tags */
-  .deliverables-badge-wrap,
-  .software-compatibility-wrap {
+  /* Deliverables Tags */
+  .deliverables-badge-wrap {
     background-color: #FFFFFF;
     border: 1px solid var(--border-light);
     border-radius: var(--radius-lg);
@@ -1177,15 +1164,13 @@ const cadWhatsAppLink = getWhatsAppLink('Hi, I would like to inquire about solar
     letter-spacing: 0.05em;
   }
 
-  .deliverable-tags,
-  .software-badges {
+  .deliverable-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
   }
 
-  .tag-item,
-  .soft-badge {
+  .tag-item {
     font-family: var(--font-heading);
     font-size: 0.8125rem;
     font-weight: 600;
