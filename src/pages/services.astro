@@ -1,320 +1,1064 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTASection from '../components/CTASection.astro';
+import { getWhatsAppLink } from '../data/whatsapp';
+
+const surveyWhatsAppLink = getWhatsAppLink('Hi, I would like to schedule a solar site survey in Texas.');
+const cadWhatsAppLink = getWhatsAppLink('Hi, I would like to inquire about solar CAD designs and permit plan sets.');
 ---
 
 <BaseLayout 
-  title="Solar Site Survey Services & Technical Deliverables | Solar Site Surveys"
-  description="Comprehensive field survey scopes for Solar EPCs: Roof geometry, electrical main service panels (MSP), battery storage clearances (NFPA 855), attic structural framing, and CAD deliverable packages."
+  title="Solar Site Survey & CAD Design Services | Solar Site Surveys"
+  description="Full-service solar solutions for EPCs & installers: Precision on-site solar & storage surveys and permit-ready solar CAD plan sets with fast 24-48h turnaround."
   activeNav="services"
 >
   <!-- Page Hero -->
-  <section class="section section-dark page-hero">
-    <div class="container">
-      <div class="page-hero-content">
-        <h1 class="page-title">Precision Field Survey Disciplines</h1>
-        <p class="lead" style="color: #9FB3C8; max-width: 820px;">
-          Standardized field verification protocols designed for zero-touch CAD drafting, PE structural stamps, and rapid AHJ permit approval. Every survey includes our certified comprehensive photo package.
+  <section class="section section-dark services-hero">
+    <div class="hero-glow-bg" aria-hidden="true"></div>
+    <div class="container relative-z">
+      <div class="hero-inner">
+        <div class="badge-pill">
+          <span class="badge-dot"></span>
+          <span class="badge-text">End-to-End Solar Engineering & Field Services</span>
+        </div>
+
+        <h1 class="services-hero-title">
+          Precision Field Surveys <br class="hidden-mobile" />
+          <span class="title-accent">& Permit-Ready CAD Designs</span>
+        </h1>
+
+        <p class="services-hero-lead">
+          From on-site roof geometry and electrical panel audits to zero-revision permit plan sets. We deliver the standardized technical data and engineering drawings Solar EPCs need for rapid AHJ approvals.
         </p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Service 1: Roof Survey -->
-  <section class="section" id="roof">
-    <div class="container">
-      <div class="service-detail-row">
-        <div class="service-text-side">
-          <h2>Roof Geometry & Structural Integrity Audit</h2>
-          <p class="lead">
-            Eliminating roof plane surprises, rafter discrepancies, and shingle condition liabilities before permit filing.
-          </p>
-          <p>
-            Our surveyors climb roofs (up to 12/12 pitch) with digital pitch gauges, calibrated measuring tapes, and safety harnesses to accurately map all azimuths, slope angles, structural spans, and millimeter-level obstruction offsets.
-          </p>
-
-          <div class="specs-box card-technical" style="margin-top: 1.5rem;">
-            <h4 class="specs-title">TECHNICAL FIELD CHECKPOINTS:</h4>
-            <ul class="specs-list-check">
-              <li><strong>Pitch & Azimuth Verification:</strong> Digital pitch gauge readings (degrees and X/12 rise) on every available roof plane with compass magnetic declination adjustment.</li>
-              <li><strong>Attic Structural Framing:</strong> Rafter/truss dimensions (e.g. 2x4, 2x6), on-center spacing (16" vs 24" O.C.), rafter span measurements, and structural tie conditions.</li>
-              <li><strong>Roof Material & Layers:</strong> Asphalt shingle (3-tab vs architectural), clay/concrete tile (S-tile, flat tile), standing seam metal, or flat membrane (TPO/EPDM). Layer count verified.</li>
-              <li><strong>Roof Condition Assessment:</strong> Granular loss, tile cracking, soft spots, ponding evidence, and estimated remaining lifespan (&lt;5 years flagged).</li>
-              <li><strong>Obstruction Mapping:</strong> Exact X/Y offsets from nearest ridge and eave for plumbing vents, attic turbines, skylights, chimneys, and satellite dishes.</li>
-              <li><strong>Shading & Clearances:</strong> Tree overhangs, horizon obstructions, and IFC fire code setbacks (36" ridge / 36" valley).</li>
-            </ul>
-          </div>
+        <!-- Quick Anchor Jump Bar -->
+        <div class="hero-quick-nav">
+          <a href="#site-surveys" class="quick-nav-btn">
+            <span class="quick-nav-num">01</span>
+            <span class="quick-nav-label">Site Surveys</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 13l5 5 5-5M12 4v14"/></svg>
+          </a>
+          <a href="#cad-designs" class="quick-nav-btn">
+            <span class="quick-nav-num">02</span>
+            <span class="quick-nav-label">CAD Designs</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 13l5 5 5-5M12 4v14"/></svg>
+          </a>
+          <a href="#matrix" class="quick-nav-link-subtle">
+            <span>View Deliverables Matrix ↓</span>
+          </a>
         </div>
 
-        <div class="service-image-side">
-          <div class="service-img-wrapper">
-            <img 
-              src="/images/roof_pitch_survey.webp" 
-              alt="Roof inspection and pitch measurement by solar site surveyor" 
-              width="1200" 
-              height="675" 
-              class="service-img"
-              loading="lazy"
-            />
+        <!-- Metric Badges Row -->
+        <div class="hero-metrics-bar">
+          <div class="metric-item">
+            <span class="metric-val">24-48h</span>
+            <span class="metric-desc">Standard Turnaround</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Service 2: Electrical Survey -->
-  <section class="section section-warm" id="electrical">
-    <div class="container">
-      <div class="service-detail-row reverse">
-        <div class="service-text-side">
-          <h2>Electrical Service & Interconnection Survey</h2>
-          <p class="lead">
-            Eliminating change orders through rigorous main service panel (MSP) interior audits.
-          </p>
-          <p>
-            Our surveyors remove panel dead-fronts (where safe) to document internal busbar ratings, main breaker ampacity, spare breaker slots, and conduit pathways—providing electrical drafters with the exact data needed for NEC 705.12 calculations.
-          </p>
-
-          <div class="specs-box card-technical" style="margin-top: 1.5rem;">
-            <h4 class="specs-title">ELECTRICAL AUDIT PARAMETERS:</h4>
-            <ul class="specs-list-check">
-              <li><strong>Main Service Panel (MSP):</strong> Manufacturer nameplate, model/catalog number, enclosure NEMA rating, and interior dead-front photograph.</li>
-              <li><strong>Busbar & Main Breaker:</strong> Busbar amp rating (e.g. 125A, 200A, 225A) and main breaker ampacity for 120% rule compliance.</li>
-              <li><strong>Interconnection Location:</strong> Assessment of opposite-end backfeed breaker slot availability, supply-side tap viability, or feeder tap box necessity.</li>
-              <li><strong>Utility Meter & Socket:</strong> Meter number, digital display, meter socket rating, lever bypass presence, and clearance from gas meters (&gt;36").</li>
-              <li><strong>Grounding & Subpanels:</strong> Grounding electrode conductor (GEC) path to ground rod or water pipe, plus existing subpanel loads.</li>
-            </ul>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">50+ Point</span>
+            <span class="metric-desc">Field Audit Checkpoints</span>
           </div>
-        </div>
-
-        <div class="service-image-side">
-          <div class="service-img-wrapper">
-            <img 
-              src="/images/electrical_panel_survey.webp" 
-              alt="Technician measuring and documenting electrical main service panel with multimeter" 
-              width="1200" 
-              height="675" 
-              class="service-img"
-              loading="lazy"
-            />
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">100%</span>
+            <span class="metric-desc">AHJ Permit Compliance</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">254</span>
+            <span class="metric-desc">Texas Counties Covered</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Service 3: Battery & Storage Survey -->
-  <section class="section" id="battery">
-    <div class="container">
-      <div class="service-detail-row">
-        <div class="service-text-side">
-          <h2>Battery & Energy Storage (ESS) Clearances</h2>
-          <p class="lead">
-            Ensuring NFPA 855 compliance and seamless microgrid gateway integration.
-          </p>
-          <p>
-            With solar-plus-storage surging, site surveys must account for strict separation distances from windows and doors, structural wall anchor capacity, and continuous conduit routing between the battery bank, system controller, and main panel.
-          </p>
-
-          <div class="specs-box card-technical" style="margin-top: 1.5rem;">
-            <h4 class="specs-title">STORAGE SURVEY CHECKPOINTS:</h4>
-            <ul class="specs-list-check">
-              <li><strong>NFPA 855 Spatial Boundaries:</strong> 3-foot minimum clearance verified from all operable windows, doors, and ventilation air intakes.</li>
-              <li><strong>System Controller / Gateway Location:</strong> Proposed mounting wall with floor-to-ceiling elevation measurements and working space clearances (NEC 110.26).</li>
-              <li><strong>Conduit Pathway & Run Length:</strong> Measured linear path and elevation changes between battery location and main service equipment.</li>
-              <li><strong>Wall Structure & Anchoring:</strong> Stud framing inspection (16" vs 24" O.C.), concrete foundation wall, or masonry support check.</li>
-              <li><strong>Critical Loads Subpanel:</strong> Inventory and photo directory of branch circuits targeted for backup islanding.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service-image-side">
-          <div class="service-img-wrapper">
-            <img 
-              src="/images/battery_storage_survey.webp" 
-              alt="Site surveyor inspecting battery storage gateway wall clearances" 
-              width="1200" 
-              height="675" 
-              class="service-img"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Service 4: Drone & Commercial C&I Survey -->
-  <section class="section section-warm" id="commercial">
-    <div class="container">
-      <div class="service-detail-row reverse">
-        <div class="service-text-side">
-          <h2>Commercial (C&I) & Drone Aerial Surveys</h2>
-          <p class="lead">
-            High-resolution aerial photogrammetry and 3-phase industrial electrical audits.
-          </p>
-          <p>
-            For commercial rooftops, carports, and complex residential estates, our FAA Part 107 certified remote pilots capture 4K photogrammetric point clouds and orthomosaic maps, while commercial electricians audit 208V/480V switchgear.
-          </p>
-
-          <div class="specs-box card-technical" style="margin-top: 1.5rem;">
-            <h4 class="specs-title">COMMERCIAL AUDIT CAPABILITIES:</h4>
-            <ul class="specs-list-check">
-              <li><strong>FAA Part 107 Drone Surveys:</strong> High-resolution 4K RGB orthomosaic maps, 3D point clouds, and thermal anomaly scans.</li>
-              <li><strong>3-Phase Electrical Switchboards:</strong> 120/208V and 277/480V main switchboard bus ratings, CT cabinets, and transformer nameplates.</li>
-              <li><strong>Flat Commercial Roofs:</strong> TPO, EPDM, Built-Up, and standing seam roof deck assessments for ballasted or penetrating racking.</li>
-              <li><strong>Structural Trusses & Decking:</strong> Open-web steel joist (OWSJ) and timber glulam truss measurements for PE structural calculations.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service-image-side">
-          <div class="service-img-wrapper">
-            <img 
-              src="/images/drone_site_inspection.webp" 
-              alt="Solar surveyor operating commercial drone on large rooftop array" 
-              width="1200" 
-              height="675" 
-              class="service-img"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DELIVERABLE SPECIFICATION & QA PROTOCOL -->
-  <section class="section" id="package">
+  <!-- DUAL SERVICE PREVIEW OVERVIEW -->
+  <section class="section section-warm services-overview-section">
     <div class="container">
       <div class="section-header center">
-        <h2>Standardized CAD Deliverables Package</h2>
+        <div class="sub-badge">CORE CAPABILITIES</div>
+        <h2>Two Dedicated Engineering Disciplines</h2>
         <p class="lead">
-          Every site survey request compiles into an organized, cloud-hosted engineering package ready for your drafting software.
+          Choose standalone field surveys, custom CAD drafting, or our integrated survey-to-permit turnkey pipeline.
         </p>
       </div>
 
-      <div class="grid-3" style="margin-top: var(--space-8);">
-        <div class="package-item card-technical">
-          <div class="package-num font-mono">01</div>
-          <h4>Structured Photo Directory</h4>
-          <p>High-resolution photos organized by elevation, roof planes, attic framing, MSP dead-front, meter socket, and utility clearances.</p>
+      <div class="dual-service-grid">
+        <!-- Service 1 Card -->
+        <div class="service-spotlight-card card-technical">
+          <div class="spotlight-header">
+            <div class="spotlight-badge font-mono">SERVICE 01</div>
+            <span class="spotlight-tag field-tag">FIELD VERIFICATION</span>
+          </div>
+          <h3 class="spotlight-title">Precision Solar Site Surveys</h3>
+          <p class="spotlight-desc">
+            Standardized on-site data collection eliminating change orders. Full roof pitch mapping, attic structural analysis, MSP dead-front audits, and NFPA 855 battery clearances.
+          </p>
+          <ul class="spotlight-features">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Digital pitch gauge & obstruction offset mapping</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Main electrical panel (MSP) interior dead-front audit</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Attic rafter/truss structural dimensions & spans</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>50+ 4K categorized photo directory & cloud package</span>
+            </li>
+          </ul>
+          <div class="spotlight-footer">
+            <a href="#site-surveys" class="btn btn-primary btn-md w-100">
+              <span>Explore Site Surveys</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
 
-        <div class="package-item card-technical">
-          <div class="package-num font-mono">02</div>
-          <h4>One-Sheet Dimensional Audit</h4>
-          <p>Standardized PDF summary with verified roof pitch degrees, rafter spans, busbar ampacity, and obstruction coordinates.</p>
-        </div>
-
-        <div class="package-item card-technical">
-          <div class="package-num font-mono">03</div>
-          <h4>CAD-Ready Parameter Sheet</h4>
-          <p>Clean single-line diagram (SLD) electrical data and roof facet azimuths formatted for direct import into AutoCAD or HelioScope.</p>
+        <!-- Service 2 Card -->
+        <div class="service-spotlight-card card-technical">
+          <div class="spotlight-header">
+            <div class="spotlight-badge font-mono">SERVICE 02</div>
+            <span class="spotlight-tag cad-tag">ENGINEERING & PERMITTING</span>
+          </div>
+          <h3 class="spotlight-title">Permit-Ready CAD Designs</h3>
+          <p class="spotlight-desc">
+            Complete architectural and electrical drawing packages tailored to your AHJ requirements. Single-line diagrams, string sizing, structural load stamps, and utility submittals.
+          </p>
+          <ul class="spotlight-features">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Full solar PV & ESS permit plan sets (.DWG & .PDF)</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Single-line (SLD) & three-line electrical diagrams</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>NEC 705.12, NEC 690, & NFPA 855 code compliance</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>PE structural & electrical stamp-ready packages</span>
+            </li>
+          </ul>
+          <div class="spotlight-footer">
+            <a href="#cad-designs" class="btn btn-primary btn-md w-100">
+              <span>Explore CAD Designs</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- =========================================================================
+       SERVICE 01 DEEP DIVE: PRECISION SOLAR SITE SURVEYS
+       ========================================================================= -->
+  <section class="section service-deep-dive" id="site-surveys">
+    <div class="container">
+      <!-- Section Tag Header -->
+      <div class="discipline-banner">
+        <div class="discipline-tag-wrap">
+          <span class="discipline-num font-mono">01</span>
+          <span class="discipline-pill">FIELD DISCIPLINE</span>
+        </div>
+        <div class="discipline-heading-group">
+          <h2>Precision Solar Site Surveys</h2>
+          <p class="lead">
+            Comprehensive on-site physical auditing engineered to feed zero-touch drafting and eliminate costly field surprises before installation day.
+          </p>
+        </div>
+      </div>
+
+      <!-- Main Visual & Summary Row -->
+      <div class="deep-dive-grid">
+        <div class="deep-dive-media">
+          <div class="media-frame">
+            <img 
+              src="/images/roof_pitch_survey.webp" 
+              alt="Certified solar surveyor measuring roof pitch and rafter dimensions with digital pitch gauge" 
+              width="1200" 
+              height="675" 
+              class="frame-img"
+              loading="lazy"
+            />
+            <div class="media-floating-badge badge-top-left">
+              <span class="badge-dot-green"></span>
+              <span>50+ Photo Verification Directory</span>
+            </div>
+            <div class="media-floating-badge badge-bottom-right">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span>Zero-Touch CAD Ready</span>
+            </div>
+          </div>
+
+          <!-- Secondary Image Grid for Site Survey Context -->
+          <div class="sub-media-grid">
+            <div class="sub-media-card">
+              <img 
+                src="/images/electrical_panel_survey.webp" 
+                alt="Electrical main service panel interior audit with dead-front removed" 
+                width="600" 
+                height="338" 
+                loading="lazy"
+              />
+              <span class="sub-media-label">MSP Dead-Front Audit</span>
+            </div>
+            <div class="sub-media-card">
+              <img 
+                src="/images/battery_storage_survey.webp" 
+                alt="Battery storage gateway clearances and NFPA 855 setback verification" 
+                width="600" 
+                height="338" 
+                loading="lazy"
+              />
+              <span class="sub-media-label">Battery & ESS Clearances</span>
+            </div>
+            <div class="sub-media-card">
+              <img 
+                src="/images/drone_site_inspection.webp" 
+                alt="Drone aerial photogrammetry for commercial rooftop solar survey" 
+                width="600" 
+                height="338" 
+                loading="lazy"
+              />
+              <span class="sub-media-label">Aerial Photogrammetry</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="deep-dive-content">
+          <div class="technical-summary-box">
+            <h3 class="box-title">What Every Field Survey Covers</h3>
+            <p>
+              Our trained Texas surveyors follow standardized field verification protocols. We climb roofs up to 12/12 pitch, remove electrical panel dead-fronts, enter attics, and document every obstruction with millimeter precision.
+            </p>
+          </div>
+
+          <!-- 4 Core Checkpoint Cards -->
+          <div class="checkpoints-stack">
+            <!-- Checkpoint 1 -->
+            <div class="checkpoint-item card-technical">
+              <div class="checkpoint-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#102A43" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <div class="checkpoint-body">
+                <h4>Roof Geometry & Structural Integrity</h4>
+                <p>
+                  Digital pitch gauge verification on all roof planes, azimuth degrees, rafter/truss dimensions (2x4, 2x6), on-center spacing (16" vs 24" O.C.), roofing material layer audit, and remaining shingle lifespan.
+                </p>
+              </div>
+            </div>
+
+            <!-- Checkpoint 2 -->
+            <div class="checkpoint-item card-technical">
+              <div class="checkpoint-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#102A43" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+              </div>
+              <div class="checkpoint-body">
+                <h4>Electrical Main Service Panel (MSP) Audit</h4>
+                <p>
+                  Interior dead-front removal to photograph busbar rating, main breaker ampacity (NEC 705.12 120% rule), spare breaker slots, utility meter rating, lever bypass, and Grounding Electrode Conductor (GEC) paths.
+                </p>
+              </div>
+            </div>
+
+            <!-- Checkpoint 3 -->
+            <div class="checkpoint-item card-technical">
+              <div class="checkpoint-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#102A43" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><line x1="6" y1="11" x2="6" y2="11"/><line x1="10" y1="11" x2="10" y2="11"/><line x1="14" y1="11" x2="14" y2="11"/><line x1="18" y1="11" x2="18" y2="11"/></svg>
+              </div>
+              <div class="checkpoint-body">
+                <h4>Battery & Energy Storage (NFPA 855)</h4>
+                <p>
+                  3-foot setback verification from operable doors and windows, system controller/gateway wall mounting elevations, conduit run measurements, and backup subpanel critical load mapping.
+                </p>
+              </div>
+            </div>
+
+            <!-- Checkpoint 4 -->
+            <div class="checkpoint-item card-technical">
+              <div class="checkpoint-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#102A43" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <div class="checkpoint-body">
+                <h4>Obstruction Mapping & Aerial Photogrammetry</h4>
+                <p>
+                  X/Y offset coordinates for plumbing vents, attic turbines, skylights, chimneys, and tree overhangs. Optional FAA Part 107 drone orthomosaic maps for large estates and commercial roofs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deliverables Pill Row -->
+          <div class="deliverables-badge-wrap">
+            <span class="deliverable-label font-mono">DELIVERABLES INCLUDED:</span>
+            <div class="deliverable-tags">
+              <span class="tag-item">50+ Categorized 4K Photos</span>
+              <span class="tag-item">One-Sheet Dimensional PDF</span>
+              <span class="tag-item">SLD Electrical Parameter Sheet</span>
+              <span class="tag-item">Cloud Drive Link (24-48h)</span>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <a href={surveyWhatsAppLink} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-md">
+              <span>Schedule a Texas Site Survey</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/join-us" class="btn btn-outline btn-md">
+              <span>Partner Your Field Team</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SERVICE 02 DEEP DIVE: PERMIT-READY CAD DESIGNS
+       ========================================================================= -->
+  <section class="section section-warm service-deep-dive" id="cad-designs">
+    <div class="container">
+      <!-- Section Tag Header -->
+      <div class="discipline-banner">
+        <div class="discipline-tag-wrap">
+          <span class="discipline-num font-mono">02</span>
+          <span class="discipline-pill cad-pill">ENGINEERING DISCIPLINE</span>
+        </div>
+        <div class="discipline-heading-group">
+          <h2>Permit-Ready CAD Designs & Plan Sets</h2>
+          <p class="lead">
+            Full-scope solar PV and energy storage drafting built to local Texas AHJ standards, utility interconnection guidelines, and National Electrical Code (NEC).
+          </p>
+        </div>
+      </div>
+
+      <!-- Main Visual & Summary Row (Reversed Layout) -->
+      <div class="deep-dive-grid reverse">
+        <div class="deep-dive-content">
+          <div class="technical-summary-box">
+            <h3 class="box-title">Complete Permit Submittal Engineering</h3>
+            <p>
+              Our drafting team converts raw survey dimensions, site photos, and equipment specifications into clean, code-compliant permit packages ready for direct submission to city building departments and utilities.
+            </p>
+          </div>
+
+          <!-- 4 Core Engineering Checkpoint Cards -->
+          <div class="checkpoints-stack">
+            <!-- CAD Checkpoint 1 -->
+            <div class="checkpoint-item card-technical">
+              <div class="checkpoint-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></polygon></svg>
+              </div>
+              <div class="checkpoint-body">
+                <h4>Architectural & Structural Roof Plan Sets</h4>
+                <p>
+                  Optimized module array placement, IFC fire code setbacks (36" ridge/valley paths), roof attachment details, rafter span structural analysis, and ASCE 7-16/7-22 wind & snow load ratings.
+                </p>
+              </div>
+            </div>
+
+            <!-- CAD Checkpoint 2 -->
+            <div class="checkpoint-item card-technical">
+              <div class="checkpoint-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </div>
+              <div class="checkpoint-body">
+                <h4>Single-Line (SLD) & 3-Line Electrical Schematics</h4>
+                <p>
+                  String sizing calculations, conductor wire gauge & conduit schedules, OCPD sizing, voltage drop calculations (&lt;2%), NEC 690 Rapid Shutdown (RSD), and NEC 705.12 120% rule calculations.
+                </p>
+              </div>
+            </div>
+
+            <!-- CAD Checkpoint 3 -->
+            <div class="checkpoint-item card-technical">
+              <div class="checkpoint-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+              </div>
+              <div class="checkpoint-body">
+                <h4>Battery & Microgrid Storage Engineering</h4>
+                <p>
+                  Whole-home and partial-home backup transfer switches (ATS/Gateway), smart load centers, emergency power off (EPO) disconnects, and NFPA 855 ventilation & spatial compliance details.
+                </p>
+              </div>
+            </div>
+
+            <!-- CAD Checkpoint 4 -->
+            <div class="checkpoint-item card-technical">
+              <div class="checkpoint-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <div class="checkpoint-body">
+                <h4>AHJ Submittal & Placard Warning Schedules</h4>
+                <p>
+                  Custom contractor title blocks, city-specific code notes, full equipment spec cut sheets, NEC warning placard directories, and Professional Engineer (PE) structural/electrical stamp readiness.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Software Compatibility Badges -->
+          <div class="software-compatibility-wrap">
+            <span class="deliverable-label font-mono">SUPPORTED CAD PLATFORMS:</span>
+            <div class="software-badges">
+              <span class="soft-badge">AutoCAD (.DWG)</span>
+              <span class="soft-badge">Vector PDF</span>
+              <span class="soft-badge">HelioScope</span>
+              <span class="soft-badge">Aurora Solar</span>
+              <span class="soft-badge">PVsyst</span>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <a href={cadWhatsAppLink} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-md">
+              <span>Request CAD Plan Sets</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/contact" class="btn btn-outline btn-md">
+              <span>Submit Project Requirements</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="deep-dive-media">
+          <div class="media-frame">
+            <img 
+              src="/images/solar_cad_designs.webp" 
+              alt="High-precision solar CAD permit drawing set, single-line electrical schematic, and structural roof plan" 
+              width="1200" 
+              height="675" 
+              class="frame-img"
+              loading="lazy"
+            />
+            <div class="media-floating-badge badge-top-left">
+              <span class="badge-dot-sky"></span>
+              <span>Permit-Ready Engineering Plan Sets</span>
+            </div>
+            <div class="media-floating-badge badge-bottom-right">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>100% AHJ Approval Guarantee</span>
+            </div>
+          </div>
+
+          <!-- CAD Highlights Mini Grid -->
+          <div class="cad-highlights-grid">
+            <div class="cad-mini-card">
+              <span class="cad-mini-num font-mono">01</span>
+              <h5>24-48 Hr Drafting</h5>
+              <p>Rapid turnarounds to keep your project pipeline moving without permitting bottlenecks.</p>
+            </div>
+            <div class="cad-mini-card">
+              <span class="cad-mini-num font-mono">02</span>
+              <h5>PE Stamp Ready</h5>
+              <p>Structured for immediate Professional Engineer (PE) structural & electrical endorsement.</p>
+            </div>
+            <div class="cad-mini-card">
+              <span class="cad-mini-num font-mono">03</span>
+              <h5>Revisions Covered</h5>
+              <p>Free AHJ revision support to ensure your permits cross the finish line every time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION: DELIVERABLES MATRIX & COMPARISON
+       ========================================================================= -->
+  <section class="section" id="matrix">
+    <div class="container">
+      <div class="section-header center">
+        <div class="sub-badge">TECHNICAL SPECIFICATIONS</div>
+        <h2>Deliverables & Scope Comparison</h2>
+        <p class="lead">
+          Compare outputs, supported systems, formats, and quality assurance protocols between our two core services.
+        </p>
+      </div>
+
+      <div class="matrix-table-container card-technical">
+        <table class="specs-table comparison-table">
+          <thead>
+            <tr>
+              <th style="width: 26%;">SPECIFICATION</th>
+              <th style="width: 37%;">SERVICE 01: SITE SURVEYS</th>
+              <th style="width: 37%;">SERVICE 02: CAD DESIGNS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="spec-name font-mono">Primary Focus</td>
+              <td>On-site physical inspection, roof pitch measurements, attic framing, and MSP interior audit.</td>
+              <td>Full architectural & electrical permit drawing sets, string sizing, and AHJ submittals.</td>
+            </tr>
+            <tr>
+              <td class="spec-name font-mono">Core Deliverables</td>
+              <td>
+                <ul class="matrix-list">
+                  <li>50+ Categorized high-res 4K photos</li>
+                  <li>One-sheet dimensional PDF audit</li>
+                  <li>SLD parameter & obstruction sheet</li>
+                </ul>
+              </td>
+              <td>
+                <ul class="matrix-list">
+                  <li>Full permit-ready drawing set (.PDF)</li>
+                  <li>Editable source CAD files (.DWG)</li>
+                  <li>Cut sheets & placard warning schedules</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="spec-name font-mono">Turnaround Time</td>
+              <td><strong>24 to 48 Hours</strong> from on-site visit completion</td>
+              <td><strong>24 to 48 Hours</strong> from survey data intake</td>
+            </tr>
+            <tr>
+              <td class="spec-name font-mono">Code Compliance</td>
+              <td>NEC 110.26 (Clearances), NFPA 855 (Storage), IFC 36" fire setbacks verification.</td>
+              <td>NEC 690 / 705.12, ASCE 7-16/22 structural loads, AHJ & utility interconnection standards.</td>
+            </tr>
+            <tr>
+              <td class="spec-name font-mono">Supported Systems</td>
+              <td>Residential Rooftop, Ground Mounts, Commercial C&I, Battery Storage (ESS), Carports.</td>
+              <td>Enphase, SolarEdge, Tesla Powerwall, FranklinWH, Sol-Ark, SMA, Canadian Solar, and more.</td>
+            </tr>
+            <tr>
+              <td class="spec-name font-mono">Quality Assurance</td>
+              <td>Multi-point internal desk QA before dispatch delivery.</td>
+              <td>Dual-tier drafting QA with 100% AHJ revision support guarantee.</td>
+            </tr>
+            <tr>
+              <td class="spec-name font-mono">Delivery Format</td>
+              <td>Secure cloud storage folder (Dropbox / Google Drive / API).</td>
+              <td>Printable vector PDF, layered AutoCAD .DWG, and calculation reports.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION: THE INTEGRATED 4-STEP PIPELINE
+       ========================================================================= -->
+  <section class="section section-dark pipeline-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="sub-badge badge-gold">SEAMLESS INTEGRATION</div>
+        <h2 style="color: #FFFFFF;">How Surveys & CAD Operate Together</h2>
+        <p class="lead" style="color: #9FB3C8;">
+          Connect your sales team directly to permit submittals with our unified Texas field-to-drafting pipeline.
+        </p>
+      </div>
+
+      <div class="pipeline-grid">
+        <!-- Step 1 -->
+        <div class="pipeline-card">
+          <div class="pipeline-number font-mono">STEP 01</div>
+          <h4>Project Dispatch</h4>
+          <p>Submit your address and customer details via our portal or WhatsApp. We assign a certified local surveyor within minutes.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="pipeline-card">
+          <div class="pipeline-number font-mono">STEP 02</div>
+          <h4>On-Site Field Audit</h4>
+          <p>Our surveyor captures roof pitch, rafter spans, electrical MSP dead-front, battery clearances, and 50+ 4K photos.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="pipeline-card">
+          <div class="pipeline-number font-mono">STEP 03</div>
+          <h4>Engineering & CAD</h4>
+          <p>Survey data automatically flows into our drafting team to produce code-compliant structural and electrical plan sets.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="pipeline-card">
+          <div class="pipeline-number font-mono">STEP 04</div>
+          <h4>Permit Submittal</h4>
+          <p>You receive the complete, stamped-ready permit package within 24-48 hours, ready for instant AHJ & utility approval.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION: FREQUENTLY ASKED QUESTIONS (FAQ)
+       ========================================================================= -->
+  <section class="section section-warm faq-section">
+    <div class="container-narrow">
+      <div class="section-header center">
+        <div class="sub-badge">GOT QUESTIONS?</div>
+        <h2>Frequently Asked Questions</h2>
+        <p class="lead">
+          Everything you need to know about our field site surveys and CAD permit drafting services.
+        </p>
+      </div>
+
+      <div class="faq-accordion">
+        <details class="faq-item card-technical" open>
+          <summary class="faq-question">
+            <span>Can I order Site Surveys and CAD Designs separately?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Yes! You can order <strong>standalone Site Surveys</strong> if you have an in-house drafting team, or send us your existing survey data to draft <strong>standalone CAD Plan Sets</strong>. Alternatively, our bundled Survey + CAD package provides the fastest zero-touch turnaround from field inspection to permit filing.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item card-technical">
+          <summary class="faq-question">
+            <span>What is the standard turnaround time for each service?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              <strong>Site Surveys:</strong> Survey packages (photos, dimensional reports, SLD sheets) are compiled, QA-checked, and uploaded within <strong>24 to 48 hours</strong> of field visit completion.<br />
+              <strong>CAD Designs:</strong> Full permit plan sets are typically delivered within <strong>24 to 48 hours</strong> of receiving verified site dimensions. Rush 24-hour turnaround options are also available.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item card-technical">
+          <summary class="faq-question">
+            <span>What happens if an AHJ requests revisions on a CAD Plan Set?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              We provide <strong>100% free revision support</strong> on all CAD plan sets for any AHJ comments or jurisdiction-specific requests. Our engineering team modifies the drawings immediately to ensure your permit is approved without extra costs or delays.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item card-technical">
+          <summary class="faq-question">
+            <span>Do your CAD drawings support Professional Engineer (PE) Stamps?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Yes. All CAD plan sets are drafted in full compliance with ASCE structural loads and NEC electrical standards, ready for immediate review and stamping by your licensed Texas Professional Engineer (PE), or we can coordinate PE structural and electrical stamps upon request.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item card-technical">
+          <summary class="faq-question">
+            <span>What geographic areas do you cover for field site surveys?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Our field site survey network coordinates verified surveyors across <strong>all 254 Texas counties</strong>, including Houston, Dallas-Fort Worth, Austin, San Antonio, El Paso, Rio Grande Valley, Lubbock, Amarillo, and surrounding submarkets. CAD design services are available nationwide.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
   <CTASection 
-    title="Ready to Request a Texas Solar Site Survey?"
-    subtitle="Contact our operations desk via WhatsApp to check real-time surveyor availability and coordinate your next Texas site survey."
-    primaryCtaText="Schedule a Texas Survey"
-    secondaryCtaText="Join Our Texas Network"
-    secondaryCtaLink="/join-us"
+    title="Ready to Request a Site Survey or CAD Plan Set?"
+    subtitle="Connect directly with our Texas operations and engineering desk via WhatsApp for instant scheduling and plan set requests."
+    primaryCtaText="Request a Texas Survey"
+    secondaryCtaText="Inquire for CAD Designs"
+    secondaryCtaLink="/contact"
   />
 </BaseLayout>
 
 <style>
-  .page-hero {
-    padding-top: var(--space-16);
-    padding-bottom: var(--space-16);
+  /* ==========================================================================
+     SERVICES PAGE LUXURY ARCHITECTURAL STYLES
+     ========================================================================== */
+
+  .relative-z {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Page Hero */
+  .services-hero {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+    position: relative;
+    overflow: hidden;
+    background-color: var(--primary);
     border-bottom: 1px solid var(--border-dark-subtle);
   }
 
-  .page-title {
-    color: #FFFFFF;
-    font-size: clamp(2.25rem, 4vw, 3.25rem);
-    margin-bottom: var(--space-4);
+  .hero-glow-bg {
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(244, 185, 66, 0.12) 0%, rgba(16, 42, 67, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
   }
 
-  .service-detail-row {
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    gap: var(--space-12);
+  .hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
 
-  .service-detail-row.reverse {
-    grid-template-columns: 1fr 1.15fr;
+  .badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.95rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-6);
   }
 
-  .service-detail-row.reverse .service-text-side {
-    order: 2;
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-gold);
+    box-shadow: 0 0 8px var(--accent-gold);
   }
 
-  .service-detail-row.reverse .service-image-side {
-    order: 1;
-  }
-
-  .service-text-side h2 {
-    margin-bottom: var(--space-3);
-    font-size: clamp(1.875rem, 3vw, 2.5rem);
-  }
-
-  .specs-box {
-    background-color: #FFFFFF;
-    padding: var(--space-6);
-  }
-
-  .specs-title {
+  .badge-text {
     font-family: var(--font-heading);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #FAFAF7;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .services-hero-title {
+    color: #FFFFFF !important;
+    font-size: clamp(2.4rem, 5vw, 3.75rem);
+    line-height: 1.12;
+    margin-bottom: var(--space-5);
+    font-weight: 600;
+  }
+
+  .title-accent {
+    color: var(--accent-gold);
+  }
+
+  .services-hero-lead {
+    color: #9FB3C8 !important;
+    font-size: clamp(1.125rem, 1.6vw, 1.25rem);
+    line-height: 1.65;
+    max-width: 820px;
+    margin-bottom: var(--space-8);
+  }
+
+  /* Hero Quick Jump Navigation */
+  .hero-quick-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.875rem;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-12);
+  }
+
+  .quick-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+  }
+
+  .quick-nav-btn:hover {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  .quick-nav-num {
+    color: var(--accent-gold);
+    font-weight: 700;
+  }
+
+  .quick-nav-btn:hover .quick-nav-num {
+    color: var(--primary);
+  }
+
+  .quick-nav-link-subtle {
+    color: #9FB3C8;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    transition: color var(--transition-fast);
+  }
+
+  .quick-nav-link-subtle:hover {
+    color: #FFFFFF;
+  }
+
+  /* Metric Badges Bar */
+  .hero-metrics-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(9, 28, 44, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6) var(--space-8);
+    width: 100%;
+    max-width: 920px;
+  }
+
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .metric-val {
+    font-family: var(--font-heading);
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+  }
+
+  .metric-desc {
+    font-size: 0.75rem;
+    color: #9FB3C8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  .metric-divider {
+    width: 1px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+
+  /* Section Sub-Badges */
+  .sub-badge {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+    background-color: rgba(16, 42, 67, 0.08);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-3);
+  }
+
+  .sub-badge.badge-gold {
+    color: var(--accent-gold);
+    background-color: rgba(244, 185, 66, 0.15);
+  }
+
+  /* ==========================================================================
+     DUAL SERVICE OVERVIEW CARDS
+     ========================================================================== */
+
+  .dual-service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  .service-spotlight-card {
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-normal);
+    position: relative;
+    background-color: #FFFFFF;
+  }
+
+  .service-spotlight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+  }
+
+  .spotlight-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+  }
+
+  .spotlight-badge {
     font-size: 0.8125rem;
     font-weight: 700;
     color: var(--primary);
-    margin-bottom: 0.75rem;
+  }
+
+  .spotlight-tag {
+    font-family: var(--font-heading);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
     letter-spacing: 0.05em;
   }
 
-  .specs-list-check {
+  .spotlight-tag.field-tag {
+    background-color: #ECFDF5;
+    color: #059669;
+  }
+
+  .spotlight-tag.cad-tag {
+    background-color: #F0F9FF;
+    color: #0284C7;
+  }
+
+  .spotlight-title {
+    font-size: clamp(1.35rem, 2vw, 1.65rem);
+    margin-bottom: var(--space-3);
+  }
+
+  .spotlight-desc {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+  }
+
+  .spotlight-features {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.625rem;
+    gap: 0.65rem;
+    margin-bottom: var(--space-8);
+    flex-grow: 1;
   }
 
-  .specs-list-check li {
+  .spotlight-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
     font-size: 0.875rem;
-    line-height: 1.5;
-    color: var(--text-secondary);
-    position: relative;
-    padding-left: 1.25rem;
-  }
-
-  .specs-list-check li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-    font-weight: 700;
-  }
-
-  .specs-list-check li strong {
     color: var(--text-main);
+    line-height: 1.45;
   }
 
-  .service-img-wrapper {
+  .spotlight-features li svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+  /* ==========================================================================
+     SERVICE DEEP DIVE SECTIONS (SITE SURVEYS & CAD DESIGNS)
+     ========================================================================== */
+
+  .service-deep-dive {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .discipline-banner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-12);
+    max-width: 840px;
+  }
+
+  .discipline-tag-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .discipline-num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+  }
+
+  .discipline-pill {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    background-color: #ECFDF5;
+    color: #059669;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+  }
+
+  .discipline-pill.cad-pill {
+    background-color: #F0F9FF;
+    color: #0284C7;
+  }
+
+  .discipline-heading-group h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    margin-bottom: var(--space-2);
+  }
+
+  .deep-dive-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: var(--space-12);
+    align-items: flex-start;
+  }
+
+  .deep-dive-grid.reverse {
+    grid-template-columns: 1.15fr 1fr;
+  }
+
+  /* Media Frame */
+  .media-frame {
     position: relative;
     border-radius: var(--radius-xl);
     overflow: hidden;
     background-color: var(--bg-surface);
     border: 1px solid var(--border-light);
     box-shadow: var(--shadow-md);
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10;
   }
 
-  .service-img {
+  .frame-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -322,44 +1066,445 @@ import CTASection from '../components/CTASection.astro';
     transition: transform 0.4s ease;
   }
 
-  .service-img-wrapper:hover .service-img {
+  .media-frame:hover .frame-img {
     transform: scale(1.02);
   }
 
-  .package-item {
-    padding: var(--space-8) var(--space-6);
+  .media-floating-badge {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.85rem;
+    background: rgba(16, 42, 67, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-full);
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+
+  .badge-top-left {
+    top: var(--space-4);
+    left: var(--space-4);
+  }
+
+  .badge-bottom-right {
+    bottom: var(--space-4);
+    right: var(--space-4);
+  }
+
+  .badge-dot-green {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #10B981;
+    box-shadow: 0 0 6px #10B981;
+  }
+
+  .badge-dot-sky {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #38BDF8;
+    box-shadow: 0 0 6px #38BDF8;
+  }
+
+  /* Sub Media Grid */
+  .sub-media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+
+  .sub-media-card {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    aspect-ratio: 16 / 10;
+    background-color: var(--bg-surface);
+  }
+
+  .sub-media-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .sub-media-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .sub-media-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.25rem 0.4rem;
+    background: linear-gradient(to top, rgba(16,42,67,0.9), transparent);
+    color: #FFFFFF;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* CAD Highlights Mini Grid */
+  .cad-highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+
+  .cad-mini-card {
     background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
   }
 
-  .package-num {
-    font-size: 1.75rem;
+  .cad-mini-num {
+    font-size: 0.9375rem;
     font-weight: 700;
-    color: var(--primary);
-    margin-bottom: var(--space-2);
+    color: #0284C7;
+    margin-bottom: 0.25rem;
+    display: block;
   }
 
-  .package-item h4 {
-    margin-bottom: var(--space-2);
-    font-size: 1.1875rem;
-  }
-
-  .package-item p {
+  .cad-mini-card h5 {
     font-size: 0.875rem;
-    line-height: 1.6;
+    margin-bottom: 0.25rem;
+    color: var(--primary);
+  }
+
+  .cad-mini-card p {
+    font-size: 0.75rem;
+    line-height: 1.4;
     margin: 0;
   }
 
+  /* Content & Technical Boxes */
+  .technical-summary-box {
+    margin-bottom: var(--space-6);
+  }
+
+  .box-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-2);
+    color: var(--primary);
+  }
+
+  .checkpoints-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+  }
+
+  .checkpoint-item {
+    display: flex;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-5);
+    background-color: #FFFFFF;
+  }
+
+  .checkpoint-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background-color: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .checkpoint-body h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--primary);
+  }
+
+  .checkpoint-body p {
+    font-size: 0.84375rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--text-secondary);
+  }
+
+  /* Deliverables & Software Tags */
+  .deliverables-badge-wrap,
+  .software-compatibility-wrap {
+    background-color: #FFFFFF;
+    border: 1px dashed var(--border-medium);
+    border-radius: var(--radius-md);
+    padding: var(--space-4) var(--space-5);
+    margin-bottom: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .deliverable-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .deliverable-tags,
+  .software-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag-item,
+  .soft-badge {
+    font-family: var(--font-heading);
+    font-size: 0.78125rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    background-color: var(--bg-secondary);
+    color: var(--primary);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+  }
+
+  .action-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  /* ==========================================================================
+     DELIVERABLES MATRIX & COMPARISON
+     ========================================================================== */
+
+  .matrix-table-container {
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+  }
+
+  .comparison-table {
+    margin: 0;
+  }
+
+  .comparison-table th {
+    background-color: var(--primary);
+    color: #FFFFFF;
+    font-size: 0.8125rem;
+    letter-spacing: 0.05em;
+  }
+
+  .spec-name {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.8125rem;
+  }
+
+  .matrix-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .matrix-list li {
+    position: relative;
+    padding-left: 1rem;
+    font-size: 0.84375rem;
+  }
+
+  .matrix-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-gold);
+    font-weight: 700;
+  }
+
+  /* ==========================================================================
+     PIPELINE INTEGRATION SECTION
+     ========================================================================== */
+
+  .pipeline-section {
+    background-color: var(--primary-dark);
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+    border-top: 1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .pipeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+
+  .pipeline-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    position: relative;
+    transition: all var(--transition-fast);
+  }
+
+  .pipeline-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+  }
+
+  .pipeline-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-3);
+  }
+
+  .pipeline-card h4 {
+    color: #FFFFFF;
+    font-size: 1.125rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .pipeline-card p {
+    color: #9FB3C8;
+    font-size: 0.84375rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ==========================================================================
+     FAQ ACCORDION
+     ========================================================================== */
+
+  .faq-section {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .faq-item {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background-color: #FFFFFF;
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-5) var(--space-6);
+    font-family: var(--font-heading);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: color var(--transition-fast);
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question:hover {
+    color: #0284C7;
+  }
+
+  .faq-chevron {
+    transition: transform var(--transition-fast);
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 var(--space-6) var(--space-6) var(--space-6);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+
+  /* ==========================================================================
+     RESPONSIVE BREAKPOINTS
+     ========================================================================== */
+
   @media (max-width: 1024px) {
-    .service-detail-row,
-    .service-detail-row.reverse {
+    .deep-dive-grid,
+    .deep-dive-grid.reverse {
       grid-template-columns: 1fr;
       gap: var(--space-8);
     }
-    .service-detail-row.reverse .service-text-side {
-      order: 1;
+
+    .pipeline-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
-    .service-detail-row.reverse .service-image-side {
-      order: 2;
+  }
+
+  @media (max-width: 768px) {
+    .services-hero {
+      padding-top: var(--space-12);
+      padding-bottom: var(--space-12);
+    }
+
+    .hero-metrics-bar {
+      flex-direction: column;
+      gap: var(--space-4);
+      padding: var(--space-5);
+    }
+
+    .metric-divider {
+      width: 100%;
+      height: 1px;
+    }
+
+    .dual-service-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pipeline-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cad-highlights-grid,
+    .sub-media-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hidden-mobile {
+      display: none;
     }
   }
 </style>
