@@ -209,7 +209,7 @@ const featuredTexasCities = top20TexasCities.slice(0, 10);
     position: relative;
     background-color: var(--bg-page);
     background-image: 
-      linear-gradient(180deg, rgba(250, 250, 247, 0.90) 0%, rgba(250, 250, 247, 0.80) 45%, rgba(250, 250, 247, 0.94) 100%),
+      linear-gradient(180deg, rgba(250, 250, 247, 0.65) 0%, rgba(250, 250, 247, 0.45) 45%, rgba(250, 250, 247, 0.75) 100%),
       url('/images/hero_surveyor_field.webp');
     background-size: cover;
     background-position: center 30%;
@@ -235,14 +235,17 @@ const featuredTexasCities = top20TexasCities.slice(0, 10);
     line-height: 1.12;
     letter-spacing: -0.03em;
     margin-bottom: var(--space-6);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
   }
 
   .hero-subtitle {
-    color: var(--text-secondary, #66717D);
+    color: #243B53;
     font-size: clamp(1.125rem, 1.8vw, 1.25rem);
+    font-weight: 500;
     line-height: 1.65;
     max-width: 740px;
     margin-bottom: var(--space-8);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
   }
 
   .hero-actions {
