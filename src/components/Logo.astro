@@ -5,7 +5,7 @@ interface Props {
   class?: string;
 }
 
-const { isDark = false, height = 56, class: className = '' } = Astro.props;
+const { isDark = false, height = 58, class: className = '' } = Astro.props;
 const logoSrc = isDark ? '/images/logo-white.png' : '/images/logo.png';
 ---
 
@@ -26,11 +26,11 @@ const logoSrc = isDark ? '/images/logo-white.png' : '/images/logo.png';
     text-decoration: none;
     user-select: none;
     line-height: 0;
-    height: var(--logo-h, 56px);
+    height: var(--logo-h, 58px);
   }
 
   .brand-logo-img {
-    height: var(--logo-h, 56px);
+    height: var(--logo-h, 58px);
     width: auto;
     max-width: 100%;
     object-fit: contain;
@@ -40,10 +40,10 @@ const logoSrc = isDark ? '/images/logo-white.png' : '/images/logo.png';
 
   @media (max-width: 640px) {
     .brand-logo-img-wrap {
-      --logo-h: 46px;
+      --logo-h: 54px;
     }
     .brand-logo-img {
-      height: 46px;
+      height: 54px;
     }
   }
 </style>
