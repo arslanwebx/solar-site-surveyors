@@ -2,11 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTASection from '../../components/CTASection.astro';
 import { allTexasCities } from '../../data/texasCities';
+
+// First 100 cities are pre-rendered statically for ultra-fast initial load & SEO
+const initialCities = allTexasCities.slice(0, 100);
+const remainingCities = allTexasCities.slice(100);
 ---
 
 <BaseLayout 
-  title="Texas Solar Site Survey Coverage | 100 Cities & Statewide Network | Solar Site Surveys"
-  description="Statewide solar site survey coordination across Texas. Active surveyor coverage across 100 Texas cities including Houston, Dallas, San Antonio, Austin, Fort Worth, and all 254 counties."
+  title="Texas Solar Site Survey Coverage | Statewide City Directory | Solar Site Surveys"
+  description="Statewide solar site survey coordination across Texas. Active surveyor coverage across all major Texas cities and regional municipalities delivering CAD-ready photo packages."
   activeNav="service-areas"
 >
   <!-- Page Hero -->
@@ -21,13 +25,13 @@ import { allTexasCities } from '../../data/texasCities';
     </div>
   </section>
 
-  <!-- 100 Texas Cities Directory -->
+  <!-- Texas Cities Directory -->
   <section class="section">
     <div class="container">
       <div class="section-header center">
         <h2>Active City Dispatch Directory</h2>
         <p class="lead">
-          Our distributed field surveyor network covers 100 major municipalities and surrounding suburban submarkets across Texas.
+          Our distributed field surveyor network covers major municipalities and regional submarkets across Texas.
         </p>
 
         <!-- Live Instant Search Bar -->
@@ -36,15 +40,15 @@ import { allTexasCities } from '../../data/texasCities';
           <input 
             type="text" 
             id="city-search" 
-            placeholder="Search all 100 Texas cities (e.g. Plano, Frisco, Lubbock, Houston)..." 
+            placeholder="Search Texas cities & towns (e.g. Plano, Frisco, Lubbock, Bandera)..." 
             aria-label="Filter Texas cities"
           />
         </div>
       </div>
 
-      <!-- 100 Clean, Centered City Cards -->
+      <!-- Cities Grid (Initial 100 Pre-rendered) -->
       <div class="cities-grid" id="cities-grid">
-        {allTexasCities.map((city) => (
+        {initialCities.map((city) => (
           <div class="city-card card-technical" id={city.slug} data-name={city.name.toLowerCase()}>
             <h3 class="city-name">{city.name}</h3>
             <p class="city-notes">{city.keyCoverageNotes}</p>
@@ -58,9 +62,17 @@ import { allTexasCities } from '../../data/texasCities';
           </div>
         ))}
       </div>
+
+      <!-- Clean Load More Button -->
+      <div class="load-more-wrap" id="load-more-wrap">
+        <button type="button" class="btn btn-outline btn-lg" id="load-more-btn">
+          <span>Load More Locations</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
       
       <div id="no-cities-msg" class="no-results-box" style="display: none;">
-        <p>No Texas cities matching your search. We cover all 254 counties statewide—<a href="/schedule" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Schedule a Custom Survey</a>.</p>
+        <p>No Texas cities matching your search. We coordinate surveys across all 254 counties statewide—<a href="/schedule" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Schedule a Custom Survey</a>.</p>
       </div>
     </div>
   </section>
@@ -76,29 +88,101 @@ import { allTexasCities } from '../../data/texasCities';
   />
 </BaseLayout>
 
-<script>
-  // Live Instant City Search
-  const searchInput = document.getElementById('city-search') as HTMLInputElement | null;
-  const cards = document.querySelectorAll('.city-card') as NodeListOf<HTMLElement>;
+<!-- Client Script for Fast Batch Loading and Full-Dataset Search -->
+<script define:vars={{ remainingCities, initialCities }}>
+  let currentLoadedCount = initialCities.length;
+  const BATCH_SIZE = 100;
+  const grid = document.getElementById('cities-grid');
+  const loadMoreBtn = document.getElementById('load-more-btn');
+  const loadMoreWrap = document.getElementById('load-more-wrap');
+  const searchInput = document.getElementById('city-search');
   const noResults = document.getElementById('no-cities-msg');
+
+  // Helper to create a city card DOM element
+  function createCardElement(city) {
+    const card = document.createElement('div');
+    card.className = 'city-card card-technical';
+    card.id = city.slug;
+    card.setAttribute('data-name', city.name.toLowerCase());
+    card.innerHTML = `
+      <h3 class="city-name">${city.name}</h3>
+      <p class="city-notes">${city.keyCoverageNotes}</p>
+      <div class="city-card-cta">
+        <a href="/schedule?city=${city.slug}" class="btn btn-city-explore">
+          <span>Explore</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    `;
+    return card;
+  }
+
+  // Load More Handler (loads next batch)
+  function loadNextBatch() {
+    if (!grid || !remainingCities) return;
+    const startIndex = currentLoadedCount - initialCities.length;
+    const nextCities = remainingCities.slice(startIndex, startIndex + BATCH_SIZE);
+
+    if (nextCities.length > 0) {
+      const fragment = document.createDocumentFragment();
+      nextCities.forEach(city => {
+        fragment.appendChild(createCardElement(city));
+      });
+      grid.appendChild(fragment);
+      currentLoadedCount += nextCities.length;
+    }
+
+    if (startIndex + BATCH_SIZE >= remainingCities.length && loadMoreWrap) {
+      loadMoreWrap.style.display = 'none';
+    }
+  }
+
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', loadNextBatch);
+  }
+
+  // Live Instant Search across whole dataset
+  const allDataset = [...initialCities, ...remainingCities];
 
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
-      const q = (e.target as HTMLInputElement).value.toLowerCase().trim();
-      let matchedCount = 0;
+      const q = e.target.value.toLowerCase().trim();
 
-      cards.forEach((card) => {
-        const name = card.getAttribute('data-name') || '';
-        if (!q || name.includes(q)) {
-          card.style.display = 'flex';
-          matchedCount++;
-        } else {
-          card.style.display = 'none';
+      if (!q) {
+        // Reset to currently loaded view
+        if (grid) {
+          const domCards = grid.querySelectorAll('.city-card');
+          domCards.forEach((c) => {
+            c.style.display = 'flex';
+          });
         }
-      });
+        if (loadMoreWrap) {
+          const startIndex = currentLoadedCount - initialCities.length;
+          loadMoreWrap.style.display = (startIndex < remainingCities.length) ? 'flex' : 'none';
+        }
+        if (noResults) noResults.style.display = 'none';
+        return;
+      }
 
-      if (noResults) {
-        noResults.style.display = matchedCount === 0 ? 'block' : 'none';
+      // If search query is active, hide load more button
+      if (loadMoreWrap) loadMoreWrap.style.display = 'none';
+
+      // Find matching cities from full dataset
+      const matches = allDataset.filter(c => c.name.toLowerCase().includes(q));
+
+      if (grid) {
+        grid.innerHTML = '';
+        if (matches.length > 0) {
+          const fragment = document.createDocumentFragment();
+          // Show up to 100 search results for instantaneous speed
+          matches.slice(0, 100).forEach(city => {
+            fragment.appendChild(createCardElement(city));
+          });
+          grid.appendChild(fragment);
+          if (noResults) noResults.style.display = 'none';
+        } else {
+          if (noResults) noResults.style.display = 'block';
+        }
       }
     });
   }
@@ -151,7 +235,7 @@ import { allTexasCities } from '../../data/texasCities';
     box-shadow: 0 0 0 3px rgba(16, 42, 67, 0.1);
   }
 
-  /* 100 Cities Grid */
+  /* Cities Grid */
   .cities-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -226,6 +310,30 @@ import { allTexasCities } from '../../data/texasCities';
     border-color: var(--primary);
     box-shadow: 0 4px 12px rgba(16, 42, 67, 0.15);
     transform: translateY(-1px);
+  }
+
+  /* Load More Wrap */
+  .load-more-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-10);
+  }
+
+  .load-more-wrap .btn-outline {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(16, 42, 67, 0.25);
+    color: var(--primary);
+    padding: 0.85rem 2.25rem;
+    font-size: 1rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .load-more-wrap .btn-outline:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
   }
 
   .no-results-box {
