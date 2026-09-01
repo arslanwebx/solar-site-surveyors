@@ -196,7 +196,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
   }
 </script>
 
-<style>
+<style is:global>
   .page-hero {
     padding-top: var(--space-16);
     padding-bottom: var(--space-16);
@@ -243,7 +243,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     box-shadow: 0 0 0 3px rgba(16, 42, 67, 0.1);
   }
 
-  /* Cities Grid */
+  /* Cities Grid - Consistent Always */
   .cities-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -255,10 +255,10 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     border: 1px solid var(--border-light);
     border-radius: var(--radius-lg);
     padding: 1.75rem 1.5rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
   }
@@ -270,54 +270,55 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
   }
 
   .city-name {
-    font-family: var(--font-heading);
-    font-size: 1.3125rem;
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-    text-align: center;
+    font-family: var(--font-heading) !important;
+    font-size: 1.3125rem !important;
+    font-weight: 600 !important;
+    color: var(--primary) !important;
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
   }
 
   .city-notes {
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    line-height: 1.55;
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    font-family: var(--font-body) !important;
+    font-size: 0.875rem !important;
+    line-height: 1.55 !important;
+    color: var(--text-secondary) !important;
+    margin-bottom: 1.5rem !important;
     flex-grow: 1;
-    text-align: center;
+    text-align: center !important;
   }
 
   .city-card-cta {
-    width: 100%;
-    border-top: 1px solid var(--border-light);
-    padding-top: 1rem;
-    margin-top: auto;
+    width: 100% !important;
+    border-top: 1px solid var(--border-light) !important;
+    padding-top: 1rem !important;
+    margin-top: auto !important;
   }
 
   .btn-city-explore {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    width: 100%;
-    padding: 0.65rem 1rem;
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--primary);
-    background-color: #FAFAF7;
-    border: 1px solid var(--border-medium);
-    border-radius: var(--radius-md);
-    transition: all var(--transition-fast);
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.4rem !important;
+    width: 100% !important;
+    padding: 0.65rem 1rem !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    color: var(--primary) !important;
+    background-color: #FAFAF7 !important;
+    border: 1px solid var(--border-medium) !important;
+    border-radius: var(--radius-md) !important;
+    transition: all var(--transition-fast) !important;
+    text-decoration: none !important;
   }
 
   .btn-city-explore:hover {
-    background-color: var(--primary);
-    color: #FFFFFF;
-    border-color: var(--primary);
-    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.15);
-    transform: translateY(-1px);
+    background-color: var(--primary) !important;
+    color: #FFFFFF !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.15) !important;
+    transform: translateY(-1px) !important;
   }
 
   /* Load More Wrap */
