@@ -33,7 +33,7 @@ const steps = [
       <div class="timeline-step card-technical">
         <div class="step-header">
           <div class="step-number-badge">
-            <span class="badge-num font-mono">{step.stepNum}</span>
+            <span class="badge-num">{step.stepNum}</span>
           </div>
           <span class="step-phase-tag">{step.phase}</span>
         </div>
@@ -97,6 +97,7 @@ const steps = [
   }
 
   .badge-num {
+    font-family: var(--font-heading);
     font-size: 0.9375rem;
     font-weight: 700;
     color: #FFFFFF;
