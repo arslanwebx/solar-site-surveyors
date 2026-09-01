@@ -1,9 +1,39 @@
 ---
+import Logo from './Logo.astro';
 ---
 
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-credits">
+  <div class="container-wide">
+    <!-- 4-Column Footer Grid -->
+    <div class="footer-grid-4">
+      <!-- Column 1: Logo & Business Description -->
+      <div class="footer-col footer-col-brand">
+        <a href="/" class="footer-logo" aria-label="Solar Site Surveys Home">
+          <Logo isDark={true} height={54} />
+        </a>
+        <p class="footer-brand-desc">
+          Statewide solar site survey coordination platform connecting solar EPCs and installers with verified local surveyors across Texas. Delivering standardized field measurements and CAD-ready deliverables.
+        </p>
+      </div>
+
+      <!-- Column 2: Placeholder for future menu -->
+      <div class="footer-col">
+        <!-- Ready for navigation items -->
+      </div>
+
+      <!-- Column 3: Placeholder for future services -->
+      <div class="footer-col">
+        <!-- Ready for service items -->
+      </div>
+
+      <!-- Column 4: Placeholder for future resources/contact -->
+      <div class="footer-col">
+        <!-- Ready for resource/contact items -->
+      </div>
+    </div>
+
+    <!-- Bottom Centered Credits -->
+    <div class="footer-bottom">
       <p>© 2026 SolarSiteSurveyors.com | All rights reserved.</p>
     </div>
   </div>
@@ -13,20 +43,66 @@
   .site-footer {
     background-color: var(--bg-dark);
     color: var(--text-light-muted);
-    padding: var(--space-8) var(--space-6);
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-8);
     border-top: 1px solid var(--border-dark-subtle);
     margin-top: auto;
   }
 
-  .footer-credits {
+  .footer-grid-4 {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: var(--space-8);
+    padding-bottom: var(--space-12);
+  }
+
+  .footer-col-brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    line-height: 0;
+  }
+
+  .footer-brand-desc {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #9FB3C8;
+    max-width: 380px;
+    margin: 0;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: var(--space-8);
     text-align: center;
   }
 
-  .footer-credits p {
+  .footer-bottom p {
     font-family: var(--font-body);
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     color: #9FB3C8;
     margin: 0;
     letter-spacing: 0.01em;
+  }
+
+  @media (max-width: 1024px) {
+    .footer-grid-4 {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .footer-grid-4 {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
   }
 </style>
