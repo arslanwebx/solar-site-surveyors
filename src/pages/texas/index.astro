@@ -142,7 +142,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
               <div>
                 <span class="metro-region">{metro.region}</span>
                 <h3 class="metro-title">
-                  <a href={`/texas/${metro.slug}/`} class="metro-link">{metro.name}</a>
+                  <a href={`/texas/${metro.slug}-solar-site-surveyors/`} class="metro-link">{metro.name}</a>
                 </h3>
               </div>
               <span class="utility-pill">{metro.utility}</span>
@@ -151,7 +151,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
             <p class="metro-note">{metro.note}</p>
 
             <div class="metro-actions">
-              <a href={`/texas/${metro.slug}/`} class="btn btn-primary btn-sm">
+              <a href={`/texas/${metro.slug}-solar-site-surveyors/`} class="btn btn-primary btn-sm">
                 <span>View {metro.name} Coverage</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
@@ -199,14 +199,14 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
           <div class="city-card card-technical" id={city.slug} data-name={city.name.toLowerCase()}>
             <div class="city-card-content">
               <h3 class="city-name">
-                <a href={`/texas/${city.slug}/`} class="city-title-link">{city.name}</a>
+                <a href={`/texas/${city.slug}-solar-site-surveyors/`} class="city-title-link">{city.name}</a>
               </h3>
               <p class="city-notes">{city.keyCoverageNotes}</p>
             </div>
 
             <div class="city-card-cta">
               <a 
-                href={`/texas/${city.slug}/`} 
+                href={`/texas/${city.slug}-solar-site-surveyors/`} 
                 class="btn btn-city-view"
                 title={`View ${city.name}, TX solar survey coverage`}
               >
@@ -317,7 +317,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     card.setAttribute('data-name', city.name.toLowerCase());
     const waText = encodeURIComponent('Hi, I would like to schedule a solar site survey in ' + city.name + ', Texas.');
     const waUrl = 'https://wa.me/16823960543?text=' + waText;
-    const cityUrl = '/texas/' + city.slug + '/';
+    const cityUrl = '/texas/' + city.slug + '-solar-site-surveyors/';
     
     card.innerHTML = `
       <div class="city-card-content">
