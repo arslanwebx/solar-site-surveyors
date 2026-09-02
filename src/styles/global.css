@@ -218,10 +218,10 @@ img, svg {
   height: auto;
 }
 
-/* Layout Containers */
+/* Layout Containers (Increased content area width by 10%) */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1320px;
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--space-6);
@@ -230,7 +230,7 @@ img, svg {
 
 .container-narrow {
   width: 100%;
-  max-width: 900px;
+  max-width: 990px;
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--space-6);
@@ -239,7 +239,7 @@ img, svg {
 
 .container-wide {
   width: 100%;
-  max-width: 1360px;
+  max-width: 1496px;
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--space-6);
@@ -285,7 +285,7 @@ img, svg {
 /* Section Header Component */
 .section-header {
   margin-bottom: var(--space-12);
-  max-width: 720px;
+  max-width: 792px;
 }
 
 .section-header.center {
