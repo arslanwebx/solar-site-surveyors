@@ -57,36 +57,13 @@ const customSurveyLink = getWhatsAppLink('Hi, I would like to schedule a solar s
         </p>
       </div>
 
-      <!-- Texas Primary Card -->
+      <!-- Clean Texas Card -->
       <div class="texas-featured-card card-technical">
-        <div class="texas-card-badge-row">
-          <span class="coverage-badge active-badge">
-            <span class="status-dot-pulse"></span>
-            Active Statewide Hub
-          </span>
-          <span class="sla-badge">48-Hr SLA</span>
-        </div>
-
         <div class="texas-card-body">
-          <h3 class="texas-card-title">Texas</h3>
+          <h2 class="texas-card-title">Texas</h2>
           <p class="texas-card-description">
             Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors.
           </p>
-
-          <div class="texas-card-meta">
-            <div class="meta-tag">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>254 Counties & ERCOT Grid</span>
-            </div>
-            <div class="meta-tag">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span>CAD-Ready Photo Packages</span>
-            </div>
-            <div class="meta-tag">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>48-Hour Standard Turnaround</span>
-            </div>
-          </div>
 
           <div class="texas-card-action">
             <a href="/texas/" class="btn btn-primary btn-lg texas-cta-btn" id="view-texas-service-areas-btn">
@@ -123,11 +100,7 @@ const customSurveyLink = getWhatsAppLink('Hi, I would like to schedule a solar s
           <p class="state-desc">
             Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors.
           </p>
-          <div class="state-sla">
-            <span class="sla-label">Turnaround:</span>
-            <span class="sla-value">48 Hours</span>
-          </div>
-          <div class="state-action">
+          <div class="state-action" style="margin-top: auto;">
             <a href="/texas/" class="btn btn-primary btn-sm btn-block">
               <span>View Texas Service Areas</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -263,69 +236,24 @@ const customSurveyLink = getWhatsAppLink('Hi, I would like to schedule a solar s
     margin-bottom: var(--space-2);
   }
 
-  /* Featured Texas Hub Card */
+  /* Clean Texas Card */
   .section-featured-hub {
-    padding-top: var(--space-16);
+    padding-top: var(--space-12);
     padding-bottom: var(--space-16);
   }
 
   .texas-featured-card {
     padding: var(--space-10);
     border-radius: var(--radius-xl);
-    border: 2px solid var(--border-light);
-    background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);
-    box-shadow: var(--shadow-lg);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .texas-featured-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--accent-gold) 100%);
-  }
-
-  .texas-card-badge-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: var(--space-5);
-  }
-
-  .coverage-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.35rem 0.85rem;
-    border-radius: var(--radius-full);
-    font-size: 0.8125rem;
-    font-weight: 600;
-    background-color: var(--status-green-bg);
-    color: var(--status-green);
-    border: 1px solid rgba(5, 150, 105, 0.2);
-  }
-
-  .status-dot-pulse {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--status-green);
-    display: inline-block;
-  }
-
-  .sla-badge {
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--primary);
-    background-color: var(--bg-secondary);
-    padding: 0.25rem 0.65rem;
-    border-radius: var(--radius-sm);
     border: 1px solid var(--border-light);
+    background-color: #FFFFFF;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+  }
+
+  .texas-featured-card:hover {
+    border-color: var(--border-medium);
+    box-shadow: var(--shadow-md);
   }
 
   .texas-card-title {
@@ -337,41 +265,15 @@ const customSurveyLink = getWhatsAppLink('Hi, I would like to schedule a solar s
   .texas-card-description {
     font-size: 1.125rem;
     line-height: 1.6;
-    color: var(--text-main);
-    max-width: 800px;
-    margin-bottom: var(--space-8);
-  }
-
-  .texas-card-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-    margin-bottom: var(--space-8);
-    padding-bottom: var(--space-8);
-    border-bottom: 1px solid var(--border-light);
-  }
-
-  .meta-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9375rem;
-    font-weight: 500;
     color: var(--text-secondary);
-    background-color: #FFFFFF;
-    padding: 0.5rem 0.875rem;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-light);
-  }
-
-  .meta-tag svg {
-    color: var(--primary);
+    max-width: 800px;
+    margin-bottom: var(--space-6);
   }
 
   .texas-cta-btn {
     display: inline-flex;
-    font-size: 1.0625rem;
-    padding: 1rem 2rem;
+    font-size: 1rem;
+    padding: 0.875rem 1.75rem;
   }
 
   /* States Grid */
