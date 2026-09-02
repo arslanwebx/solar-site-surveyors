@@ -1,0 +1,767 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { allTexasCities } from '../../data/texasCities';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// Breadcrumbs hierarchy: Home > Service Areas > Texas
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas' }
+];
+
+// Top Major Metro Areas for Quick Navigation Hub
+const majorMetros = [
+  {
+    name: 'Houston',
+    slug: 'houston',
+    region: 'Gulf Coast / Southeast TX',
+    utility: 'CenterPoint Energy',
+    note: 'High-volume residential & commercial surveys, coastal wind load rafter audits, and CenterPoint interconnection prep.'
+  },
+  {
+    name: 'Dallas',
+    slug: 'dallas',
+    region: 'North Texas / DFW',
+    utility: 'Oncor Electric Delivery',
+    note: 'Rapid-turnaround surveys across Dallas County, attic framing inspections, and 200A/400A MSP bus audits.'
+  },
+  {
+    name: 'Austin',
+    slug: 'austin',
+    region: 'Central Texas / Hill Country',
+    utility: 'Austin Energy',
+    note: 'Austin Energy solar interconnection clearances, battery storage NFPA 855 setbacks, and tile/metal roof framing.'
+  },
+  {
+    name: 'San Antonio',
+    slug: 'san-antonio',
+    region: 'South Central Texas',
+    utility: 'CPS Energy',
+    note: 'CPS Energy standard interconnection audits, spanish tile roof assessments, and main panel de-rate calculations.'
+  },
+  {
+    name: 'Fort Worth',
+    slug: 'fort-worth',
+    region: 'North Texas / Tarrant County',
+    utility: 'Oncor & TNMP',
+    note: 'Standardized roof pitch and rafter span documentation across Fort Worth and western Metroplex submarkets.'
+  },
+  {
+    name: 'El Paso',
+    slug: 'el-paso',
+    region: 'West Texas',
+    utility: 'El Paso Electric',
+    note: 'Desert sun conditions, tile roof underlayment checks, and ground mount topography surveys across El Paso County.'
+  },
+  {
+    name: 'Corpus Christi',
+    slug: 'corpus-christi',
+    region: 'Coastal Bend',
+    utility: 'AEP Texas Central',
+    note: 'Strict Gulf Coast wind-load structural tie-in inspections and AEP Texas meter base verification.'
+  },
+  {
+    name: 'Plano',
+    slug: 'plano',
+    region: 'Collin County / North DFW',
+    utility: 'Oncor Electric Delivery',
+    note: 'High-pitch residential roof profiles, attic framing assessments, and battery gateway routing audits.'
+  }
+];
+
+// First 100 cities are pre-rendered statically for ultra-fast initial load & SEO indexing
+const initialCities = allTexasCities.slice(0, 100);
+const remainingCities = allTexasCities.slice(100);
+const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedule a solar site survey in Texas.');
+---
+
+<BaseLayout 
+  title="Texas Solar Site Survey Coverage | Statewide City Directory | Solar Site Surveys"
+  description="Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors. Fast-track surveyor coordination and CAD-ready photo packages across all 254 counties."
+  activeNav="service-areas"
+  canonical="/texas/"
+>
+  <!-- Page Hero with Dark Luxury Aesthetic -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <!-- Structured Breadcrumb Trail: Home > Service Areas > Texas -->
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+          <span>Statewide Operations Hub • 254 Counties</span>
+        </div>
+
+        <h1 class="page-title">Texas Solar Site Survey Coverage & City Directory</h1>
+        <p class="lead" style="color: #9FB3C8; max-width: 840px;">
+          Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors. From the Rio Grande Valley to the Panhandle, Solar Site Surveys coordinates vetted local site surveyors across all 254 Texas counties—delivering CAD-ready photo packages for your engineering and permitting teams.
+        </p>
+
+        <!-- Key Metrics Strip -->
+        <div class="texas-stats-grid">
+          <div class="stat-box">
+            <span class="stat-number">254</span>
+            <span class="stat-label">Counties Covered</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">48h</span>
+            <span class="stat-label">Standard SLA</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">CAD-Ready Photos</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">ERCOT</span>
+            <span class="stat-label">Grid & Co-Op Aligned</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Major Metro Hubs Section -->
+  <section class="section section-metros">
+    <div class="container">
+      <div class="section-header">
+        <div class="kicker">Primary Regional Hubs</div>
+        <h2>Major Texas Metro Service Areas</h2>
+        <p class="lead">
+          Direct dispatch coverage across all major Texas metropolitan markets and regional utility territories.
+        </p>
+      </div>
+
+      <div class="metro-grid">
+        {majorMetros.map((metro) => (
+          <div class="metro-card card-technical">
+            <div class="metro-card-top">
+              <div>
+                <span class="metro-region">{metro.region}</span>
+                <h3 class="metro-title">
+                  <a href={`/texas/${metro.slug}/`} class="metro-link">{metro.name}</a>
+                </h3>
+              </div>
+              <span class="utility-pill">{metro.utility}</span>
+            </div>
+
+            <p class="metro-note">{metro.note}</p>
+
+            <div class="metro-actions">
+              <a href={`/texas/${metro.slug}/`} class="btn btn-primary btn-sm">
+                <span>View {metro.name} Coverage</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a 
+                href={getWhatsAppLink(`Hi, I need to schedule a solar site survey in ${metro.name}, Texas.`)} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-outline btn-sm"
+                title={`Schedule survey in ${metro.name}`}
+              >
+                <span>Dispatch</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Texas Statewide Cities Directory & Live Instant Search -->
+  <section class="section section-warm" id="city-directory">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Statewide Directory</div>
+        <h2>Active Texas City Dispatch Directory</h2>
+        <p class="lead">
+          Our distributed field surveyor network covers municipal jurisdictions and rural co-op territories across the entire state.
+        </p>
+
+        <!-- Live Instant Search Bar -->
+        <div class="search-bar-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#66717D" stroke-width="2" class="search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input 
+            type="text" 
+            id="city-search" 
+            placeholder="Search Texas cities & towns (e.g. Houston, Plano, Lubbock, Tyler, Waco)..." 
+            aria-label="Filter Texas cities"
+          />
+        </div>
+      </div>
+
+      <!-- Cities Grid (Initial 100 Pre-rendered) -->
+      <div class="cities-grid" id="cities-grid">
+        {initialCities.map((city) => (
+          <div class="city-card card-technical" id={city.slug} data-name={city.name.toLowerCase()}>
+            <div class="city-card-content">
+              <h3 class="city-name">
+                <a href={`/texas/${city.slug}/`} class="city-title-link">{city.name}</a>
+              </h3>
+              <p class="city-notes">{city.keyCoverageNotes}</p>
+            </div>
+
+            <div class="city-card-cta">
+              <a 
+                href={`/texas/${city.slug}/`} 
+                class="btn btn-city-view"
+                title={`View ${city.name}, TX solar survey coverage`}
+              >
+                <span>View Area</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a 
+                href={getWhatsAppLink(`Hi, I would like to schedule a solar site survey in ${city.name}, Texas.`)} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-city-wa"
+                title={`Dispatch surveyor to ${city.name}`}
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Load More Button -->
+      <div class="load-more-wrap" id="load-more-wrap">
+        <button type="button" class="btn btn-outline btn-lg" id="load-more-btn">
+          <span>Load More Texas Cities</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      
+      <!-- No Search Results Fallback -->
+      <div id="no-cities-msg" class="no-results-box" style="display: none;">
+        <p>No Texas cities matching your search. We coordinate surveys across all 254 counties statewide—<a href={defaultCustomSurveyWhatsApp} target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Schedule a Custom Survey via WhatsApp</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Texas Technical & Utility Interconnection Standards -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Engineering Specifications</div>
+        <h2>Texas AHJ & Utility Compliance Matrix</h2>
+        <p class="lead">
+          Our surveys are purpose-built to comply with ERCOT transmission entities, municipal electric authorities, and regional building departments.
+        </p>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-card card-technical">
+          <div class="spec-header">
+            <h4>Major Electric Utilities</h4>
+            <span class="spec-tag">Statewide</span>
+          </div>
+          <p>Standardized measurement protocols aligned with Oncor Electric Delivery, CenterPoint Energy, AEP Texas, Texas-New Mexico Power (TNMP), Austin Energy, CPS Energy, and rural electric co-ops (Pedernales, Bluebonnet, CoServ, Tri-County).</p>
+        </div>
+
+        <div class="spec-card card-technical">
+          <div class="spec-header">
+            <h4>Gulf Coast High Wind Loads</h4>
+            <span class="spec-tag">Coastal Zone</span>
+          </div>
+          <p>Rigorous structural rafter assessments, truss spacing measurements, and decking condition logs complying with Texas Department of Insurance (TDI) windstorm guidelines and 115–150+ mph wind speed engineering thresholds.</p>
+        </div>
+
+        <div class="spec-card card-technical">
+          <div class="spec-header">
+            <h4>ERCOT Market & Tariff Nuances</h4>
+            <span class="spec-tag">Deregulated</span>
+          </div>
+          <p>Documentation of dual-meter sockets, solar net-billing meters, smart meter serial numbers, and line-side tap clearances required for seamless retail electric provider (REP) buyback enrollment.</p>
+        </div>
+
+        <div class="spec-card card-technical">
+          <div class="spec-header">
+            <h4>Battery & Backup Clearances</h4>
+            <span class="spec-tag">ESS / NFPA 855</span>
+          </div>
+          <p>Precise clearance measurements around garage walls, outdoor siding, gas meters, windows, and doors to ensure compliance with NFPA 855 and local municipal fire marshal setback codes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <CTASection 
+    title="Ready to Dispatch a Solar Site Survey Anywhere in Texas?"
+    subtitle="Connect with our operations desk to check surveyor availability, turnaround SLAs, and coordinate your upcoming pipeline."
+    primaryCtaText="Schedule a Texas Survey"
+    secondaryCtaText="Join Our Texas Network"
+    secondaryCtaLink="/join-us"
+  />
+</BaseLayout>
+
+<!-- Client Script for Ultra-Fast Batch Loading and Full-Dataset Search -->
+<script define:vars={{ remainingCities, initialCities }}>
+  let currentLoadedCount = initialCities.length;
+  const BATCH_SIZE = 100;
+  const grid = document.getElementById('cities-grid');
+  const loadMoreBtn = document.getElementById('load-more-btn');
+  const loadMoreWrap = document.getElementById('load-more-wrap');
+  const searchInput = document.getElementById('city-search');
+  const noResults = document.getElementById('no-cities-msg');
+
+  // Helper to create a city card DOM element
+  function createCardElement(city) {
+    const card = document.createElement('div');
+    card.className = 'city-card card-technical';
+    card.id = city.slug;
+    card.setAttribute('data-name', city.name.toLowerCase());
+    const waText = encodeURIComponent('Hi, I would like to schedule a solar site survey in ' + city.name + ', Texas.');
+    const waUrl = 'https://wa.me/16823960543?text=' + waText;
+    const cityUrl = '/texas/' + city.slug + '/';
+    
+    card.innerHTML = `
+      <div class="city-card-content">
+        <h3 class="city-name">
+          <a href="${cityUrl}" class="city-title-link">${city.name}</a>
+        </h3>
+        <p class="city-notes">${city.keyCoverageNotes}</p>
+      </div>
+      <div class="city-card-cta">
+        <a href="${cityUrl}" class="btn btn-city-view" title="View ${city.name}, TX solar survey coverage">
+          <span>View Area</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-city-wa" title="Dispatch surveyor to ${city.name}">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+      </div>
+    `;
+    return card;
+  }
+
+  // Load More Handler (loads next batch)
+  function loadNextBatch() {
+    if (!grid || !remainingCities) return;
+    const startIndex = currentLoadedCount - initialCities.length;
+    const nextCities = remainingCities.slice(startIndex, startIndex + BATCH_SIZE);
+
+    if (nextCities.length > 0) {
+      const fragment = document.createDocumentFragment();
+      nextCities.forEach(city => {
+        fragment.appendChild(createCardElement(city));
+      });
+      grid.appendChild(fragment);
+      currentLoadedCount += nextCities.length;
+    }
+
+    if (startIndex + BATCH_SIZE >= remainingCities.length && loadMoreWrap) {
+      loadMoreWrap.style.display = 'none';
+    }
+  }
+
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', loadNextBatch);
+  }
+
+  // Live Instant Search across whole dataset
+  const allDataset = [...initialCities, ...remainingCities];
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+
+      if (!q) {
+        // Reset to currently loaded view
+        if (grid) {
+          const domCards = grid.querySelectorAll('.city-card');
+          domCards.forEach((c) => {
+            c.style.display = 'flex';
+          });
+        }
+        if (loadMoreWrap) {
+          const startIndex = currentLoadedCount - initialCities.length;
+          loadMoreWrap.style.display = (startIndex < remainingCities.length) ? 'flex' : 'none';
+        }
+        if (noResults) noResults.style.display = 'none';
+        return;
+      }
+
+      // If search query is active, hide load more button
+      if (loadMoreWrap) loadMoreWrap.style.display = 'none';
+
+      // Find matching cities from full dataset
+      const matches = allDataset.filter(c => c.name.toLowerCase().includes(q));
+
+      if (grid) {
+        grid.innerHTML = '';
+        if (matches.length > 0) {
+          const fragment = document.createDocumentFragment();
+          // Show up to 100 search results for instantaneous speed
+          matches.slice(0, 100).forEach(city => {
+            fragment.appendChild(createCardElement(city));
+          });
+          grid.appendChild(fragment);
+          if (noResults) noResults.style.display = 'none';
+        } else {
+          if (noResults) noResults.style.display = 'block';
+        }
+      }
+    });
+  }
+</script>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--border-dark-subtle);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #FAFAF7;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    margin-bottom: var(--space-3);
+  }
+
+  .page-title {
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    margin-bottom: var(--space-4);
+  }
+
+  .kicker {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: var(--space-2);
+  }
+
+  /* Texas Stats Grid */
+  .texas-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    max-width: 840px;
+  }
+
+  .stat-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.8125rem;
+    color: var(--text-light-muted);
+  }
+
+  /* Major Metro Hubs */
+  .section-metros {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .metro-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+
+  .metro-card {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+  }
+
+  .metro-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .metro-region {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  .metro-title {
+    font-size: 1.375rem;
+    color: var(--primary);
+    margin: 0;
+  }
+
+  .metro-link {
+    color: var(--primary);
+    transition: color var(--transition-fast);
+  }
+
+  .metro-link:hover {
+    color: var(--accent-gold);
+  }
+
+  .utility-pill {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    border: 1px solid var(--border-light);
+  }
+
+  .metro-note {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-5);
+    flex-grow: 1;
+  }
+
+  .metro-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .metro-actions .btn-primary {
+    flex: 1;
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .metro-actions .btn-outline {
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Search Bar */
+  .search-bar-wrap {
+    position: relative;
+    max-width: 540px;
+    margin: var(--space-6) auto 0;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .search-bar-wrap input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 2.75rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-full);
+    background-color: #FFFFFF;
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+  }
+
+  .search-bar-wrap input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(16, 42, 67, 0.1);
+  }
+
+  /* Cities Grid */
+  .cities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+    margin-top: var(--space-8);
+  }
+
+  .city-card {
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    min-height: 140px;
+  }
+
+  .city-name {
+    font-size: 1.125rem;
+    color: var(--primary);
+    margin-bottom: 0.35rem;
+  }
+
+  .city-title-link {
+    color: var(--primary);
+  }
+
+  .city-title-link:hover {
+    color: var(--accent-gold);
+  }
+
+  .city-notes {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .city-card-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+
+  .btn-city-view {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.35rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary);
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+    flex-grow: 1;
+    transition: all var(--transition-fast);
+  }
+
+  .btn-city-view:hover {
+    background-color: var(--primary);
+    color: #FFFFFF;
+    border-color: var(--primary);
+  }
+
+  .btn-city-wa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.55rem;
+    color: var(--status-green);
+    background-color: var(--status-green-bg);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(5, 150, 105, 0.2);
+    transition: all var(--transition-fast);
+  }
+
+  .btn-city-wa:hover {
+    background-color: var(--status-green);
+    color: #FFFFFF;
+  }
+
+  .load-more-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-10);
+  }
+
+  .no-results-box {
+    text-align: center;
+    padding: var(--space-10);
+    background-color: #FFFFFF;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    margin-top: var(--space-6);
+  }
+
+  /* Specs Grid */
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .spec-card {
+    padding: var(--space-6);
+    background-color: #FFFFFF;
+  }
+
+  .spec-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-3);
+  }
+
+  .spec-header h4 {
+    color: var(--primary);
+    margin: 0;
+  }
+
+  .spec-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary);
+    background-color: var(--bg-secondary);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+  }
+
+  .spec-card p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .metro-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cities-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .texas-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .metro-grid {
+      grid-template-columns: 1fr;
+    }
+    .cities-grid {
+      grid-template-columns: 1fr;
+    }
+    .specs-grid {
+      grid-template-columns: 1fr;
+    }
+    .texas-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

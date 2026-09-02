@@ -1,0 +1,152 @@
+---
+export interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+  isDark?: boolean;
+}
+
+const { items, isDark = false } = Astro.props;
+const siteUrl = 'https://solarsitesurveyors.com';
+
+// Generate Schema.org BreadcrumbList
+const schemaBreadcrumbList = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': items.map((item, index) => {
+    const isLast = index === items.length - 1;
+    const fullUrl = item.href 
+      ? (item.href.startsWith('http') ? item.href : `${siteUrl}${item.href}`)
+      : undefined;
+
+    return {
+      '@type': 'ListItem',
+      'position': index + 1,
+      'name': item.label,
+      ...(fullUrl && !isLast ? { 'item': fullUrl } : {})
+    };
+  })
+};
+---
+
+<nav aria-label="Breadcrumb" class={`breadcrumb-nav ${isDark ? 'breadcrumb-dark' : 'breadcrumb-light'}`}>
+  <ol class="breadcrumb-list">
+    {items.map((item, index) => {
+      const isLast = index === items.length - 1;
+      return (
+        <li class="breadcrumb-item" aria-current={isLast ? 'page' : undefined}>
+          {!isLast && item.href ? (
+            <a href={item.href} class="breadcrumb-link">
+              {index === 0 && (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="breadcrumb-home-icon">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              )}
+              <span>{item.label}</span>
+            </a>
+          ) : (
+            <span class="breadcrumb-current">{item.label}</span>
+          )}
+          {!isLast && (
+            <span class="breadcrumb-separator" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </span>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>
+
+<!-- JSON-LD Breadcrumbs for Search Engines -->
+<script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumbList)} />
+
+<style>
+  .breadcrumb-nav {
+    display: inline-flex;
+    margin-bottom: var(--space-4);
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    font-family: var(--font-body);
+  }
+
+  .breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .breadcrumb-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color var(--transition-fast);
+    font-weight: 500;
+  }
+
+  .breadcrumb-home-icon {
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .breadcrumb-separator {
+    display: inline-flex;
+    align-items: center;
+    opacity: 0.5;
+  }
+
+  .breadcrumb-current {
+    font-weight: 600;
+  }
+
+  /* Dark Theme Breadcrumb (e.g. within dark hero banners) */
+  .breadcrumb-dark .breadcrumb-link {
+    color: #9FB3C8;
+  }
+
+  .breadcrumb-dark .breadcrumb-link:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+  }
+
+  .breadcrumb-dark .breadcrumb-separator {
+    color: #627D98;
+  }
+
+  .breadcrumb-dark .breadcrumb-current {
+    color: #FFFFFF;
+  }
+
+  /* Light Theme Breadcrumb */
+  .breadcrumb-light .breadcrumb-link {
+    color: var(--text-secondary);
+  }
+
+  .breadcrumb-light .breadcrumb-link:hover {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
+  .breadcrumb-light .breadcrumb-separator {
+    color: var(--text-muted);
+  }
+
+  .breadcrumb-light .breadcrumb-current {
+    color: var(--primary);
+  }
+</style>
