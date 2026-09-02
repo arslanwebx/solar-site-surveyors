@@ -114,16 +114,6 @@ const serviceSchema = {
               <span>Send Project Requirements</span>
             </a>
           </div>
-
-          <!-- Trust Strip Chips -->
-          <div class="trust-strip">
-            <span class="trust-chip">PV</span>
-            <span class="trust-chip">ESS</span>
-            <span class="trust-chip">SLD / 3-Line</span>
-            <span class="trust-chip">Structural Notes</span>
-            <span class="trust-chip">Placards</span>
-            <span class="trust-chip">Revision Support</span>
-          </div>
         </div>
 
         <div class="hero-media-wrap">
@@ -563,7 +553,7 @@ const serviceSchema = {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: var(--space-8);
+    margin-bottom: 0;
   }
 
   .hero-cta-group .btn-primary,
@@ -605,26 +595,6 @@ const serviceSchema = {
     border-color: #FFFFFF !important;
     color: var(--primary) !important;
     transform: translateY(-2px);
-  }
-
-  /* Trust Strip Chips */
-  .trust-strip {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding-top: var(--space-4);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  .trust-chip {
-    font-family: var(--font-heading);
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: #CBD2D9;
-    background-color: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 0.25rem 0.65rem;
-    border-radius: var(--radius-md);
   }
 
   .hero-media-wrap {
