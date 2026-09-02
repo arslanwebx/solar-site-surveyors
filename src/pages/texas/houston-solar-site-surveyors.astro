@@ -1,0 +1,462 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in Houston, TX';
+const pageDescription = 'Professional solar site surveys across Greater Houston for EPCs, installers, and engineering teams. Coordinated field documentation from the Inner Loop to Katy, Sugar Land, and The Woodlands.';
+const canonicalPath = '/texas/houston-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'Houston' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to schedule a solar site survey in the Houston metro area.');
+
+// Schema.org
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors — Houston, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Houston, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': ['Solar Site Surveys', 'Residential Solar Site Survey', 'Commercial Solar Site Survey'],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How far outside Houston proper do your surveyors travel?',
+    answer: 'Our field coordination covers the full Greater Houston metro, including Katy, Sugar Land, Pearland, League City, The Woodlands, Cypress, Spring, and surrounding Harris County municipalities. Submit the project address to confirm specific coverage.'
+  },
+  {
+    question: 'What does a Houston solar site survey include?',
+    answer: 'A typical survey documents roof geometry, attic or structural framing where accessible, main electrical service equipment, meter configuration, proposed battery or ESS locations, obstructions, and a categorized photo package organized for your design team.'
+  },
+  {
+    question: 'How does Houston weather affect survey scheduling?',
+    answer: 'Houston experiences frequent afternoon storms during summer months. Surveys are scheduled with weather contingency windows. If conditions prevent safe roof or exterior work, the visit is rescheduled rather than delivering incomplete documentation.'
+  },
+  {
+    question: 'Can you match our company survey checklist?',
+    answer: 'Yes. If your EPC or engineering team has a required photo list, measurement checklist, or field form, provide it at intake so the surveyor scope aligns with your internal workflow.'
+  },
+  {
+    question: 'Do you cover commercial properties in Houston?',
+    answer: 'Commercial and C&I site surveys can be coordinated depending on project scope and site access requirements. Contact our operations desk with the property details and survey scope for availability.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(faq => ({
+    '@type': 'Question',
+    'name': faq.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': faq.answer }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <!-- Hero -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveys Across Greater Houston's Sprawling Metro</h1>
+        <p class="lead" style="color: #9FB3C8; max-width: 820px;">
+          Houston's 670-square-mile footprint means your next solar project could be in Montrose, Missouri City, or 45 minutes north in Spring. Our surveyor coordination handles the logistics so your design team gets consistent, CAD-ready field data regardless of where the property sits.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" id="houston-schedule-btn">
+            <span>Schedule a Houston Survey</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Why Houston Solar Projects Demand Reliable Field Data -->
+  <section class="section">
+    <div class="container narrow-content">
+      <div class="section-header">
+        <div class="kicker">Metro-Scale Operations</div>
+        <h2>Why Houston Solar Projects Demand Reliable Field Data</h2>
+      </div>
+      <div class="editorial-prose">
+        <p>
+          Houston is the largest solar market in Texas by residential permit volume, and the sheer geographic spread of the metro creates a coordination problem that most solar companies underestimate. A project in Clear Lake has different roof stock, different wind exposure, and different municipal review requirements than a project in Tomball — but both need the same quality of field documentation to keep the design pipeline moving.
+        </p>
+        <p>
+          When field data arrives inconsistent or incomplete, the cost compounds downstream: designers request clarification photos, structural engineers flag missing attic measurements, and permitting reviewers send back incomplete applications. Our survey coordination standardizes the field capture process across Greater Houston so your team receives the same organized deliverable every time, regardless of which submarket the property is in.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Houston Metro Coverage Zones -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Coverage Zones</div>
+        <h2>Coordinated Surveyor Coverage Across Greater Houston</h2>
+        <p class="lead">From the Inner Loop to outer-ring suburbs — field surveys organized by submarket.</p>
+      </div>
+
+      <div class="zone-grid">
+        <div class="zone-card card-technical">
+          <div class="zone-label">Inner Loop & Central</div>
+          <p>Montrose, Heights, Midtown, Museum District, Third Ward, EaDo, Rice Military — older housing stock with varied roof pitches, mature tree canopy, and compact lot lines.</p>
+        </div>
+        <div class="zone-card card-technical">
+          <div class="zone-label">Energy Corridor & West</div>
+          <p>Katy, Cinco Ranch, Fulshear, Richmond — large-footprint new construction, HOA-governed neighborhoods, and consistent ranch-style roof geometry common in master-planned communities.</p>
+        </div>
+        <div class="zone-card card-technical">
+          <div class="zone-label">South & Southeast</div>
+          <p>Sugar Land, Pearland, League City, Clear Lake, Friendswood — mixed housing vintages near the coast with TDI wind-load documentation requirements for some jurisdictions.</p>
+        </div>
+        <div class="zone-card card-technical">
+          <div class="zone-label">North & The Woodlands</div>
+          <p>Spring, The Woodlands, Conroe, Tomball, Cypress — rapidly expanding new-build suburbs served by Entergy or Lone Star transmission cooperatives with varying interconnection processes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Survey Scope & Deliverables -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Field Documentation</div>
+        <h2>What Your Houston Site Survey Package Includes</h2>
+        <p class="lead">Structured field data organized for solar design, engineering, and permitting review.</p>
+      </div>
+
+      <div class="scope-table-wrap card-technical">
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Documentation Category</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Roof Geometry</strong></td>
+              <td>Pitch, plane dimensions, ridge and eave measurements, material type, condition notes, and obstruction coordinates (vents, skylights, plumbing stacks)</td>
+            </tr>
+            <tr>
+              <td><strong>Attic & Structural</strong></td>
+              <td>Rafter or truss dimensions, spacing, span, decking type, and framing photos where attic access is available</td>
+            </tr>
+            <tr>
+              <td><strong>Main Electrical Service</strong></td>
+              <td>Panel make/model, bus rating, main breaker ampacity, available breaker positions, meter socket, grounding electrode, and conduit pathway options</td>
+            </tr>
+            <tr>
+              <td><strong>Battery / ESS Area</strong></td>
+              <td>Proposed equipment wall, clearance measurements from doors, windows, gas equipment, and pathway distances per NFPA 855 requirements</td>
+            </tr>
+            <tr>
+              <td><strong>Property & Exterior</strong></td>
+              <td>Elevation photos, equipment locations, utility meter position, possible conduit routes, and access notes for the design team</td>
+            </tr>
+            <tr>
+              <td><strong>Categorized Photo Package</strong></td>
+              <td>High-resolution photos labeled and organized by category — not an unordered batch of phone images — ready for CAD reference</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Houston Permitting Landscape -->
+  <section class="section section-dark">
+    <div class="container narrow-content">
+      <div class="section-header">
+        <div class="kicker" style="color: var(--accent-gold);">Permitting Context</div>
+        <h2 style="color: #FFFFFF;">How Houston's Permitting Landscape Affects Your Site Survey</h2>
+      </div>
+      <div class="editorial-prose" style="color: #9FB3C8;">
+        <p>
+          The City of Houston famously has no zoning ordinance, but solar installations still require building permits and electrical permits — and the documentation expectations can vary depending on whether the property falls under the City of Houston, an ETJ area, or an adjacent incorporated city like Bellaire, West University, or Pasadena.
+        </p>
+        <p>
+          Our survey process captures the information that both the City of Houston building department and surrounding municipal AHJs typically require: labeled panel photos, service entrance ratings, structural framing documentation, and property setback context. This way, the field package is usable whether your permitting coordinator submits to Houston's ePermit system or a smaller jurisdiction's paper-based process.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: How It Works (4-step) -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Survey Process</div>
+        <h2>From Project Submission to Delivered Package</h2>
+      </div>
+
+      <div class="steps-row">
+        <div class="step-item">
+          <div class="step-number">01</div>
+          <h3>Submit the Project</h3>
+          <p>Send the property address, project scope, and any custom checklist requirements via WhatsApp or email.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">02</div>
+          <h3>Coordinate the Visit</h3>
+          <p>We assign a local Houston-area surveyor and schedule the site visit based on property access and homeowner availability.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">03</div>
+          <h3>Field Documentation</h3>
+          <p>The surveyor captures all required measurements, photos, and notes following the agreed scope and your team's standards.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">04</div>
+          <h3>QA & Delivery</h3>
+          <p>The field package goes through desk QA review before release. Your design team receives organized, verified deliverables.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container narrow-content">
+      <div class="section-header">
+        <div class="kicker">Common Questions</div>
+        <h2>Houston Solar Site Survey FAQ</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((faq) => (
+          <details class="faq-item">
+            <summary class="faq-question">{faq.question}</summary>
+            <div class="faq-answer"><p>{faq.answer}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- CTA -->
+  <CTASection
+    title="Need a Solar Site Survey in Houston?"
+    subtitle="Contact our operations desk to confirm surveyor availability across Greater Houston and schedule your next field visit."
+    primaryCtaText="Schedule in Houston"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Hub"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--border-dark-subtle);
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .kicker {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: var(--space-2);
+  }
+
+  .narrow-content {
+    max-width: 780px;
+  }
+
+  .editorial-prose p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-5);
+  }
+
+  .editorial-prose p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Zone Grid */
+  .zone-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .zone-card {
+    padding: var(--space-6);
+  }
+
+  .zone-label {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    color: var(--primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .zone-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  /* Scope Table */
+  .scope-table-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  /* Steps Row */
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    counter-reset: step-counter;
+  }
+
+  .step-item {
+    text-align: center;
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .step-number {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    line-height: 1;
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.03em;
+  }
+
+  .step-item h3 {
+    font-size: 1.0625rem;
+    color: var(--primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .step-item p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .faq-item {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    background: var(--bg-surface);
+    overflow: hidden;
+    transition: border-color var(--transition-fast);
+  }
+
+  .faq-item[open] {
+    border-color: var(--accent-gold);
+  }
+
+  .faq-question {
+    padding: var(--space-5) var(--space-6);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--primary);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    transition: transform var(--transition-fast);
+  }
+
+  .faq-item[open] .faq-question::after {
+    content: '−';
+  }
+
+  .faq-answer {
+    padding: 0 var(--space-6) var(--space-5);
+  }
+
+  .faq-answer p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 1024px) {
+    .zone-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps-row { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .zone-grid { grid-template-columns: 1fr; }
+    .steps-row { grid-template-columns: 1fr; }
+  }
+</style>

@@ -4,47 +4,10 @@ export interface TexasCity {
   keyCoverageNotes: string;
 }
 
+// Premium cities (Houston, San Antonio, Dallas, Fort Worth, Austin, El Paso, Arlington, Corpus Christi)
+// have dedicated static .astro pages in src/pages/texas/ and are excluded from this dynamic array.
+
 export const allTexasCities: TexasCity[] = [
-  {
-    "slug": "houston",
-    "name": "Houston",
-    "keyCoverageNotes": "Active surveyor coordination and standardized CAD-ready photo packages across Houston and surrounding submarkets."
-  },
-  {
-    "slug": "san-antonio",
-    "name": "San Antonio",
-    "keyCoverageNotes": "Active surveyor coordination and standardized CAD-ready photo packages across San Antonio and surrounding submarkets."
-  },
-  {
-    "slug": "dallas",
-    "name": "Dallas",
-    "keyCoverageNotes": "Active surveyor coordination and standardized CAD-ready photo packages across Dallas and surrounding submarkets."
-  },
-  {
-    "slug": "fort-worth",
-    "name": "Fort Worth",
-    "keyCoverageNotes": "Active surveyor coordination and standardized CAD-ready photo packages across Fort Worth and surrounding submarkets."
-  },
-  {
-    "slug": "austin",
-    "name": "Austin",
-    "keyCoverageNotes": "Active surveyor coordination and standardized CAD-ready photo packages across Austin and surrounding submarkets."
-  },
-  {
-    "slug": "el-paso",
-    "name": "El Paso",
-    "keyCoverageNotes": "Active surveyor coordination and standardized CAD-ready photo packages across El Paso and surrounding submarkets."
-  },
-  {
-    "slug": "arlington",
-    "name": "Arlington",
-    "keyCoverageNotes": "Active surveyor coordination and standardized CAD-ready photo packages across Arlington and surrounding submarkets."
-  },
-  {
-    "slug": "corpus-christi",
-    "name": "Corpus Christi",
-    "keyCoverageNotes": "Active surveyor coordination and standardized CAD-ready photo packages across Corpus Christi and surrounding submarkets."
-  },
   {
     "slug": "plano",
     "name": "Plano",

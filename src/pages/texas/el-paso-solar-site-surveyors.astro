@@ -1,0 +1,402 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in El Paso, TX';
+const pageDescription = 'Solar site surveys in El Paso and Far West Texas. Remote field coordination for EPCs and installers operating in El Paso Electric territory with high-irradiance desert conditions.';
+const canonicalPath = '/texas/el-paso-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'El Paso' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to schedule a solar site survey in the El Paso area.');
+
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors — El Paso, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'El Paso, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': ['Solar Site Surveys', 'Residential Solar Site Survey', 'Commercial Solar Site Survey'],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How does El Paso Electric differ from other Texas utilities?',
+    answer: 'El Paso Electric is an investor-owned utility but operates outside the ERCOT grid — it is part of the Western Interconnection. This means interconnection processes, metering requirements, and net metering program details follow different procedures than Oncor, CenterPoint, or AEP Texas territories. Our surveys capture the documentation that El Paso Electric applications require.'
+  },
+  {
+    question: 'What areas around El Paso do you cover?',
+    answer: 'Our surveyor coordination covers El Paso proper, the Upper Valley, Mission Hills, Horizon City, Socorro, San Elizario, Canutillo, and surrounding El Paso County areas. Submit the project address for specific coverage confirmation.'
+  },
+  {
+    question: 'How does desert climate affect the survey process?',
+    answer: 'El Paso averages over 300 days of sunshine per year, which creates excellent solar irradiance but also means extreme summer temperatures, UV exposure, and occasional dust storms. Our surveys document environmental conditions that could affect equipment placement, conduit routing, and long-term system exposure.'
+  },
+  {
+    question: 'Do flat roofs in El Paso require different survey documentation?',
+    answer: 'Many El Paso homes feature flat or low-slope roofs common to Southwestern architecture. Our surveyors document parapet heights, roof surface material, drainage patterns, and available mounting area — the data your design team needs for ballasted or attached flat-roof array layouts.'
+  },
+  {
+    question: 'How do I request a survey in El Paso?',
+    answer: 'Contact our operations desk via WhatsApp with the property address, project scope, and any custom requirements. We confirm surveyor availability and coordinate the field visit.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(faq => ({
+    '@type': 'Question',
+    'name': faq.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': faq.answer }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <!-- Hero -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveys in El Paso & Far West Texas</h1>
+        <p class="lead" style="color: #9FB3C8; max-width: 820px;">
+          El Paso sits 600 miles from the nearest major Texas metro — and operates on a completely different electric grid. Our remote field coordination handles the logistics of surveying in Far West Texas so your design and engineering teams get the same reliable, structured deliverables they expect from urban markets.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" id="ep-schedule-btn">
+            <span>Schedule an El Paso Survey</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Remote Coordination -->
+  <section class="section">
+    <div class="container narrow-content">
+      <div class="section-header">
+        <div class="kicker">Remote Operations</div>
+        <h2>Remote Coordination in Far West Texas</h2>
+      </div>
+      <div class="editorial-prose">
+        <p>
+          Most Texas-based solar companies are headquartered along the I-35 corridor — Austin, San Antonio, Dallas, Houston. When a project comes in from El Paso, sending a surveyor from the home office means a full day of travel in each direction and significant expense. For companies operating at volume, this is not sustainable.
+        </p>
+        <p>
+          Our surveyor coordination model solves this by maintaining field relationships in the El Paso market. When you submit a project address in El Paso County, we assign a local surveyor who understands the regional housing stock, flat-roof construction typical of the Borderland, and the specific documentation requirements of El Paso Electric — without the logistical overhead of dispatching from Central or East Texas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: El Paso Electric Territory -->
+  <section class="section section-dark">
+    <div class="container narrow-content">
+      <div class="section-header">
+        <div class="kicker" style="color: var(--accent-gold);">Utility Territory</div>
+        <h2 style="color: #FFFFFF;">El Paso Electric Territory: Utility-Specific Documentation</h2>
+      </div>
+      <div class="editorial-prose" style="color: #9FB3C8;">
+        <p>
+          El Paso Electric serves approximately 460,000 customers in Far West Texas and Southern New Mexico. Unlike most Texas utilities, EPE operates on the Western Interconnection rather than the ERCOT grid. This means interconnection applications, metering standards, and net metering program details follow a different regulatory framework than what solar teams encounter in DFW, Houston, or Austin.
+        </p>
+        <p>
+          Our survey process captures the meter socket type, service entrance configuration, and utility-side equipment details that El Paso Electric reviews during their distributed generation application process. Accurate documentation of these elements during the first field visit prevents application rejections and costly return trips to a market that is already challenging to reach from a logistics standpoint.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Survey Deliverables (2-col split) -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Deliverables</div>
+        <h2>El Paso Field Survey Documentation</h2>
+      </div>
+
+      <div class="split-grid">
+        <div class="split-col">
+          <h3 class="split-heading">Physical & Structural</h3>
+          <ul class="split-list">
+            <li>Roof geometry — pitch, planes, dimensions, material, condition</li>
+            <li>Flat/low-slope roof specifics — parapet height, drainage, surface type</li>
+            <li>Attic framing — rafter/truss sizing, spacing, span where accessible</li>
+            <li>Obstruction mapping — vents, skylights, HVAC units, plumbing stacks</li>
+            <li>Property exterior — elevations, setbacks, access constraints</li>
+          </ul>
+        </div>
+        <div class="split-col">
+          <h3 class="split-heading">Electrical & Equipment</h3>
+          <ul class="split-list">
+            <li>Main panel — make, bus rating, breaker ampacity, available slots</li>
+            <li>Meter socket — type, configuration, El Paso Electric documentation</li>
+            <li>Grounding electrode — type and location</li>
+            <li>Battery / ESS area — clearances, pathway, environmental suitability</li>
+            <li>Categorized photo package — labeled HD photos by scope area</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Desert Climate -->
+  <section class="section">
+    <div class="container narrow-content">
+      <div class="section-header">
+        <div class="kicker">Environmental Context</div>
+        <h2>Desert Climate Considerations for Solar Installations</h2>
+      </div>
+      <div class="editorial-prose">
+        <p>
+          El Paso's Chihuahuan Desert climate delivers some of the highest solar irradiance levels in the continental U.S. — over 6.5 kWh/m²/day on average. For solar design, this is excellent for production modeling. But the same conditions that produce high irradiance also create environmental factors that affect equipment selection and placement.
+        </p>
+        <p>
+          Intense UV exposure accelerates material degradation. Summer surface temperatures on dark roof materials can exceed 170°F. Occasional dust storms deposit fine particulate that affects roof surface conditions. Our surveyors document these environmental factors during the field visit — roof surface temperature context, exposure orientation, dust accumulation patterns, and equipment location options — so your engineering team can account for them in the system design.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Specs -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Operations</div>
+        <h2>El Paso Survey Specifications</h2>
+      </div>
+      <div class="table-wrap card-technical">
+        <table class="specs-table">
+          <tbody>
+            <tr>
+              <td><strong>Coverage Area</strong></td>
+              <td>El Paso, Upper Valley, Horizon City, Socorro, San Elizario, Canutillo, and surrounding El Paso County</td>
+            </tr>
+            <tr>
+              <td><strong>Utility Territory</strong></td>
+              <td>El Paso Electric (Western Interconnection — not ERCOT)</td>
+            </tr>
+            <tr>
+              <td><strong>Climate Zone</strong></td>
+              <td>Chihuahuan Desert — high irradiance, extreme summer heat, low humidity</td>
+            </tr>
+            <tr>
+              <td><strong>Roof Types</strong></td>
+              <td>Flat/low-slope (Southwestern), composition shingle, tile, TPO membrane</td>
+            </tr>
+            <tr>
+              <td><strong>Compliance Reference</strong></td>
+              <td>NEC 2020/2023, NFPA 855, City of El Paso building permit requirements</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container narrow-content">
+      <div class="section-header">
+        <div class="kicker">FAQ</div>
+        <h2>El Paso Site Survey Questions</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((faq) => (
+          <details class="faq-item">
+            <summary class="faq-question">{faq.question}</summary>
+            <div class="faq-answer"><p>{faq.answer}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <CTASection
+    title="Need a Solar Site Survey in El Paso?"
+    subtitle="Contact our operations desk to coordinate surveyor availability in Far West Texas and the El Paso Electric service territory."
+    primaryCtaText="Schedule in El Paso"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Hub"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--border-dark-subtle);
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .kicker {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: var(--space-2);
+  }
+
+  .narrow-content { max-width: 780px; }
+
+  .editorial-prose p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-5);
+  }
+
+  .editorial-prose p:last-child { margin-bottom: 0; }
+
+  /* Split Grid */
+  .split-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .split-heading {
+    font-size: 1.125rem;
+    color: var(--primary);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--accent-gold);
+  }
+
+  .split-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .split-list li {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    padding-left: var(--space-5);
+    position: relative;
+  }
+
+  .split-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-gold);
+  }
+
+  /* Specs Table */
+  .table-wrap {
+    background-color: #FFFFFF;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .faq-item {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    background: var(--bg-surface);
+    overflow: hidden;
+    transition: border-color var(--transition-fast);
+  }
+
+  .faq-item[open] { border-color: var(--accent-gold); }
+
+  .faq-question {
+    padding: var(--space-5) var(--space-6);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--primary);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-question::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+  }
+
+  .faq-item[open] .faq-question::after { content: '−'; }
+
+  .faq-answer { padding: 0 var(--space-6) var(--space-5); }
+
+  .faq-answer p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .split-grid { grid-template-columns: 1fr; }
+  }
+</style>
