@@ -274,6 +274,33 @@ img, svg {
   color: var(--text-light-muted);
 }
 
+/* Page Hero Centered Alignment for City & Landing Pages */
+.page-hero .page-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.page-hero .page-title {
+  text-align: center;
+}
+
+.page-hero .lead {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-hero .hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: var(--space-8);
+  flex-wrap: wrap;
+}
+
 .section-warm {
   background-color: var(--bg-secondary);
 }
