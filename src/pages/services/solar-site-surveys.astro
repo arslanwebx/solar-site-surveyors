@@ -1,0 +1,1064 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Survey Services | Roof, Electrical & Attic Field Surveys';
+const pageDescription = 'Professional solar site survey services for EPCs and installers. Roof, attic, electrical, battery, obstruction and photo documentation delivered as CAD-ready field data.';
+const canonicalUrl = 'https://solarsitesurveyors.com/services/solar-site-surveys/';
+
+// Breadcrumbs
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services/' },
+  { label: 'Solar Site Surveys' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I would like to schedule a solar site survey in Texas.');
+
+// FAQ Data for on-page accordion and Schema.org
+const faqs = [
+  {
+    question: 'What is included in a solar site survey?',
+    answer: 'A typical solar site survey documents roof geometry, structural or attic information where accessible, electrical service equipment, utility meter details, proposed equipment locations, obstructions, property conditions and a categorized photo package. The exact scope can be matched to your EPC or engineering checklist.'
+  },
+  {
+    question: 'Can you follow our custom survey checklist?',
+    answer: 'Yes. If your company has required photos, measurements, naming conventions or a survey form, provide it at project intake so the field scope can be aligned to your workflow.'
+  },
+  {
+    question: 'Do you remove the electrical panel dead front?',
+    answer: 'When the project scope requires interior panel documentation, it should only be performed by a qualified person and when site conditions allow it to be done safely. If access is unsafe or restricted, the limitation should be documented rather than forcing the inspection.'
+  },
+  {
+    question: 'Can you survey battery or ESS installation areas?',
+    answer: 'Yes. Battery-related surveys can document proposed equipment walls, doors, windows, gas equipment, electrical equipment, pathway distances and other site measurements that the design team may need for layout and code review.'
+  },
+  {
+    question: 'Do you provide CAD drawings with the survey?',
+    answer: 'Site surveys can be ordered as a standalone field service. If you also need permit-ready solar drawings, the project can continue into our Solar CAD Design service after the field package is verified.'
+  },
+  {
+    question: 'How fast are site surveys delivered?',
+    answer: 'Timing depends on surveyor availability, travel distance, customer access and the project scope. We confirm scheduling and delivery expectations when the project address and requirements are submitted.'
+  },
+  {
+    question: 'Where do you provide field surveys?',
+    answer: 'Our current field survey coordination focuses on Texas markets. Use the Texas service-area directory or send the project address to confirm coverage.'
+  }
+];
+
+// Schema.org Service Schema & FAQPage Schema
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      'name': 'Professional Solar Site Survey Services',
+      'url': canonicalUrl,
+      'description': pageDescription,
+      'provider': {
+        '@type': 'Organization',
+        'name': 'Solar Site Surveys',
+        'url': 'https://solarsitesurveyors.com/'
+      },
+      'areaServed': {
+        '@type': 'State',
+        'name': 'Texas'
+      },
+      'serviceType': 'Solar site survey and field verification services'
+    },
+    {
+      '@type': 'FAQPage',
+      'mainEntity': faqs.map(faq => ({
+        '@type': 'Question',
+        'name': faq.question,
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': faq.answer
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="services"
+  canonical={canonicalUrl}
+  ogImage="/images/hero_surveyor_field.webp"
+  schemaData={serviceSchema}
+>
+  <!-- Section 1: Hero (Two-Column Layout) -->
+  <section class="section section-dark service-hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <Breadcrumbs items={breadcrumbs} isDark={true} />
+          
+          <div class="discipline-tag-wrap">
+            <span class="discipline-badge badge-green">FIELD VERIFICATION</span>
+          </div>
+
+          <h1 class="service-h1">Professional Solar Site Survey Services for EPCs & Installers</h1>
+          
+          <p class="service-lead">
+            Get the roof, structural, electrical, battery and property data your design team needs before drafting begins. Our field survey workflow is built for solar EPCs, installers and engineering teams that need clear measurements, organized photo documentation and reliable site information without sending an in-house employee to every project.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+              <span>Schedule a Site Survey</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#deliverables" class="btn btn-outline-white btn-lg">
+              <span>View Survey Deliverables</span>
+            </a>
+          </div>
+
+          <!-- Trust Strip Chips -->
+          <div class="trust-strip">
+            <span class="trust-chip">Roof Geometry</span>
+            <span class="trust-chip">Attic Framing</span>
+            <span class="trust-chip">Electrical MSP</span>
+            <span class="trust-chip">ESS Clearances</span>
+            <span class="trust-chip">Obstruction Mapping</span>
+            <span class="trust-chip">Categorized Photos</span>
+          </div>
+        </div>
+
+        <div class="hero-media-wrap">
+          <div class="media-frame card-technical">
+            <img 
+              src="/images/hero_surveyor_field.webp" 
+              alt="Professional solar site surveyor documenting residential rooftop geometry and property layout" 
+              width="600" 
+              height="400" 
+              class="hero-img"
+              loading="eager"
+            />
+            <div class="floating-media-badge">
+              <span class="badge-dot-green"></span>
+              <span>CAD-Ready Field Package</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Why the Survey Matters -->
+  <section class="section section-warm">
+    <div class="container narrow-container">
+      <div class="section-header text-left">
+        <div class="sub-badge">FIELD INTEL FIRST</div>
+        <h2>Better field data makes the rest of the solar project easier</h2>
+      </div>
+      <div class="editorial-body">
+        <p>
+          A solar design is only as reliable as the information collected at the property. Missing panel labels, incomplete attic measurements, unclear roof geometry or undocumented equipment locations can create avoidable redesigns and site revisits. Our survey process is structured around the information solar designers and permitting teams actually use, so the handoff from field visit to CAD is cleaner and easier to review.
+        </p>
+        <p>
+          For teams managing volume across multiple markets, standardized field capture also makes projects more consistent. Your operations team receives the same categories of measurements and photos from project to project instead of a different style of report from every surveyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: What Every Site Survey Can Document -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header center">
+        <div class="sub-badge">COMPREHENSIVE AUDITING</div>
+        <h2>What Every Site Survey Can Document</h2>
+        <p class="lead">Structured physical, electrical, and structural inspection criteria.</p>
+      </div>
+
+      <div class="grid-2 gap-6">
+        <!-- Card 1 -->
+        <div class="scope-card card-technical">
+          <div class="scope-header">
+            <div class="scope-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3>Roof geometry & condition</h3>
+          </div>
+          <p>Roof planes, pitch readings, ridges, eaves, valleys, roof material, visible condition, mounting areas and major rooftop obstructions.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="scope-card card-technical">
+          <div class="scope-header">
+            <div class="scope-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <h3>Attic & structural framing</h3>
+          </div>
+          <p>Accessible rafter or truss dimensions, spacing, spans, framing direction, decking observations and supporting photos needed for structural review.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="scope-card card-technical">
+          <div class="scope-header">
+            <div class="scope-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="9" y1="9" x2="9" y2="15"/><line x1="15" y1="9" x2="15" y2="15"/><line x1="9" y1="12" x2="15" y2="12"/></svg>
+            </div>
+            <h3>Main electrical service</h3>
+          </div>
+          <p>Main service panel, main breaker, bus rating, available breaker space, meter, disconnects, grounding observations and equipment labels when safely accessible.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="scope-card card-technical">
+          <div class="scope-header">
+            <div class="scope-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><line x1="6" y1="11" x2="6" y2="11"/><line x1="10" y1="11" x2="10" y2="11"/><line x1="14" y1="11" x2="14" y2="11"/><line x1="18" y1="11" x2="18" y2="11"/></svg>
+            </div>
+            <h3>Battery / ESS locations</h3>
+          </div>
+          <p>Candidate equipment walls, doors, windows, gas equipment, electrical equipment, pathway measurements and other clearances relevant to battery layout review.</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="scope-card card-technical">
+          <div class="scope-header">
+            <div class="scope-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+            <h3>Property & equipment layout</h3>
+          </div>
+          <p>Exterior elevations, meter and panel locations, inverter / equipment areas, possible conduit routes, access constraints and project-specific field notes.</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="scope-card card-technical">
+          <div class="scope-header">
+            <div class="scope-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h3>Photo documentation</h3>
+          </div>
+          <p>A categorized photo package that helps designers understand the property without relying on a handful of unorganized phone images.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Deliverables -->
+  <section class="section section-warm" id="deliverables">
+    <div class="container">
+      <div class="deliverables-box card-technical">
+        <div class="deliverables-content">
+          <div class="sub-badge">STANDARDIZED HANDOFF</div>
+          <h2>CAD-Ready Field Data, Organized for Your Team</h2>
+          <p class="lead" style="margin-bottom: var(--space-6);">
+            Deliverables can be matched to your company checklist or project requirements. A typical survey package may include:
+          </p>
+
+          <div class="checklist-grid">
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Categorized high-resolution property photographs</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Roof pitch and roof-plane documentation</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Obstruction measurements and location notes</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Attic framing / rafter / truss observations where accessible</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Main service panel and meter photographs</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Breaker, bus and equipment data plate documentation</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Grounding and existing disconnect photographs</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Proposed inverter, disconnect and battery-location measurements</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Exterior elevations and possible conduit-path documentation</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Field notes and dimensional summary suitable for CAD intake</span>
+            </div>
+            <div class="check-item full-width">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Secure digital delivery to your operations or design team</span>
+            </div>
+          </div>
+
+          <div class="scope-note">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#66717D" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <span>Delivered as a categorized HD photo package, with specific checklist requirements aligned directly to your project scope.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-Service Bridge -->
+  <section class="section section-light bridge-section">
+    <div class="container">
+      <div class="bridge-card card-technical">
+        <div class="bridge-text">
+          <span class="bridge-tag">NEXT STEP IN PIPELINE</span>
+          <h3>Need permit-ready drawings after the field visit?</h3>
+          <p>Pair your field survey with our full CAD drafting service for complete PV & ESS permit plan sets.</p>
+        </div>
+        <div class="bridge-action">
+          <a href="/services/solar-cad-designs/" class="btn btn-outline btn-md">
+            <span>Explore Solar CAD Designs</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Survey Types -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="sub-badge">VERSATILE CAPABILITIES</div>
+        <h2>Specialized Survey Configurations</h2>
+        <p class="lead">Tailored survey scopes matching system complexity and property type.</p>
+      </div>
+
+      <div class="grid-3 gap-6">
+        <div class="type-card card-technical">
+          <h4>Residential rooftop solar surveys</h4>
+          <p>Field documentation for standard residential PV projects, including roof, attic, electrical service and proposed equipment areas.</p>
+        </div>
+        <div class="type-card card-technical">
+          <h4>Solar + battery site surveys</h4>
+          <p>Additional ESS location measurements, backup equipment areas, pathway documentation and project-specific clearance capture.</p>
+        </div>
+        <div class="type-card card-technical">
+          <h4>Ground-mount surveys</h4>
+          <p>Property, electrical service, equipment, access and site-condition documentation needed before ground-mount design.</p>
+        </div>
+        <div class="type-card card-technical">
+          <h4>Commercial / C&I field surveys</h4>
+          <p>Project-specific electrical, roof, structural and property documentation for larger or more complex facilities.</p>
+        </div>
+        <div class="type-card card-technical full-row-span">
+          <h4>Custom EPC checklists</h4>
+          <p>If your design team already has a survey form, photo standard or required naming convention, the field workflow can be aligned to it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: How It Works -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header center">
+        <div class="sub-badge">END-TO-END EXECUTION</div>
+        <h2>Field Verification Workflow</h2>
+        <p class="lead">A standardized 5-step operational pipeline from project intake to digital delivery.</p>
+      </div>
+
+      <div class="workflow-grid">
+        <div class="workflow-step card-technical">
+          <span class="step-number">01</span>
+          <h4>Send the project</h4>
+          <p>Provide the project address, customer / access details, system scope and any company-specific survey checklist.</p>
+        </div>
+        <div class="workflow-step card-technical">
+          <span class="step-number">02</span>
+          <h4>Coordinate the visit</h4>
+          <p>The field visit is scheduled and the assigned surveyor receives the required capture scope.</p>
+        </div>
+        <div class="workflow-step card-technical">
+          <span class="step-number">03</span>
+          <h4>Verify the property</h4>
+          <p>The surveyor documents the roof, structural conditions, electrical service, proposed equipment areas and required photographs.</p>
+        </div>
+        <div class="workflow-step card-technical">
+          <span class="step-number">04</span>
+          <h4>Desk QA</h4>
+          <p>The package is reviewed for completeness and obvious missing items before release.</p>
+        </div>
+        <div class="workflow-step card-technical">
+          <span class="step-number">05</span>
+          <h4>Deliver to your team</h4>
+          <p>Survey files are organized and sent to your operations, CAD or engineering workflow for the next project stage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Built for Solar Operations Teams -->
+  <section class="section section-warm">
+    <div class="container narrow-container">
+      <div class="b2b-statement-box card-technical">
+        <div class="sub-badge">B2B OPERATIONS FOCUS</div>
+        <h2>Built for Solar Operations Teams</h2>
+        <p>
+          We work as an extension of the back office — not as a homeowner-facing sales company. The service is designed for EPCs, installers, solar dealers, drafting teams and engineering groups that need dependable field verification before system design or permit preparation.
+        </p>
+        <p>
+          Whether you need one difficult survey outside your normal territory or a repeatable field-survey workflow across a larger pipeline, the goal is the same: give your design team clearer information before they begin drawing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Texas Coverage -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="coverage-box card-technical">
+        <div class="coverage-content">
+          <div class="sub-badge">FIELD FOOTPRINT</div>
+          <h2>Solar Site Survey Coordination Across Texas</h2>
+          <p>
+            Our field survey network supports major Texas metropolitan areas and regional submarkets, including Houston, Dallas-Fort Worth, Austin, San Antonio, El Paso, the Rio Grande Valley, Lubbock, Amarillo and surrounding communities. Exact availability is confirmed by project address.
+          </p>
+          <div class="coverage-links">
+            <span class="links-label">Explore active coverage:</span>
+            <a href="/texas/" class="coverage-tag primary-tag">Texas Coverage Directory</a>
+            <a href="/texas/houston-solar-site-surveyors/" class="coverage-tag">Houston</a>
+            <a href="/texas/dallas-solar-site-surveyors/" class="coverage-tag">Dallas</a>
+            <a href="/texas/austin-solar-site-surveyors/" class="coverage-tag">Austin</a>
+            <a href="/texas/san-antonio-solar-site-surveyors/" class="coverage-tag">San Antonio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: FAQ -->
+  <section class="section section-warm">
+    <div class="container narrow-container">
+      <div class="section-header center">
+        <div class="sub-badge">QUESTIONS & ANSWERS</div>
+        <h2>Frequently Asked Questions</h2>
+        <p class="lead">Common questions about our field survey process, checklists, and turnaround.</p>
+      </div>
+
+      <div class="faq-accordion">
+        {faqs.map((faq) => (
+          <details class="faq-item card-technical">
+            <summary class="faq-question">
+              <span>{faq.question}</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 10: Final CTA -->
+  <section class="section section-dark cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-inner">
+        <h2>Need a solar site survey for an upcoming project?</h2>
+        <p class="cta-lead">
+          Send the project address and your survey requirements to our operations desk. We will confirm coverage, scheduling and the field scope before dispatch.
+        </p>
+        <div class="cta-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Schedule a Site Survey</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/contact" class="btn btn-outline-white btn-lg">
+            <span>Talk to Operations</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ==========================================================================
+     PRECISION SOLAR SITE SURVEYS - TECHNICAL ARCHITECTURAL STYLING
+     ========================================================================== */
+
+  .service-hero {
+    padding-top: clamp(3rem, 5vw, 4.5rem);
+    padding-bottom: clamp(3.5rem, 6vw, 5rem);
+    border-bottom: 1px solid var(--border-dark-subtle);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  .discipline-tag-wrap {
+    margin-bottom: var(--space-4);
+  }
+
+  .discipline-badge {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+  }
+
+  .discipline-badge.badge-green {
+    background-color: #ECFDF5;
+    color: #059669;
+  }
+
+  .service-h1 {
+    color: #FFFFFF !important;
+    font-family: var(--font-heading) !important;
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    margin-bottom: var(--space-5);
+  }
+
+  .service-lead {
+    color: #9FB3C8 !important;
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.3vw, 1.125rem);
+    font-weight: 400;
+    line-height: 1.65;
+    margin-bottom: var(--space-8);
+  }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-8);
+  }
+
+  .btn-outline-white {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .btn-outline-white:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+  }
+
+  /* Trust Strip Chips */
+  .trust-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: var(--space-4);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .trust-chip {
+    font-family: var(--font-heading);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #CBD2D9;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-media-wrap {
+    position: relative;
+  }
+
+  .media-frame {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background-color: var(--primary-dark);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+  }
+
+  .floating-media-badge {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: rgba(16, 42, 67, 0.9);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+
+  .badge-dot-green {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #059669;
+    box-shadow: 0 0 8px #059669;
+  }
+
+  /* Sub-badge */
+  .sub-badge {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+    background-color: rgba(16, 42, 67, 0.08);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-3);
+  }
+
+  .narrow-container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .editorial-body p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  /* Scope Cards */
+  .scope-card {
+    padding: 2rem;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .scope-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .scope-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background-color: #ECFDF5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .scope-header h3 {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+  }
+
+  .scope-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Deliverables Box */
+  .deliverables-box {
+    padding: clamp(2rem, 4vw, 3.5rem);
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2rem;
+    margin-bottom: var(--space-8);
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--text-main);
+    line-height: 1.45;
+  }
+
+  .check-item.full-width {
+    grid-column: 1 / -1;
+  }
+
+  .check-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .scope-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 1rem 1.25rem;
+    background-color: var(--bg-subtle);
+    border-left: 3px solid #059669;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* Bridge Section */
+  .bridge-card {
+    padding: 2rem 2.5rem;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+
+  .bridge-tag {
+    font-family: var(--font-heading);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0284C7;
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+
+  .bridge-text h3 {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+  }
+
+  .bridge-text p {
+    color: var(--text-secondary);
+    margin-bottom: 0;
+    font-size: 0.9375rem;
+  }
+
+  .bridge-action {
+    flex-shrink: 0;
+  }
+
+  /* Survey Types */
+  .type-card {
+    padding: 1.75rem;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+  }
+
+  .type-card h4 {
+    color: var(--primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .type-card p {
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
+
+  .full-row-span {
+    grid-column: 1 / -1;
+  }
+
+  /* Workflow */
+  .workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+  }
+
+  .workflow-step {
+    padding: 1.75rem 1.25rem;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step-number {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #059669;
+    line-height: 1;
+    margin-bottom: var(--space-3);
+  }
+
+  .workflow-step h4 {
+    margin-bottom: var(--space-2);
+    font-size: 1rem;
+  }
+
+  .workflow-step p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  /* B2B Statement */
+  .b2b-statement-box {
+    padding: clamp(2rem, 4vw, 3rem);
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    text-align: center;
+  }
+
+  .b2b-statement-box h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .b2b-statement-box p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    max-width: 760px;
+    margin: 0 auto var(--space-4);
+  }
+
+  .b2b-statement-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Coverage Box */
+  .coverage-box {
+    padding: 2.5rem;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+  }
+
+  .coverage-box p {
+    color: var(--text-secondary);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+  }
+
+  .coverage-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .links-label {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--primary);
+  }
+
+  .coverage-tag {
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-md);
+    background-color: var(--bg-subtle);
+    color: var(--primary);
+    text-decoration: none;
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-fast);
+  }
+
+  .coverage-tag:hover {
+    background-color: var(--primary);
+    color: #FFFFFF;
+    border-color: var(--primary);
+  }
+
+  .coverage-tag.primary-tag {
+    background-color: var(--primary);
+    color: #FFFFFF;
+    border-color: var(--primary);
+  }
+
+  .coverage-tag.primary-tag:hover {
+    background-color: var(--accent-gold);
+    color: var(--primary);
+    border-color: var(--accent-gold);
+  }
+
+  /* FAQ */
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color var(--transition-fast);
+  }
+
+  .faq-item[open] {
+    border-color: var(--primary);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-chevron {
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+  }
+
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+
+  /* Final CTA Banner */
+  .cta-banner-section {
+    padding: clamp(3.5rem, 6vw, 5rem) 0;
+    text-align: center;
+  }
+
+  .cta-banner-inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .cta-banner-inner h2 {
+    color: #FFFFFF !important;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-lead {
+    color: #9FB3C8 !important;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Responsive Media Queries */
+  @media (max-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    .workflow-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .checklist-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bridge-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .workflow-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-cta-group,
+    .cta-actions {
+      flex-direction: column;
+    }
+
+    .hero-cta-group a,
+    .cta-actions a {
+      width: 100%;
+    }
+  }
+</style>
