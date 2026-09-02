@@ -6,10 +6,23 @@ import { allTexasCities, type TexasCity } from '../../data/texasCities';
 import { getWhatsAppLink } from '../../data/whatsapp';
 
 export function getStaticPaths() {
-  return allTexasCities.map((city) => ({
-    params: { city: `${city.slug}-solar-site-surveyors` },
-    props: { city }
-  }));
+  const customCitySlugs = new Set([
+    'houston',
+    'san-antonio',
+    'dallas',
+    'fort-worth',
+    'austin',
+    'el-paso',
+    'arlington',
+    'corpus-christi'
+  ]);
+
+  return allTexasCities
+    .filter((city) => !customCitySlugs.has(city.slug))
+    .map((city) => ({
+      params: { city: `${city.slug}-solar-site-surveyors` },
+      props: { city }
+    }));
 }
 
 interface Props {

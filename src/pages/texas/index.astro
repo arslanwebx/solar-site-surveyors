@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CTASection from '../../components/CTASection.astro';
-import { allTexasCities } from '../../data/texasCities';
+import { allTexasCities, featuredTexasCities } from '../../data/texasCities';
 import { getWhatsAppLink } from '../../data/whatsapp';
 
 // Breadcrumbs hierarchy: Home > Service Areas > Texas
@@ -35,6 +35,48 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
         <p class="lead" style="color: #9FB3C8; max-width: 840px;">
           Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors. From the Rio Grande Valley to the Panhandle, Solar Site Surveys coordinates vetted local site surveyors across all 254 Texas counties—delivering CAD-ready photo packages for your engineering and permitting teams.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Major Texas Metro Dispatch Hubs (Pinned on Top) -->
+  <section class="section section-tight featured-metros-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Primary Markets</div>
+        <h2>Major Texas Metro Dispatch Hubs</h2>
+        <p class="lead">
+          Dedicated, jurisdiction-specific field survey operations and custom engineering coverage across Texas's eight primary metropolitan centers.
+        </p>
+      </div>
+
+      <div class="metro-grid">
+        {featuredTexasCities.map((city) => (
+          <div class="metro-card card-technical">
+            <div class="metro-card-top">
+              <div class="metro-header-row">
+                <span class="metro-badge">Primary Hub</span>
+                <span class="metro-status"><span class="status-dot"></span> Active</span>
+              </div>
+              <h3 class="metro-name">
+                <a href={`/texas/${city.slug}-solar-site-surveyors/`} class="metro-title-link">
+                  {city.name}
+                </a>
+              </h3>
+              <p class="metro-notes">{city.keyCoverageNotes}</p>
+            </div>
+            <div class="metro-card-bottom">
+              <a 
+                href={`/texas/${city.slug}-solar-site-surveyors/`} 
+                class="btn btn-primary btn-sm metro-btn"
+                title={`Explore ${city.name}, TX Solar Site Survey Coverage`}
+              >
+                <span>Explore {city.name}</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -323,6 +365,107 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     box-shadow: 0 0 0 3px rgba(16, 42, 67, 0.1);
   }
 
+  /* Featured Metro Hubs (Top Section) */
+  .featured-metros-section {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--border-light);
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .metro-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+
+  .metro-card {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+  }
+
+  .metro-card:hover {
+    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+  }
+
+  .metro-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-3);
+  }
+
+  .metro-badge {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary);
+    background-color: var(--accent-gold-subtle);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(244, 185, 66, 0.3);
+  }
+
+  .metro-status {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--status-green);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 600;
+  }
+
+  .metro-name {
+    font-family: var(--font-heading) !important;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 var(--space-2) 0;
+    letter-spacing: -0.02em;
+  }
+
+  .metro-title-link {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .metro-title-link:hover {
+    color: var(--accent-gold);
+  }
+
+  .metro-notes {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .metro-card-bottom {
+    margin-top: auto;
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .metro-btn {
+    width: 100%;
+    justify-content: center;
+    font-weight: 600;
+  }
+
   /* Cities Grid & Clean Cards */
   .cities-grid {
     display: grid;
@@ -484,6 +627,9 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
   }
 
   @media (max-width: 768px) {
+    .metro-grid {
+      grid-template-columns: 1fr;
+    }
     .cities-grid {
       grid-template-columns: 1fr;
     }

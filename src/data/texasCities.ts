@@ -4,10 +4,52 @@ export interface TexasCity {
   keyCoverageNotes: string;
 }
 
-// Premium cities (Houston, San Antonio, Dallas, Fort Worth, Austin, El Paso, Arlington, Corpus Christi)
-// have dedicated static .astro pages in src/pages/texas/ and are excluded from this dynamic array.
+// 8 Primary Texas Metros with dedicated custom landing pages
+export const featuredTexasCities: TexasCity[] = [
+  {
+    slug: "houston",
+    name: "Houston",
+    keyCoverageNotes: "Greater Houston metro & Harris County — 670 sq mi coverage from Inner Loop to Katy, Sugar Land, and The Woodlands."
+  },
+  {
+    slug: "san-antonio",
+    name: "San Antonio",
+    keyCoverageNotes: "San Antonio & Bexar County — CPS Energy municipal utility territory and military-adjacent neighborhood coordination."
+  },
+  {
+    slug: "dallas",
+    name: "Dallas",
+    keyCoverageNotes: "Dallas & DFW Metroplex — Multi-AHJ permitting coordination across Oncor utility service territory."
+  },
+  {
+    slug: "fort-worth",
+    name: "Fort Worth",
+    keyCoverageNotes: "Fort Worth & Western DFW — Expanding new-construction suburbs across Tarrant and Parker counties."
+  },
+  {
+    slug: "austin",
+    name: "Austin",
+    keyCoverageNotes: "Austin & Travis County — Austin Energy solar buyback program alignment and progressive municipal code requirements."
+  },
+  {
+    slug: "el-paso",
+    name: "El Paso",
+    keyCoverageNotes: "El Paso & Far West Texas — El Paso Electric territory (Western Interconnection) & high-irradiance desert climate."
+  },
+  {
+    slug: "arlington",
+    name: "Arlington",
+    keyCoverageNotes: "Arlington & Mid-Cities — Central DFW hub with dense residential housing stock and diverse multi-decade roof profiles."
+  },
+  {
+    slug: "corpus-christi",
+    name: "Corpus Christi",
+    keyCoverageNotes: "Corpus Christi & Coastal Bend — TDI wind-load compliance, hurricane zone structural engineering & salt-air corrosion context."
+  }
+];
 
 export const allTexasCities: TexasCity[] = [
+  ...featuredTexasCities,
   {
     "slug": "plano",
     "name": "Plano",
