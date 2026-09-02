@@ -100,26 +100,6 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
         <p class="lead" style="color: #9FB3C8; max-width: 840px;">
           Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors. From the Rio Grande Valley to the Panhandle, Solar Site Surveys coordinates vetted local site surveyors across all 254 Texas counties—delivering CAD-ready photo packages for your engineering and permitting teams.
         </p>
-
-        <!-- Key Metrics Strip -->
-        <div class="texas-stats-grid">
-          <div class="stat-box">
-            <span class="stat-number">254</span>
-            <span class="stat-label">Counties Covered</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">48h</span>
-            <span class="stat-label">Standard SLA</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">CAD-Ready Photos</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">ERCOT</span>
-            <span class="stat-label">Grid & Co-Op Aligned</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -448,38 +428,6 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     margin-bottom: var(--space-2);
   }
 
-  /* Texas Stats Grid */
-  .texas-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-4);
-    margin-top: var(--space-8);
-    max-width: 840px;
-  }
-
-  .stat-box {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-md);
-    padding: var(--space-4);
-    text-align: center;
-  }
-
-  .stat-number {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--accent-gold);
-    line-height: 1.1;
-    margin-bottom: 0.25rem;
-  }
-
-  .stat-label {
-    font-size: 0.8125rem;
-    color: var(--text-light-muted);
-  }
-
   /* Major Metro Hubs */
   .section-metros {
     padding-top: var(--space-16);
@@ -747,9 +695,6 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     .cities-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-    .texas-stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 
   @media (max-width: 768px) {
@@ -761,9 +706,6 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     }
     .specs-grid {
       grid-template-columns: 1fr;
-    }
-    .texas-stats-grid {
-      grid-template-columns: repeat(2, 1fr);
     }
   }
 </style>

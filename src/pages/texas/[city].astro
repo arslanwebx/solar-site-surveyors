@@ -96,26 +96,6 @@ const citySchema = {
             <span>← All Texas Cities</span>
           </a>
         </div>
-
-        <!-- Key Metrics Strip -->
-        <div class="city-stats-strip">
-          <div class="city-stat-item">
-            <span class="city-stat-num">48h</span>
-            <span class="city-stat-label">Turnaround SLA</span>
-          </div>
-          <div class="city-stat-item">
-            <span class="city-stat-num">100%</span>
-            <span class="city-stat-label">CAD-Ready Photos</span>
-          </div>
-          <div class="city-stat-item">
-            <span class="city-stat-num">{city.name}</span>
-            <span class="city-stat-label">Local Dispatch</span>
-          </div>
-          <div class="city-stat-item">
-            <span class="city-stat-num">ERCOT</span>
-            <span class="city-stat-label">Utility Aligned</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -272,37 +252,6 @@ const citySchema = {
     flex-wrap: wrap;
   }
 
-  .city-stats-strip {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-4);
-    margin-top: var(--space-10);
-    max-width: 820px;
-  }
-
-  .city-stat-item {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-md);
-    padding: var(--space-4);
-    text-align: center;
-  }
-
-  .city-stat-num {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent-gold);
-    line-height: 1.1;
-    margin-bottom: 0.25rem;
-  }
-
-  .city-stat-label {
-    font-size: 0.8125rem;
-    color: var(--text-light-muted);
-  }
-
   .kicker {
     font-size: 0.8125rem;
     font-weight: 600;
@@ -366,17 +315,11 @@ const citySchema = {
     .deliverables-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-    .city-stats-strip {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 
   @media (max-width: 768px) {
     .deliverables-grid {
       grid-template-columns: 1fr;
-    }
-    .city-stats-strip {
-      grid-template-columns: repeat(2, 1fr);
     }
   }
 </style>
