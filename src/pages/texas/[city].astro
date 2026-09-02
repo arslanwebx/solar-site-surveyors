@@ -20,8 +20,8 @@ const { city } = Astro.props;
 
 // Canonical URL & SEO metadata
 const canonicalPath = `/texas/${city.slug}-solar-site-surveyors/`;
-const pageTitle = `Solar Site Surveyors in ${city.name} TX | Solar Site Surveys`;
-const seoHeading = `Solar Site Surveyors in ${city.name} TX`;
+const pageTitle = `Solar Site Surveyors in ${city.name}, TX`;
+const seoHeading = `Solar Site Surveyors in ${city.name}, TX`;
 const pageDescription = `Professional solar site surveys in ${city.name}, TX for solar installers, EPCs, and contractors. Fast 48-hour turnaround, CAD-ready photo packages & local utility compliance.`;
 
 // Breadcrumbs: Home > Service Areas > Texas > [City]
@@ -38,7 +38,7 @@ const dispatchWhatsApp = getWhatsAppLink(`Hi, I would like to schedule a solar s
 const citySchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  'name': `Solar Site Surveyors in ${city.name} TX`,
+  'name': `Solar Site Surveyors in ${city.name}, TX`,
   'description': pageDescription,
   'url': `https://solarsitesurveyors.com${canonicalPath}`,
   'telephone': '+1-682-396-0543',
