@@ -12,66 +12,6 @@ const breadcrumbs = [
   { label: 'Texas' }
 ];
 
-// Top Major Metro Areas for Quick Navigation Hub
-const majorMetros = [
-  {
-    name: 'Houston',
-    slug: 'houston',
-    region: 'Gulf Coast / Southeast TX',
-    utility: 'CenterPoint Energy',
-    note: 'High-volume residential & commercial surveys, coastal wind load rafter audits, and CenterPoint interconnection prep.'
-  },
-  {
-    name: 'Dallas',
-    slug: 'dallas',
-    region: 'North Texas / DFW',
-    utility: 'Oncor Electric Delivery',
-    note: 'Rapid-turnaround surveys across Dallas County, attic framing inspections, and 200A/400A MSP bus audits.'
-  },
-  {
-    name: 'Austin',
-    slug: 'austin',
-    region: 'Central Texas / Hill Country',
-    utility: 'Austin Energy',
-    note: 'Austin Energy solar interconnection clearances, battery storage NFPA 855 setbacks, and tile/metal roof framing.'
-  },
-  {
-    name: 'San Antonio',
-    slug: 'san-antonio',
-    region: 'South Central Texas',
-    utility: 'CPS Energy',
-    note: 'CPS Energy standard interconnection audits, spanish tile roof assessments, and main panel de-rate calculations.'
-  },
-  {
-    name: 'Fort Worth',
-    slug: 'fort-worth',
-    region: 'North Texas / Tarrant County',
-    utility: 'Oncor & TNMP',
-    note: 'Standardized roof pitch and rafter span documentation across Fort Worth and western Metroplex submarkets.'
-  },
-  {
-    name: 'El Paso',
-    slug: 'el-paso',
-    region: 'West Texas',
-    utility: 'El Paso Electric',
-    note: 'Desert sun conditions, tile roof underlayment checks, and ground mount topography surveys across El Paso County.'
-  },
-  {
-    name: 'Corpus Christi',
-    slug: 'corpus-christi',
-    region: 'Coastal Bend',
-    utility: 'AEP Texas Central',
-    note: 'Strict Gulf Coast wind-load structural tie-in inspections and AEP Texas meter base verification.'
-  },
-  {
-    name: 'Plano',
-    slug: 'plano',
-    region: 'Collin County / North DFW',
-    utility: 'Oncor Electric Delivery',
-    note: 'High-pitch residential roof profiles, attic framing assessments, and battery gateway routing audits.'
-  }
-];
-
 // First 100 cities are pre-rendered statically for ultra-fast initial load & SEO indexing
 const initialCities = allTexasCities.slice(0, 100);
 const remainingCities = allTexasCities.slice(100);
@@ -100,53 +40,6 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
         <p class="lead" style="color: #9FB3C8; max-width: 840px;">
           Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors. From the Rio Grande Valley to the Panhandle, Solar Site Surveys coordinates vetted local site surveyors across all 254 Texas counties—delivering CAD-ready photo packages for your engineering and permitting teams.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Major Metro Hubs Section -->
-  <section class="section section-metros">
-    <div class="container">
-      <div class="section-header">
-        <div class="kicker">Primary Regional Hubs</div>
-        <h2>Major Texas Metro Service Areas</h2>
-        <p class="lead">
-          Direct dispatch coverage across all major Texas metropolitan markets and regional utility territories.
-        </p>
-      </div>
-
-      <div class="metro-grid">
-        {majorMetros.map((metro) => (
-          <div class="metro-card card-technical">
-            <div class="metro-card-top">
-              <div>
-                <span class="metro-region">{metro.region}</span>
-                <h3 class="metro-title">
-                  <a href={`/texas/${metro.slug}-solar-site-surveyors/`} class="metro-link">{metro.name}</a>
-                </h3>
-              </div>
-              <span class="utility-pill">{metro.utility}</span>
-            </div>
-
-            <p class="metro-note">{metro.note}</p>
-
-            <div class="metro-actions">
-              <a href={`/texas/${metro.slug}-solar-site-surveyors/`} class="btn btn-primary btn-sm">
-                <span>View {metro.name} Coverage</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a 
-                href={getWhatsAppLink(`Hi, I need to schedule a solar site survey in ${metro.name}, Texas.`)} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="btn btn-outline btn-sm"
-                title={`Schedule survey in ${metro.name}`}
-              >
-                <span>Dispatch</span>
-              </a>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   </section>
@@ -428,93 +321,6 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     margin-bottom: var(--space-2);
   }
 
-  /* Major Metro Hubs */
-  .section-metros {
-    padding-top: var(--space-16);
-    padding-bottom: var(--space-16);
-  }
-
-  .metro-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-6);
-  }
-
-  .metro-card {
-    padding: var(--space-6);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #FFFFFF;
-  }
-
-  .metro-card-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 0.5rem;
-    margin-bottom: var(--space-3);
-  }
-
-  .metro-region {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.15rem;
-  }
-
-  .metro-title {
-    font-size: 1.375rem;
-    color: var(--primary);
-    margin: 0;
-  }
-
-  .metro-link {
-    color: var(--primary);
-    transition: color var(--transition-fast);
-  }
-
-  .metro-link:hover {
-    color: var(--accent-gold);
-  }
-
-  .utility-pill {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    background-color: var(--bg-secondary);
-    color: var(--text-secondary);
-    padding: 0.2rem 0.5rem;
-    border-radius: var(--radius-sm);
-    white-space: nowrap;
-    border: 1px solid var(--border-light);
-  }
-
-  .metro-note {
-    font-size: 0.875rem;
-    line-height: 1.55;
-    color: var(--text-secondary);
-    margin-bottom: var(--space-5);
-    flex-grow: 1;
-  }
-
-  .metro-actions {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .metro-actions .btn-primary {
-    flex: 1;
-    font-size: 0.8125rem;
-    padding: 0.5rem 0.75rem;
-  }
-
-  .metro-actions .btn-outline {
-    font-size: 0.8125rem;
-    padding: 0.5rem 0.75rem;
-  }
-
   /* Search Bar */
   .search-bar-wrap {
     position: relative;
@@ -698,9 +504,6 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
   }
 
   @media (max-width: 768px) {
-    .metro-grid {
-      grid-template-columns: 1fr;
-    }
     .cities-grid {
       grid-template-columns: 1fr;
     }
