@@ -76,24 +76,14 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
               </h3>
               <p class="city-notes">{city.keyCoverageNotes}</p>
             </div>
-
-            <div class="city-card-cta">
+            <div class="city-card-action">
               <a 
                 href={`/texas/${city.slug}-solar-site-surveyors/`} 
-                class="btn btn-city-view"
-                title={`View ${city.name}, TX solar survey coverage`}
+                class="btn btn-city-explore"
+                title={`Explore ${city.name}, TX solar site survey coverage`}
               >
-                <span>View Area</span>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a 
-                href={getWhatsAppLink(`Hi, I would like to schedule a solar site survey in ${city.name}, Texas.`)} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="btn-city-wa"
-                title={`Dispatch surveyor to ${city.name}`}
-              >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>Explore</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             </div>
           </div>
@@ -188,8 +178,6 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     card.className = 'city-card card-technical';
     card.id = city.slug;
     card.setAttribute('data-name', city.name.toLowerCase());
-    const waText = encodeURIComponent('Hi, I would like to schedule a solar site survey in ' + city.name + ', Texas.');
-    const waUrl = 'https://wa.me/16823960543?text=' + waText;
     const cityUrl = '/texas/' + city.slug + '-solar-site-surveyors/';
     
     card.innerHTML = `
@@ -199,13 +187,10 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
         </h3>
         <p class="city-notes">${city.keyCoverageNotes}</p>
       </div>
-      <div class="city-card-cta">
-        <a href="${cityUrl}" class="btn btn-city-view" title="View ${city.name}, TX solar survey coverage">
-          <span>View Area</span>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-city-wa" title="Dispatch surveyor to ${city.name}">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <div class="city-card-action">
+        <a href="${cityUrl}" class="btn btn-city-explore" title="Explore ${city.name}, TX solar site survey coverage">
+          <span>Explore</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     `;
@@ -355,7 +340,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     box-shadow: 0 0 0 3px rgba(16, 42, 67, 0.1);
   }
 
-  /* Cities Grid */
+  /* Cities Grid & Clean Cards */
   .cities-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -363,80 +348,92 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     margin-top: var(--space-8);
   }
 
-  .city-card {
-    padding: var(--space-5);
+  :global(.city-card) {
+    padding: var(--space-6);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #FFFFFF;
-    min-height: 140px;
-  }
-
-  .city-name {
-    font-size: 1.125rem;
-    color: var(--primary);
-    margin-bottom: 0.35rem;
-  }
-
-  .city-title-link {
-    color: var(--primary);
-  }
-
-  .city-title-link:hover {
-    color: var(--accent-gold);
-  }
-
-  .city-notes {
-    font-size: 0.8125rem;
-    line-height: 1.45;
-    color: var(--text-secondary);
-    margin-bottom: var(--space-4);
-  }
-
-  .city-card-cta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: auto;
-  }
-
-  .btn-city-view {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.35rem;
-    padding: 0.4rem 0.75rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--primary);
-    background-color: var(--bg-secondary);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-lg);
     border: 1px solid var(--border-light);
-    flex-grow: 1;
+    box-shadow: var(--shadow-sm);
     transition: all var(--transition-fast);
   }
 
-  .btn-city-view:hover {
+  :global(.city-card:hover) {
+    border-color: var(--border-medium);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  :global(.city-card-content) {
+    margin-bottom: var(--space-4);
+  }
+
+  :global(.city-name) {
+    font-family: var(--font-heading) !important;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0 0 0.4rem 0;
+  }
+
+  :global(.city-title-link) {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  :global(.city-title-link:hover) {
+    color: var(--accent-gold);
+  }
+
+  :global(.city-notes) {
+    font-family: var(--font-body);
+    font-size: 0.84rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  :global(.city-card-action) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  :global(.btn-city-explore) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    padding: 0.55rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  :global(.btn-city-explore:hover) {
     background-color: var(--primary);
     color: #FFFFFF;
     border-color: var(--primary);
   }
 
-  .btn-city-wa {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.4rem 0.55rem;
-    color: var(--status-green);
-    background-color: var(--status-green-bg);
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(5, 150, 105, 0.2);
-    transition: all var(--transition-fast);
+  :global(.btn-city-explore svg) {
+    transition: transform var(--transition-fast);
   }
 
-  .btn-city-wa:hover {
-    background-color: var(--status-green);
-    color: #FFFFFF;
+  :global(.btn-city-explore:hover svg) {
+    transform: translateX(3px);
   }
 
   .load-more-wrap {
