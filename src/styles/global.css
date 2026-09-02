@@ -337,6 +337,29 @@ img, svg {
   box-shadow: var(--shadow-md);
 }
 
+/* High-Contrast Primary Button on Dark Sections */
+.section-dark .btn-primary,
+.service-hero .btn-primary,
+.cta-banner-section .btn-primary,
+.cta-section .btn-primary {
+  background-color: var(--accent-gold) !important;
+  color: var(--primary) !important;
+  border-color: var(--accent-gold) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(244, 185, 66, 0.35);
+}
+
+.section-dark .btn-primary:hover,
+.service-hero .btn-primary:hover,
+.cta-banner-section .btn-primary:hover,
+.cta-section .btn-primary:hover {
+  background-color: var(--accent-gold-hover) !important;
+  border-color: var(--accent-gold-hover) !important;
+  color: var(--primary-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 185, 66, 0.45);
+}
+
 .btn-outline,
 .btn-secondary {
   background-color: transparent;
