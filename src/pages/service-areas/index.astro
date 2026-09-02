@@ -2,31 +2,16 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CTASection from '../../components/CTASection.astro';
-import { serviceAreasData } from '../../data/serviceAreas';
-import { getWhatsAppLink } from '../../data/whatsapp';
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
   { label: 'Service Areas' }
 ];
-
-const texasArea = serviceAreasData.find(s => s.slug === 'texas') || {
-  slug: 'texas',
-  name: 'Texas',
-  code: 'TX',
-  status: 'Active Coverage',
-  turnaroundSla: '48 Hours',
-  metroAreas: ['Dallas-Fort Worth', 'Greater Houston', 'Austin', 'San Antonio', 'Rio Grande Valley', 'El Paso'],
-  summary: 'Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors.'
-};
-
-const otherStates = serviceAreasData.filter(s => s.slug !== 'texas');
-const customSurveyLink = getWhatsAppLink('Hi, I would like to schedule a solar site survey coordination.');
 ---
 
 <BaseLayout 
-  title="Solar Site Survey Service Areas | Nationwide Coverage | Solar Site Surveys"
-  description="Professional solar site survey coordination throughout Texas and expanding nationwide markets for installers, EPCs, solar companies, and contractors."
+  title="Service Areas | Solar Site Surveys"
+  description="Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors."
   activeNav="service-areas"
 >
   <!-- Page Hero with Dark Aesthetic -->
@@ -38,160 +23,38 @@ const customSurveyLink = getWhatsAppLink('Hi, I would like to schedule a solar s
           <span class="status-dot"></span>
           <span>Field Surveyor Coverage</span>
         </div>
-        <h1 class="page-title">Solar Site Survey Service Areas</h1>
+        <h1 class="page-title">Service Areas</h1>
         <p class="lead" style="color: #9FB3C8; max-width: 820px;">
-          Standardized solar site survey coordination delivering CAD-ready photo packages for residential, commercial, and energy storage projects. Explore active state hubs and regional dispatch coverage.
+          Explore our regional coverage and active surveyor dispatch networks across Texas.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Featured State Hub: Texas -->
-  <section class="section section-featured-hub">
+  <!-- Clean Texas Card Section -->
+  <section class="section section-texas-area">
     <div class="container">
-      <div class="section-header">
-        <div class="kicker">Primary State Hub</div>
-        <h2>Statewide Texas Coverage</h2>
-        <p class="lead">
-          Our dedicated Texas field network coordinates certified local site surveyors across all 254 counties.
-        </p>
-      </div>
-
       <!-- Clean Texas Card -->
-      <div class="texas-featured-card card-technical">
-        <div class="texas-card-body">
-          <h2 class="texas-card-title">Texas</h2>
-          <p class="texas-card-description">
-            Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors.
-          </p>
-
-          <div class="texas-card-action">
-            <a href="/texas/" class="btn btn-primary btn-lg texas-cta-btn" id="view-texas-service-areas-btn">
-              <span>View Texas Service Areas</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Multi-State Coverage Directory -->
-  <section class="section section-warm">
-    <div class="container">
-      <div class="section-header center">
-        <div class="kicker">Regional Expansion</div>
-        <h2>All State Service Territories</h2>
-        <p class="lead">
-          In addition to our statewide Texas hub, we coordinate surveying operations and regional dispatch across key high-growth solar markets.
+      <div class="texas-card card-technical">
+        <h2 class="texas-card-title">Texas</h2>
+        <p class="texas-card-description">
+          Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors.
         </p>
-      </div>
-
-      <div class="states-grid">
-        <!-- Texas State Card in Grid -->
-        <div class="state-card card-technical state-card-highlight">
-          <div class="state-card-header">
-            <div>
-              <span class="state-code">TX</span>
-              <h3 class="state-name">Texas</h3>
-            </div>
-            <span class="badge badge-active">Active Hub</span>
-          </div>
-          <p class="state-desc">
-            Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors.
-          </p>
-          <div class="state-action" style="margin-top: auto;">
-            <a href="/texas/" class="btn btn-primary btn-sm btn-block">
-              <span>View Texas Service Areas</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Other States -->
-        {otherStates.map((state) => (
-          <div class="state-card card-technical">
-            <div class="state-card-header">
-              <div>
-                <span class="state-code">{state.code}</span>
-                <h3 class="state-name">{state.name}</h3>
-              </div>
-              <span class="badge badge-active">{state.status}</span>
-            </div>
-            <p class="state-desc">{state.summary}</p>
-            <div class="state-sla">
-              <span class="sla-label">Turnaround:</span>
-              <span class="sla-value">{state.turnaroundSla}</span>
-            </div>
-            <div class="state-action">
-              <a 
-                href={getWhatsAppLink(`Hi, I would like to inquire about solar site survey coverage in ${state.name}.`)}
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="btn btn-outline btn-sm btn-block"
-              >
-                <span>Inquire Dispatch</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Standardized Survey Capabilities -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header center">
-        <div class="kicker">Standardized Execution</div>
-        <h2>What Every Site Survey Delivers</h2>
-        <p class="lead">
-          Consistent field measurements and photographic documentation tailored directly to your engineering team's exact requirements.
-        </p>
-      </div>
-
-      <div class="capabilities-grid">
-        <div class="capability-card card-technical">
-          <div class="capability-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <h4>Attic & Structural Framing</h4>
-          <p>Rafter size, spacing, span, roof pitch, framing health, and decking thickness accurately recorded with clear measurement rulers.</p>
-        </div>
-
-        <div class="capability-card card-technical">
-          <div class="capability-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <h4>Main Service Panel & Electrical</h4>
-          <p>Bus rating, main breaker ampacity, utility meter number, grounding electrode, available breaker slots, and conduit pathways.</p>
-        </div>
-
-        <div class="capability-card card-technical">
-          <div class="capability-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          </div>
-          <h4>Battery & ESS Clearance</h4>
-          <p>NFPA 855 setback verification, wall backing condition, pathway to MSP, and indoor/outdoor environmental clearances.</p>
-        </div>
-
-        <div class="capability-card card-technical">
-          <div class="capability-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-          </div>
-          <h4>Shading & Aerial Photogrammetry</h4>
-          <p>Drone roof surface capture, obstruction coordinates (vents, skylights, plumbing stacks), and high-resolution solar irradiance context.</p>
+        <div class="texas-card-action">
+          <a href="/texas/" class="btn btn-primary btn-lg texas-cta-btn" id="view-texas-service-areas-btn">
+            <span>View Texas Service Areas</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- Final CTA -->
   <CTASection 
-    title="Need Solar Site Surveys Coordinated in Texas or Nationwide?"
-    subtitle="Connect with our operations desk to schedule your next survey or discuss recurring regional survey dispatch."
-    primaryCtaText="Explore Texas Hub"
+    title="Need a Solar Site Survey Anywhere in Texas?"
+    subtitle="Contact our dispatch desk via WhatsApp to check real-time surveyor availability and coordinate your next survey."
+    primaryCtaText="View Texas Hub"
     primaryCtaLink="/texas/"
     secondaryCtaText="Partner With Us"
     secondaryCtaLink="/join-us"
@@ -227,46 +90,40 @@ const customSurveyLink = getWhatsAppLink('Hi, I would like to schedule a solar s
     margin-bottom: var(--space-4);
   }
 
-  .kicker {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--accent-gold);
-    margin-bottom: var(--space-2);
+  /* Clean Texas Card Section */
+  .section-texas-area {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-20);
   }
 
-  /* Clean Texas Card */
-  .section-featured-hub {
-    padding-top: var(--space-12);
-    padding-bottom: var(--space-16);
-  }
-
-  .texas-featured-card {
-    padding: var(--space-10);
+  .texas-card {
+    padding: var(--space-10) var(--space-12);
     border-radius: var(--radius-xl);
     border: 1px solid var(--border-light);
     background-color: #FFFFFF;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-fast);
+    max-width: 820px;
   }
 
-  .texas-featured-card:hover {
+  .texas-card:hover {
     border-color: var(--border-medium);
     box-shadow: var(--shadow-md);
   }
 
   .texas-card-title {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-family: var(--font-heading) !important;
+    font-size: clamp(2rem, 3.5vw, 2.5rem);
+    font-weight: 600;
     color: var(--primary);
     margin-bottom: var(--space-3);
   }
 
   .texas-card-description {
+    font-family: var(--font-body);
     font-size: 1.125rem;
-    line-height: 1.6;
+    line-height: 1.65;
     color: var(--text-secondary);
-    max-width: 800px;
     margin-bottom: var(--space-6);
   }
 
@@ -276,150 +133,9 @@ const customSurveyLink = getWhatsAppLink('Hi, I would like to schedule a solar s
     padding: 0.875rem 1.75rem;
   }
 
-  /* States Grid */
-  .states-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-6);
-  }
-
-  .state-card {
-    padding: var(--space-6);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background-color: #FFFFFF;
-  }
-
-  .state-card-highlight {
-    border-color: var(--primary);
-    background: linear-gradient(to bottom, #FFFFFF, #F8FAFC);
-  }
-
-  .state-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: var(--space-4);
-  }
-
-  .state-code {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-gold);
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.15rem;
-  }
-
-  .state-name {
-    font-size: 1.35rem;
-    color: var(--primary);
-    margin: 0;
-  }
-
-  .badge {
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.2rem 0.55rem;
-    border-radius: var(--radius-full);
-  }
-
-  .badge-active {
-    background-color: var(--status-green-bg);
-    color: var(--status-green);
-  }
-
-  .state-desc {
-    font-size: 0.875rem;
-    line-height: 1.55;
-    color: var(--text-secondary);
-    margin-bottom: var(--space-4);
-    flex-grow: 1;
-  }
-
-  .state-sla {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8125rem;
-    padding: 0.5rem 0.75rem;
-    background-color: var(--bg-secondary);
-    border-radius: var(--radius-sm);
-    margin-bottom: var(--space-5);
-  }
-
-  .sla-label {
-    color: var(--text-muted);
-  }
-
-  .sla-value {
-    font-family: var(--font-mono);
-    font-weight: 600;
-    color: var(--primary);
-  }
-
-  .btn-block {
-    width: 100%;
-  }
-
-  /* Capabilities Grid */
-  .capabilities-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-6);
-  }
-
-  .capability-card {
-    padding: var(--space-6);
-    background-color: #FFFFFF;
-  }
-
-  .capability-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-md);
-    background-color: var(--accent-gold-subtle);
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--space-4);
-  }
-
-  .capability-card h4 {
-    margin-bottom: var(--space-2);
-    color: var(--primary);
-  }
-
-  .capability-card p {
-    font-size: 0.875rem;
-    line-height: 1.55;
-  }
-
-  @media (max-width: 1024px) {
-    .states-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .capabilities-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
   @media (max-width: 768px) {
-    .states-grid {
-      grid-template-columns: 1fr;
-    }
-    .capabilities-grid {
-      grid-template-columns: 1fr;
-    }
-    .texas-featured-card {
-      padding: var(--space-6);
-    }
-    .texas-card-meta {
-      flex-direction: column;
-      gap: var(--space-2);
+    .texas-card {
+      padding: var(--space-8) var(--space-6);
     }
   }
 </style>
