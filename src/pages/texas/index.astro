@@ -12,6 +12,18 @@ const breadcrumbs = [
   { label: 'Texas' }
 ];
 
+// 52 Dedicated Texas City Landing Pages
+const active52SlugsList = [
+  'houston', 'san-antonio', 'dallas', 'fort-worth', 'austin', 'el-paso', 'arlington', 'corpus-christi',
+  'plano', 'lubbock', 'laredo', 'irving', 'garland', 'frisco', 'mckinney', 'grand-prairie',
+  'amarillo', 'brownsville', 'denton', 'killeen', 'mesquite', 'mcallen', 'pasadena', 'waco',
+  'midland', 'round-rock', 'lewisville', 'carrollton', 'abilene', 'pearland', 'college-station',
+  'odessa', 'new-braunfels', 'league-city', 'conroe', 'richardson', 'tyler', 'allen', 'beaumont',
+  'edinburg', 'sugar-land', 'georgetown', 'wichita-falls', 'san-angelo', 'temple', 'bryan',
+  'leander', 'mission', 'baytown', 'mansfield', 'longview', 'pharr'
+];
+const active52Set = new Set(active52SlugsList);
+
 // First 100 cities are pre-rendered statically for ultra-fast initial load & SEO indexing
 const initialCities = allTexasCities.slice(0, 100);
 const remainingCities = allTexasCities.slice(100);
@@ -33,7 +45,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
 
         <h1 class="page-title">Texas Solar Site Survey Coverage & City Directory</h1>
         <p class="lead" style="color: #9FB3C8; max-width: 924px;">
-          Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors. From the Rio Grande Valley to the Panhandle, Solar Site Surveys coordinates vetted local site surveyors across all 254 Texas counties—delivering CAD-ready photo packages for your engineering and permitting teams.
+          Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors. From the Rio Grande Valley to the Panhandle, Solar Site Surveys coordinates vetted local site surveyors across all 254 Texas counties, delivering CAD-ready photo packages for your engineering and permitting teams.
         </p>
       </div>
     </div>
@@ -63,26 +75,46 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
 
       <!-- Cities Grid (Initial 100 Pre-rendered) -->
       <div class="cities-grid" id="cities-grid">
-        {initialCities.map((city) => (
-          <div class="city-card card-technical" id={city.slug} data-name={city.name.toLowerCase()}>
-            <div class="city-card-content">
-              <h3 class="city-name">
-                <a href={`/texas/${city.slug}-solar-site-surveyors/`} class="city-title-link">{city.name}</a>
-              </h3>
-              <p class="city-notes">{city.keyCoverageNotes}</p>
+        {initialCities.map((city) => {
+          const hasPage = active52Set.has(city.slug);
+          return (
+            <div class={`city-card card-technical ${hasPage ? 'has-page' : 'is-unlinked'}`} id={city.slug} data-name={city.name.toLowerCase()}>
+              <div class="city-card-content">
+                <h3 class="city-name">
+                  {hasPage ? (
+                    <a href={`/texas/${city.slug}-solar-site-surveyors/`} class="city-title-link">{city.name}</a>
+                  ) : (
+                    <span class="city-title-static">{city.name}</span>
+                  )}
+                </h3>
+                <p class="city-notes">{city.keyCoverageNotes}</p>
+              </div>
+              <div class="city-card-action">
+                {hasPage ? (
+                  <a 
+                    href={`/texas/${city.slug}-solar-site-surveyors/`} 
+                    class="btn btn-city-explore"
+                    title={`Explore ${city.name}, TX solar site survey coverage`}
+                  >
+                    <span>Explore</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                ) : (
+                  <button 
+                    type="button" 
+                    class="btn btn-city-explore btn-unlinked"
+                    disabled
+                    aria-disabled="true"
+                    title="Coverage available across Texas. Dedicated landing page coming soon."
+                  >
+                    <span>Explore</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </button>
+                )}
+              </div>
             </div>
-            <div class="city-card-action">
-              <a 
-                href={`/texas/${city.slug}-solar-site-surveyors/`} 
-                class="btn btn-city-explore"
-                title={`Explore ${city.name}, TX solar site survey coverage`}
-              >
-                <span>Explore</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <!-- Load More Button -->
@@ -95,7 +127,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
       
       <!-- No Search Results Fallback -->
       <div id="no-cities-msg" class="no-results-box" style="display: none;">
-        <p>No Texas cities matching your search. We coordinate surveys across all 254 counties statewide—<a href={defaultCustomSurveyWhatsApp} target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Schedule a Custom Survey via WhatsApp</a>.</p>
+        <p>No Texas cities matching your search. We coordinate surveys across all 254 counties statewide. <a href={defaultCustomSurveyWhatsApp} target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Schedule a Custom Survey via WhatsApp</a>.</p>
       </div>
     </div>
   </section>
@@ -158,7 +190,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
 </BaseLayout>
 
 <!-- Client Script for Ultra-Fast Batch Loading and Full-Dataset Search -->
-<script define:vars={{ remainingCities, initialCities }}>
+<script define:vars={{ remainingCities, initialCities, active52SlugsList }}>
   let currentLoadedCount = initialCities.length;
   const BATCH_SIZE = 100;
   const grid = document.getElementById('cities-grid');
@@ -166,11 +198,13 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
   const loadMoreWrap = document.getElementById('load-more-wrap');
   const searchInput = document.getElementById('city-search');
   const noResults = document.getElementById('no-cities-msg');
+  const active52Set = new Set(active52SlugsList);
 
   // Helper to create a city card DOM element
   function createCardElement(city) {
     const card = document.createElement('div');
-    card.className = 'city-card card-technical';
+    const hasPage = active52Set.has(city.slug);
+    card.className = `city-card card-technical ${hasPage ? 'has-page' : 'is-unlinked'}`;
     card.id = city.slug;
     card.setAttribute('data-name', city.name.toLowerCase());
     const cityUrl = '/texas/' + city.slug + '-solar-site-surveyors/';
@@ -178,15 +212,23 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     card.innerHTML = `
       <div class="city-card-content">
         <h3 class="city-name">
-          <a href="${cityUrl}" class="city-title-link">${city.name}</a>
+          ${hasPage 
+            ? `<a href="${cityUrl}" class="city-title-link">${city.name}</a>` 
+            : `<span class="city-title-static">${city.name}</span>`}
         </h3>
         <p class="city-notes">${city.keyCoverageNotes}</p>
       </div>
       <div class="city-card-action">
-        <a href="${cityUrl}" class="btn btn-city-explore" title="Explore ${city.name}, TX solar site survey coverage">
-          <span>Explore</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        ${hasPage 
+          ? `<a href="${cityUrl}" class="btn btn-city-explore" title="Explore ${city.name}, TX solar site survey coverage">
+              <span>Explore</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>`
+          : `<button type="button" class="btn btn-city-explore btn-unlinked" disabled aria-disabled="true" title="Coverage available across Texas. Dedicated landing page coming soon.">
+              <span>Explore</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>`
+        }
       </div>
     `;
     return card;
@@ -386,6 +428,10 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     color: var(--accent-gold);
   }
 
+  :global(.city-title-static) {
+    color: var(--primary);
+  }
+
   :global(.city-notes) {
     font-family: var(--font-body);
     font-size: 0.84rem;
@@ -432,6 +478,30 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
 
   :global(.btn-city-explore:hover svg) {
     transform: translateX(3px);
+  }
+
+  :global(.btn-city-explore.btn-unlinked) {
+    cursor: default;
+    opacity: 0.6;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px dashed var(--border-medium, #cbd2d9);
+    pointer-events: none;
+  }
+
+  :global(.btn-city-explore.btn-unlinked:hover) {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    border-color: var(--border-medium, #cbd2d9);
+    transform: none;
+  }
+
+  :global(.btn-city-explore.btn-unlinked svg) {
+    opacity: 0.5;
+  }
+
+  :global(.btn-city-explore.btn-unlinked:hover svg) {
+    transform: none;
   }
 
   .load-more-wrap {
