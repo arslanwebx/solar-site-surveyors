@@ -1,0 +1,159 @@
+---
+import { getWhatsAppLink } from '../data/whatsapp';
+
+interface Props {
+  message?: string;
+}
+
+const { message = 'Hi, I would like to schedule a solar site survey in Texas.' } = Astro.props;
+const whatsappHref = getWhatsAppLink(message);
+---
+
+<aside aria-label="WhatsApp Contact" class="whatsapp-floating-container">
+  <a
+    href={whatsappHref}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="whatsapp-floating-btn"
+    id="global-whatsapp-btn"
+    aria-label="Chat on WhatsApp"
+    title="Chat with Solar Site Surveys operations on WhatsApp"
+  >
+    <span class="whatsapp-icon-wrap" aria-hidden="true">
+      <svg
+        class="whatsapp-floating-icon"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M17.472 14.382c-.301-.15-1.781-.879-2.057-.979-.276-.1-.476-.15-.677.15-.2.3-.777.979-.952 1.18-.176.201-.351.226-.652.076-.301-.151-1.27-.468-2.42-1.493-.895-.798-1.5-1.783-1.676-2.084-.175-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.175.2-.301.3-.502.1-.2.05-.376-.025-.526-.075-.15-.677-1.632-.927-2.233-.244-.585-.492-.505-.677-.515l-.577-.01c-.2 0-.527.075-.803.376-.276.3-1.053 1.029-1.053 2.509 0 1.48 1.079 2.909 1.229 3.11.15.2 2.124 3.243 5.145 4.549.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.58-.087 1.781-.728 2.032-1.431.25-.703.25-1.305.175-1.431-.075-.126-.276-.201-.577-.352zM12.032 2a9.98 9.98 0 0 0-8.508 15.228L2 22l4.912-1.474A9.975 9.975 0 0 0 12.032 22C17.538 22 22 17.523 22 12S17.538 2 12.032 2z"/>
+      </svg>
+    </span>
+    <span class="whatsapp-floating-text">Chat on WhatsApp</span>
+  </a>
+</aside>
+
+<style>
+  .whatsapp-floating-container {
+    position: fixed;
+    bottom: max(24px, env(safe-area-inset-bottom, 24px));
+    right: max(24px, env(safe-area-inset-right, 24px));
+    z-index: 999;
+    pointer-events: none;
+  }
+
+  .whatsapp-floating-btn {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: #FFFFFF !important;
+    padding: 12px 20px 12px 16px;
+    border-radius: 9999px;
+    text-decoration: none !important;
+    font-family: var(--font-heading, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    box-shadow: 0 4px 18px rgba(37, 211, 102, 0.38), 0 2px 8px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.2s ease;
+    animation: whatsappEntrance 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .whatsapp-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .whatsapp-floating-icon {
+    width: 22px;
+    height: 22px;
+    display: block;
+    color: #FFFFFF;
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .whatsapp-floating-text {
+    white-space: nowrap;
+    color: #FFFFFF;
+  }
+
+  /* Desktop hover and active interactions */
+  @media (hover: hover) and (pointer: fine) {
+    .whatsapp-floating-btn:hover {
+      background-color: #20BA5A;
+      color: #FFFFFF !important;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.48), 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .whatsapp-floating-btn:hover .whatsapp-floating-icon {
+      transform: scale(1.08);
+    }
+
+    .whatsapp-floating-btn:active {
+      transform: translateY(-1px) scale(0.99);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35), 0 2px 6px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  /* Mobile responsiveness: compact circular button */
+  @media (max-width: 640px) {
+    .whatsapp-floating-container {
+      bottom: max(18px, env(safe-area-inset-bottom, 18px));
+      right: max(18px, env(safe-area-inset-right, 18px));
+    }
+
+    .whatsapp-floating-btn {
+      width: 52px;
+      height: 52px;
+      padding: 0;
+      border-radius: 50%;
+      justify-content: center;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22), 0 2px 8px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-floating-text {
+      display: none;
+    }
+
+    .whatsapp-floating-icon {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  /* Subtle entrance animation */
+  @keyframes whatsappEntrance {
+    from {
+      opacity: 0;
+      transform: translateY(14px) scale(0.92);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .whatsapp-floating-btn {
+      animation: none;
+      transition: none;
+    }
+    .whatsapp-floating-icon {
+      transition: none;
+    }
+  }
+</style>
