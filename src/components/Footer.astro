@@ -68,12 +68,15 @@ const whatsappLink = WHATSAPP_BASE_URL;
       </div>
     </div>
 
-    <!-- Bottom Credits -->
+    <!-- Bottom Centered Credits -->
     <div class="footer-bottom">
       <div class="footer-bottom-inner">
-        <p>© 2026 SolarSiteSurveyors.com | All rights reserved.</p>
-        <p class="footer-powered-by">
-          Powered by <a href="https://vantexwebstudio.com/" target="_blank" rel="noopener noreferrer">VantexWeb</a>
+        <p class="footer-credits">
+          <span>© 2026 SolarSiteSurveyors.com | All rights reserved.</span>
+          <span class="footer-divider" aria-hidden="true">|</span>
+          <span class="footer-powered-by">
+            Powered by <a href="https://vantexwebstudio.com/" target="_blank" rel="noopener noreferrer">VantexWeb</a>
+          </span>
         </p>
       </div>
     </div>
@@ -197,22 +200,33 @@ const whatsappLink = WHATSAPP_BASE_URL;
   .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: var(--space-8);
+    text-align: center;
   }
 
   .footer-bottom-inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: var(--space-4);
   }
 
-  .footer-bottom p {
+  .footer-credits {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
     font-family: var(--font-body);
     font-size: 0.875rem;
     color: #9FB3C8;
     margin: 0;
     letter-spacing: 0.01em;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .footer-divider {
+    color: rgba(255, 255, 255, 0.25);
+    user-select: none;
   }
 
   .footer-powered-by a {
@@ -240,10 +254,13 @@ const whatsappLink = WHATSAPP_BASE_URL;
       gap: var(--space-6);
     }
 
-    .footer-bottom-inner {
+    .footer-credits {
       flex-direction: column;
-      text-align: center;
       gap: var(--space-2);
+    }
+
+    .footer-divider {
+      display: none;
     }
   }
 </style>
