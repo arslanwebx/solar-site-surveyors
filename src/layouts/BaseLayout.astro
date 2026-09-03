@@ -61,6 +61,16 @@ const baseSchema = {
     <meta name="description" content={description} />
     <link rel="canonical" href={fullCanonicalUrl} />
 
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-GXSFB3FHHS"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GXSFB3FHHS');
+    </script>
+
     <!-- Favicon & Brand Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#102A43" />
