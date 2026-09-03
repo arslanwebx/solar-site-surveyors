@@ -1,0 +1,420 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in College Station, TX | CSU Utility';
+const pageDescription = 'Solar site surveys in College Station, TX. Verifying College Station Utilities (CSU) meter equipment, attic framing, and roof condition across Brazos County.';
+const canonicalPath = '/texas/college-station-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'College Station' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to coordinate a solar site survey in College Station, Texas.');
+
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors: College Station, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'College Station, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': [
+    'Solar Site Surveys',
+    'Municipal Utility Solar Surveys',
+    'Residential Solar Site Survey',
+    'CSU Meter Verification'
+  ],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How does College Station Utilities affect solar interconnection requirements?',
+    answer: 'College Station Utilities (CSU) operates as a city-owned municipal electric utility. Solar interconnection in CSU territory requires dedicated distributed generation paperwork, specific bi-directional meter socket standards, and exterior AC disconnect switches. Our field survey captures clear photographs of the CSU meter base, label numbers, and service entrance disconnects to ensure compliance before plan submittal.'
+  },
+  {
+    question: 'Are all College Station addresses served by College Station Utilities?',
+    answer: 'Most properties within the city limits are served by CSU, but certain peripheral neighborhoods and extraterritorial areas in Brazos County connect to Bryan Texas Utilities (BTU) or Entergy Texas. We verify the utility meter badge and enclosure labels during the on-site visit to confirm the serving utility for your engineering team.'
+  },
+  {
+    question: 'What roof framing conditions are common across College Station?',
+    answer: 'College Station features a mix of older single-family homes near Texas A&M University with conventional lumber rafters alongside modern master-planned subdivisions with engineered roof trusses. The survey records rafter dimensions, truss spacing, and roof decking thickness with measurement photos.'
+  },
+  {
+    question: 'What electrical panel data is captured during the survey?',
+    answer: 'We capture the main service panel label, busbar rating, main breaker capacity, available breaker slots, grounding electrode path, and any existing subpanels. This confirms whether the system can use a standard breaker backfeed or requires a service panel upgrade.'
+  },
+  {
+    question: 'Do you cover projects across the Brazos Valley region?',
+    answer: 'Yes. Survey dispatches regularly connect College Station with Bryan, Caldwell, Navasota, and Brenham.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': f.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Centered Hero Section -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveyors in College Station, TX</h1>
+        <p class="lead">
+          Accurate field data collection aligned with College Station Utilities (CSU) municipal standards. Documenting electrical equipment, roof plane geometry, and attic framing across Brazos County.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Coordinate College Station Survey</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CSU Municipal Utility Alert -->
+  <section class="section">
+    <div class="container">
+      <div class="csu-banner card-technical">
+        <div class="csu-header">
+          <div class="csu-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          </div>
+          <div>
+            <div class="kicker">Municipal Utility Notice</div>
+            <h2>College Station Utilities (CSU) Operates Independent Interconnection Standards</h2>
+          </div>
+        </div>
+        <p>
+          College Station does not operate under Oncor or deregulated ERCOT retail electric provider rules. Electric distribution is owned and managed directly by the City of College Station through College Station Utilities (CSU). Solar installers entering the Brazos Valley market often face project delays when submitting plans that assume standard Oncor distributed generation rules.
+        </p>
+        <p>
+          CSU maintains distinct interconnection paperwork, specific utility disconnect switch clearances, and unique meter base requirements. Our site survey packages focus heavily on collecting clear photographs of the CSU meter base, service entrance mast, utility tags, and existing disconnect equipment. This verification ensures your interconnection team files the appropriate paperwork without administrative delays.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Scope Grid -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Field Inspection Scope</div>
+        <h2>College Station Site Survey Package Deliverables</h2>
+        <p class="lead">
+          Comprehensive physical data prepared to support engineering review and City of College Station building permits.
+        </p>
+      </div>
+
+      <div class="csu-grid">
+        <div class="csu-card card-technical">
+          <h3>CSU Electric Meter Equipment</h3>
+          <p>
+            We photograph the electric meter enclosure, meter badge number, digital display, service entrance conduit, and existing grounding to support complete CSU interconnection filing.
+          </p>
+        </div>
+
+        <div class="csu-card card-technical">
+          <h3>Main Electrical Service Panels</h3>
+          <p>
+            The survey records busbar ratings, main breaker capacity, manufacturer data plates, and circuit breaker directories, confirming whether the electrical panel can accept a solar backfeed breaker.
+          </p>
+        </div>
+
+        <div class="csu-card card-technical">
+          <h3>Attic Framing in College-Town Housing</h3>
+          <p>
+            From older university-adjacent residential properties with conventional lumber rafters to modern subdivisions with engineered trusses, we document framing member sizes, spans, and decking materials.
+          </p>
+        </div>
+
+        <div class="csu-card card-technical">
+          <h3>Roof Planes & Penetrations</h3>
+          <p>
+            We measure pitch angles, record roof plane azimuth, and map plumbing vents, attic fans, exhaust flues, and skylights to verify usable array boundaries within local fire code setbacks.
+          </p>
+        </div>
+
+        <div class="csu-card card-technical">
+          <h3>Battery Backup & Inverter Clearances</h3>
+          <p>
+            For ESS projects, we record available wall space in attached garages or exterior side yards, verifying clearances from windows, doors, and gas meters to support code-compliant battery placement.
+          </p>
+        </div>
+
+        <div class="csu-card card-technical">
+          <h3>Property Elevation Context</h3>
+          <p>
+            Full elevation photos document site access, fence gates, air conditioning equipment, and ladder setup areas to assist installation managers with build-day staging.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Coverage Links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Brazos Valley Operations</div>
+        <h2>Connected Survey Coverage Across Surrounding Brazos County Markets</h2>
+        <p class="lead">
+          Coordinate field surveys across neighboring municipalities with consistent documentation standards.
+        </p>
+      </div>
+
+      <div class="csu-links">
+        <a href="/texas/bryan-solar-site-surveyors/" class="csu-link-card">
+          <h4>Bryan Solar Site Surveyors</h4>
+          <p>Bryan Texas Utilities municipal standards and historic framing documentation directly north.</p>
+        </a>
+        <a href="/texas/conroe-solar-site-surveyors/" class="csu-link-card">
+          <h4>Conroe Solar Site Surveyors</h4>
+          <p>Entergy Texas territory and pine tree shading analysis directly southeast in Montgomery County.</p>
+        </a>
+        <a href="/texas/waco-solar-site-surveyors/" class="csu-link-card">
+          <h4>Waco Solar Site Surveyors</h4>
+          <p>McLennan County residential survey coordination and I-35 corridor framing documentation.</p>
+        </a>
+        <a href="/texas/round-rock-solar-site-surveyors/" class="csu-link-card">
+          <h4>Round Rock Solar Site Surveyors</h4>
+          <p>High-density Williamson County tech corridor survey coordination directly southwest.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Frequently Asked Questions</div>
+        <h2>College Station Solar Survey Operations</h2>
+        <p class="lead">Essential details for solar contractors and project coordinators.</p>
+      </div>
+
+      <div class="csu-faq-list">
+        {faqs.map(faq => (
+          <div class="csu-faq-item card-technical">
+            <h3 class="csu-faq-q">{faq.question}</h3>
+            <p class="csu-faq-a">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection
+    title="Coordinate a Solar Site Survey in College Station, TX"
+    subtitle="Submit your project address to confirm surveyor scheduling and ensure your field package meets College Station Utilities standards."
+    primaryCtaText="Schedule Survey in College Station"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Directory"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .page-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .page-hero .lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #9FB3C8;
+    max-width: 900px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .csu-banner {
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-left: 6px solid var(--accent-gold);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .csu-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  .csu-icon {
+    color: var(--accent-gold);
+    margin-top: 0.25rem;
+  }
+
+  .csu-banner h2 {
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    line-height: 1.2;
+    margin-bottom: var(--space-2);
+  }
+
+  .csu-banner p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .csu-banner p:last-child {
+    margin-bottom: 0;
+  }
+
+  .csu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .csu-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .csu-card h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .csu-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .csu-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .csu-link-card {
+    display: block;
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .csu-link-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .csu-link-card h4 {
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .csu-link-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  .csu-faq-list {
+    max-width: 900px;
+    margin: var(--space-8) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .csu-faq-item {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .csu-faq-q {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .csu-faq-a {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+</style>

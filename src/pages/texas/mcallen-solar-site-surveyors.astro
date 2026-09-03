@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in McAllen, TX | Rio Grande Valley';
+const pageDescription = 'Solar site surveys in McAllen, TX. Documenting AEP Texas Central electrical service panels, Spanish tile roofs, and shading obstacles across Hidalgo County.';
+const canonicalPath = '/texas/mcallen-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'McAllen' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to schedule a solar site survey in McAllen, Texas.');
+
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors: McAllen, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'McAllen, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': [
+    'Solar Site Surveys',
+    'Residential Solar Site Survey',
+    'Spanish Tile Roof Survey',
+    'Main Electrical Service Inspection'
+  ],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How do Spanish clay tile roofs affect solar site surveys in McAllen?',
+    answer: 'Homes in McAllen frequently feature Spanish clay or concrete barrel tile roofs. Walking on tile carries significant breakage risk. Our surveyors measure roof pitch from eaves and ground points, photograph tile attachment methods from gable ends, and inspect roof underlayment condition from accessible attic spaces, providing CAD designers with accurate layout boundaries.'
+  },
+  {
+    question: 'Which utility company serves McAllen solar installations?',
+    answer: 'McAllen is primarily served by AEP Texas Central. We photograph the digital meter display, meter enclosure, meter badge number, service drop or underground lateral, and main utility disconnect to ensure complete documentation for AEP distributed generation filings.'
+  },
+  {
+    question: 'How do palm trees and landscape vegetation affect solar surveys in McAllen?',
+    answer: 'Mature palm trees and tropical landscaping are common across established McAllen neighborhoods. Our surveyors photograph surrounding foliage, record obstruction angles, and document the effective solar window to help CAD designers position arrays away from dense shading.'
+  },
+  {
+    question: 'What electrical service panel details are captured during the survey?',
+    answer: 'We photograph the main service panel, manufacturer label, busbar rating, main breaker capacity, existing breaker schedules, grounding conductors, and utility meter enclosure. This data confirms whether a standard breaker backfeed is compliant or if an alternative interconnection method is needed.'
+  },
+  {
+    question: 'Do you cover projects across the Upper and Mid Rio Grande Valley?',
+    answer: 'Yes. Survey dispatches regularly connect McAllen with Edinburg, Mission, Pharr, San Juan, Alamo, and Donna.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': f.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Centered Hero Section -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveyors in McAllen, TX</h1>
+        <p class="lead">
+          Field site documentation across Hidalgo County and the Rio Grande Valley. Standardizing AEP Texas Central electrical service data, Spanish tile roof plane geometry, and attic structural framing for solar design teams.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Schedule Survey in McAllen</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commercial Capital of the Valley Focus -->
+  <section class="section">
+    <div class="container">
+      <div class="mca-split">
+        <div class="mca-text">
+          <div class="kicker">Operational Focus</div>
+          <h2>Commercial Capital of the Valley: High-Velocity Solar Coordination</h2>
+          <p>
+            McAllen serves as the retail, healthcare, and financial hub of the Rio Grande Valley. Blessed with some of the highest annual solar irradiance in the southern United States and persistent summer heat that drives residential air conditioning demand, McAllen has become an active center for residential solar installations.
+          </p>
+          <p>
+            The residential landscape presents distinctive field conditions. Subdivisions across north and south McAllen feature Spanish barrel tile, concrete tile, and composition shingle roofs, often surrounded by mature palm trees and tropical landscaping that create micro-shading patterns. Furthermore, electrical distribution is governed by AEP Texas Central, which enforces specific bi-directional meter standards and distributed generation procedures.
+          </p>
+          <p>
+            Our survey coordination standardizes field data collection across every McAllen project. We record verified electrical service parameters, inspect accessible attic framing, measure roof plane geometry, and photograph all service equipment to ensure your design team can draft accurate, permit-ready plans.
+          </p>
+        </div>
+        <div class="mca-profile card-technical">
+          <div class="profile-tag">Market Profile</div>
+          <h3>McAllen Operating Overview</h3>
+          <ul class="mca-spec-list">
+            <li>
+              <strong>County:</strong>
+              <span>Hidalgo County</span>
+            </li>
+            <li>
+              <strong>Electric Utility:</strong>
+              <span>AEP Texas Central</span>
+            </li>
+            <li>
+              <strong>Permit Authority:</strong>
+              <span>City of McAllen Building Inspections</span>
+            </li>
+            <li>
+              <strong>Housing Architecture:</strong>
+              <span>Spanish tile, stucco construction, modern master-planned tracts</span>
+            </li>
+            <li>
+              <strong>Electrical Norms:</strong>
+              <span>150A to 200A residential service equipment</span>
+            </li>
+            <li>
+              <strong>Core Services:</strong>
+              <span><a href="/services/solar-site-surveys/">Site Surveys</a> and <a href="/services/solar-cad-designs/">Solar CAD Plan Sets</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Deliverables Grid -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Field Scope</div>
+        <h2>Field Deliverables for McAllen Solar Installations</h2>
+        <p class="lead">
+          Structured documentation designed to eliminate design revisions and support smooth permitting.
+        </p>
+      </div>
+
+      <div class="mca-grid">
+        <div class="mca-card card-technical">
+          <h3>Main Electrical Panel Verification</h3>
+          <p>
+            We photograph the panel interior, busbar rating, main breaker capacity, manufacturer catalog number, and circuit directory, verifying open spaces for solar backfeed breakers.
+          </p>
+        </div>
+
+        <div class="mca-card card-technical">
+          <h3>AEP Texas Central Meter Tagging</h3>
+          <p>
+            The survey documents the electric meter enclosure, meter badge number, digital display, service entrance conduit, and existing grounding to support complete AEP interconnection filing.
+          </p>
+        </div>
+
+        <div class="mca-card card-technical">
+          <h3>Spanish Tile & Roof Plane Geometry</h3>
+          <p>
+            We measure pitch angles, record azimuth, and map roof planes across the structure. The survey identifies vent pipes, attic fans, chimney flashing, and dormers to define usable array boundaries.
+          </p>
+        </div>
+
+        <div class="mca-card card-technical">
+          <h3>Attic Rafter & Truss Framing</h3>
+          <p>
+            When accessible, the surveyor records rafter dimensions, truss member sizes, center-to-center spacing, purlin bracing, and roof decking thickness with physical tape measure photographs.
+          </p>
+        </div>
+
+        <div class="mca-card card-technical">
+          <h3>Battery Backup Wall Setbacks</h3>
+          <p>
+            When projects incorporate energy storage systems, we record available wall dimensions in attached garages or exterior walls, verifying clearances from windows, doors, and gas meters.
+          </p>
+        </div>
+
+        <div class="mca-card card-technical">
+          <h3>Property Elevation Context</h3>
+          <p>
+            Four-corner property elevation photos capture site access, fence gates, air conditioning compressors, and overhead service drops to support installation crew safety and staging.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Coverage Links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Rio Grande Valley Operations</div>
+        <h2>Connected Survey Coverage Across Surrounding Hidalgo County Markets</h2>
+        <p class="lead">
+          Coordinate field surveys across neighboring municipalities with consistent documentation standards.
+        </p>
+      </div>
+
+      <div class="mca-links">
+        <a href="/texas/edinburg-solar-site-surveyors/" class="mca-link-card">
+          <h4>Edinburg Solar Site Surveyors</h4>
+          <p>Hidalgo County seat survey coordination and university corridor framing documentation directly north.</p>
+        </a>
+        <a href="/texas/mission-solar-site-surveyors/" class="mca-link-card">
+          <h4>Mission Solar Site Surveyors</h4>
+          <p>Western Valley citrus corridor residential survey coordination and Magic Valley EC data directly west.</p>
+        </a>
+        <a href="/texas/pharr-solar-site-surveyors/" class="mca-link-card">
+          <h4>Pharr Solar Site Surveyors</h4>
+          <p>International bridge corridor high-density residential survey coordination directly east.</p>
+        </a>
+        <a href="/texas/brownsville-solar-site-surveyors/" class="mca-link-card">
+          <h4>Brownsville Solar Site Surveyors</h4>
+          <p>BPUB municipal electric standards and coastal border survey operations southeast.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Frequently Asked Questions</div>
+        <h2>McAllen Solar Survey Operations</h2>
+        <p class="lead">Common questions from solar operations managers and project coordinators.</p>
+      </div>
+
+      <div class="mca-faq-list">
+        {faqs.map(faq => (
+          <div class="mca-faq-item card-technical">
+            <h3 class="mca-faq-q">{faq.question}</h3>
+            <p class="mca-faq-a">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection
+    title="Need a Solar Site Survey in McAllen, TX?"
+    subtitle="Submit your project address to confirm surveyor scheduling and receive CAD-ready field documentation for your design team."
+    primaryCtaText="Schedule Survey in McAllen"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Directory"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .page-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .page-hero .lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #9FB3C8;
+    max-width: 900px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .mca-split {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  .mca-text h2 {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+  }
+
+  .mca-text p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .mca-profile {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .profile-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    background: var(--surface-subtle);
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .mca-profile h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .mca-spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mca-spec-list li {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.9375rem;
+  }
+
+  .mca-spec-list li:last-child {
+    border-bottom: none;
+  }
+
+  .mca-spec-list strong {
+    color: var(--text-primary);
+    margin-bottom: 0.125rem;
+  }
+
+  .mca-spec-list span {
+    color: var(--text-secondary);
+  }
+
+  .mca-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .mca-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .mca-card h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .mca-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .mca-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .mca-link-card {
+    display: block;
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .mca-link-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .mca-link-card h4 {
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .mca-link-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  .mca-faq-list {
+    max-width: 900px;
+    margin: var(--space-8) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .mca-faq-item {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .mca-faq-q {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .mca-faq-a {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .mca-split {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+</style>

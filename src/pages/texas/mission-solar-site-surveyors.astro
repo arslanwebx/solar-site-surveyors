@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in Mission, TX | Western RGV Surveys';
+const pageDescription = 'Solar site surveys in Mission, TX. Managing dual AEP vs Magic Valley EC utility lines, Spanish tile roof planes, and electrical panels across Hidalgo County.';
+const canonicalPath = '/texas/mission-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'Mission' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to coordinate a solar site survey in Mission, Texas.');
+
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors: Mission, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Mission, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': [
+    'Solar Site Surveys',
+    'Dual-Utility Solar Surveys',
+    'Residential Solar Site Survey',
+    'Spanish Tile Roof Survey'
+  ],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How do electric utility boundaries operate across Mission properties?',
+    answer: 'Mission properties are divided between AEP Texas Central and Magic Valley Electric Cooperative (MVEC). In western sections, agricultural transitions, and certain master-planned communities like Bentsen Palm, electric cooperative interconnection rules apply. Our surveyors verify the meter enclosure, digital display, badge numbers, and disconnect hardware to ensure applications are submitted to the correct utility.'
+  },
+  {
+    question: 'What roof types are typical in Mission residential neighborhoods?',
+    answer: 'Homes in Mission feature a blend of Spanish barrel tile, concrete tile, composition shingles, and low-pitch roofs on conventional rafter framing. The survey measures pitch per plane, records azimuth, maps plumbing vents, and documents rafter spacing with measurement photos.'
+  },
+  {
+    question: 'How does the City of Mission review residential solar permits?',
+    answer: 'The City of Mission Inspection Department requires code-compliant single-line electrical diagrams, manufacturer equipment cut sheets, and clear structural mounting attachments. Our survey photo logs and physical measurements provide remote CAD teams with verified data to pass plan review on the initial submission.'
+  },
+  {
+    question: 'What electrical service panel details are captured during the survey?',
+    answer: 'We photograph the main service panel, manufacturer label, busbar rating, main breaker capacity, existing breaker schedules, grounding conductors, and utility meter enclosure. This data confirms whether a standard breaker backfeed is compliant or if an alternative interconnection method is needed.'
+  },
+  {
+    question: 'Do you cover projects across western Hidalgo County?',
+    answer: 'Yes. Survey dispatches regularly connect Mission with McAllen, Palmview, Alton, Peñitas, and Sullivan City.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': f.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Centered Hero Section -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveyors in Mission, TX</h1>
+        <p class="lead">
+          Field site documentation across the western Rio Grande Valley. Navigating dual-utility boundaries between AEP Texas Central and Magic Valley Electric Cooperative, Spanish tile roofs, and attic framing across Hidalgo County.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Coordinate Mission Survey</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Western Valley Citrus Focus -->
+  <section class="section">
+    <div class="container">
+      <div class="mis-split">
+        <div class="mis-text">
+          <div class="kicker">Operational Focus</div>
+          <h2>Western Valley Citrus Corridor: Residential and Master-Planned Solar Field Data</h2>
+          <p>
+            Mission anchors the western gateway of the Rio Grande Valley, characterized by historic citrus agricultural roots, master-planned developments, and winter-resident communities along the Rio Grande. Blessed with exceptional solar insolation and high summer temperatures, residential solar adoption across Mission is robust.
+          </p>
+          <p>
+            Operating in Mission requires managing dual-utility service boundaries between AEP Texas Central and Magic Valley Electric Cooperative (MVEC). A project on the eastern edge near Sharyland may connect to AEP Texas, while master-planned communities further west connect to MVEC. Each utility enforces distinct distributed generation interconnection paperwork, meter socket requirements, and review timelines.
+          </p>
+          <p>
+            Our survey coordination standardizes field data collection across every Mission project. We record verified electrical service parameters, inspect accessible attic framing, measure roof plane geometry, and photograph all service equipment to ensure your engineering team can draft accurate, permit-ready plans.
+          </p>
+        </div>
+        <div class="mis-profile card-technical">
+          <div class="profile-tag">Market Profile</div>
+          <h3>Mission Operating Overview</h3>
+          <ul class="mis-spec-list">
+            <li>
+              <strong>County:</strong>
+              <span>Hidalgo County</span>
+            </li>
+            <li>
+              <strong>Electric Utilities:</strong>
+              <span>AEP Texas Central and Magic Valley Electric Cooperative (MVEC)</span>
+            </li>
+            <li>
+              <strong>Permit Authority:</strong>
+              <span>City of Mission Inspection Department</span>
+            </li>
+            <li>
+              <strong>Housing Architecture:</strong>
+              <span>Spanish barrel tile, stucco construction, master plans</span>
+            </li>
+            <li>
+              <strong>Electrical Norms:</strong>
+              <span>125A to 200A residential service equipment</span>
+            </li>
+            <li>
+              <strong>Core Services:</strong>
+              <span><a href="/services/solar-site-surveys/">Site Surveys</a> and <a href="/services/solar-cad-designs/">Solar CAD Plan Sets</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Deliverables Grid -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Field Scope</div>
+        <h2>Field Deliverables for Mission Solar Installations</h2>
+        <p class="lead">
+          Structured documentation designed to eliminate design revisions and support smooth permitting.
+        </p>
+      </div>
+
+      <div class="mis-grid">
+        <div class="mis-card card-technical">
+          <h3>Main Electrical Panel Verification</h3>
+          <p>
+            We photograph the panel interior, busbar rating, main breaker capacity, manufacturer catalog number, and circuit directory, verifying open spaces for solar backfeed breakers.
+          </p>
+        </div>
+
+        <div class="mis-card card-technical">
+          <h3>AEP & Magic Valley Meter Tagging</h3>
+          <p>
+            The survey documents the electric meter enclosure, meter badge number, digital display, service entrance conduit, and existing grounding to support complete utility interconnection filing.
+          </p>
+        </div>
+
+        <div class="mis-card card-technical">
+          <h3>Roof Plane Geometry & Usable Area</h3>
+          <p>
+            We measure pitch angles, record azimuth, and map roof planes across the structure. The survey identifies vent pipes, attic fans, chimney flashing, and dormers to define usable array boundaries.
+          </p>
+        </div>
+
+        <div class="mis-card card-technical">
+          <h3>Attic Rafter & Truss Framing</h3>
+          <p>
+            When accessible, the surveyor records rafter dimensions, truss member sizes, center-to-center spacing, purlin bracing, and roof decking thickness with physical tape measure photographs.
+          </p>
+        </div>
+
+        <div class="mis-card card-technical">
+          <h3>Battery Backup Wall Setbacks</h3>
+          <p>
+            When projects incorporate energy storage systems, we record available wall dimensions in attached garages or exterior walls, verifying clearances from windows, doors, and gas meters.
+          </p>
+        </div>
+
+        <div class="mis-card card-technical">
+          <h3>Property Elevation Context</h3>
+          <p>
+            Four-corner property elevation photos capture site access, fence gates, air conditioning compressors, and overhead service drops to support installation crew safety and staging.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Coverage Links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Western Valley Operations</div>
+        <h2>Connected Survey Coverage Across Surrounding Hidalgo County Markets</h2>
+        <p class="lead">
+          Coordinate field surveys across neighboring municipalities with consistent documentation standards.
+        </p>
+      </div>
+
+      <div class="mis-links">
+        <a href="/texas/mcallen-solar-site-surveyors/" class="mis-link-card">
+          <h4>McAllen Solar Site Surveyors</h4>
+          <p>Rio Grande Valley commercial hub survey coordination and AEP Texas Central documentation directly east.</p>
+        </a>
+        <a href="/texas/edinburg-solar-site-surveyors/" class="mis-link-card">
+          <h4>Edinburg Solar Site Surveyors</h4>
+          <p>Hidalgo County seat survey coordination and university corridor framing documentation directly northeast.</p>
+        </a>
+        <a href="/texas/pharr-solar-site-surveyors/" class="mis-link-card">
+          <h4>Pharr Solar Site Surveyors</h4>
+          <p>International bridge corridor high-density residential survey coordination directly southeast.</p>
+        </a>
+        <a href="/texas/laredo-solar-site-surveyors/" class="mis-link-card">
+          <h4>Laredo Solar Site Surveyors</h4>
+          <p>Webb County border logistics hub survey operations and flat parapet roof documentation directly northwest.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Frequently Asked Questions</div>
+        <h2>Mission Solar Survey Operations</h2>
+        <p class="lead">Common questions from solar operations managers and project coordinators.</p>
+      </div>
+
+      <div class="mis-faq-list">
+        {faqs.map(faq => (
+          <div class="mis-faq-item card-technical">
+            <h3 class="mis-faq-q">{faq.question}</h3>
+            <p class="mis-faq-a">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection
+    title="Need a Solar Site Survey in Mission, TX?"
+    subtitle="Submit your project address to confirm surveyor scheduling and receive CAD-ready field documentation for your design team."
+    primaryCtaText="Schedule Survey in Mission"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Directory"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .page-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .page-hero .lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #9FB3C8;
+    max-width: 900px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .mis-split {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  .mis-text h2 {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+  }
+
+  .mis-text p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .mis-profile {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .profile-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    background: var(--surface-subtle);
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .mis-profile h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .mis-spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mis-spec-list li {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.9375rem;
+  }
+
+  .mis-spec-list li:last-child {
+    border-bottom: none;
+  }
+
+  .mis-spec-list strong {
+    color: var(--text-primary);
+    margin-bottom: 0.125rem;
+  }
+
+  .mis-spec-list span {
+    color: var(--text-secondary);
+  }
+
+  .mis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .mis-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .mis-card h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .mis-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .mis-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .mis-link-card {
+    display: block;
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .mis-link-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .mis-link-card h4 {
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .mis-link-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  .mis-faq-list {
+    max-width: 900px;
+    margin: var(--space-8) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .mis-faq-item {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .mis-faq-q {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .mis-faq-a {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .mis-split {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+</style>

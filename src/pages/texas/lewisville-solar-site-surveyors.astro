@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in Lewisville, TX | Denton County';
+const pageDescription = 'Solar site surveys in Lewisville, TX. Comprehensive roof, electrical panel, and CoServ or Oncor utility documentation across southern Denton County.';
+const canonicalPath = '/texas/lewisville-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'Lewisville' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to coordinate a solar site survey in Lewisville, Texas.');
+
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors: Lewisville, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Lewisville, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': [
+    'Solar Site Surveys',
+    'Residential Solar Site Survey',
+    'Electrical Service Panel Verification',
+    'Roof Plane Measurement'
+  ],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How do utility boundaries operate across Lewisville properties?',
+    answer: 'Lewisville projects can fall under either Oncor Electric Delivery or CoServ Electric depending on the neighborhood. Newer communities near Castle Hills frequently connect to CoServ, while established central neighborhoods connect to Oncor. Our surveyors verify the meter enclosure and utility labels on site to ensure interconnection submittals go to the proper entity.'
+  },
+  {
+    question: 'What roof framing conditions are documented in Lewisville homes?',
+    answer: 'Homes near Lewisville Lake and older central neighborhoods often have conventional 2x4 and 2x6 rafter construction, whereas newer subdivisions feature engineered truss systems. The survey measures member sizes, center-to-center spacing, purlin bracing, and roof decking thickness with clear physical measurement photos.'
+  },
+  {
+    question: 'How does the City of Lewisville review residential solar permits?',
+    answer: 'The City of Lewisville Building Inspections department requires code-compliant single-line electrical diagrams, manufacturer equipment cut sheets, and clear structural mounting attachments. Our survey photo logs and physical measurements provide remote CAD teams with verified data to pass plan review on the first submission.'
+  },
+  {
+    question: 'What electrical service panel details are captured during the survey?',
+    answer: 'We photograph the main service panel, manufacturer label, busbar rating, main breaker capacity, existing breaker schedules, grounding conductors, and utility meter enclosure. This data confirms whether a standard breaker backfeed is compliant or if an alternative interconnection method is needed.'
+  },
+  {
+    question: 'Do your surveyors cover adjacent southern Denton County communities?',
+    answer: 'Yes. Survey routes frequently connect Lewisville with Flower Mound, Highland Village, The Colony, Carrollton, and Denton.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': f.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Centered Hero Section -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveyors in Lewisville, TX</h1>
+        <p class="lead">
+          Field site documentation across Lewisville and southern Denton County. Capturing electrical service equipment, attic structural framing, and dual CoServ versus Oncor utility data for solar design teams.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Schedule Survey in Lewisville</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Section: Regional Context -->
+  <section class="section">
+    <div class="container">
+      <div class="lewis-split">
+        <div class="lewis-main">
+          <div class="kicker">Regional Context</div>
+          <h2>Northwest DFW Project Diversity: Central Core to Castle Hills</h2>
+          <p>
+            Lewisville occupies a key position in northwest DFW, connecting Dallas County to Denton County along the I-35E corridor. The residential landscape spans from established single-story homes near Lewisville Lake to expansive multi-story production homes in master-planned communities like Castle Hills.
+          </p>
+          <p>
+            This variety requires thorough on-site verification. An older home near Main Street may have an original 125-amp electrical panel and conventional rafter framing, while a Castle Hills property features a 200-amp service with complex hip roof geometry and CoServ electric service.
+          </p>
+          <p>
+            Our surveyor coordination provides consistent, high-standard field packages for every Lewisville project. We document structural members, verify bus ratings, map roof penetrations, and confirm the serving utility so your engineering department can complete permit-ready plan sets without missing data.
+          </p>
+        </div>
+        <div class="lewis-profile card-technical">
+          <div class="profile-tag">Market Overview</div>
+          <h3>Lewisville Operating Profile</h3>
+          <ul class="lewis-spec-list">
+            <li>
+              <strong>County:</strong>
+              <span>Denton County, Dallas County overlap</span>
+            </li>
+            <li>
+              <strong>Electric Utilities:</strong>
+              <span>Oncor Electric Delivery and CoServ Electric</span>
+            </li>
+            <li>
+              <strong>Permit Authority:</strong>
+              <span>City of Lewisville Building Inspections</span>
+            </li>
+            <li>
+              <strong>Housing Diversity:</strong>
+              <span>Established lakefront properties, modern master plans</span>
+            </li>
+            <li>
+              <strong>Electrical Norms:</strong>
+              <span>125A to 200A residential service equipment</span>
+            </li>
+            <li>
+              <strong>Related Services:</strong>
+              <span><a href="/services/solar-site-surveys/">Site Surveys</a> and <a href="/services/solar-cad-designs/">Solar CAD Plan Sets</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Inspection Scope -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Field Scope</div>
+        <h2>Field Deliverables for Lewisville Solar Installations</h2>
+        <p class="lead">
+          Structured documentation designed to eliminate design revisions and support smooth permitting.
+        </p>
+      </div>
+
+      <div class="lewis-grid">
+        <div class="lewis-card card-technical">
+          <h3>Electrical Panel & Main Breakers</h3>
+          <p>
+            We photograph the main service panel label, busbar rating, main breaker capacity, circuit directory, and grounding conductors, confirming whether the panel can accept a solar backfeed breaker.
+          </p>
+        </div>
+
+        <div class="lewis-card card-technical">
+          <h3>Oncor & CoServ Meter Tagging</h3>
+          <p>
+            The survey documents the electric meter enclosure, meter badge number, digital display, service entrance conduit, and existing exterior disconnect equipment to verify the serving utility.
+          </p>
+        </div>
+
+        <div class="lewis-card card-technical">
+          <h3>Roof Plane Geometry & Usable Area</h3>
+          <p>
+            We measure pitch angles, record azimuth, and map roof planes across the structure. The survey identifies vent pipes, attic fans, chimney flashing, and dormers to define buildable array boundaries.
+          </p>
+        </div>
+
+        <div class="lewis-card card-technical">
+          <h3>Attic Structural Framing</h3>
+          <p>
+            When accessible, the surveyor records rafter dimensions, truss member sizes, center-to-center spacing, purlin bracing, and roof decking thickness with physical measurement photos.
+          </p>
+        </div>
+
+        <div class="lewis-card card-technical">
+          <h3>Battery Backup Wall Setbacks</h3>
+          <p>
+            When projects incorporate energy storage systems, we record available wall dimensions in attached garages or exterior walls, verifying clearances from windows, doors, and gas meters.
+          </p>
+        </div>
+
+        <div class="lewis-card card-technical">
+          <h3>Property Elevation Context</h3>
+          <p>
+            Four-corner property elevation photos capture site access, fence gates, air conditioning compressors, and overhead service drops to support installation crew safety and staging.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Coverage Links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Denton County Operations</div>
+        <h2>Connected Survey Coverage Across Surrounding DFW Markets</h2>
+        <p class="lead">
+          Coordinate field surveys across neighboring municipalities with the same high data standards.
+        </p>
+      </div>
+
+      <div class="lewis-links">
+        <a href="/texas/denton-solar-site-surveyors/" class="lewis-link-card">
+          <h4>Denton Solar Site Surveyors</h4>
+          <p>Denton Municipal Electric service data and university-area structural framing directly north.</p>
+        </a>
+        <a href="/texas/carrollton-solar-site-surveyors/" class="lewis-link-card">
+          <h4>Carrollton Solar Site Surveyors</h4>
+          <p>Tri-county municipal coordination across Dallas, Denton, and Collin county project borders.</p>
+        </a>
+        <a href="/texas/frisco-solar-site-surveyors/" class="lewis-link-card">
+          <h4>Frisco Solar Site Surveyors</h4>
+          <p>Steep roof plane geometry, dual-utility boundaries, and high-velocity residential design coordination.</p>
+        </a>
+        <a href="/texas/plano-solar-site-surveyors/" class="lewis-link-card">
+          <h4>Plano Solar Site Surveyors</h4>
+          <p>High-density North DFW residential survey coordination and engineering handoffs.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Frequently Asked Questions</div>
+        <h2>Lewisville Solar Survey Operations</h2>
+        <p class="lead">Essential details for solar contractors and project coordinators.</p>
+      </div>
+
+      <div class="lewis-faq-list">
+        {faqs.map(faq => (
+          <div class="lewis-faq-item card-technical">
+            <h3 class="lewis-faq-q">{faq.question}</h3>
+            <p class="lewis-faq-a">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection
+    title="Coordinate a Solar Site Survey in Lewisville, TX"
+    subtitle="Submit your project address to confirm surveyor scheduling and receive CAD-ready field documentation for your design team."
+    primaryCtaText="Schedule Survey in Lewisville"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Directory"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .page-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .page-hero .lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #9FB3C8;
+    max-width: 900px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .lewis-split {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  .lewis-main h2 {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+  }
+
+  .lewis-main p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .lewis-profile {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .profile-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    background: var(--surface-subtle);
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .lewis-profile h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .lewis-spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .lewis-spec-list li {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.9375rem;
+  }
+
+  .lewis-spec-list li:last-child {
+    border-bottom: none;
+  }
+
+  .lewis-spec-list strong {
+    color: var(--text-primary);
+    margin-bottom: 0.125rem;
+  }
+
+  .lewis-spec-list span {
+    color: var(--text-secondary);
+  }
+
+  .lewis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .lewis-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .lewis-card h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .lewis-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .lewis-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .lewis-link-card {
+    display: block;
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .lewis-link-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .lewis-link-card h4 {
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .lewis-link-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  .lewis-faq-list {
+    max-width: 900px;
+    margin: var(--space-8) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .lewis-faq-item {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .lewis-faq-q {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .lewis-faq-a {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .lewis-split {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+</style>

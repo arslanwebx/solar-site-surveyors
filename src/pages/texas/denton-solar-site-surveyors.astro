@@ -1,0 +1,420 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in Denton, TX | DME Utility Area';
+const pageDescription = 'Solar site survey coordination in Denton, TX. Verifying Denton Municipal Electric (DME) meter equipment, attic framing, and roof condition across North DFW.';
+const canonicalPath = '/texas/denton-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'Denton' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to coordinate a solar site survey in Denton, Texas.');
+
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors: Denton, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Denton, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': [
+    'Solar Site Surveys',
+    'Municipal Utility Solar Surveys',
+    'Residential Solar Site Survey',
+    'Attic Framing Inspection'
+  ],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How does Denton Municipal Electric affect solar interconnection requirements?',
+    answer: 'Denton Municipal Electric (DME) operates as a city-owned municipal electric utility. Solar interconnection in DME territory requires specific distributed generation paperwork, dedicated AC disconnect switches, and adherence to DME meter socket guidelines. Our field survey captures clear photographs of the DME meter, disconnect hardware, and service mast to support your utility application.'
+  },
+  {
+    question: 'Are all Denton properties served by Denton Municipal Electric?',
+    answer: 'While the majority of properties inside the city limits are in DME territory, certain outer neighborhoods and extraterritorial jurisdiction areas are served by Oncor Electric Delivery or CoServ Electric. We verify the meter badge and utility markings on site so your team files with the correct utility.'
+  },
+  {
+    question: 'What roof framing conditions are common in Denton residential neighborhoods?',
+    answer: 'Denton features an equal mix of historic residential framing near downtown and the university campuses alongside modern production subdivisions. Older homes feature conventional 2x4 and 2x6 rafters with tongue-and-groove or shiplap decking, while newer communities feature engineered truss systems. Our surveyors record member sizes, spacing, and decking materials.'
+  },
+  {
+    question: 'What electrical panel data is collected during a Denton survey?',
+    answer: 'We capture the main service panel label, busbar rating, main breaker capacity, available breaker slots, grounding electrode path, and any existing subpanels. This confirms whether the system can use a standard breaker backfeed or requires a service panel upgrade.'
+  },
+  {
+    question: 'How do you handle survey dispatches across Northern Denton County?',
+    answer: 'Survey dispatches regularly cover Denton as well as contiguous communities in Corinth, Lake Dallas, Highland Village, Sanger, and Krum.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': f.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Centered Hero Section -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveyors in Denton, TX</h1>
+        <p class="lead">
+          Specialized field site surveys across Denton and northern DFW. Verifying Denton Municipal Electric (DME) service equipment, roof plane geometry, and attic framing health for solar design teams.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Schedule Survey in Denton</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DME Municipal Utility Alert -->
+  <section class="section">
+    <div class="container">
+      <div class="dme-banner card-technical">
+        <div class="dme-header">
+          <div class="dme-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          </div>
+          <div>
+            <div class="kicker">Municipal Electric Market</div>
+            <h2>Denton Municipal Electric Territory Demands City-Specific Verification</h2>
+          </div>
+        </div>
+        <p>
+          Denton is not standard Oncor territory. The City of Denton operates its own municipal electric utility, Denton Municipal Electric (DME). Solar contractors accustomed to deregulated ERCOT processes often stumble when encountering DME interconnection rules, customer generation guidelines, and meter disconnect standards.
+        </p>
+        <p>
+          Our field surveyors document the specific electrical parameters DME requires: meter socket ratings, service entrance mast dimensions, exterior disconnect switch clearances, and grounding electrode paths. In border neighborhoods where DME boundaries overlap with Oncor or CoServ Electric, our on-site inspection verifies the exact utility tags so your team never files interconnection paperwork with the wrong provider.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Scope Grid -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Field Inspection Scope</div>
+        <h2>Denton Site Survey Package Deliverables</h2>
+        <p class="lead">
+          Comprehensive physical data prepared to support engineering review and City of Denton building permits.
+        </p>
+      </div>
+
+      <div class="denton-grid">
+        <div class="denton-card card-technical">
+          <h3>DME & Utility Meter Tagging</h3>
+          <p>
+            We photograph the electric meter enclosure, meter badge number, digital display, overhead service drop or underground lateral, and existing exterior disconnect equipment.
+          </p>
+        </div>
+
+        <div class="denton-card card-technical">
+          <h3>Main Electrical Service Panels</h3>
+          <p>
+            The survey records busbar ratings, main breaker capacity, manufacturer data plates, and circuit breaker directories, confirming whether the electrical panel can accept a solar backfeed breaker.
+          </p>
+        </div>
+
+        <div class="denton-card card-technical">
+          <h3>Attic Framing in College-Town Housing</h3>
+          <p>
+            From older university-adjacent residential properties with conventional lumber rafters to modern subdivisions with engineered trusses, we document framing member sizes, spans, and decking materials.
+          </p>
+        </div>
+
+        <div class="denton-card card-technical">
+          <h3>Roof Planes & Penetrations</h3>
+          <p>
+            We measure pitch angles, record roof plane azimuth, and map plumbing vents, attic fans, exhaust flues, and skylights to verify usable array boundaries within local fire code setbacks.
+          </p>
+        </div>
+
+        <div class="denton-card card-technical">
+          <h3>Battery Backup & Inverter Clearances</h3>
+          <p>
+            For ESS projects, we record available wall space in attached garages or exterior side yards, verifying clearances from windows, doors, and gas meters to support code-compliant battery placement.
+          </p>
+        </div>
+
+        <div class="denton-card card-technical">
+          <h3>Property Elevation Context</h3>
+          <p>
+            Full elevation photos document site access, fence gates, air conditioning equipment, and ladder setup areas to assist installation managers with build-day staging.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Coverage Links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Northern DFW Coverage</div>
+        <h2>Connected Survey Operations Across Northern DFW</h2>
+        <p class="lead">
+          Coordinate field surveys across neighboring municipalities with the same high data standards.
+        </p>
+      </div>
+
+      <div class="denton-links">
+        <a href="/texas/lewisville-solar-site-surveyors/" class="denton-link-card">
+          <h4>Lewisville Solar Site Surveyors</h4>
+          <p>Lake-adjacent residential site data and utility coordination across southern Denton County.</p>
+        </a>
+        <a href="/texas/frisco-solar-site-surveyors/" class="denton-link-card">
+          <h4>Frisco Solar Site Surveyors</h4>
+          <p>Steep roof plane geometry, dual-utility boundaries, and high-velocity residential design coordination.</p>
+        </a>
+        <a href="/texas/carrollton-solar-site-surveyors/" class="denton-link-card">
+          <h4>Carrollton Solar Site Surveyors</h4>
+          <p>Standardized field documentation spanning Dallas, Denton, and Collin county project borders.</p>
+        </a>
+        <a href="/texas/plano-solar-site-surveyors/" class="denton-link-card">
+          <h4>Plano Solar Site Surveyors</h4>
+          <p>High-density North DFW residential survey coordination and engineering plan set handoffs.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Frequently Asked Questions</div>
+        <h2>Denton Solar Survey Operations</h2>
+        <p class="lead">Essential details for solar contractors and project coordinators.</p>
+      </div>
+
+      <div class="denton-faq-list">
+        {faqs.map(faq => (
+          <div class="denton-faq-item card-technical">
+            <h3 class="denton-faq-q">{faq.question}</h3>
+            <p class="denton-faq-a">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection
+    title="Coordinate a Solar Site Survey in Denton, TX"
+    subtitle="Submit your project address to confirm surveyor scheduling and ensure your field package meets Denton Municipal Electric standards."
+    primaryCtaText="Schedule Survey in Denton"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Directory"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .page-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .page-hero .lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #9FB3C8;
+    max-width: 900px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .dme-banner {
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-left: 6px solid var(--accent-gold);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .dme-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  .dme-icon {
+    color: var(--accent-gold);
+    margin-top: 0.25rem;
+  }
+
+  .dme-banner h2 {
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    line-height: 1.2;
+    margin-bottom: var(--space-2);
+  }
+
+  .dme-banner p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .dme-banner p:last-child {
+    margin-bottom: 0;
+  }
+
+  .denton-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .denton-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .denton-card h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .denton-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .denton-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .denton-link-card {
+    display: block;
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .denton-link-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .denton-link-card h4 {
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .denton-link-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  .denton-faq-list {
+    max-width: 900px;
+    margin: var(--space-8) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .denton-faq-item {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .denton-faq-q {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .denton-faq-a {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+</style>

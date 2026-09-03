@@ -1,0 +1,638 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in Plano, TX | EPC Field Data';
+const pageDescription = 'Solar site surveys in Plano, TX for solar EPCs and installers. Standardized roof, electrical panel, and attic documentation across North DFW.';
+const canonicalPath = '/texas/plano-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'Plano' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to schedule a solar site survey in Plano, Texas.');
+
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors: Plano, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Plano, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': [
+    'Solar Site Surveys',
+    'Residential Solar Site Survey',
+    'Commercial Solar Site Survey',
+    'Main Electrical Service Panel Inspection',
+    'Battery Storage Clearance Verification'
+  ],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How does Plano building inspection handle solar plan set submittals?',
+    answer: 'The City of Plano Building Inspections department requires clear structural calculations and single-line electrical diagrams that match field conditions. Incomplete meter photos or ambiguous framing spans frequently trigger plan review comments. Our field package documents rafter dimensions, truss spacing, bus ratings, and service disconnects to support first-pass permit approval.'
+  },
+  {
+    question: 'What Oncor service equipment details are recorded during the survey?',
+    answer: 'Field documentation captures the Oncor meter enclosure, meter number, service entrance conduit diameter, main disconnect rating, and the grounding electrode conductor. These photographs and measurements allow your interconnection coordinator to file complete Oncor Distributed Generation interconnection paperwork.'
+  },
+  {
+    question: 'Can you survey homes with steep roofs and multi-plane hip layouts in West Plano?',
+    answer: 'Yes. Properties in neighborhoods like Willow Bend and Kings Ridge feature steep 8/12 to 12/12 pitch roof profiles with multiple hips, valleys, and dormers. Our surveyors document pitch per plane, measure usable array boundaries, identify plumbing vents, and photograph roof condition.'
+  },
+  {
+    question: 'What happens if the attic framing has restricted access?',
+    answer: 'When attic spaces have tight clearances or partial decking, the surveyor documents as much structural framing as can be safely reached. We record framing member dimensions, truss plate stamps, and spacing from the access hatch, and note any physical obstructions in the field report.'
+  },
+  {
+    question: 'Do you provide survey coverage for projects in neighboring North DFW cities?',
+    answer: 'Yes. Survey dispatches across Collin County routinely include contiguous projects in Frisco, Allen, McKinney, Richardson, and Carrollton, allowing your operations team to maintain consistent documentation standards across your entire regional pipeline.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': f.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Centered Hero Section -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveyors in Plano, TX</h1>
+        <p class="lead">
+          Professional field site documentation across Plano and surrounding Collin County submarkets. Standardized roof framing, electrical service, and battery storage measurements prepared for remote solar design teams.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Schedule Survey in Plano</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Operational Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-content">
+          <div class="kicker">Operational Focus</div>
+          <h2>Maintaining Data Consistency Across North DFW Installations</h2>
+          <p>
+            Plano represents one of the densest residential solar markets in North Texas. Solar EPCs and installation companies operating here often run multiple installation crews while their engineering, permitting, and CAD teams work from central offices in Dallas, Austin, or out of state. When field survey quality varies from one neighborhood to the next, design departments waste hours requesting missing photos or clarify ambiguous panel ratings.
+          </p>
+          <p>
+            Our surveyor coordination delivers structured, comprehensive site packages for every Plano address. Whether the home is a 1980s ranch near central Plano with a 150-amp split-bus panel or a modern two-story custom build in Willow Bend with complex roof hips, the survey captures verified physical data that your engineering team can use immediately.
+          </p>
+          <p>
+            By establishing verified field facts before CAD drafting begins, your team eliminates avoidable return visits, reduces permit turnaround friction with the City of Plano Building Inspections department, and keeps interconnection submittals moving through Oncor Electric Delivery.
+          </p>
+        </div>
+        <div class="jurisdiction-card card-technical">
+          <div class="card-badge">Local Profile</div>
+          <h3>Plano Project Environment</h3>
+          <ul class="spec-list">
+            <li>
+              <span class="spec-label">Primary Counties:</span>
+              <span class="spec-value">Collin County, Denton County overlap</span>
+            </li>
+            <li>
+              <span class="spec-label">Electric Utility:</span>
+              <span class="spec-value">Oncor Electric Delivery</span>
+            </li>
+            <li>
+              <span class="spec-label">Permit Authority:</span>
+              <span class="spec-value">City of Plano Building Inspections</span>
+            </li>
+            <li>
+              <span class="spec-label">Common Roof Types:</span>
+              <span class="spec-value">Composition shingle, concrete tile, standing seam</span>
+            </li>
+            <li>
+              <span class="spec-label">Typical Service Size:</span>
+              <span class="spec-value">150A to 200A residential, 400A split services</span>
+            </li>
+            <li>
+              <span class="spec-label">Service Scope:</span>
+              <span class="spec-value"><a href="/services/solar-site-surveys/">Precision Site Surveys</a> and <a href="/services/solar-cad-designs/">Solar CAD Support</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Field Documentation Module -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Data Collection Scope</div>
+        <h2>What Your Engineering Team Receives From the Field Visit</h2>
+        <p class="lead">
+          Every site visit produces an organized collection of high-resolution photographs, structural measurements, and electrical notes configured for direct CAD handoff.
+        </p>
+      </div>
+
+      <div class="scope-grid">
+        <div class="scope-card card-technical">
+          <div class="scope-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Roof Planes & Obstructions</h3>
+          <p>
+            Plano properties showcase varied architectural profiles. We document roof pitch per plane, material condition, shingle wear, ridge vents, plumbing pipe penetrations, skylights, satellite dishes, and dormers. The survey maps usable array surface boundaries so designers do not locate panels over fire setbacks or structural valleys.
+          </p>
+        </div>
+
+        <div class="scope-card card-technical">
+          <div class="scope-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+          </div>
+          <h3>Attic & Structural Framing</h3>
+          <p>
+            When attic access is safe and accessible, the surveyor records rafter dimensions, truss member spacing, roof decking material and thickness, purlin bracing, and collar ties. Close-up photos with physical tape measures establish member sizing for structural engineer review and permit stamp packages.
+          </p>
+        </div>
+
+        <div class="scope-card card-technical">
+          <div class="scope-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Main Electrical Service Panel</h3>
+          <p>
+            The electrical survey captures wide and macro photographs of the main service panel, manufacturer label, busbar rating, main breaker ampacity, available breaker spaces, grounding electrode conductor, and utility meter enclosure. This data determines whether an interconnection can use a standard breaker backfeed or requires a line-side tap or service upgrade.
+          </p>
+        </div>
+
+        <div class="scope-card card-technical">
+          <div class="scope-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3>Battery & ESS Installation Areas</h3>
+          <p>
+            When the project includes battery energy storage, the surveyor evaluates proposed installation locations in attached garages or exterior walls. We measure wall dimensions, verify working clearances to windows and doors, document gas meter proximity, and identify potential conduit pathways back to the main service equipment.
+          </p>
+        </div>
+
+        <div class="scope-card card-technical">
+          <div class="scope-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Conduit Paths & Equipment Walls</h3>
+          <p>
+            Designers need clear exterior elevation photographs to route DC and AC conduit without creating customer aesthetic disputes. The surveyor documents the path from roof eaves down to the inverter and disconnect location, noting masonry transitions, stucco walls, siding, and attic junction points.
+          </p>
+        </div>
+
+        <div class="scope-card card-technical">
+          <div class="scope-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3>Property Elevations & Access</h3>
+          <p>
+            Full four-corner property elevation photographs provide immediate context on site access, fence gates, exterior air conditioning units, service drops, and overhead service lines. This documentation helps installation project managers plan ladder placement and staging before crews arrive on site.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Problem Section -->
+  <section class="section">
+    <div class="container">
+      <div class="editorial-container">
+        <div class="section-header">
+          <div class="kicker">Field Coordination Standards</div>
+          <h2>The Specific Measurements That Prevent Permit Revisions</h2>
+        </div>
+        <div class="editorial-body">
+          <p>
+            A common issue in North DFW solar operations is the disconnect between the field survey and the CAD plan set. A surveyor who takes ten photos of a roof from the ground but forgets to record the main breaker model number forces the design team to make assumptions. If the plan set lists a 200-amp bus with a 200-amp main breaker, but the actual on-site equipment is a 150-amp split-bus panel, the permit application will either be rejected during review or fail the final city inspection.
+          </p>
+          <p>
+            In Plano, municipal inspectors pay close attention to structural attachments and electrical service compliance. When rafter spacing is assumed to be 24 inches on center but turns out to be 16 inches on center with 2x4 members spanning fourteen feet, the installation crew encounters structural layout issues on build day. Our survey process prioritizes verified data over fast approximations, giving your design and engineering teams the exact information they need to draft accurate, permit-ready plans.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Operational Process Timeline -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Workflow</div>
+        <h2>From Address Intake to Complete Survey Package</h2>
+        <p class="lead">
+          A predictable four-step coordination process built for high-volume solar contractors.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <h3>Intake & Dispatch</h3>
+          <p>
+            Submit the Plano project address along with any company-specific checklist requirements. Our operations desk coordinates site access and schedules the field visit with surveyor availability.
+          </p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <h3>On-Site Documentation</h3>
+          <p>
+            The surveyor performs a complete walkthrough covering roof planes, attic framing, electrical service equipment, utility meter details, battery locations, and exterior property elevations.
+          </p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <h3>Quality Review</h3>
+          <p>
+            Photographs, measurement logs, and notes are reviewed for legibility and completeness. Data plate images and electrical labels are checked to ensure all model numbers and ratings are readable.
+          </p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <h3>Design Handoff</h3>
+          <p>
+            The categorized field package is delivered directly to your project team or forwarded directly to our <a href="/services/solar-cad-designs/">solar CAD design team</a> if permit plan sets are requested.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Coverage Links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Collin & Denton County Coverage</div>
+        <h2>Coordinated Surveying Across Adjacent North DFW Markets</h2>
+        <p class="lead">
+          Maintain the same standardized field package when your installation pipeline moves between neighboring municipalities.
+        </p>
+      </div>
+
+      <div class="nearby-grid">
+        <a href="/texas/frisco-solar-site-surveyors/" class="nearby-card">
+          <h4>Frisco Solar Site Surveyors</h4>
+          <p>Master-planned residential developments, dual-utility boundaries, and steep pitch roof geometry across western Collin County.</p>
+        </a>
+        <a href="/texas/allen-solar-site-surveyors/" class="nearby-card">
+          <h4>Allen Solar Site Surveyors</h4>
+          <p>High-density suburban neighborhoods and rapid CAD turnaround workflows directly east of Plano.</p>
+        </a>
+        <a href="/texas/mckinney-solar-site-surveyors/" class="nearby-card">
+          <h4>McKinney Solar Site Surveyors</h4>
+          <p>Historic residential framing to modern production builds across northern Collin County.</p>
+        </a>
+        <a href="/texas/richardson-solar-site-surveyors/" class="nearby-card">
+          <h4>Richardson Solar Site Surveyors</h4>
+          <p>Telecom corridor housing stock, mature tree shading patterns, and legacy electrical service panels.</p>
+        </a>
+        <a href="/texas/carrollton-solar-site-surveyors/" class="nearby-card">
+          <h4>Carrollton Solar Site Surveyors</h4>
+          <p>Tri-county municipal coordination across Dallas, Denton, and Collin county project borders.</p>
+        </a>
+        <a href="/texas/dallas-solar-site-surveyors/" class="nearby-card">
+          <h4>Dallas Solar Site Surveyors</h4>
+          <p>Comprehensive field survey support across the broader Dallas metroplex and Oncor territory.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Frequently Asked Questions</div>
+        <h2>Plano Solar Site Survey Considerations</h2>
+        <p class="lead">Common questions from solar operations managers and project coordinators.</p>
+      </div>
+
+      <div class="faq-list">
+        {faqs.map(faq => (
+          <div class="faq-item card-technical">
+            <h3 class="faq-question">{faq.question}</h3>
+            <p class="faq-answer">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection
+    title="Have a Plano Solar Project Ready for Site Survey?"
+    subtitle="Contact our operations desk to confirm surveyor availability in Plano and coordinate your upcoming field visit."
+    primaryCtaText="Schedule Survey in Plano"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Hub"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .page-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .page-hero .lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #9FB3C8;
+    max-width: 900px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  .overview-content h2 {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+  }
+
+  .overview-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .jurisdiction-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .card-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    background: var(--surface-subtle);
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .jurisdiction-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .spec-list li {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.9375rem;
+  }
+
+  .spec-list li:last-child {
+    border-bottom: none;
+  }
+
+  .spec-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.125rem;
+  }
+
+  .spec-value {
+    color: var(--text-secondary);
+  }
+
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .scope-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .scope-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background: var(--surface-subtle);
+    color: var(--primary-color);
+    margin-bottom: var(--space-4);
+  }
+
+  .scope-card h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .scope-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .editorial-container {
+    max-width: 990px;
+    margin: 0 auto;
+  }
+
+  .editorial-body p {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .process-step {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .step-num {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: var(--space-3);
+  }
+
+  .process-step h3 {
+    color: #FFFFFF;
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .process-step p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #9FB3C8;
+  }
+
+  .nearby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .nearby-card {
+    display: block;
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .nearby-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .nearby-card h4 {
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .nearby-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  .faq-list {
+    max-width: 900px;
+    margin: var(--space-8) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .faq-item {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .faq-question {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .faq-answer {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .overview-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+</style>

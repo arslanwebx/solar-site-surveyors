@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in Lubbock, TX | West Texas Surveys';
+const pageDescription = 'Solar site surveys in Lubbock, TX. Navigating the LP&L retail electric choice transition, high-wind West Texas roof planes, and attic structural framing.';
+const canonicalPath = '/texas/lubbock-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'Lubbock' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to schedule a solar site survey in Lubbock, Texas.');
+
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors: Lubbock, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Lubbock, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': [
+    'Solar Site Surveys',
+    'LP&L Retail Choice Solar Survey',
+    'Residential Solar Site Survey',
+    'High-Wind Framing Inspection'
+  ],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How does the Lubbock Power & Light retail choice transition affect solar surveys?',
+    answer: 'In 2024, Lubbock Power & Light (LP&L) completed its historic transition to the deregulated ERCOT retail electric market. While LP&L continues to own and operate the transmission and distribution wires, interconnection filings now interact with competitive Retail Electric Providers (REPs) and ERCOT settlement systems. Our surveyors photograph the digital LP&L meter badge, enclosure tags, and utility disconnect to verify account details for interconnection.'
+  },
+  {
+    question: 'How do high West Texas winds influence roof and structural survey requirements?',
+    answer: 'Lubbock experiences sustained high winds and severe dust storms. Survey packages document roof decking thickness, rafter span lengths, collar ties, and purlin bracing with physical measurement photos. This structural information allows engineering teams to confirm load capacity and select appropriate roof attachment hardware without relying on assumptions.'
+  },
+  {
+    question: 'What electrical panel issues are common in older Lubbock neighborhoods?',
+    answer: 'Homes near Texas Tech University and central Lubbock built in the 1960s and 1970s often feature 100-amp or 125-amp service equipment with limited open spaces. Our surveyors record bus ratings, breaker capacities, and available slots to help engineers determine if a service upgrade is necessary.'
+  },
+  {
+    question: 'How does dust accumulation affect exterior electrical inspections in Lubbock?',
+    answer: 'Blowing dust and caliche soil can coat exterior disconnects and meter enclosures. Our surveyors clear nameplates before photographing, ensuring catalog numbers, voltage ratings, and UL stamps are completely legible for your engineering desk.'
+  },
+  {
+    question: 'Do you provide survey dispatches across the South Plains region?',
+    answer: 'Yes. Survey dispatches regularly connect Lubbock with Wolfforth, Slaton, Levelland, Plainview, and Brownfield.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': f.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Centered Hero Section -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveyors in Lubbock, TX</h1>
+        <p class="lead">
+          Comprehensive field documentation across the South Plains. Navigating the LP&L retail electric choice transition, high-wind West Texas roof planes, and attic structural framing for solar design teams.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Schedule Survey in Lubbock</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LP&L Transition Operational Focus -->
+  <section class="section">
+    <div class="container">
+      <div class="lbb-split">
+        <div class="lbb-text">
+          <div class="kicker">Operational Focus</div>
+          <h2>Lubbock Power & Light (LP&L): Navigating the Historic Retail Choice Transition</h2>
+          <p>
+            Lubbock represents one of the most dynamic solar markets in Texas. Following the 2024 transition that connected Lubbock Power & Light (LP&L) to ERCOT retail electric choice, property owners gained the ability to select competitive retail electric providers and net metering plans for the first time.
+          </p>
+          <p>
+            This structural shift means field surveys must capture precise utility meter specifications. LP&L maintains distribution infrastructure, but distributed generation applications require coordination between the municipal wires utility, ERCOT settlement systems, and the chosen retail provider. Incomplete meter photos or missing disconnect data can stall interconnection filings.
+          </p>
+          <p>
+            In addition to utility considerations, the South Plains climate demands robust structural documentation. High wind gusts, spring dust storms, and intense sun exposure require accurate assessment of roof decking, rafter health, and electrical enclosure condition. Our survey packages provide verified physical data that keeps your design team on track.
+          </p>
+        </div>
+        <div class="lbb-profile card-technical">
+          <div class="profile-tag">Market Profile</div>
+          <h3>Lubbock Operating Overview</h3>
+          <ul class="lbb-spec-list">
+            <li>
+              <strong>County:</strong>
+              <span>Lubbock County</span>
+            </li>
+            <li>
+              <strong>Electric Distribution:</strong>
+              <span>Lubbock Power & Light (LP&L)</span>
+            </li>
+            <li>
+              <strong>Market Structure:</strong>
+              <span>ERCOT Retail Electric Choice (2024 Transition)</span>
+            </li>
+            <li>
+              <strong>Permit Authority:</strong>
+              <span>City of Lubbock Building Safety</span>
+            </li>
+            <li>
+              <strong>Environmental Context:</strong>
+              <span>High wind loads, blowing caliche dust, intense solar irradiance</span>
+            </li>
+            <li>
+              <strong>Core Services:</strong>
+              <span><a href="/services/solar-site-surveys/">Site Surveys</a> and <a href="/services/solar-cad-designs/">Solar CAD Plan Sets</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Scope Grid -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Field Scope</div>
+        <h2>Field Deliverables for Lubbock Solar Installations</h2>
+        <p class="lead">
+          Structured documentation designed to eliminate design revisions and support smooth permitting.
+        </p>
+      </div>
+
+      <div class="lbb-grid">
+        <div class="lbb-card card-technical">
+          <h3>Main Electrical Panel Verification</h3>
+          <p>
+            We photograph the panel interior, busbar rating, main breaker capacity, manufacturer catalog number, and circuit directory, verifying open spaces for solar backfeed breakers.
+          </p>
+        </div>
+
+        <div class="lbb-card card-technical">
+          <h3>LP&L Digital Meter Tagging</h3>
+          <p>
+            The survey documents the electric meter enclosure, meter badge number, digital display, service entrance conduit, and existing grounding to support complete utility interconnection filing.
+          </p>
+        </div>
+
+        <div class="lbb-card card-technical">
+          <h3>High-Wind Roof Geometry & Usable Area</h3>
+          <p>
+            We measure pitch angles, record azimuth, and map roof planes across the structure. The survey identifies vent pipes, attic fans, chimney flashing, and dormers to define usable array boundaries.
+          </p>
+        </div>
+
+        <div class="lbb-card card-technical">
+          <h3>Attic Rafter & Truss Framing</h3>
+          <p>
+            When accessible, the surveyor records rafter dimensions, truss member sizes, center-to-center spacing, purlin bracing, and roof decking thickness with physical tape measure photographs.
+          </p>
+        </div>
+
+        <div class="lbb-card card-technical">
+          <h3>Battery Backup Wall Setbacks</h3>
+          <p>
+            When projects incorporate energy storage systems, we record available wall dimensions in attached garages or exterior walls, verifying clearances from windows, doors, and gas meters.
+          </p>
+        </div>
+
+        <div class="lbb-card card-technical">
+          <h3>Property Elevation Context</h3>
+          <p>
+            Four-corner property elevation photos capture site access, fence gates, air conditioning compressors, and overhead service drops to support installation crew safety and staging.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Coverage Links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">South Plains Operations</div>
+        <h2>Connected Survey Coverage Across Surrounding West Texas Markets</h2>
+        <p class="lead">
+          Coordinate field surveys across neighboring municipalities with consistent documentation standards.
+        </p>
+      </div>
+
+      <div class="lbb-links">
+        <a href="/texas/amarillo-solar-site-surveyors/" class="lbb-link-card">
+          <h4>Amarillo Solar Site Surveyors</h4>
+          <p>Panhandle regional survey coordination and Xcel Energy utility documentation directly north.</p>
+        </a>
+        <a href="/texas/midland-solar-site-surveyors/" class="lbb-link-card">
+          <h4>Midland Solar Site Surveyors</h4>
+          <p>Permian Basin energy hub survey operations and Oncor service data directly south.</p>
+        </a>
+        <a href="/texas/odessa-solar-site-surveyors/" class="lbb-link-card">
+          <h4>Odessa Solar Site Surveyors</h4>
+          <p>Ector County residential survey coordination and low-slope roof plane mapping.</p>
+        </a>
+        <a href="/texas/abilene-solar-site-surveyors/" class="lbb-link-card">
+          <h4>Abilene Solar Site Surveyors</h4>
+          <p>AEP Texas North territory and Big Country residential framing documentation directly southeast.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Frequently Asked Questions</div>
+        <h2>Lubbock Solar Survey Operations</h2>
+        <p class="lead">Common questions from solar operations managers and project coordinators.</p>
+      </div>
+
+      <div class="lbb-faq-list">
+        {faqs.map(faq => (
+          <div class="lbb-faq-item card-technical">
+            <h3 class="lbb-faq-q">{faq.question}</h3>
+            <p class="lbb-faq-a">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection
+    title="Need a Solar Site Survey in Lubbock, TX?"
+    subtitle="Submit your project address to confirm surveyor scheduling and receive CAD-ready field documentation for your design team."
+    primaryCtaText="Schedule Survey in Lubbock"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Directory"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .page-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .page-hero .lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #9FB3C8;
+    max-width: 900px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .lbb-split {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  .lbb-text h2 {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+  }
+
+  .lbb-text p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .lbb-profile {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .profile-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    background: var(--surface-subtle);
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .lbb-profile h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .lbb-spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .lbb-spec-list li {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.9375rem;
+  }
+
+  .lbb-spec-list li:last-child {
+    border-bottom: none;
+  }
+
+  .lbb-spec-list strong {
+    color: var(--text-primary);
+    margin-bottom: 0.125rem;
+  }
+
+  .lbb-spec-list span {
+    color: var(--text-secondary);
+  }
+
+  .lbb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .lbb-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .lbb-card h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .lbb-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .lbb-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .lbb-link-card {
+    display: block;
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .lbb-link-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .lbb-link-card h4 {
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .lbb-link-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  .lbb-faq-list {
+    max-width: 900px;
+    margin: var(--space-8) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .lbb-faq-item {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .lbb-faq-q {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .lbb-faq-a {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .lbb-split {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+</style>

@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in Abilene, TX | Big Country Surveys';
+const pageDescription = 'Solar site surveys in Abilene, TX. Aligning with AEP Texas North standards, high-wind plains roof framing, and electrical panels across Taylor County.';
+const canonicalPath = '/texas/abilene-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'Abilene' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to coordinate a solar site survey in Abilene, Texas.');
+
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors: Abilene, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Abilene, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': [
+    'Solar Site Surveys',
+    'AEP Texas Utility Solar Surveys',
+    'Residential Solar Site Survey',
+    'High-Wind Structural Roof Survey'
+  ],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How do AEP Texas North requirements affect solar surveys in Abilene?',
+    answer: 'Abilene is served by AEP Texas North. Unlike Oncor territory, AEP Texas North enforces specific distributed generation interconnection forms, dedicated bi-directional meter base standards, and manual exterior AC disconnect rules. Our surveyors photograph the digital AEP meter badge, enclosure tags, and service disconnect to verify compliance before plan submittal.'
+  },
+  {
+    question: 'What roof framing conditions are documented across Abilene neighborhoods?',
+    answer: 'Abilene features an architectural mix ranging from post-war bungalows and mid-century brick ranches near central Abilene to modern suburban subdivisions along southern Taylor County. We document framing member dimensions, spans, and decking materials with physical measurement photos.'
+  },
+  {
+    question: 'How do high wind speeds impact solar site surveys in the Big Country?',
+    answer: 'Taylor County experiences sustained wind exposure across open plains. Survey packages record roof decking thickness, rafter or truss spacing, attachment points, and existing structural bracing with physical measurement photos, giving your structural engineer verified data for wind calculations.'
+  },
+  {
+    question: 'What electrical service panel details are captured during the survey?',
+    answer: 'We photograph the main service panel, manufacturer label, busbar rating, main breaker capacity, existing breaker schedules, grounding conductors, and utility meter enclosure. This data confirms whether a standard breaker backfeed is compliant or if an alternative interconnection method is needed.'
+  },
+  {
+    question: 'Do you cover projects across the greater Big Country region?',
+    answer: 'Yes. Survey dispatches regularly connect Abilene with Dyess AFB, Sweetwater, Clyde, Baird, Anson, and Coleman.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': f.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Centered Hero Section -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveyors in Abilene, TX</h1>
+        <p class="lead">
+          Field site documentation across the Big Country and Taylor County. Aligning with AEP Texas North utility standards, high-wind roof plane geometry, and attic structural framing for solar design teams.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Coordinate Abilene Survey</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AEP Texas North Operational Focus -->
+  <section class="section">
+    <div class="container">
+      <div class="abi-split">
+        <div class="abi-text">
+          <div class="kicker">Operational Focus</div>
+          <h2>Big Country Regional Hub: Navigating AEP Texas North Interconnection</h2>
+          <p>
+            Abilene serves as the regional commercial and healthcare center of West Central Texas, spanning Taylor and Jones counties. For solar operations managers, coordinating projects in Abilene means working within AEP Texas North territory rather than the Oncor grid that dominates North Texas.
+          </p>
+          <p>
+            AEP Texas North enforces specific distributed generation interconnection procedures, distinct bi-directional meter base requirements, and external manual disconnect rules. In addition, established residential neighborhoods in central Abilene frequently feature 100-amp or 125-amp service equipment where outdoor disconnect labels have been weathered by West Texas sun and wind. If remote CAD engineers work from blurry photos, they cannot verify busbar ratings, leading to permit plan rejections or costly installation-day delays.
+          </p>
+          <p>
+            Our survey coordination standardizes field data collection across every Abilene project. We clean and record legible electrical data plates, verify main breaker capacities, inspect accessible attic framing, and map high-wind roof planes so your engineering team can draft accurate, permit-ready plans.
+          </p>
+        </div>
+        <div class="abi-profile card-technical">
+          <div class="profile-tag">Market Profile</div>
+          <h3>Abilene Operating Overview</h3>
+          <ul class="abi-spec-list">
+            <li>
+              <strong>Counties:</strong>
+              <span>Taylor County, Jones County overlap</span>
+            </li>
+            <li>
+              <strong>Electric Utility:</strong>
+              <span>AEP Texas North</span>
+            </li>
+            <li>
+              <strong>Permit Authority:</strong>
+              <span>City of Abilene Building Inspections</span>
+            </li>
+            <li>
+              <strong>Housing Architecture:</strong>
+              <span>Mid-century brick ranches, contemporary suburban subdivisions</span>
+            </li>
+            <li>
+              <strong>Electrical Norms:</strong>
+              <span>100A to 200A residential service equipment</span>
+            </li>
+            <li>
+              <strong>Core Services:</strong>
+              <span><a href="/services/solar-site-surveys/">Site Surveys</a> and <a href="/services/solar-cad-designs/">Solar CAD Plan Sets</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Deliverables Grid -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Field Scope</div>
+        <h2>Field Deliverables for Abilene Solar Installations</h2>
+        <p class="lead">
+          Structured documentation designed to eliminate design revisions and support smooth permitting.
+        </p>
+      </div>
+
+      <div class="abi-grid">
+        <div class="abi-card card-technical">
+          <h3>Main Electrical Panel Verification</h3>
+          <p>
+            We photograph the panel interior, busbar rating, main breaker capacity, manufacturer catalog number, and circuit directory, verifying open spaces for solar backfeed breakers.
+          </p>
+        </div>
+
+        <div class="abi-card card-technical">
+          <h3>AEP Texas North Meter Tagging</h3>
+          <p>
+            The survey documents the electric meter enclosure, meter badge number, digital display, service entrance conduit, and existing grounding to support complete AEP interconnection filing.
+          </p>
+        </div>
+
+        <div class="abi-card card-technical">
+          <h3>Roof Plane Geometry & Usable Area</h3>
+          <p>
+            We measure pitch angles, record azimuth, and map roof planes across the structure. The survey identifies vent pipes, attic fans, chimney flashing, and dormers to define usable array boundaries.
+          </p>
+        </div>
+
+        <div class="abi-card card-technical">
+          <h3>Attic Rafter & Truss Framing</h3>
+          <p>
+            When accessible, the surveyor records rafter dimensions, truss member sizes, center-to-center spacing, purlin bracing, and roof decking thickness with physical tape measure photographs.
+          </p>
+        </div>
+
+        <div class="abi-card card-technical">
+          <h3>Battery Backup Wall Setbacks</h3>
+          <p>
+            When projects incorporate energy storage systems, we record available wall dimensions in attached garages or exterior walls, verifying clearances from windows, doors, and gas meters.
+          </p>
+        </div>
+
+        <div class="abi-card card-technical">
+          <h3>Property Elevation Context</h3>
+          <p>
+            Four-corner property elevation photos capture site access, fence gates, air conditioning compressors, and overhead service drops to support installation crew safety and staging.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Coverage Links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Big Country Operations</div>
+        <h2>Connected Survey Coverage Across Surrounding West Texas Markets</h2>
+        <p class="lead">
+          Coordinate field surveys across neighboring municipalities with consistent documentation standards.
+        </p>
+      </div>
+
+      <div class="abi-links">
+        <a href="/texas/san-angelo-solar-site-surveyors/" class="abi-link-card">
+          <h4>San Angelo Solar Site Surveyors</h4>
+          <p>Concho Valley residential survey coordination and AEP Texas North documentation directly south.</p>
+        </a>
+        <a href="/texas/lubbock-solar-site-surveyors/" class="abi-link-card">
+          <h4>Lubbock Solar Site Surveyors</h4>
+          <p>LP&L retail choice market transition and South Plains residential survey coordination directly northwest.</p>
+        </a>
+        <a href="/texas/midland-solar-site-surveyors/" class="abi-link-card">
+          <h4>Midland Solar Site Surveyors</h4>
+          <p>Permian Basin energy hub survey operations and Oncor service data directly west.</p>
+        </a>
+        <a href="/texas/wichita-falls-solar-site-surveyors/" class="abi-link-card">
+          <h4>Wichita Falls Solar Site Surveyors</h4>
+          <p>Red River border residential survey coordination and severe hail history documentation directly northeast.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Frequently Asked Questions</div>
+        <h2>Abilene Solar Survey Operations</h2>
+        <p class="lead">Common questions from solar operations managers and project coordinators.</p>
+      </div>
+
+      <div class="abi-faq-list">
+        {faqs.map(faq => (
+          <div class="abi-faq-item card-technical">
+            <h3 class="abi-faq-q">{faq.question}</h3>
+            <p class="abi-faq-a">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection
+    title="Need a Solar Site Survey in Abilene, TX?"
+    subtitle="Submit your project address to confirm surveyor scheduling and receive CAD-ready field documentation for your design team."
+    primaryCtaText="Schedule Survey in Abilene"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Directory"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .page-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .page-hero .lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #9FB3C8;
+    max-width: 900px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .abi-split {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  .abi-text h2 {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+  }
+
+  .abi-text p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .abi-profile {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .profile-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    background: var(--surface-subtle);
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .abi-profile h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .abi-spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .abi-spec-list li {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.9375rem;
+  }
+
+  .abi-spec-list li:last-child {
+    border-bottom: none;
+  }
+
+  .abi-spec-list strong {
+    color: var(--text-primary);
+    margin-bottom: 0.125rem;
+  }
+
+  .abi-spec-list span {
+    color: var(--text-secondary);
+  }
+
+  .abi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .abi-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .abi-card h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .abi-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .abi-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .abi-link-card {
+    display: block;
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .abi-link-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .abi-link-card h4 {
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .abi-link-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  .abi-faq-list {
+    max-width: 900px;
+    margin: var(--space-8) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .abi-faq-item {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .abi-faq-q {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .abi-faq-a {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .abi-split {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+</style>

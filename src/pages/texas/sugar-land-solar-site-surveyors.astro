@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in Sugar Land, TX | Field Surveys';
+const pageDescription = 'Solar site surveys in Sugar Land, TX. Documenting 400A split electrical services, complex roof plane geometry, and Fort Bend County standards.';
+const canonicalPath = '/texas/sugar-land-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'Sugar Land' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to schedule a solar site survey in Sugar Land, Texas.');
+
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors: Sugar Land, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Sugar Land, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': [
+    'Solar Site Surveys',
+    'Residential Solar Site Survey',
+    '400A Split Electrical Service Survey',
+    'HOA Architectural Solar Inspection'
+  ],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How do City of Sugar Land building inspections impact solar plan sets?',
+    answer: 'The City of Sugar Land Permits and Inspections department enforces stringent building and electrical standards under current codes. Plan reviewers pay close attention to structural rafter attachment details, exterior equipment aesthetics, and electrical single-line accuracy. Our survey packages provide high-resolution data plate photos and verified framing measurements to ensure smooth plan approval.'
+  },
+  {
+    question: 'How common are 400-amp electrical services in Sugar Land homes?',
+    answer: 'Many custom and estate homes across master-planned communities like Riverstone, Sweetwater, and Sugar Creek feature 400-amp split services with two 200-amp subpanels. The surveyor records busbar ratings, main breaker capacities, feed-through lugs, and utility meter enclosure specifications for both panels to assist engineers in planning balanced solar backfeeds.'
+  },
+  {
+    question: 'Which utility company handles solar interconnection in Sugar Land?',
+    answer: 'Sugar Land is served by CenterPoint Energy. We photograph the digital meter display, meter enclosure, meter badge number, service drop or underground lateral, and main utility disconnect to ensure complete documentation for CenterPoint distributed generation filings.'
+  },
+  {
+    question: 'How do you document complex hip roofs in master-planned communities?',
+    answer: 'Properties in Sugar Land frequently feature multi-plane hip roofs with steep slopes, dormers, and multiple valleys. We measure pitch per plane, record azimuth, map all roof penetrations, and calculate usable array areas within local fire code setbacks.'
+  },
+  {
+    question: 'Can you coordinate surveys across neighboring Fort Bend County cities?',
+    answer: 'Yes. Survey dispatches regularly connect Sugar Land with Missouri City, Stafford, Richmond, Rosenberg, and Katy.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': f.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Centered Hero Section -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveyors in Sugar Land, TX</h1>
+        <p class="lead">
+          High-precision field site documentation across Fort Bend County. Specialized in 400-amp split service panels, complex multi-plane roof geometry, and strict municipal standards for solar EPC design teams.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Schedule Survey in Sugar Land</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fort Bend Architectural Focus -->
+  <section class="section">
+    <div class="container">
+      <div class="sl-split">
+        <div class="sl-text">
+          <div class="kicker">Operational Focus</div>
+          <h2>Strict Municipal and Architectural Standards in Fort Bend County</h2>
+          <p>
+            Sugar Land is renowned for premier master-planned communities including First Colony, Sugar Creek, Riverstone, and Greatwood. For solar contractors, coordinating projects in Sugar Land requires navigating strict municipal plan reviews and active architectural review boards that mandate clean, unobtrusive equipment placement.
+          </p>
+          <p>
+            Large residential footprints in Sugar Land frequently feature 400-amp split electrical services, detached garages, and complex hip roofs with multiple valleys, dormers, and masonry transitions. If a field surveyor fails to map conduit routes or neglects to record both main panel bus ratings, remote CAD engineers are forced to make assumptions that can trigger costly installation-day rework.
+          </p>
+          <p>
+            Our survey coordination standardizes field data collection across every Sugar Land property. We document electrical bus ratings, record attic rafter dimensions, map roof plane boundaries, and photograph exterior equipment walls, ensuring your design department has verified physical data to draft accurate, code-compliant plan sets.
+          </p>
+        </div>
+        <div class="sl-profile card-technical">
+          <div class="profile-tag">Market Profile</div>
+          <h3>Sugar Land Operating Overview</h3>
+          <ul class="sl-spec-list">
+            <li>
+              <strong>County:</strong>
+              <span>Fort Bend County</span>
+            </li>
+            <li>
+              <strong>Electric Utility:</strong>
+              <span>CenterPoint Energy</span>
+            </li>
+            <li>
+              <strong>Permit Authority:</strong>
+              <span>City of Sugar Land Permits and Inspections</span>
+            </li>
+            <li>
+              <strong>Housing Architecture:</strong>
+              <span>Master-planned estates, two-story custom brick homes</span>
+            </li>
+            <li>
+              <strong>Electrical Norms:</strong>
+              <span>200A to 400A split residential service equipment</span>
+            </li>
+            <li>
+              <strong>Core Services:</strong>
+              <span><a href="/services/solar-site-surveys/">Site Surveys</a> and <a href="/services/solar-cad-designs/">Solar CAD Plan Sets</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Deliverables Grid -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Field Scope</div>
+        <h2>Field Deliverables for Sugar Land Solar Installations</h2>
+        <p class="lead">
+          Structured documentation designed to eliminate design revisions and support smooth permitting.
+        </p>
+      </div>
+
+      <div class="sl-grid">
+        <div class="sl-card card-technical">
+          <h3>400A Split Service Panel Verification</h3>
+          <p>
+            We photograph both panel interiors, busbar ratings, main breaker capacities, manufacturer catalog numbers, and circuit directories, verifying open spaces for solar backfeed breakers.
+          </p>
+        </div>
+
+        <div class="sl-card card-technical">
+          <h3>CenterPoint Meter & Disconnect Hardware</h3>
+          <p>
+            The survey documents the electric meter enclosure, meter badge number, digital display, service entrance conduit, and existing grounding to support complete CenterPoint interconnection filing.
+          </p>
+        </div>
+
+        <div class="sl-card card-technical">
+          <h3>Complex Hip Roof Plane Geometry</h3>
+          <p>
+            We measure pitch angles, record azimuth, and map roof planes across the structure. The survey identifies vent pipes, attic fans, chimney flashing, and dormers to define usable array boundaries.
+          </p>
+        </div>
+
+        <div class="sl-card card-technical">
+          <h3>Attic Rafter & Truss Framing</h3>
+          <p>
+            When accessible, the surveyor records rafter dimensions, truss member sizes, center-to-center spacing, purlin bracing, and roof decking thickness with physical tape measure photographs.
+          </p>
+        </div>
+
+        <div class="sl-card card-technical">
+          <h3>Battery Backup Wall Setbacks</h3>
+          <p>
+            When projects incorporate energy storage systems, we record available wall dimensions in attached garages or exterior walls, verifying clearances from windows, doors, and gas meters.
+          </p>
+        </div>
+
+        <div class="sl-card card-technical">
+          <h3>Conduit Routing & Exterior Drops</h3>
+          <p>
+            We photograph proposed conduit pathways from the roof line down to the inverter and main service equipment, noting masonry transitions and attic junction points.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Coverage Links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Fort Bend Operations</div>
+        <h2>Connected Survey Coverage Across Surrounding Greater Houston Markets</h2>
+        <p class="lead">
+          Coordinate field surveys across neighboring municipalities with consistent documentation standards.
+        </p>
+      </div>
+
+      <div class="sl-links">
+        <a href="/texas/pearland-solar-site-surveyors/" class="sl-link-card">
+          <h4>Pearland Solar Site Surveyors</h4>
+          <p>Multi-county suburban survey coordination and dual CenterPoint versus TNMP utility data directly east.</p>
+        </a>
+        <a href="/texas/houston-solar-site-surveyors/" class="sl-link-card">
+          <h4>Houston Solar Site Surveyors</h4>
+          <p>Comprehensive solar site survey operations across the broader Greater Houston metropolitan area.</p>
+        </a>
+        <a href="/texas/pasadena-solar-site-surveyors/" class="sl-link-card">
+          <h4>Pasadena Solar Site Surveyors</h4>
+          <p>Southeast Houston residential and industrial corridor survey coordination.</p>
+        </a>
+        <a href="/texas/league-city-solar-site-surveyors/" class="sl-link-card">
+          <h4>League City Solar Site Surveyors</h4>
+          <p>Clear Lake and coastal transition area survey operations directly southeast.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Frequently Asked Questions</div>
+        <h2>Sugar Land Solar Survey Operations</h2>
+        <p class="lead">Common questions from solar operations managers and project coordinators.</p>
+      </div>
+
+      <div class="sl-faq-list">
+        {faqs.map(faq => (
+          <div class="sl-faq-item card-technical">
+            <h3 class="sl-faq-q">{faq.question}</h3>
+            <p class="sl-faq-a">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection
+    title="Need a Solar Site Survey in Sugar Land, TX?"
+    subtitle="Submit your project address to confirm surveyor scheduling and receive CAD-ready field documentation for your design team."
+    primaryCtaText="Schedule Survey in Sugar Land"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Directory"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .page-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .page-hero .lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #9FB3C8;
+    max-width: 900px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .sl-split {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  .sl-text h2 {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+  }
+
+  .sl-text p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .sl-profile {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .profile-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    background: var(--surface-subtle);
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .sl-profile h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .sl-spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sl-spec-list li {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.9375rem;
+  }
+
+  .sl-spec-list li:last-child {
+    border-bottom: none;
+  }
+
+  .sl-spec-list strong {
+    color: var(--text-primary);
+    margin-bottom: 0.125rem;
+  }
+
+  .sl-spec-list span {
+    color: var(--text-secondary);
+  }
+
+  .sl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .sl-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .sl-card h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .sl-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .sl-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .sl-link-card {
+    display: block;
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .sl-link-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .sl-link-card h4 {
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .sl-link-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  .sl-faq-list {
+    max-width: 900px;
+    margin: var(--space-8) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .sl-faq-item {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .sl-faq-q {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .sl-faq-a {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .sl-split {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+</style>

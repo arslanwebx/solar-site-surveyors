@@ -1,0 +1,420 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in Garland, TX | GP&L Territory';
+const pageDescription = 'Field solar site surveys in Garland, TX. Capturing electrical service, roof condition, and attic data aligned with Garland Power and Light utility standards.';
+const canonicalPath = '/texas/garland-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'Garland' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to coordinate a solar site survey in Garland, Texas.');
+
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors: Garland, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Garland, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': [
+    'Solar Site Surveys',
+    'Municipal Utility Solar Surveys',
+    'Residential Solar Site Survey',
+    'Main Service Panel Inspection'
+  ],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How does Garland Power and Light impact solar survey requirements?',
+    answer: 'Garland Power and Light (GP&L) is a municipal electric utility with distinct interconnection standards. Unlike deregulated Oncor territory, GP&L requires specific meter socket configurations, exterior AC disconnect placement, and utility coordination paperwork. Our survey captures high-resolution photos of the GP&L meter base, label numbers, and service entrance disconnects to verify compliance before plan submittal.'
+  },
+  {
+    question: 'Are all Garland addresses served by Garland Power and Light?',
+    answer: 'Most properties within the city limits are served by GP&L, but certain border neighborhoods in northern and eastern Garland fall under Oncor Electric Delivery. We verify the utility meter badge and enclosure labels during the on-site visit to confirm the serving utility for your engineering team.'
+  },
+  {
+    question: 'What electrical challenges are common in older Garland residential homes?',
+    answer: 'Garland has substantial housing stock from the 1960s, 1970s, and 1980s. These homes frequently feature 100-amp or 125-amp service equipment with limited open breaker slots or split-bus configurations. Our surveyors photograph the interior panel schedule, bus ratings, and service mast to assist engineers in determining if a main panel upgrade or supply-side connection is necessary.'
+  },
+  {
+    question: 'How do you document low-slope roofs in established Garland neighborhoods?',
+    answer: 'Neighborhoods near Central Garland and South Garland often feature low-slope 3/12 or 4/12 roof pitches with conventional rafter framing. The survey records roof pitch, shingle condition, eave overhangs, plumbing vents, and rafter dimensions to ensure accurate layout drafting.'
+  },
+  {
+    question: 'Can you coordinate contiguous surveys across East DFW markets?',
+    answer: 'Yes. Survey routes frequently connect Garland projects with neighboring properties in Mesquite, Rowlett, Richardson, and eastern Dallas.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': f.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Centered Hero Section -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveyors in Garland, TX</h1>
+        <p class="lead">
+          Accurate field data collection aligned with Garland Power and Light standards. Documenting electrical equipment, roof conditions, and attic framing across established East DFW neighborhoods.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Coordinate Garland Survey</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Municipal Utility Alert & Operational Thesis -->
+  <section class="section">
+    <div class="container">
+      <div class="municipal-callout card-technical">
+        <div class="callout-header">
+          <div class="callout-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          </div>
+          <div>
+            <div class="kicker">Municipal Utility Notice</div>
+            <h2>Why Garland Projects Require a Dedicated Municipal Utility Check</h2>
+          </div>
+        </div>
+        <p>
+          Unlike the majority of the Dallas-Fort Worth metroplex, the City of Garland operates its own municipal electric provider: Garland Power and Light (GP&L). Solar contractors who assume all DFW projects operate under Oncor rules face severe permit delays and interconnection rejections when submitting Garland plan sets.
+        </p>
+        <p>
+          GP&L maintains distinct distributed generation policies, specific utility disconnect hardware mandates, and unique meter base requirements. Our site survey packages focus heavily on collecting clear, legible photographs of the meter base, service entrance mast, utility tags, and existing disconnect equipment. This verification ensures your interconnection team files the appropriate paperwork without back-and-forth utility inquiries.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Deliverables Matrix -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Field Scope</div>
+        <h2>Electrical & Structural Documentation for Garland Installations</h2>
+        <p class="lead">
+          Field data structured to support design engineering and municipal building permit reviews.
+        </p>
+      </div>
+
+      <div class="garland-grid">
+        <div class="garland-card card-technical">
+          <h3>Garland Power & Light Meter Equipment</h3>
+          <p>
+            We photograph the electric meter enclosure, meter badge number, digital display, service entrance conduit, and existing grounding. We verify whether the property is served by overhead lines or underground service lateral and record physical access clearances around the meter base.
+          </p>
+        </div>
+
+        <div class="garland-card card-technical">
+          <h3>Main Service Panel & Subpanels</h3>
+          <p>
+            Established homes throughout Garland often feature 100A or 125A panels. The surveyor captures macro photos of the manufacturer label, busbar rating, main breaker capacity, and circuit directory, allowing your design team to assess whether a service upgrade or subpanel relocation is needed.
+          </p>
+        </div>
+
+        <div class="garland-card card-technical">
+          <h3>Rafter Framing & Attic Access</h3>
+          <p>
+            Conventional 2x4 and 2x6 rafter construction is prevalent in central Garland neighborhoods. We record rafter sizing, span lengths, ridge board dimensions, and collar tie spacing. In homes with tight attic crawl spaces, our surveyors capture framing details from access points to confirm structural viability.
+          </p>
+        </div>
+
+        <div class="garland-card card-technical">
+          <h3>Roof Planes & Shingle Life</h3>
+          <p>
+            We measure pitch angles, record azimuth, and map roof planes across the structure. The survey identifies vent stacks, attic turbines, chimney flashing, and dormers while documenting shingle wear and granule loss so project managers can verify roof health before installation.
+          </p>
+        </div>
+
+        <div class="garland-card card-technical">
+          <h3>Battery Backup & Conduit Pathways</h3>
+          <p>
+            When projects incorporate energy storage systems, we measure garage and exterior wall clearances. The surveyor notes gas meter distances, hose bibs, and windows, while planning clean exterior conduit routes down from the roof eaves to the inverter location.
+          </p>
+        </div>
+
+        <div class="garland-card card-technical">
+          <h3>Property Elevation Context</h3>
+          <p>
+            Four-elevation photographs establish site boundaries, fence gate widths, exterior AC equipment, and ladder setup areas. This information helps installation managers coordinate equipment staging and crew safety on build day.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Operations Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">East DFW Network</div>
+        <h2>Connected Field Coverage Across East Dallas County</h2>
+        <p class="lead">
+          Directly coordinate survey schedules across adjacent municipalities.
+        </p>
+      </div>
+
+      <div class="cluster-grid">
+        <a href="/texas/mesquite-solar-site-surveyors/" class="cluster-card">
+          <h4>Mesquite Solar Site Surveyors</h4>
+          <p>Field survey coverage for established East DFW residential neighborhoods and electrical service upgrades.</p>
+        </a>
+        <a href="/texas/richardson-solar-site-surveyors/" class="cluster-card">
+          <h4>Richardson Solar Site Surveyors</h4>
+          <p>Telecom corridor housing stock, tree shading analysis, and legacy electrical service verification.</p>
+        </a>
+        <a href="/texas/plano-solar-site-surveyors/" class="cluster-card">
+          <h4>Plano Solar Site Surveyors</h4>
+          <p>High-density North DFW residential survey coordination and engineering plan set handoffs.</p>
+        </a>
+        <a href="/texas/dallas-solar-site-surveyors/" class="cluster-card">
+          <h4>Dallas Solar Site Surveyors</h4>
+          <p>Comprehensive solar site survey operations supporting installers across Dallas County.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Frequently Asked Questions</div>
+        <h2>Garland Solar Survey Details</h2>
+        <p class="lead">Common questions regarding utility coordination and field data collection in Garland.</p>
+      </div>
+
+      <div class="faq-stack">
+        {faqs.map(faq => (
+          <div class="faq-card card-technical">
+            <h3 class="faq-query">{faq.question}</h3>
+            <p class="faq-response">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection
+    title="Coordinate a Site Survey in Garland, Texas"
+    subtitle="Submit your project address to confirm surveyor scheduling and ensure your field data aligns with Garland Power and Light requirements."
+    primaryCtaText="Schedule Survey in Garland"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Service Areas"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .page-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .page-hero .lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #9FB3C8;
+    max-width: 900px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .municipal-callout {
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-left: 6px solid var(--accent-gold);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .callout-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  .callout-icon {
+    color: var(--accent-gold);
+    margin-top: 0.25rem;
+  }
+
+  .municipal-callout h2 {
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    line-height: 1.2;
+    margin-bottom: var(--space-2);
+  }
+
+  .municipal-callout p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .municipal-callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  .garland-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .garland-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .garland-card h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .garland-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .cluster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .cluster-card {
+    display: block;
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .cluster-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .cluster-card h4 {
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .cluster-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  .faq-stack {
+    max-width: 900px;
+    margin: var(--space-8) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .faq-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .faq-query {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .faq-response {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+</style>

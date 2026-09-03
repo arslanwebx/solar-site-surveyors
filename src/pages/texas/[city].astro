@@ -7,6 +7,7 @@ import { getWhatsAppLink } from '../../data/whatsapp';
 
 export function getStaticPaths() {
   const customCitySlugs = new Set([
+    // Flagship 8
     'houston',
     'san-antonio',
     'dallas',
@@ -14,7 +15,56 @@ export function getStaticPaths() {
     'austin',
     'el-paso',
     'arlington',
-    'corpus-christi'
+    'corpus-christi',
+    // Batch 1: North DFW
+    'plano',
+    'irving',
+    'garland',
+    'frisco',
+    'mckinney',
+    'grand-prairie',
+    'denton',
+    'mesquite',
+    'lewisville',
+    'carrollton',
+    'richardson',
+    'allen',
+    'mansfield',
+    // Batch 2: Greater Houston
+    'pasadena',
+    'pearland',
+    'league-city',
+    'conroe',
+    'sugar-land',
+    'baytown',
+    // Batch 3: Central Texas
+    'killeen',
+    'waco',
+    'round-rock',
+    'college-station',
+    'new-braunfels',
+    'georgetown',
+    'temple',
+    'bryan',
+    'leander',
+    // Batch 4: West Texas & Panhandle
+    'lubbock',
+    'amarillo',
+    'midland',
+    'odessa',
+    'abilene',
+    'wichita-falls',
+    'san-angelo',
+    // Batch 5: South Texas, RGV & East Texas
+    'laredo',
+    'brownsville',
+    'mcallen',
+    'edinburg',
+    'mission',
+    'pharr',
+    'tyler',
+    'longview',
+    'beaumont'
   ]);
 
   return allTexasCities

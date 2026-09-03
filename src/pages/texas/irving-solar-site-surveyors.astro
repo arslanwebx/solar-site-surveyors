@@ -1,0 +1,534 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+
+// SEO Metadata
+const pageTitle = 'Solar Site Surveyors in Irving, TX | Field Documentation';
+const pageDescription = 'Solar site survey coordination in Irving, TX. Property-specific electrical, structural, and ESS data for solar EPCs and remote design engineering teams.';
+const canonicalPath = '/texas/irving-solar-site-surveyors/';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas/' },
+  { label: 'Irving' }
+];
+
+const dispatchWhatsApp = getWhatsAppLink('Hi, I need to schedule a solar site survey in Irving, Texas.');
+
+const citySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Solar Site Surveyors: Irving, TX',
+  'description': pageDescription,
+  'url': `https://solarsitesurveyors.com${canonicalPath}`,
+  'telephone': '+1-682-396-0543',
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Irving, Texas',
+    'containedInPlace': { '@type': 'State', 'name': 'Texas' }
+  },
+  'serviceType': [
+    'Solar Site Surveys',
+    'Residential Solar Site Survey',
+    'Commercial Solar Site Survey',
+    'Electrical Service Panel Verification',
+    'Battery Storage Setback Survey'
+  ],
+  'priceRange': '$$'
+};
+
+const faqs = [
+  {
+    question: 'How do City of Irving building inspections impact survey requirements?',
+    answer: 'The City of Irving Inspections Department requires precise single-line electrical diagrams and verified framing attachment plans. Incomplete photographs of panel labels or ambiguous rafter spacing can cause permit review rejections. Our survey packages provide high-resolution data plate photos and physical span measurements to support prompt plan approvals.'
+  },
+  {
+    question: 'What electrical documentation is captured for older homes in South Irving?',
+    answer: 'Homes built in the 1960s and 1970s across South Irving frequently feature 100-amp or 125-amp main service panels, split-bus configurations, or interior subpanels. We photograph panel labels, bus ratings, main breakers, grounding electrodes, and existing branch circuits to evaluate backfeed capacity or panel upgrade necessity.'
+  },
+  {
+    question: 'Do you survey multi-story homes in Las Colinas and Valley Ranch?',
+    answer: 'Yes. Master-planned developments in Las Colinas and Valley Ranch often have complex multi-story roof planes, tile materials, and strict architectural setbacks. Our surveyors document plane slopes, ridge lengths, valleys, and plumbing vents across all elevations.'
+  },
+  {
+    question: 'How is Oncor meter data collected in gated communities?',
+    answer: 'When projects are located within gated neighborhoods, we coordinate site access instructions in advance. The surveyor captures the Oncor meter badge number, meter socket form, overhead or underground service entrance, and disconnect hardware for your utility interconnection filing.'
+  },
+  {
+    question: 'Can you survey commercial properties along the SH-114 corridor?',
+    answer: 'Yes. Commercial flat-roof and low-slope solar surveys along the Irving business corridor can be scheduled based on project scope, roof access coordination, and electrical service complexity.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': f.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+  schemaData={citySchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Centered Hero Section -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <Breadcrumbs items={breadcrumbs} isDark={true} />
+        <h1 class="page-title">Solar Site Surveyors in Irving, TX</h1>
+        <p class="lead">
+          Comprehensive field documentation across Las Colinas, Valley Ranch, and central Irving. Delivering verified electrical service records, structural framing data, and battery clearance measurements for solar EPC design teams.
+        </p>
+        <div class="hero-actions">
+          <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Schedule Survey in Irving</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/texas/" class="btn btn-outline-white btn-lg">
+            <span>← All Texas Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Problem Section -->
+  <section class="section">
+    <div class="container">
+      <div class="content-split">
+        <div class="content-main">
+          <div class="kicker">Jurisdictional Context</div>
+          <h2>An Irving Project Requires Its Own Municipal Standards</h2>
+          <p>
+            Treating an Irving solar project as generic Dallas territory is an operational mistake. Irving operates its own independent municipal government, its own Inspections Department, and enforces specific plan review standards. Whether your project is located in a master-planned community in Las Colinas or an established neighborhood near MacArthur Boulevard, the field survey must address local municipal expectations.
+          </p>
+          <p>
+            When remote CAD and engineering departments work from incomplete field notes, they frequently make assumptions regarding main panel bus ratings or rafter spacing. If an assumption fails to match the physical property, plan reviewers issue comments, and field crews encounter unexpected site conditions on installation day.
+          </p>
+          <p>
+            Our survey coordination provides your team with verified field data. We collect comprehensive photographic records, physical tape measurements, and electrical equipment specifications that eliminate guesswork and keep your project moving through permitting and Oncor interconnection.
+          </p>
+        </div>
+        <div class="profile-card card-technical">
+          <div class="profile-tag">Market Specifications</div>
+          <h3>Irving Operating Profile</h3>
+          <ul class="detail-list">
+            <li>
+              <strong>County:</strong>
+              <span>Dallas County</span>
+            </li>
+            <li>
+              <strong>Electric Utility:</strong>
+              <span>Oncor Electric Delivery</span>
+            </li>
+            <li>
+              <strong>Permitting Entity:</strong>
+              <span>City of Irving Inspections Department</span>
+            </li>
+            <li>
+              <strong>Neighborhood Profiles:</strong>
+              <span>Las Colinas, Valley Ranch, Bear Creek, Heritage District</span>
+            </li>
+            <li>
+              <strong>Key Field Verification:</strong>
+              <span>Main service panel bus ratings, attic framing health, meter disconnects</span>
+            </li>
+            <li>
+              <strong>Related Services:</strong>
+              <span><a href="/services/solar-site-surveys/">Site Surveys</a> and <a href="/services/solar-cad-designs/">Solar CAD Plan Sets</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Electrical Service Priority Section -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Electrical Verification</div>
+        <h2>Main Service Panel, Meter, and Disconnect Documentation</h2>
+        <p class="lead">
+          Accurate electrical records are the foundation of a code-compliant solar plan set and smooth interconnection filing.
+        </p>
+      </div>
+
+      <div class="technical-grid">
+        <div class="tech-card card-technical">
+          <div class="tech-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Bus Rating & Main Breaker</h3>
+          <p>
+            The surveyor captures clear photographs of the panel data plate, recording busbar ampacity, main breaker rating, and manufacturer catalog numbers. This data confirms whether a 120 percent backfeed rule applies or if an alternative interconnection method is necessary.
+          </p>
+        </div>
+
+        <div class="tech-card card-technical">
+          <div class="tech-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+          </div>
+          <h3>Breaker Schedule & Available Space</h3>
+          <p>
+            Macro photos record every breaker position, circuit label, and spare slot. We identify whether existing subpanels exist and note any tandem breakers that affect physical space for solar backfeed breakers.
+          </p>
+        </div>
+
+        <div class="tech-card card-technical">
+          <div class="tech-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Utility Meter & Service Entrance</h3>
+          <p>
+            We document the Oncor meter enclosure, digital meter display, overhead service drop or underground lateral, and the grounding electrode conductor path to ensure complete documentation for the utility application.
+          </p>
+        </div>
+
+        <div class="tech-card card-technical">
+          <div class="tech-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3>Battery Backup Wall Setbacks</h3>
+          <p>
+            For ESS projects, we record available wall dimensions in garages or exterior locations, verifying clearances from windows, doors, and gas meters to support code-compliant equipment placement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Structural & Roof Documentation -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="kicker">Structural Inspection</div>
+        <h2>Attic Framing Inspection and Roof Decking Conditions</h2>
+      </div>
+      <div class="text-columns">
+        <p>
+          Roof and structural conditions across Irving vary significantly between newer communities and established neighborhoods. In Las Colinas and Valley Ranch, homes frequently feature steep multi-plane hip roofs with engineered roof trusses. In contrast, older neighborhoods near central and south Irving often showcase conventional rafter framing with 2x4 or 2x6 members spanning wider distances.
+        </p>
+        <p>
+          When attic spaces are accessible, our surveyors measure framing member sizes, center-to-center spacing, purlin supports, and collar ties. We photograph roof decking thickness, inspect for signs of water intrusion or prior repairs, and note any framing modifications. This structural information allows engineering teams to confirm load capacity and select appropriate roof attachment hardware without relying on assumptions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Coverage Links -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">DFW Operations Network</div>
+        <h2>Coordinated Surveying Across Adjacent DFW Municipalities</h2>
+        <p class="lead">
+          Connect your Irving field dispatches with surrounding service areas across the greater metroplex.
+        </p>
+      </div>
+
+      <div class="network-grid">
+        <a href="/texas/dallas-solar-site-surveyors/" class="network-card">
+          <h4>Dallas Solar Site Surveyors</h4>
+          <p>Broad metroplex coverage supporting solar EPC operations throughout Dallas County.</p>
+        </a>
+        <a href="/texas/grand-prairie-solar-site-surveyors/" class="network-card">
+          <h4>Grand Prairie Solar Site Surveyors</h4>
+          <p>Coordinated survey coverage spanning the Dallas and Tarrant County municipal border.</p>
+        </a>
+        <a href="/texas/carrollton-solar-site-surveyors/" class="network-card">
+          <h4>Carrollton Solar Site Surveyors</h4>
+          <p>Standardized field data across tri-county residential and commercial projects.</p>
+        </a>
+        <a href="/texas/plano-solar-site-surveyors/" class="network-card">
+          <h4>Plano Solar Site Surveyors</h4>
+          <p>High-density North DFW residential survey coordination and engineering handoffs.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="kicker">Frequently Asked Questions</div>
+        <h2>Irving Solar Site Survey Essentials</h2>
+        <p class="lead">Key operational details for solar installers and project managers.</p>
+      </div>
+
+      <div class="faq-accordion">
+        {faqs.map(faq => (
+          <div class="faq-box card-technical">
+            <h3 class="faq-title">{faq.question}</h3>
+            <p class="faq-desc">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTASection
+    title="Put an Irving Solar Project on the Dispatch Schedule"
+    subtitle="Connect with our operations desk via WhatsApp to verify surveyor availability and coordinate your upcoming site visit."
+    primaryCtaText="Schedule Survey in Irving"
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Directory"
+    secondaryCtaLink="/texas/"
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .page-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-title {
+    font-family: var(--font-heading) !important;
+    color: #FFFFFF;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .page-hero .lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #9FB3C8;
+    max-width: 900px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .content-split {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  .content-main h2 {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+  }
+
+  .content-main p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .profile-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .profile-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    background: var(--surface-subtle);
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .profile-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .detail-list li {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.9375rem;
+  }
+
+  .detail-list li:last-child {
+    border-bottom: none;
+  }
+
+  .detail-list strong {
+    color: var(--text-primary);
+    margin-bottom: 0.125rem;
+  }
+
+  .detail-list span {
+    color: var(--text-secondary);
+  }
+
+  .technical-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .tech-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .tech-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background: var(--surface-subtle);
+    color: var(--primary-color);
+    margin-bottom: var(--space-4);
+  }
+
+  .tech-card h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .tech-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .text-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    margin-top: var(--space-6);
+  }
+
+  .text-columns p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .network-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .network-card {
+    display: block;
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .network-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .network-card h4 {
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .network-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  .faq-accordion {
+    max-width: 900px;
+    margin: var(--space-8) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .faq-box {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .faq-title {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .faq-desc {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .content-split {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+    .text-columns {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+</style>
