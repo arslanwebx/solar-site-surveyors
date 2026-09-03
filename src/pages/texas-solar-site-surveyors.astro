@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import CTASection from '../../components/CTASection.astro';
-import { allTexasCities } from '../../data/texasCities';
-import { getWhatsAppLink } from '../../data/whatsapp';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTASection from '../components/CTASection.astro';
+import { allTexasCities } from '../data/texasCities';
+import { getWhatsAppLink } from '../data/whatsapp';
 
 // Breadcrumbs hierarchy: Home > Service Areas > Texas
 const breadcrumbs = [
@@ -34,7 +34,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
   title="Solar Site Surveyors in Texas | Statewide Coverage"
   description="Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors. Fast-track surveyor coordination and CAD-ready photo packages across all 254 counties."
   activeNav="service-areas"
-  canonical="/texas/"
+  canonical="/texas-solar-site-surveyors/"
 >
   <!-- Page Hero with Dark Luxury Aesthetic -->
   <section class="section section-dark page-hero">
@@ -453,23 +453,26 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.4rem;
+    gap: 0.45rem;
     width: 100%;
-    padding: 0.55rem 1.25rem;
+    padding: 0.6rem 1.25rem;
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--primary);
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-light);
+    color: #FFFFFF;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
     border-radius: var(--radius-md);
     text-decoration: none;
+    box-shadow: var(--shadow-sm);
     transition: all var(--transition-fast);
   }
 
   :global(.btn-city-explore:hover) {
-    background-color: var(--primary);
+    background-color: var(--primary-dark);
     color: #FFFFFF;
-    border-color: var(--primary);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.22);
   }
 
   :global(.btn-city-explore svg) {
