@@ -68,9 +68,14 @@ const whatsappLink = WHATSAPP_BASE_URL;
       </div>
     </div>
 
-    <!-- Bottom Centered Credits -->
+    <!-- Bottom Credits -->
     <div class="footer-bottom">
-      <p>© 2026 SolarSiteSurveyors.com | All rights reserved.</p>
+      <div class="footer-bottom-inner">
+        <p>© 2026 SolarSiteSurveyors.com | All rights reserved.</p>
+        <p class="footer-powered-by">
+          Powered by <a href="https://vantexwebstudio.com/" target="_blank" rel="noopener noreferrer">VantexWeb</a>
+        </p>
+      </div>
     </div>
   </div>
 </footer>
@@ -192,7 +197,14 @@ const whatsappLink = WHATSAPP_BASE_URL;
   .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: var(--space-8);
-    text-align: center;
+  }
+
+  .footer-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
   }
 
   .footer-bottom p {
@@ -201,6 +213,18 @@ const whatsappLink = WHATSAPP_BASE_URL;
     color: #9FB3C8;
     margin: 0;
     letter-spacing: 0.01em;
+  }
+
+  .footer-powered-by a {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-powered-by a:hover {
+    color: var(--accent-gold);
+    text-decoration: underline;
   }
 
   @media (max-width: 1024px) {
@@ -214,6 +238,12 @@ const whatsappLink = WHATSAPP_BASE_URL;
     .footer-grid-4 {
       grid-template-columns: 1fr;
       gap: var(--space-6);
+    }
+
+    .footer-bottom-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: var(--space-2);
     }
   }
 </style>
