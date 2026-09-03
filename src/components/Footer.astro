@@ -1,8 +1,8 @@
 ---
 import Logo from './Logo.astro';
-import { getWhatsAppLink } from '../data/whatsapp';
+import { WHATSAPP_BASE_URL } from '../data/whatsapp';
 
-const whatsappLink = getWhatsAppLink('Hi, I would like to inquire about solar site surveys and CAD designs in Texas.');
+const whatsappLink = WHATSAPP_BASE_URL;
 ---
 
 <footer class="site-footer">

@@ -4,6 +4,10 @@ export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_PHONE}`;
 export const DEFAULT_WHATSAPP_MESSAGE = 'Hi, I would like to schedule a solar site survey in Texas.';
 
 export function getWhatsAppLink(customMessage?: string): string {
-  const msg = customMessage || DEFAULT_WHATSAPP_MESSAGE;
+  if (customMessage === '' || customMessage === null) {
+    return WHATSAPP_BASE_URL;
+  }
+  const msg = customMessage !== undefined ? customMessage : DEFAULT_WHATSAPP_MESSAGE;
   return `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(msg)}`;
 }
+
