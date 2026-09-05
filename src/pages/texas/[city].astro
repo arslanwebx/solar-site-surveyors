@@ -53,17 +53,6 @@ const serviceSchema = {
   }
 };
 
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://solarsitesurveyors.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://solarsitesurveyors.com/service-areas/' },
-    { '@type': 'ListItem', position: 3, name: 'Texas', item: 'https://solarsitesurveyors.com/texas-solar-site-surveyors/' },
-    { '@type': 'ListItem', position: 4, name: page.name, item: `https://solarsitesurveyors.com${canonicalPath}` }
-  ]
-};
-
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -218,7 +207,6 @@ const sectionClass = (section: CitySection, index: number) => {
   </section>
 
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <CTASection
