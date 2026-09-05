@@ -1,0 +1,495 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getWhatsAppLink } from '../../data/whatsapp';
+import { texasCityAuthorityPages } from '../../data/texasCityAuthority';
+import type { TexasCityAuthorityPage, CitySection } from '../../data/texasCityAuthority.types';
+
+export function getStaticPaths() {
+  return texasCityAuthorityPages.map((page) => ({
+    params: { city: `${page.slug}-solar-site-surveyors` },
+    props: { page }
+  }));
+}
+
+interface Props {
+  page: TexasCityAuthorityPage;
+}
+
+const { page } = Astro.props;
+const canonicalPath = `/texas/${page.slug}-solar-site-surveyors/`;
+const dispatchWhatsApp = getWhatsAppLink(
+  `Hi, I need to schedule a solar site survey in ${page.name}, Texas.`
+);
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Texas', href: '/texas-solar-site-surveyors/' },
+  { label: page.name }
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Solar site survey service in ${page.name}, Texas`,
+  description: page.description,
+  url: `https://solarsitesurveyors.com${canonicalPath}`,
+  serviceType: 'Solar Site Survey',
+  areaServed: {
+    '@type': 'City',
+    name: page.name,
+    containedInPlace: {
+      '@type': 'State',
+      name: 'Texas'
+    }
+  },
+  provider: {
+    '@type': 'Organization',
+    name: 'Solar Site Surveys',
+    url: 'https://solarsitesurveyors.com',
+    telephone: '+1-682-396-0543'
+  }
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: page.faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer
+    }
+  }))
+};
+
+const sectionClass = (section: CitySection, index: number) => {
+  if (section.type === 'callout') return 'section section-dark';
+  return index % 2 === 0 ? 'section' : 'section section-warm';
+};
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  activeNav="service-areas"
+  canonical={canonicalPath}
+>
+  <section class="section section-dark city-hero">
+    <div class="container city-hero-inner">
+      <Breadcrumbs items={breadcrumbs} isDark={true} />
+      <h1 class="page-title">{page.h1}</h1>
+      <div class="hero-copy">
+        {page.intro.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+      <div class="hero-actions">
+        <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+          Schedule a {page.name} Survey
+        </a>
+        <a href="/texas-solar-site-surveyors/" class="btn btn-outline-white btn-lg">Browse Texas Coverage</a>
+      </div>
+    </div>
+  </section>
+
+  {page.sections.map((section, index) => (
+    <section class={sectionClass(section, index)}>
+      <div class={section.type === 'prose' || section.type === 'callout' ? 'container narrow-content' : 'container'}>
+        {section.kicker && <div class="kicker">{section.kicker}</div>}
+        <h2 class={section.type === 'callout' ? 'light-heading' : undefined}>{section.heading}</h2>
+
+        {section.type === 'prose' && (
+          <div class="editorial-prose">
+            {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+        )}
+
+        {section.type === 'cards' && (
+          <>
+            {section.intro && <p class="section-intro">{section.intro}</p>}
+            <div class="content-grid">
+              {section.cards.map((card) => (
+                <article class="content-card card-technical">
+                  <h3>{card.title}</h3>
+                  <p>{card.body}</p>
+                </article>
+              ))}
+            </div>
+          </>
+        )}
+
+        {section.type === 'checklist' && (
+          <>
+            {section.intro && <p class="section-intro">{section.intro}</p>}
+            <div class="checklist-grid">
+              {section.items.map((item) => (
+                <div class="check-item">
+                  <span class="check-mark" aria-hidden="true">✓</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {section.type === 'steps' && (
+          <>
+            {section.intro && <p class="section-intro">{section.intro}</p>}
+            <div class="steps-grid">
+              {section.steps.map((step, stepIndex) => (
+                <div class="step-card">
+                  <span class="step-number">{String(stepIndex + 1).padStart(2, '0')}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {section.type === 'table' && (
+          <>
+            {section.intro && <p class="section-intro">{section.intro}</p>}
+            <div class="table-wrap card-technical">
+              <table class="specs-table">
+                <tbody>
+                  {section.rows.map((row) => (
+                    <tr>
+                      <th scope="row">{row.label}</th>
+                      <td>{row.detail}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )}
+
+        {section.type === 'callout' && (
+          <p class="callout-copy">{section.body}</p>
+        )}
+
+        {section.type === 'nearby' && (
+          <>
+            <p class="section-intro">{section.intro}</p>
+            <div class="nearby-grid">
+              {section.links.map((link) => (
+                <a href={`/texas/${link.slug}-solar-site-surveyors/`} class="nearby-card">
+                  <strong>{link.label}</strong>
+                  <span>{link.note}</span>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </section>
+  ))}
+
+  <section class="section">
+    <div class="container narrow-content">
+      <div class="kicker">Questions from EPC and design teams</div>
+      <h2>{page.name} Solar Site Survey FAQ</h2>
+      <div class="faq-list">
+        {page.faqs.map((faq) => (
+          <details class="faq-item">
+            <summary class="faq-question">{faq.question}</summary>
+            <div class="faq-answer"><p>{faq.answer}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <CTASection
+    title={`Need a Solar Site Survey in ${page.name}?`}
+    subtitle={`Send the project address and scope to our operations desk. We will confirm coverage and coordinate the field visit for your ${page.name} project.`}
+    primaryCtaText={`Schedule in ${page.name}`}
+    primaryCtaLink={dispatchWhatsApp}
+    secondaryCtaText="Explore Texas Coverage"
+    secondaryCtaLink="/texas-solar-site-surveyors/"
+  />
+</BaseLayout>
+
+<style>
+  .city-hero {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    text-align: center;
+    border-bottom: 1px solid var(--border-dark-subtle);
+  }
+
+  .city-hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-title {
+    color: #fff;
+    max-width: 980px;
+    margin-bottom: var(--space-5);
+    font-size: clamp(2.25rem, 4.4vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+  }
+
+  .hero-copy {
+    max-width: 900px;
+    color: #b8c6d4;
+  }
+
+  .hero-copy p {
+    margin: 0 auto var(--space-3);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: var(--space-7);
+  }
+
+  .narrow-content {
+    max-width: 880px;
+  }
+
+  .kicker {
+    margin-bottom: var(--space-2);
+    color: var(--accent-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .editorial-prose p,
+  .section-intro,
+  .callout-copy {
+    font-size: 1.02rem;
+    line-height: 1.72;
+  }
+
+  .editorial-prose p {
+    margin-bottom: var(--space-5);
+  }
+
+  .section-intro {
+    max-width: 850px;
+    margin-bottom: var(--space-7);
+    color: var(--text-secondary);
+  }
+
+  .content-grid,
+  .checklist-grid,
+  .steps-grid,
+  .nearby-grid {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .content-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content-card {
+    padding: var(--space-6);
+  }
+
+  .content-card h3,
+  .check-item h3,
+  .step-card h3 {
+    margin-bottom: var(--space-2);
+    color: var(--primary);
+    font-size: 1.03rem;
+  }
+
+  .content-card p,
+  .check-item p,
+  .step-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.62;
+  }
+
+  .checklist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-5);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    background: #fff;
+  }
+
+  .check-mark {
+    display: inline-grid;
+    place-items: center;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: var(--bg-secondary);
+    color: var(--primary);
+    font-weight: 800;
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .step-card {
+    padding: var(--space-5);
+    border-top: 2px solid var(--accent-gold);
+    background: #fff;
+  }
+
+  .step-number {
+    display: block;
+    margin-bottom: var(--space-4);
+    color: var(--accent-gold);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  .table-wrap {
+    overflow: hidden;
+  }
+
+  .specs-table th {
+    width: 28%;
+    vertical-align: top;
+    color: var(--primary);
+    text-align: left;
+  }
+
+  .light-heading {
+    color: #fff;
+  }
+
+  .callout-copy {
+    color: #b8c6d4;
+  }
+
+  .nearby-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nearby-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-5);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .nearby-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-gold);
+  }
+
+  .nearby-card strong {
+    color: var(--primary);
+  }
+
+  .nearby-card span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .faq-item {
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    background: #fff;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-6);
+    color: var(--primary);
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-heading);
+    font-weight: 650;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::after {
+    content: '+';
+    color: var(--accent-gold);
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+
+  .faq-item[open] .faq-question::after {
+    content: '−';
+  }
+
+  .faq-answer {
+    padding: 0 var(--space-6) var(--space-5);
+  }
+
+  .faq-answer p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 1024px) {
+    .content-grid,
+    .nearby-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content-grid,
+    .checklist-grid,
+    .steps-grid,
+    .nearby-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .specs-table th {
+      width: 38%;
+    }
+  }
+</style>
