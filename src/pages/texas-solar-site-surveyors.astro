@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CTASection from '../components/CTASection.astro';
 import { allTexasCities } from '../data/texasCities';
+import { texasCityAuthorityPages } from '../data/texasCityAuthority';
 import { getWhatsAppLink } from '../data/whatsapp';
 
 // Breadcrumbs hierarchy: Home > Service Areas > Texas
@@ -12,27 +13,27 @@ const breadcrumbs = [
   { label: 'Texas' }
 ];
 
-// 52 Dedicated Texas City Landing Pages
-const active52SlugsList = [
-  'houston', 'san-antonio', 'dallas', 'fort-worth', 'austin', 'el-paso', 'arlington', 'corpus-christi',
-  'plano', 'lubbock', 'laredo', 'irving', 'garland', 'frisco', 'mckinney', 'grand-prairie',
-  'amarillo', 'brownsville', 'denton', 'killeen', 'mesquite', 'mcallen', 'pasadena', 'waco',
-  'midland', 'round-rock', 'lewisville', 'carrollton', 'abilene', 'pearland', 'college-station',
-  'odessa', 'new-braunfels', 'league-city', 'conroe', 'richardson', 'tyler', 'allen', 'beaumont',
-  'edinburg', 'sugar-land', 'georgetown', 'wichita-falls', 'san-angelo', 'temple', 'bryan',
-  'leander', 'mission', 'baytown', 'mansfield', 'longview', 'pharr'
-];
+// 52 dedicated city authority pages.
+const active52SlugsList = texasCityAuthorityPages.map((page) => page.slug);
 const active52Set = new Set(active52SlugsList);
+const authorityBySlug = new Map(texasCityAuthorityPages.map((page) => [page.slug, page]));
 
-// First 100 cities are pre-rendered statically for ultra-fast initial load & SEO indexing
-const initialCities = allTexasCities.slice(0, 100);
-const remainingCities = allTexasCities.slice(100);
+// Keep the full Texas directory, but replace generic summaries for the 52
+// published city pages with their individually written local summaries.
+const cityDirectory = allTexasCities.map((city) => ({
+  ...city,
+  keyCoverageNotes: authorityBySlug.get(city.slug)?.hubSummary ?? city.keyCoverageNotes
+}));
+
+// First 100 cities are pre-rendered statically for fast initial load and crawlability.
+const initialCities = cityDirectory.slice(0, 100);
+const remainingCities = cityDirectory.slice(100);
 const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedule a solar site survey in Texas.');
 ---
 
 <BaseLayout 
-  title="Solar Site Surveyors in Texas | Statewide Coverage"
-  description="Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors. Fast-track surveyor coordination and CAD-ready photo packages across all 254 counties."
+  title="Texas Solar Site Surveyors | 52 City Service Pages"
+  description="Solar site survey coordination for Texas EPCs and installers, with 52 dedicated city pages covering roof, electrical, structural, battery, and field documentation needs."
   activeNav="service-areas"
   canonical="/texas-solar-site-surveyors/"
 >
@@ -45,7 +46,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
 
         <h1 class="page-title">Texas Solar Site Survey Coverage & City Directory</h1>
         <p class="lead" style="color: #9FB3C8; max-width: 924px;">
-          Professional solar site surveys throughout Texas for installers, EPCs, solar companies, and contractors. From the Rio Grande Valley to the Panhandle, Solar Site Surveys coordinates vetted local site surveyors across all 254 Texas counties, delivering CAD-ready photo packages for your engineering and permitting teams.
+          Texas solar projects do not share one utility, one permitting path, or one housing type. This directory connects EPCs and installers with 52 dedicated city pages built around the field conditions that matter locally, while the wider city list helps teams identify additional Texas coverage areas.
         </p>
       </div>
     </div>
@@ -58,7 +59,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
         <div class="kicker">Statewide Directory</div>
         <h2>Active Texas City Dispatch Directory</h2>
         <p class="lead">
-          Our distributed field surveyor network covers municipal jurisdictions and rural co-op territories across the entire state.
+          Start with one of the 52 published city guides for detailed local survey context, or search the wider Texas directory to discuss coverage for another project address.
         </p>
 
         <!-- Live Instant Search Bar -->
@@ -137,43 +138,43 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     <div class="container">
       <div class="section-header center">
         <div class="kicker">Engineering Specifications</div>
-        <h2>Texas AHJ & Utility Compliance Matrix</h2>
+        <h2>Texas Field Data That Travels Well Across Different AHJs and Utilities</h2>
         <p class="lead">
-          Our surveys are purpose-built to comply with ERCOT transmission entities, municipal electric authorities, and regional building departments.
+          Texas project requirements vary by service address. The survey should establish accurate site facts first, then let your design, engineering, permitting, and interconnection teams apply the current requirements.
         </p>
       </div>
 
       <div class="specs-grid">
         <div class="spec-card card-technical">
           <div class="spec-header">
-            <h4>Major Electric Utilities</h4>
-            <span class="spec-tag">Statewide</span>
+            <h4>Service Equipment Verification</h4>
+            <span class="spec-tag">Address Specific</span>
           </div>
-          <p>Standardized measurement protocols aligned with Oncor Electric Delivery, CenterPoint Energy, AEP Texas, Texas-New Mexico Power (TNMP), Austin Energy, CPS Energy, and rural electric co-ops (Pedernales, Bluebonnet, CoServ, Tri-County).</p>
+          <p>Readable meter identifiers, service equipment, panel ratings, grounding context, and wider electrical photos help the project team confirm the serving utility and design from the actual property configuration.</p>
         </div>
 
         <div class="spec-card card-technical">
           <div class="spec-header">
-            <h4>Gulf Coast High Wind Loads</h4>
-            <span class="spec-tag">Coastal Zone</span>
+            <h4>Roof & Structural Evidence</h4>
+            <span class="spec-tag">Engineering Input</span>
           </div>
-          <p>Rigorous structural rafter assessments, truss spacing measurements, and decking condition logs complying with Texas Department of Insurance (TDI) windstorm guidelines and 115–150+ mph wind speed engineering thresholds.</p>
+          <p>Roof pitch, plane geometry, visible roof condition, attic framing, member dimensions, spacing, and decking can be documented for engineering review without turning the field survey into a structural certification.</p>
         </div>
 
         <div class="spec-card card-technical">
           <div class="spec-header">
-            <h4>ERCOT Market & Tariff Nuances</h4>
-            <span class="spec-tag">Deregulated</span>
+            <h4>Jurisdiction & Utility Context</h4>
+            <span class="spec-tag">Verify Current Rules</span>
           </div>
-          <p>Documentation of dual-meter sockets, solar net-billing meters, smart meter serial numbers, and line-side tap clearances required for seamless retail electric provider (REP) buyback enrollment.</p>
+          <p>Texas cities can sit under municipal utilities, cooperatives, and different transmission or distribution territories. We capture field identifiers and site context while your project team verifies the current AHJ and interconnection requirements.</p>
         </div>
 
         <div class="spec-card card-technical">
           <div class="spec-header">
-            <h4>Battery & Backup Clearances</h4>
-            <span class="spec-tag">ESS / NFPA 855</span>
+            <h4>Battery & Backup Locations</h4>
+            <span class="spec-tag">Site Context</span>
           </div>
-          <p>Precise clearance measurements around garage walls, outdoor siding, gas meters, windows, and doors to ensure compliance with NFPA 855 and local municipal fire marshal setback codes.</p>
+          <p>Wall dimensions, nearby doors and windows, gas or electrical equipment, service relationships, and potential routing can be captured so the design team can apply current code and manufacturer clearance requirements.</p>
         </div>
       </div>
     </div>
