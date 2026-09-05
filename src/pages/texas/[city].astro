@@ -67,8 +67,10 @@ const faqSchema = {
 };
 
 const sectionClass = (section: CitySection, index: number) => {
-  if (section.type === 'callout') return 'section section-dark';
-  return index % 2 === 0 ? 'section' : 'section section-warm';
+  if (section.type === 'callout') return 'section section-dark city-content-section';
+  return index % 2 === 0
+    ? 'section city-content-section'
+    : 'section section-warm city-content-section';
 };
 ---
 
@@ -191,7 +193,7 @@ const sectionClass = (section: CitySection, index: number) => {
     </section>
   ))}
 
-  <section class="section">
+  <section class="section city-faq-section">
     <div class="container narrow-content">
       <div class="kicker">Questions from EPC and design teams</div>
       <h2>{page.name} Solar Site Survey FAQ</h2>
@@ -265,13 +267,44 @@ const sectionClass = (section: CitySection, index: number) => {
     max-width: 880px;
   }
 
+  /* Shared vertical rhythm for all 52 city pages */
+  .city-content-section,
+  .city-faq-section {
+    padding-top: clamp(4.5rem, 6vw, 6rem);
+    padding-bottom: clamp(4.5rem, 6vw, 6rem);
+  }
+
+  .city-content-section > .container > h2,
+  .city-faq-section > .container > h2 {
+    max-width: 1040px;
+    margin: 0;
+    text-wrap: balance;
+  }
+
   .kicker {
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
     color: var(--accent-gold);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+  }
+
+  /* Headings with an introductory paragraph */
+  .city-content-section h2 + .section-intro {
+    margin-top: var(--space-4);
+  }
+
+  /* Headings that lead directly into content need clear separation */
+  .city-content-section h2 + .editorial-prose,
+  .city-content-section h2 + .content-grid,
+  .city-content-section h2 + .checklist-grid,
+  .city-content-section h2 + .steps-grid,
+  .city-content-section h2 + .table-wrap,
+  .city-content-section h2 + .callout-copy,
+  .city-content-section h2 + .nearby-grid,
+  .city-faq-section h2 + .faq-list {
+    margin-top: var(--space-8);
   }
 
   .editorial-prose p,
@@ -285,9 +318,13 @@ const sectionClass = (section: CitySection, index: number) => {
     margin-bottom: var(--space-5);
   }
 
+  .editorial-prose p:last-child {
+    margin-bottom: 0;
+  }
+
   .section-intro {
     max-width: 850px;
-    margin-bottom: var(--space-7);
+    margin-bottom: var(--space-8);
     color: var(--text-secondary);
   }
 
@@ -310,7 +347,7 @@ const sectionClass = (section: CitySection, index: number) => {
   .content-card h3,
   .check-item h3,
   .step-card h3 {
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
     color: var(--primary);
     font-size: 1.03rem;
   }
@@ -481,6 +518,23 @@ const sectionClass = (section: CitySection, index: number) => {
   }
 
   @media (max-width: 768px) {
+    .city-content-section,
+    .city-faq-section {
+      padding-top: var(--space-14, 3.5rem);
+      padding-bottom: var(--space-14, 3.5rem);
+    }
+
+    .city-content-section h2 + .editorial-prose,
+    .city-content-section h2 + .content-grid,
+    .city-content-section h2 + .checklist-grid,
+    .city-content-section h2 + .steps-grid,
+    .city-content-section h2 + .table-wrap,
+    .city-content-section h2 + .callout-copy,
+    .city-content-section h2 + .nearby-grid,
+    .city-faq-section h2 + .faq-list {
+      margin-top: var(--space-6);
+    }
+
     .content-grid,
     .checklist-grid,
     .steps-grid,
