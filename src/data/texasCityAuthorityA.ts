@@ -4,7 +4,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "abilene",
     "name": "Abilene",
-    "title": "Solar Site Surveyors in Abilene, TX | Field Data for EPCs",
+    "title": "Solar Site Surveyors in Abilene, TX",
     "description": "Solar site surveys in Abilene, Texas for EPCs, installers, and design teams. Roof, attic, electrical, battery, and property documentation organized for downstream engineering.",
     "h1": "Solar Site Surveyors in Abilene, TX",
     "hubSummary": "Big Country field coverage focused on accurate roof, electrical, attic, and equipment-location documentation for Abilene solar projects.",
@@ -102,7 +102,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "allen",
     "name": "Allen",
-    "title": "Solar Site Surveyors in Allen, TX | Collin County Field Surveys",
+    "title": "Solar Site Surveyors in Allen, TX",
     "description": "Solar site surveys in Allen, TX for EPCs and installers. Detailed roof, attic, electrical, battery, and exterior documentation for Collin County residential solar projects.",
     "h1": "Solar Site Surveyors in Allen, TX",
     "hubSummary": "Collin County survey coverage for dense suburban homes, multi-plane roofs, modern electrical services, and battery-ready design documentation.",
@@ -231,7 +231,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "amarillo",
     "name": "Amarillo",
-    "title": "Solar Site Surveyors in Amarillo, TX | Panhandle Field Surveys",
+    "title": "Solar Site Surveyors in Amarillo, TX",
     "description": "Solar site surveys in Amarillo, Texas for EPCs and installers. Panhandle roof, structural, electrical, equipment-location, and property documentation for remote design teams.",
     "h1": "Solar Site Surveyors in Amarillo, TX",
     "hubSummary": "Panhandle survey coordination emphasizing wind-exposed roof conditions, open-site context, service equipment, framing, and organized design-ready documentation.",
@@ -328,7 +328,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "arlington",
     "name": "Arlington",
-    "title": "Solar Site Surveyors in Arlington, TX | DFW Field Documentation",
+    "title": "Solar Site Surveyors in Arlington, TX",
     "description": "Solar site surveys in Arlington, Texas for EPCs and installers. Residential roof, attic, electrical, battery, and exterior field documentation in the DFW Mid-Cities.",
     "h1": "Solar Site Surveyors in Arlington, TX",
     "hubSummary": "DFW Mid-Cities survey coverage for dense residential neighborhoods, mixed housing ages, roof obstructions, electrical service, and design-ready field packages.",
@@ -438,7 +438,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "austin",
     "name": "Austin",
-    "title": "Solar Site Surveyors in Austin, TX | Austin Energy Field Surveys",
+    "title": "Solar Site Surveyors in Austin, TX",
     "description": "Solar site surveys in Austin, Texas for EPCs and installers. Roof, attic, electrical, meter, battery, and site-plan field data for projects in the Austin market.",
     "h1": "Solar Site Surveyors in Austin, TX",
     "hubSummary": "Austin-area surveys with close attention to service equipment, meter context, equipment placement, roof geometry, and field data used for distributed-generation planning.",
@@ -549,7 +549,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "baytown",
     "name": "Baytown",
-    "title": "Solar Site Surveyors in Baytown, TX | East Houston Field Surveys",
+    "title": "Solar Site Surveyors in Baytown, TX",
     "description": "Solar site surveys in Baytown, Texas for EPCs and installers. Roof, attic, electrical, exterior, corrosion-context, and equipment-location documentation near the upper Texas Gulf Coast.",
     "h1": "Solar Site Surveyors in Baytown, TX",
     "hubSummary": "East Houston and upper Gulf Coast field surveys emphasizing exterior equipment condition, roof documentation, property access, and organized EPC handoffs.",
@@ -656,7 +656,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "beaumont",
     "name": "Beaumont",
-    "title": "Solar Site Surveyors in Beaumont, TX | Southeast Texas Field Surveys",
+    "title": "Solar Site Surveyors in Beaumont, TX",
     "description": "Solar site surveys in Beaumont, Texas for EPCs and installers. Southeast Texas roof, attic, electrical, equipment-location, and property documentation for solar design teams.",
     "h1": "Solar Site Surveyors in Beaumont, TX",
     "hubSummary": "Southeast Texas surveys built around coastal-weather context, mature housing, electrical verification, structural documentation, and clean remote-design handoffs.",
@@ -774,7 +774,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "brownsville",
     "name": "Brownsville",
-    "title": "Solar Site Surveyors in Brownsville, TX | Rio Grande Valley Surveys",
+    "title": "Solar Site Surveyors in Brownsville, TX",
     "description": "Solar site surveys in Brownsville, Texas for EPCs and installers. Roof, electrical, attic, battery, and exterior documentation for Rio Grande Valley solar projects.",
     "h1": "Solar Site Surveyors in Brownsville, TX",
     "hubSummary": "Lower Rio Grande Valley surveys with attention to municipal utility context, coastal exposure, roof condition, service equipment, and equipment-placement documentation.",
@@ -884,7 +884,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "bryan",
     "name": "Bryan",
-    "title": "Solar Site Surveyors in Bryan, TX | Brazos Valley Field Surveys",
+    "title": "Solar Site Surveyors in Bryan, TX",
     "description": "Solar site surveys in Bryan, Texas for solar EPCs and installers. Roof, structure, electrical service, equipment-location, and property documentation in the Brazos Valley.",
     "h1": "Solar Site Surveyors in Bryan, TX",
     "hubSummary": "Brazos Valley surveys for Bryan projects with municipal-utility awareness, older and newer housing, roof/attic verification, and electrical field documentation.",
@@ -991,7 +991,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "carrollton",
     "name": "Carrollton",
-    "title": "Solar Site Surveyors in Carrollton, TX | North DFW Site Surveys",
+    "title": "Solar Site Surveyors in Carrollton, TX",
     "description": "Solar site surveys in Carrollton, Texas for EPCs and installers. North DFW roof, attic, electrical, battery, and exterior documentation across a multi-county city.",
     "h1": "Solar Site Surveyors in Carrollton, TX",
     "hubSummary": "North DFW field surveys for a city spanning Dallas, Denton, and Collin counties, with emphasis on address-level jurisdiction, electrical service, and roof documentation.",
@@ -1105,7 +1105,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "college-station",
     "name": "College Station",
-    "title": "Solar Site Surveyors in College Station, TX | CSU Field Surveys",
+    "title": "Solar Site Surveyors in College Station, TX",
     "description": "Solar site surveys in College Station, Texas for EPCs and installers. Field documentation for College Station Utilities solar projects, including roof, electrical, meter, and structural data.",
     "h1": "Solar Site Surveyors in College Station, TX",
     "hubSummary": "College Station Utilities project surveys with close attention to meter/service documentation, roof geometry, structural data, and the field facts needed before interconnection.",
@@ -1219,7 +1219,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "conroe",
     "name": "Conroe",
-    "title": "Solar Site Surveyors in Conroe, TX | Montgomery County Surveys",
+    "title": "Solar Site Surveyors in Conroe, TX",
     "description": "Solar site surveys in Conroe, Texas for EPCs and installers. Roof, attic, electrical, tree-cover, battery, and property documentation across Montgomery County.",
     "h1": "Solar Site Surveyors in Conroe, TX",
     "hubSummary": "Montgomery County field surveys for wooded lots, fast-growth subdivisions, mixed utility context, roof/attic data, and equipment-location planning.",
@@ -1329,7 +1329,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
   {
     "slug": "corpus-christi",
     "name": "Corpus Christi",
-    "title": "Solar Site Surveyors in Corpus Christi, TX | Coastal Bend Surveys",
+    "title": "Solar Site Surveyors in Corpus Christi, TX",
     "description": "Solar site surveys in Corpus Christi, Texas for EPCs and installers. Coastal Bend roof, structural, electrical, corrosion-context, battery, and exterior field documentation.",
     "h1": "Solar Site Surveyors in Corpus Christi, TX",
     "hubSummary": "Coastal Bend surveys emphasizing roof/framing evidence, exterior equipment condition, windstorm-aware documentation, and reliable solar design handoffs.",

@@ -4,7 +4,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "pasadena",
     "name": "Pasadena",
-    "title": "Solar Site Surveyors in Pasadena, TX | Southeast Houston Surveys",
+    "title": "Solar Site Surveyors in Pasadena, TX",
     "description": "Solar site surveys in Pasadena, Texas for EPCs and installers. Roof, attic, electrical, battery, exterior-equipment, and property documentation in southeast Harris County.",
     "h1": "Solar Site Surveyors in Pasadena, TX",
     "hubSummary": "Southeast Houston field surveys emphasizing established housing, electrical-service verification, roof/attic conditions, exterior equipment, and practical installation routes.",
@@ -114,7 +114,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "pearland",
     "name": "Pearland",
-    "title": "Solar Site Surveyors in Pearland, TX | South Houston Field Surveys",
+    "title": "Solar Site Surveyors in Pearland, TX",
     "description": "Solar site surveys in Pearland, Texas for EPCs and installers. Roof, attic, electrical, battery, utility-context, and property documentation across the south Houston market.",
     "h1": "Solar Site Surveyors in Pearland, TX",
     "hubSummary": "South Houston survey coverage for fast-growth subdivisions, address-level utility/jurisdiction verification, complex roofs, electrical service, and storage planning.",
@@ -225,7 +225,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "pharr",
     "name": "Pharr",
-    "title": "Solar Site Surveyors in Pharr, TX | Hidalgo County Field Surveys",
+    "title": "Solar Site Surveyors in Pharr, TX",
     "description": "Solar site surveys in Pharr, Texas for EPCs and installers. Roof, attic, electrical, battery, heat-exposure, and utility-context documentation in Hidalgo County.",
     "h1": "Solar Site Surveyors in Pharr, TX",
     "hubSummary": "Hidalgo County field surveys for dense residential lots, hot-climate equipment placement, utility-provider verification, roof/attic data, and route planning.",
@@ -335,7 +335,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "plano",
     "name": "Plano",
-    "title": "Solar Site Surveyors in Plano, TX | North DFW Design-Ready Surveys",
+    "title": "Solar Site Surveyors in Plano, TX",
     "description": "Solar site surveys in Plano, Texas for EPCs and installers. Detailed roof, attic, electrical, battery, mature-tree, and property documentation for North DFW projects.",
     "h1": "Solar Site Surveyors in Plano, TX",
     "hubSummary": "North DFW field surveys for established large homes, mature tree cover, complex roof planes, service-equipment verification, and storage-ready design handoffs.",
@@ -445,7 +445,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "richardson",
     "name": "Richardson",
-    "title": "Solar Site Surveyors in Richardson, TX | North Dallas Field Surveys",
+    "title": "Solar Site Surveyors in Richardson, TX",
     "description": "Solar site surveys in Richardson, Texas for EPCs and installers. Mature-tree, roof, attic, electrical, battery, and established-housing documentation in North Dallas.",
     "h1": "Solar Site Surveyors in Richardson, TX",
     "hubSummary": "North Dallas field surveys for mature-tree neighborhoods, established roofs and electrical services, attic verification, and practical storage/equipment planning.",
@@ -552,7 +552,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "round-rock",
     "name": "Round Rock",
-    "title": "Solar Site Surveyors in Round Rock, TX | Williamson County Surveys",
+    "title": "Solar Site Surveyors in Round Rock, TX",
     "description": "Solar site surveys in Round Rock, Texas for EPCs and installers. Roof, attic, electrical, battery, fast-growth neighborhood, and property documentation north of Austin.",
     "h1": "Solar Site Surveyors in Round Rock, TX",
     "hubSummary": "Williamson County survey coverage for high-volume residential pipelines, complex suburban roofs, service-equipment verification, storage planning, and clean QA handoffs.",
@@ -676,7 +676,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "san-angelo",
     "name": "San Angelo",
-    "title": "Solar Site Surveyors in San Angelo, TX | Concho Valley Surveys",
+    "title": "Solar Site Surveyors in San Angelo, TX",
     "description": "Solar site surveys in San Angelo, Texas for EPCs and installers. Roof, attic, electrical, battery, open-lot, and property documentation across the Concho Valley.",
     "h1": "Solar Site Surveyors in San Angelo, TX",
     "hubSummary": "Concho Valley field surveys for open residential exposure, established housing, electrical service, roof/attic data, larger lots, and equipment routes.",
@@ -786,7 +786,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "san-antonio",
     "name": "San Antonio",
-    "title": "Solar Site Surveyors in San Antonio, TX | CPS Energy Field Surveys",
+    "title": "Solar Site Surveyors in San Antonio, TX",
     "description": "Solar site surveys in San Antonio, Texas for EPCs and installers. Field data for CPS Energy projects, including roof, attic, electrical, site-plan, battery, and equipment documentation.",
     "h1": "Solar Site Surveyors in San Antonio, TX",
     "hubSummary": "Bexar County surveys aligned with CPS Energy project workflows, including service equipment, roof/attic data, one-line/site-plan inputs, and storage locations.",
@@ -900,7 +900,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "sugar-land",
     "name": "Sugar Land",
-    "title": "Solar Site Surveyors in Sugar Land, TX | Fort Bend County Surveys",
+    "title": "Solar Site Surveyors in Sugar Land, TX",
     "description": "Solar site surveys in Sugar Land, Texas for EPCs and installers. Large-home roof, attic, electrical, battery, equipment-wall, and property documentation in Fort Bend County.",
     "h1": "Solar Site Surveyors in Sugar Land, TX",
     "hubSummary": "Fort Bend County surveys for larger suburban homes, complex roof geometry, high-capacity service equipment, storage placement, and homeowner-visible routes.",
@@ -1024,7 +1024,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "temple",
     "name": "Temple",
-    "title": "Solar Site Surveyors in Temple, TX | Bell County Field Surveys",
+    "title": "Solar Site Surveyors in Temple, TX",
     "description": "Solar site surveys in Temple, Texas for EPCs and installers. Roof, attic, electrical, battery, established-home, and new-growth property documentation along the I-35 corridor.",
     "h1": "Solar Site Surveyors in Temple, TX",
     "hubSummary": "Bell County/I-35 corridor surveys spanning established neighborhoods and new growth, with roof, structure, electrical-service, storage, and route documentation.",
@@ -1131,7 +1131,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "tyler",
     "name": "Tyler",
-    "title": "Solar Site Surveyors in Tyler, TX | East Texas Field Surveys",
+    "title": "Solar Site Surveyors in Tyler, TX",
     "description": "Solar site surveys in Tyler, Texas for EPCs and installers. Pine-canopy, roof, attic, electrical, battery, larger-lot, and property documentation across Smith County.",
     "h1": "Solar Site Surveyors in Tyler, TX",
     "hubSummary": "Smith County field surveys with strong tree-canopy context, roof/attic verification, electrical service, larger-lot routing, and storage placement.",
@@ -1238,7 +1238,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "waco",
     "name": "Waco",
-    "title": "Solar Site Surveyors in Waco, TX | Central Texas Field Surveys",
+    "title": "Solar Site Surveyors in Waco, TX",
     "description": "Solar site surveys in Waco, Texas for EPCs and installers. Roof, attic, electrical, battery, historic-home, suburban, and property documentation in McLennan County.",
     "h1": "Solar Site Surveyors in Waco, TX",
     "hubSummary": "McLennan County/I-35 corridor surveys for historic and newer housing, roof/attic verification, electrical service, storage locations, and organized design handoffs.",
@@ -1348,7 +1348,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
   {
     "slug": "wichita-falls",
     "name": "Wichita Falls",
-    "title": "Solar Site Surveyors in Wichita Falls, TX | North Texas Surveys",
+    "title": "Solar Site Surveyors in Wichita Falls, TX",
     "description": "Solar site surveys in Wichita Falls, Texas for EPCs and installers. Roof-condition, attic, electrical, battery, weather-exposure, and property documentation in North Texas.",
     "h1": "Solar Site Surveyors in Wichita Falls, TX",
     "hubSummary": "North Texas field surveys with careful roof-condition documentation, open-weather exposure, electrical-service verification, structure, and equipment-route planning.",

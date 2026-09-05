@@ -4,7 +4,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "dallas",
     "name": "Dallas",
-    "title": "Solar Site Surveyors in Dallas, TX | DFW Field Surveys",
+    "title": "Solar Site Surveyors in Dallas, TX",
     "description": "Solar site surveys in Dallas, Texas for EPCs, installers, and engineering teams. Roof, attic, electrical, battery, and property documentation for DFW solar design.",
     "h1": "Solar Site Surveyors in Dallas, TX",
     "hubSummary": "Dallas field surveys built for multi-jurisdiction DFW pipelines, with detailed roof, electrical, structural, equipment-location, and property documentation.",
@@ -129,7 +129,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "denton",
     "name": "Denton",
-    "title": "Solar Site Surveyors in Denton, TX | DME Project Field Data",
+    "title": "Solar Site Surveyors in Denton, TX",
     "description": "Solar site surveys in Denton, Texas for EPCs and installers. Field documentation for DME-area solar projects, including meter, panel, roof, attic, and battery data.",
     "h1": "Solar Site Surveyors in Denton, TX",
     "hubSummary": "Denton projects with DME-aware electrical documentation, roof and attic verification, meter/panel photography, and current-permit-ready field context.",
@@ -230,7 +230,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "edinburg",
     "name": "Edinburg",
-    "title": "Solar Site Surveyors in Edinburg, TX | Rio Grande Valley Surveys",
+    "title": "Solar Site Surveyors in Edinburg, TX",
     "description": "Solar site surveys in Edinburg, Texas for EPCs and installers. Roof, attic, electrical, battery, and property documentation for Hidalgo County solar projects.",
     "h1": "Solar Site Surveyors in Edinburg, TX",
     "hubSummary": "Hidalgo County survey coverage for fast-growth neighborhoods, utility-boundary verification, heat-exposed equipment, roof geometry, and design-ready field packages.",
@@ -340,7 +340,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "el-paso",
     "name": "El Paso",
-    "title": "Solar Site Surveyors in El Paso, TX | El Paso Electric Field Data",
+    "title": "Solar Site Surveyors in El Paso, TX",
     "description": "Solar site surveys in El Paso, Texas for EPCs and installers. Roof, electrical, meter, structural, battery, and site documentation for El Paso Electric solar projects.",
     "h1": "Solar Site Surveyors in El Paso, TX",
     "hubSummary": "Far West Texas surveys with El Paso Electric interconnection context, desert roof conditions, service-equipment detail, and remote-design-ready field packages.",
@@ -454,7 +454,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "fort-worth",
     "name": "Fort Worth",
-    "title": "Solar Site Surveyors in Fort Worth, TX | Tarrant County Surveys",
+    "title": "Solar Site Surveyors in Fort Worth, TX",
     "description": "Solar site surveys in Fort Worth, Texas for EPCs and installers. Roof, attic, electrical, battery, and property field documentation across Tarrant County and western DFW.",
     "h1": "Solar Site Surveyors in Fort Worth, TX",
     "hubSummary": "Western DFW field surveys for fast-growth subdivisions, established neighborhoods, large-lot properties, roof complexity, and electrical design handoffs.",
@@ -578,7 +578,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "frisco",
     "name": "Frisco",
-    "title": "Solar Site Surveyors in Frisco, TX | North DFW Field Surveys",
+    "title": "Solar Site Surveyors in Frisco, TX",
     "description": "Solar site surveys in Frisco, Texas for EPCs and installers. Detailed roof, attic, electrical, battery, and utility-context documentation for fast-growth North DFW projects.",
     "h1": "Solar Site Surveyors in Frisco, TX",
     "hubSummary": "Fast-growth North DFW surveys focused on complex roof geometry, equipment-wall competition, utility-provider verification, and storage-ready field documentation.",
@@ -685,7 +685,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "garland",
     "name": "Garland",
-    "title": "Solar Site Surveyors in Garland, TX | GP&L Area Field Data",
+    "title": "Solar Site Surveyors in Garland, TX",
     "description": "Solar site surveys in Garland, Texas for EPCs and installers. Electrical, meter, roof, attic, battery, and site documentation for GP&L and other Garland service areas.",
     "h1": "Solar Site Surveyors in Garland, TX",
     "hubSummary": "Garland surveys with address-level utility verification, GP&L-aware service documentation, established-housing electrical checks, and roof/attic field data.",
@@ -795,7 +795,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "georgetown",
     "name": "Georgetown",
-    "title": "Solar Site Surveyors in Georgetown, TX | Williamson County Surveys",
+    "title": "Solar Site Surveyors in Georgetown, TX",
     "description": "Solar site surveys in Georgetown, Texas for EPCs and installers. Roof, attic, electrical, battery, and municipal-utility context for Williamson County solar projects.",
     "h1": "Solar Site Surveyors in Georgetown, TX",
     "hubSummary": "Georgetown-area surveys for fast-growth Williamson County housing, municipal electric service context, roof/attic verification, and storage-ready field documentation.",
@@ -902,7 +902,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "grand-prairie",
     "name": "Grand Prairie",
-    "title": "Solar Site Surveyors in Grand Prairie, TX | Mid-Cities Surveys",
+    "title": "Solar Site Surveyors in Grand Prairie, TX",
     "description": "Solar site surveys in Grand Prairie, Texas for EPCs and installers. Roof, attic, electrical, battery, and property documentation across the Dallas-Fort Worth Mid-Cities.",
     "h1": "Solar Site Surveyors in Grand Prairie, TX",
     "hubSummary": "Mid-Cities field coverage bridging Dallas and Tarrant County workflows, with address-level utility/jurisdiction checks and complete roof/electrical documentation.",
@@ -1020,7 +1020,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "houston",
     "name": "Houston",
-    "title": "Solar Site Surveyors in Houston, TX | Greater Houston Field Surveys",
+    "title": "Solar Site Surveyors in Houston, TX",
     "description": "Solar site surveys across Houston, Texas for EPCs and installers. Roof, attic, electrical, battery, and property documentation for Greater Houston solar projects.",
     "h1": "Solar Site Surveyors in Houston, TX",
     "hubSummary": "Greater Houston survey coordination across dense urban neighborhoods and outer suburbs, with strong roof, electrical, storage, weather, and route documentation.",
@@ -1130,7 +1130,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "irving",
     "name": "Irving",
-    "title": "Solar Site Surveyors in Irving, TX | Central DFW Field Surveys",
+    "title": "Solar Site Surveyors in Irving, TX",
     "description": "Solar site surveys in Irving, Texas for EPCs and installers. Roof, attic, electrical, battery, and property documentation for central DFW residential and commercial projects.",
     "h1": "Solar Site Surveyors in Irving, TX",
     "hubSummary": "Central DFW surveys covering established neighborhoods, newer Las Colinas-area development, electrical-service verification, roof/attic data, and equipment planning.",
@@ -1254,7 +1254,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "killeen",
     "name": "Killeen",
-    "title": "Solar Site Surveyors in Killeen, TX | Bell County Field Surveys",
+    "title": "Solar Site Surveyors in Killeen, TX",
     "description": "Solar site surveys in Killeen, Texas for EPCs and installers. Roof, attic, electrical, battery, and property documentation for Bell County and Fort Cavazos-area solar projects.",
     "h1": "Solar Site Surveyors in Killeen, TX",
     "hubSummary": "Bell County survey coverage for high-turnover residential stock, service-equipment verification, roof/attic documentation, and organized remote-design handoffs.",
@@ -1351,7 +1351,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
   {
     "slug": "laredo",
     "name": "Laredo",
-    "title": "Solar Site Surveyors in Laredo, TX | South Texas Field Surveys",
+    "title": "Solar Site Surveyors in Laredo, TX",
     "description": "Solar site surveys in Laredo, Texas for EPCs and installers. Roof, attic, electrical, heat-exposure, battery, and property documentation across Webb County.",
     "h1": "Solar Site Surveyors in Laredo, TX",
     "hubSummary": "South Texas survey coordination for high-heat conditions, varied roof materials, service equipment, storage locations, and complete field-to-design handoffs.",

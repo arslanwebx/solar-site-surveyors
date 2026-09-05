@@ -4,7 +4,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "league-city",
     "name": "League City",
-    "title": "Solar Site Surveyors in League City, TX | Clear Lake Area Surveys",
+    "title": "Solar Site Surveyors in League City, TX",
     "description": "Solar site surveys in League City, Texas for EPCs and installers. Roof, attic, electrical, battery, coastal-exposure, and property documentation near Clear Lake.",
     "h1": "Solar Site Surveyors in League City, TX",
     "hubSummary": "Clear Lake-area surveys with coastal-transition roof and exterior context, service-provider verification, attic documentation, and storage-ready field data.",
@@ -111,7 +111,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "leander",
     "name": "Leander",
-    "title": "Solar Site Surveyors in Leander, TX | North Austin Field Surveys",
+    "title": "Solar Site Surveyors in Leander, TX",
     "description": "Solar site surveys in Leander, Texas for EPCs and installers. Roof, attic, electrical, battery, large-lot, and Hill Country-edge field documentation.",
     "h1": "Solar Site Surveyors in Leander, TX",
     "hubSummary": "Northwest Austin-metro surveys for fast-growth subdivisions and Hill Country-edge properties, with roof, structure, service, storage, and routing documentation.",
@@ -235,7 +235,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "lewisville",
     "name": "Lewisville",
-    "title": "Solar Site Surveyors in Lewisville, TX | Denton County Field Surveys",
+    "title": "Solar Site Surveyors in Lewisville, TX",
     "description": "Solar site surveys in Lewisville, Texas for EPCs and installers. Roof, attic, electrical, battery, utility-context, and property documentation in southern Denton County.",
     "h1": "Solar Site Surveyors in Lewisville, TX",
     "hubSummary": "Southern Denton County surveys focused on mixed utility-service context, established and newer housing, roof geometry, electrical verification, and storage planning.",
@@ -349,7 +349,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "longview",
     "name": "Longview",
-    "title": "Solar Site Surveyors in Longview, TX | East Texas Field Surveys",
+    "title": "Solar Site Surveyors in Longview, TX",
     "description": "Solar site surveys in Longview, Texas for EPCs and installers. East Texas roof, tree-cover, attic, electrical, battery, and property documentation.",
     "h1": "Solar Site Surveyors in Longview, TX",
     "hubSummary": "East Texas surveys with strong tree-canopy context, utility-provider verification, roof and attic documentation, electrical-service detail, and remote-design handoffs.",
@@ -456,7 +456,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "lubbock",
     "name": "Lubbock",
-    "title": "Solar Site Surveyors in Lubbock, TX | South Plains Field Surveys",
+    "title": "Solar Site Surveyors in Lubbock, TX",
     "description": "Solar site surveys in Lubbock, Texas for EPCs and installers. Roof, attic, electrical, wind-exposure, battery, and property documentation across the South Plains.",
     "h1": "Solar Site Surveyors in Lubbock, TX",
     "hubSummary": "South Plains surveys for open-wind exposure, low-tree-cover neighborhoods, service-equipment verification, roof/attic data, and complete design handoffs.",
@@ -557,7 +557,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "mansfield",
     "name": "Mansfield",
-    "title": "Solar Site Surveyors in Mansfield, TX | South DFW Field Surveys",
+    "title": "Solar Site Surveyors in Mansfield, TX",
     "description": "Solar site surveys in Mansfield, Texas for EPCs and installers. Roof, attic, electrical, battery, large-lot, and utility-context documentation in South DFW.",
     "h1": "Solar Site Surveyors in Mansfield, TX",
     "hubSummary": "South DFW survey coverage for fast-growth subdivisions and larger lots, with roof complexity, provider verification, service detail, and route planning.",
@@ -681,7 +681,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "mcallen",
     "name": "McAllen",
-    "title": "Solar Site Surveyors in McAllen, TX | Rio Grande Valley Surveys",
+    "title": "Solar Site Surveyors in McAllen, TX",
     "description": "Solar site surveys in McAllen, Texas for EPCs and installers. Roof, attic, electrical, battery, heat-exposure, and property documentation across Hidalgo County.",
     "h1": "Solar Site Surveyors in McAllen, TX",
     "hubSummary": "Central Rio Grande Valley surveys for hot-climate equipment placement, varied roof materials, electrical-service detail, roof/attic data, and utility verification.",
@@ -795,7 +795,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "mckinney",
     "name": "McKinney",
-    "title": "Solar Site Surveyors in McKinney, TX | Collin County Field Surveys",
+    "title": "Solar Site Surveyors in McKinney, TX",
     "description": "Solar site surveys in McKinney, Texas for EPCs and installers. Roof, attic, electrical, battery, historic-home, and fast-growth neighborhood documentation.",
     "h1": "Solar Site Surveyors in McKinney, TX",
     "hubSummary": "Northern Collin County surveys spanning historic neighborhoods and new-growth subdivisions, with roof, structure, service, equipment, and route documentation.",
@@ -919,7 +919,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "mesquite",
     "name": "Mesquite",
-    "title": "Solar Site Surveyors in Mesquite, TX | East DFW Field Surveys",
+    "title": "Solar Site Surveyors in Mesquite, TX",
     "description": "Solar site surveys in Mesquite, Texas for EPCs and installers. Established-housing roof, attic, electrical, battery, and property documentation across East Dallas County.",
     "h1": "Solar Site Surveyors in Mesquite, TX",
     "hubSummary": "East DFW surveys with extra attention to older service equipment, low-slope and modified roofs, tree cover, electrical verification, and equipment routes.",
@@ -1029,7 +1029,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "midland",
     "name": "Midland",
-    "title": "Solar Site Surveyors in Midland, TX | Permian Basin Surveys",
+    "title": "Solar Site Surveyors in Midland, TX",
     "description": "Solar site surveys in Midland, Texas for EPCs and installers. Permian Basin roof, attic, electrical, dust-exposure, battery, and property field documentation.",
     "h1": "Solar Site Surveyors in Midland, TX",
     "hubSummary": "Permian Basin residential survey coverage with open-site exposure, dust context, electrical-service verification, roof/attic data, and organized design handoffs.",
@@ -1140,7 +1140,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "mission",
     "name": "Mission",
-    "title": "Solar Site Surveyors in Mission, TX | Western RGV Field Surveys",
+    "title": "Solar Site Surveyors in Mission, TX",
     "description": "Solar site surveys in Mission, Texas for EPCs and installers. Roof, attic, electrical, battery, utility-context, and hot-climate field documentation across western Hidalgo County.",
     "h1": "Solar Site Surveyors in Mission, TX",
     "hubSummary": "Western Hidalgo County surveys for varied roof materials, utility-provider verification, heat-exposed equipment areas, electrical detail, and storage-ready design data.",
@@ -1250,7 +1250,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "new-braunfels",
     "name": "New Braunfels",
-    "title": "Solar Site Surveyors in New Braunfels, TX | NBU Project Surveys",
+    "title": "Solar Site Surveyors in New Braunfels, TX",
     "description": "Solar site surveys in New Braunfels, Texas for EPCs and installers. Field data for NBU-area solar projects, including meter, roof, attic, electrical, and battery documentation.",
     "h1": "Solar Site Surveyors in New Braunfels, TX",
     "hubSummary": "New Braunfels Utilities-area surveys with strong meter/service documentation, fast-growth housing context, Hill Country-edge roofs, and equipment-location planning.",
@@ -1364,7 +1364,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
   {
     "slug": "odessa",
     "name": "Odessa",
-    "title": "Solar Site Surveyors in Odessa, TX | Ector County Field Surveys",
+    "title": "Solar Site Surveyors in Odessa, TX",
     "description": "Solar site surveys in Odessa, Texas for EPCs and installers. Roof, attic, electrical, battery, dust-exposure, and property documentation across Ector County.",
     "h1": "Solar Site Surveyors in Odessa, TX",
     "hubSummary": "Ector County survey coverage for established housing, older electrical services, open-environment exposure, roof/attic data, and practical equipment routing.",
