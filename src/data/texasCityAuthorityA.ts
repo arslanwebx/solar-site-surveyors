@@ -329,109 +329,157 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
     "slug": "arlington",
     "name": "Arlington",
     "title": "Solar Site Surveyors in Arlington, TX",
-    "description": "Solar site surveys in Arlington, Texas for EPCs and installers. Residential roof, attic, electrical, battery, and exterior field documentation in the DFW Mid-Cities.",
+    "description": "Solar site surveys in Arlington, TX for EPCs and installers. Detailed roof, attic, electrical, battery, permit-ready, and Oncor-area field documentation for residential solar projects.",
     "h1": "Solar Site Surveyors in Arlington, TX",
-    "hubSummary": "DFW Mid-Cities survey coverage for dense residential neighborhoods, mixed housing ages, roof obstructions, electrical service, and design-ready field packages.",
+    "hubSummary": "Arlington solar site surveys for mixed-age DFW housing, roof and attic verification, service-equipment documentation, battery planning, and permit-ready field data.",
     "intro": [
-      "Arlington sits in the middle of a large DFW operating area, but a solar project here still needs property-specific field work. Housing age, roof geometry, electrical service, tree cover, and equipment-placement options can change from one neighborhood to the next.",
-      "Our Arlington surveys are designed for remote EPC and engineering teams that need to understand the property without guessing. We capture both technical closeups and enough wide context to show how every part of the system connects."
+      "A strong Arlington solar site survey should do more than confirm that a roof exists and a main panel is present. Arlington has decades of residential development, from older central neighborhoods to newer subdivisions near the southern and western edges of the city. That mix creates different roof framing, service equipment, attic access, tree cover, and equipment-placement questions from one address to the next.",
+      "We document the property so an EPC, designer, or engineer can understand the site without rebuilding the visit from scattered photos. Roof planes, attic framing, meter and service equipment, proposed equipment walls, access conditions, and route constraints are captured as one connected field record."
     ],
     "sections": [
       {
         "type": "prose",
-        "kicker": "Mid-Cities reality",
-        "heading": "The same metro does not mean the same site conditions",
+        "kicker": "Arlington field reality",
+        "heading": "Why Arlington projects need property-specific survey depth",
         "paragraphs": [
-          "An older Arlington home may have a simple roof but limited electrical capacity or a panel location that creates a difficult equipment run. A newer home may have modern service equipment but a highly articulated roof with multiple small planes, vents, and limited uninterrupted array space.",
-          "That is why the survey should not be reduced to a standard photo count. The useful deliverable answers the actual design questions for that address and flags conditions that deserve attention before plans are produced."
+          "Aerial imagery can be useful for early layout work, but it does not show whether a roof plane is framed differently from an addition, whether the attic access reaches the proposed array zone, or whether the service equipment matches what was entered during sales. Those are the questions that cause design revisions when they are left unanswered.",
+          "In Arlington, a 1970s or 1980s home may have undergone a re-roof, panel replacement, patio conversion, or room addition. A newer home may have modern electrical service but a highly segmented roof with hips, valleys, vents, and several attic zones. The survey should respond to the actual property rather than force both homes through the same photo script.",
+          "The useful standard is simple: a remote designer should be able to tell where the meter is, what the main service equipment is, which roof planes are viable, how the structure is framed where accessible, and where proposed solar or storage equipment can physically fit."
+        ]
+      },
+      {
+        "type": "checklist",
+        "kicker": "Design-critical capture",
+        "heading": "What we verify before an Arlington project reaches CAD",
+        "intro": "The exact scope can follow your EPC checklist, but these are the field details that most often prevent a second visit or a design clarification.",
+        "items": [
+          {
+            "title": "Roof geometry and roof condition",
+            "body": "Plane dimensions, pitch, roofing material, ridges, hips, valleys, penetrations, visible wear, and the relationship between major obstructions and usable roof areas."
+          },
+          {
+            "title": "Attic and structural context",
+            "body": "Accessible rafters or trusses, member dimensions, spacing, decking, framing direction, and notes showing which attic zone corresponds to which roof section."
+          },
+          {
+            "title": "Electrical service record",
+            "body": "Meter, main disconnect, service equipment, panel make and rating, breaker configuration, grounding context, and wider photos that show how the equipment is arranged."
+          },
+          {
+            "title": "Battery and equipment space",
+            "body": "Candidate walls, wall dimensions, nearby doors and windows, gas or electrical equipment, garage conditions, and possible paths between storage equipment and the service."
+          }
         ]
       },
       {
         "type": "cards",
-        "kicker": "Design questions",
-        "heading": "Three areas that regularly decide Arlington layouts",
+        "kicker": "Mid-Cities design pressure",
+        "heading": "Three Arlington conditions that often change the final plan",
         "cards": [
           {
-            "title": "Usable roof area",
-            "body": "Plane dimensions, setbacks context, penetrations, hips, valleys, satellite equipment, and mature-tree shading can shrink the area that first appears usable."
+            "title": "Mature neighborhoods with modifications",
+            "body": "Established homes can contain electrical upgrades, additions, changed roof sections, or service equipment that no longer matches original construction. The field package should reveal those changes clearly."
           },
           {
-            "title": "Electrical strategy",
-            "body": "Meter and panel location, service rating, breaker configuration, exterior working space, and equipment-wall availability influence the single-line and equipment layout."
+            "title": "Dense suburban access",
+            "body": "Fences, narrow side yards, rear service equipment, pools, sheds, and neighboring structures can affect ladder placement, conduit routes, and equipment access long before installation day."
           },
           {
-            "title": "Conduit aesthetics",
-            "body": "Dense suburban lots and visible elevations make route planning important. Wide photos help designers choose practical pathways before the homeowner sees a last-minute field change."
+            "title": "Oncor interconnection context",
+            "body": "Many Arlington projects are in Oncor territory, where the installer submits interconnection information through the utility process. Clear service and equipment documentation supports that downstream work, while the exact serving utility should still be confirmed by address."
+          }
+        ]
+      },
+      {
+        "type": "resources",
+        "kicker": "Official project references",
+        "heading": "Arlington and utility resources worth checking before final design",
+        "intro": "Permitting and interconnection requirements can change. These official sources are more reliable than carrying an old requirement forward from a previous job.",
+        "links": [
+          {
+            "label": "City of Arlington Permits",
+            "href": "https://www.arlingtontx.gov/City-Services/Permits",
+            "note": "Official City of Arlington permit and inspection information."
+          },
+          {
+            "label": "Arlington Online Permit Applications",
+            "href": "https://ap.arlingtontx.gov/AP/sfjsp?gotopage=about&interviewID=Welcome",
+            "note": "Planning and Development Services portal information for building and electrical permit applications."
+          },
+          {
+            "label": "Oncor Solar and DER Resources for Installers",
+            "href": "https://www.oncor.com/content/oncorwww/us/en/home/smart-energy/renewables-solar-and-more/for-installers.html",
+            "note": "Current Oncor interconnection guidance and installer resources."
           }
         ]
       },
       {
         "type": "steps",
-        "kicker": "Quality control",
-        "heading": "A survey workflow built to reduce clarification requests",
+        "kicker": "Field-to-design workflow",
+        "heading": "How we turn an Arlington visit into usable design data",
         "steps": [
           {
-            "title": "Read the scope",
-            "body": "We review the EPC checklist and identify project-specific requirements before the visit."
+            "title": "Confirm the real scope",
+            "body": "We start with the project address, system concept, storage requirements, known homeowner preferences, and your survey checklist instead of assuming every job is roof-only."
           },
           {
-            "title": "Capture in sequence",
-            "body": "Roof, attic, electrical, exterior, and equipment areas are photographed and measured in a logical order."
+            "title": "Capture relationships",
+            "body": "Closeups of labels and measurements are paired with wider views so the design team knows where each item sits in relation to the roof, service, garage, and proposed equipment."
           },
           {
-            "title": "Check for gaps",
-            "body": "The package is reviewed for missing labels, poor context, or obvious unanswered design questions."
+            "title": "Call out limitations",
+            "body": "Blocked attic access, unreadable labels, unsafe roof areas, locked equipment, or homeowner restrictions are documented directly rather than hidden behind assumptions."
           },
           {
-            "title": "Release to design",
-            "body": "The completed field package is organized so the next team can work from verified site conditions."
+            "title": "Release an organized record",
+            "body": "The final survey package is structured for remote design review so CAD, engineering, permitting, and installation teams can work from the same verified site information."
           }
         ]
       },
       {
         "type": "nearby",
-        "kicker": "DFW internal linking",
-        "heading": "Nearby DFW survey pages",
-        "intro": "Arlington projects are often dispatched alongside adjacent Mid-Cities and Tarrant County work.",
+        "kicker": "DFW field coverage",
+        "heading": "Related solar site survey markets near Arlington",
+        "intro": "Arlington projects are often scheduled alongside nearby Mid-Cities and Tarrant County work, but each city keeps its own survey and permitting context.",
         "links": [
           {
             "slug": "fort-worth",
             "label": "Fort Worth",
-            "note": "Western DFW and Tarrant County field survey coverage."
+            "note": "Western DFW field surveys for mixed housing, larger lots, and electrical-service documentation."
           },
           {
             "slug": "grand-prairie",
             "label": "Grand Prairie",
-            "note": "Mid-Cities projects spanning Dallas and Tarrant County context."
+            "note": "Cross-county Mid-Cities survey coordination and address-specific utility verification."
           },
           {
             "slug": "mansfield",
             "label": "Mansfield",
-            "note": "South DFW residential survey coordination."
+            "note": "South DFW surveys for newer subdivisions, larger properties, and storage-ready layouts."
           }
         ]
       }
     ],
     "faqs": [
       {
-        "question": "What information does an Arlington solar designer receive?",
-        "answer": "Depending on scope, the field package can include roof geometry and obstructions, attic framing, electrical service and panel documentation, equipment-wall context, battery locations, conduit-routing views, and organized property photos."
+        "question": "What should an Arlington solar site survey include?",
+        "answer": "A typical residential scope can include roof geometry and obstructions, attic framing where safely accessible, meter and service equipment, panel ratings and labels, proposed inverter or battery areas, exterior routes, access conditions, and an organized photo package matched to the project."
       },
       {
-        "question": "Do you document older electrical panels?",
-        "answer": "Yes. The survey captures the panel and service as found, including readable labels and ratings when visible. It does not assume an upgrade is required; that decision belongs to the design and electrical team."
+        "question": "Do you assume every Arlington property is served by Oncor?",
+        "answer": "No. Oncor serves many Arlington projects, but the serving utility should be confirmed for the exact address. We capture meter and service identifiers so the project team can verify the correct interconnection path."
       },
       {
-        "question": "Can you survey projects with heavy tree cover?",
-        "answer": "Yes. The package can document tree locations and roof shading context so the EPC can decide whether a separate production or shade analysis is needed."
+        "question": "Can you document older homes with additions or electrical upgrades?",
+        "answer": "Yes. Those properties benefit from extra context. We document visible additions, roof transitions, accessible framing differences, service changes, and the current electrical equipment rather than relying on the age of the original home."
       },
       {
-        "question": "Do you cover commercial sites in Arlington?",
-        "answer": "Commercial surveys can be coordinated based on scope, access, roof type, and electrical requirements. Send the project address and requested deliverables for confirmation."
+        "question": "Can the survey include battery-storage planning?",
+        "answer": "Yes. We can document candidate battery walls, dimensions, nearby doors and windows, gas or electrical equipment, service relationships, garage conditions, and likely routing paths for design review."
       },
       {
-        "question": "Can the survey include a homeowner-preferred equipment location?",
-        "answer": "Yes. Provide the preferred location at intake or have it identified during the visit. We can document dimensions, nearby openings and utilities, electrical relationships, and routing context for design review."
+        "question": "What happens if the attic or roof cannot be accessed safely?",
+        "answer": "The limitation is documented clearly. We do not invent measurements or framing details. Your engineering or operations team can then decide whether alternate verification or a return visit is necessary."
       }
     ]
   },
@@ -439,110 +487,144 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
     "slug": "austin",
     "name": "Austin",
     "title": "Solar Site Surveyors in Austin, TX",
-    "description": "Solar site surveys in Austin, Texas for EPCs and installers. Roof, attic, electrical, meter, battery, and site-plan field data for projects in the Austin market.",
+    "description": "Solar site surveys in Austin, TX for EPCs and installers. Austin Energy-aware roof, attic, meter, electrical, battery, equipment-location, and inspection-ready field documentation.",
     "h1": "Solar Site Surveyors in Austin, TX",
-    "hubSummary": "Austin-area surveys with close attention to service equipment, meter context, equipment placement, roof geometry, and field data used for distributed-generation planning.",
+    "hubSummary": "Austin solar site surveys with Austin Energy-aware meter and service documentation, roof and attic verification, storage planning, and field data for permitting and inspections.",
     "intro": [
-      "An Austin solar survey has to support more than panel layout. For projects in Austin Energy territory, current interconnection materials call for detailed system and site information, and Austin Energy states that interconnected solar installations require a passing utility inspection before operation.",
-      "That makes accurate field capture important early in the process. We document the service equipment, meter location, roof and structural conditions, proposed equipment areas, and exterior relationships your design team needs before plans and interconnection documents are finalized."
+      "Austin solar projects benefit from unusually strong field documentation because the local utility and permitting process asks the design team to be precise about service equipment, meter relationships, system layout, and inspections. A survey that misses one electrical relationship can create more work than a survey that simply takes too few roof photos.",
+      "Our Austin field work is built around that reality. We document roof geometry, structural access, meter and service equipment, proposed equipment areas, and route context so the project team can prepare plans and interconnection documents from verified conditions rather than assumptions."
     ],
     "sections": [
       {
         "type": "table",
-        "kicker": "Austin project data",
-        "heading": "Field information that supports Austin solar planning",
-        "intro": "The survey is not the permit application, but it should give the design team reliable site facts for the documents that follow.",
+        "kicker": "Austin Energy-aware capture",
+        "heading": "Field information that deserves special attention in Austin",
+        "intro": "Austin Energy currently requires solar systems in its service area to pass a final solar inspection before operation, and the utility publishes specific interconnection and metering guidance. The survey should give the design team reliable facts for that process.",
         "rows": [
           {
-            "label": "Meter and service",
-            "detail": "Readable meter, service, panel, and equipment photos with ratings and physical relationships clearly shown."
+            "label": "Meter and service area",
+            "detail": "Readable meter, service-equipment, disconnect, and panel photos plus wide elevation context showing how the equipment is grouped and where additional solar or storage hardware could fit."
           },
           {
             "label": "Roof and structure",
-            "detail": "Plane geometry, pitch, obstructions, roof condition, and attic framing where access is available."
+            "detail": "Plane dimensions, pitch, material, roof obstructions, visible condition, and attic framing where safe access is available."
           },
           {
-            "label": "Site/elevation context",
-            "detail": "Exterior views showing proposed equipment locations and the relationship between service equipment, roof entry points, and usable wall space."
+            "label": "Equipment layout",
+            "detail": "Candidate inverter, combiner, disconnect, battery, or gateway areas with wall dimensions, nearby openings, utilities, and practical installation access."
           },
           {
-            "label": "Storage",
-            "detail": "Battery or backup equipment locations with nearby openings, utilities, wall dimensions, and routing context when included in the project."
+            "label": "Routing context",
+            "detail": "Exterior and attic route options between array areas, service equipment, and proposed solar or backup hardware."
+          },
+          {
+            "label": "Access limitations",
+            "detail": "Locked gates, restricted attic zones, steep or unsafe roof areas, homeowner restrictions, or other conditions that could affect design confidence."
+          }
+        ]
+      },
+      {
+        "type": "resources",
+        "kicker": "Current official guidance",
+        "heading": "Austin sources your design and interconnection teams should use",
+        "intro": "Utility requirements change. These official Austin Energy resources are the right place to confirm current inspection, interconnection, and meter-related requirements before submission.",
+        "links": [
+          {
+            "label": "Austin Energy Solar Inspections",
+            "href": "https://austinenergy.com/green-power/solar-solutions/solar-inspections",
+            "note": "Current solar and battery permitting and inspection guidance for Austin Energy territory."
+          },
+          {
+            "label": "Austin Energy Customer-Owned Power Production",
+            "href": "https://austinenergy.com/contractors/construction-renovation/customer-power-production",
+            "note": "Distributed generation planning, interconnection guidance, and current utility resources."
+          },
+          {
+            "label": "Austin Energy Participating Solar Contractors",
+            "href": "https://austinenergy.com/green-power/solar-solutions/participating-solar-contractors",
+            "note": "Current program information and contractor-related solar resources."
           }
         ]
       },
       {
         "type": "prose",
-        "kicker": "Current utility context",
-        "heading": "Austin Energy projects benefit from service-address verification early",
+        "kicker": "Property diversity",
+        "heading": "Austin is not one roof type, one neighborhood, or one service condition",
         "paragraphs": [
-          "Austin Energy's current customer-owned power production guidance includes distributed-generation planning and interconnection documents, and it notes that solar installations in its service area require a passing Austin Energy inspection before they can be turned on. The utility also publishes specific equipment and interconnection criteria that can change over time.",
-          "For that reason, we treat the survey as a factual record of the property rather than trying to bake every utility rule into permanent marketing copy. Your interconnection team can apply the current Austin Energy requirements to verified field conditions instead of correcting assumptions later."
+          "Central Austin projects can involve older homes, compact lots, mature trees, remodels, detached structures, and service equipment that has changed over time. In those cases, the field visit should spend more effort proving what exists today than repeating measurements that are obvious from imagery.",
+          "Farther from the urban core, newer subdivisions often shift the problem. The service equipment may be modern, but the roof can be broken into many hips, valleys, dormers, and smaller planes. Multiple attic zones can make structural documentation more important, especially when the proposed array spans different portions of the house.",
+          "Austin also has a strong solar-plus-storage market. A battery concept that looks clean on a sales drawing can fail once garage doors, windows, gas equipment, meter grouping, electrical working space, and homeowner storage are all considered. Wide wall photos and real dimensions belong in the survey before the battery layout is finalized."
         ]
       },
       {
+        "type": "callout",
+        "kicker": "Metering matters",
+        "heading": "Do not treat the meter wall as an afterthought",
+        "body": "Austin Energy publishes design criteria and inspection guidance that can affect meter grouping and solar equipment placement. The field package should show the full service wall, not only a closeup of the meter number. When the designer can see dimensions, nearby openings, existing equipment, and route options, fewer layout assumptions survive into permit drawings."
+      },
+      {
         "type": "cards",
-        "kicker": "Austin housing variety",
-        "heading": "City conditions that can change the field scope",
+        "kicker": "Survey judgment",
+        "heading": "Where an Austin survey earns its value",
         "cards": [
           {
-            "title": "Older central neighborhoods",
-            "body": "Mature trees, additions, compact lots, mixed electrical upgrades, and nonstandard attic access can require more contextual documentation."
+            "title": "Older electrical infrastructure",
+            "body": "We document current ratings, panel labels, service relationships, and visible upgrades without assuming that an older home automatically needs a main-panel replacement."
           },
           {
-            "title": "Newer suburban roofs",
-            "body": "Complex hips, valleys, dormers, and small roof planes make precise roof context important even when the electrical service is newer."
+            "title": "Tree and roof interaction",
+            "body": "Mature canopy is photographed in relation to specific roof planes so the EPC can decide whether formal shade modeling or vegetation planning is needed."
           },
           {
-            "title": "Battery-focused projects",
-            "body": "Austin's storage market makes wall space, clearances, service relationships, and equipment pathways important parts of the site visit, not an afterthought."
+            "title": "Storage and backup complexity",
+            "body": "Battery projects can include gateway, backup-load, disconnect, and service-wall context so downstream teams understand how the proposed equipment must coexist."
           }
         ]
       },
       {
         "type": "nearby",
-        "kicker": "Central Texas coverage",
-        "heading": "Related Austin-area survey pages",
-        "intro": "For pipelines extending outside Austin proper, these dedicated pages cover common nearby markets.",
+        "kicker": "Central Texas network",
+        "heading": "Related Austin-area solar site survey pages",
+        "intro": "Projects outside Austin proper can have different utilities and permit workflows, so nearby cities keep separate local pages rather than inheriting Austin assumptions.",
         "links": [
           {
             "slug": "round-rock",
             "label": "Round Rock",
-            "note": "Williamson County residential survey coordination north of Austin."
+            "note": "Williamson County field surveys for high-volume residential and storage projects."
           },
           {
             "slug": "georgetown",
             "label": "Georgetown",
-            "note": "Local utility context and field documentation in northern Williamson County."
+            "note": "North Austin metro surveys with municipal-utility and fast-growth housing context."
           },
           {
             "slug": "leander",
             "label": "Leander",
-            "note": "Fast-growth Hill Country-edge projects and equipment-location surveys."
+            "note": "Northwest metro and Hill Country-edge surveys for larger lots and complex new roofs."
           }
         ]
       }
     ],
     "faqs": [
       {
-        "question": "Does Austin Energy require solar inspections?",
-        "answer": "Austin Energy's current customer-owned power production guidance states that solar systems interconnected in its service area require a passing Austin Energy inspection before they can be turned on. Your permitting and interconnection team should verify the latest requirements for the project."
+        "question": "Does Austin Energy inspect solar systems before they are turned on?",
+        "answer": "Austin Energy's current guidance states that solar systems in its service area must pass a final solar inspection before operation. The project team should confirm the latest requirements at the time of permitting and interconnection."
       },
       {
-        "question": "Can the survey capture information for an Austin Energy interconnection package?",
-        "answer": "The field scope can capture meter and service details, equipment locations, roof and structural information, and exterior site context that the design team may use when preparing current interconnection and permit documents."
+        "question": "Can the survey capture information used for Austin Energy interconnection planning?",
+        "answer": "Yes. We can document the meter and service arrangement, panel information, roof and structural conditions, proposed equipment areas, and route context used by the design team when preparing current utility and permit documents."
       },
       {
-        "question": "Do you cover battery storage projects in Austin?",
-        "answer": "Yes. Storage surveys can document candidate locations, nearby openings and utilities, wall dimensions, electrical service relationships, and routing context. The final equipment placement is determined by the design team under current codes and manufacturer requirements."
+        "question": "Do you survey battery projects in Austin?",
+        "answer": "Yes. Storage scopes can include candidate battery locations, garage or exterior wall dimensions, nearby openings and utilities, service relationships, backup equipment, and practical routing options."
       },
       {
-        "question": "Can you follow an Austin EPC's custom checklist?",
-        "answer": "Yes. Send your photo list, field form, equipment assumptions, and file-naming requirements before dispatch so the visit matches your process."
+        "question": "Can you document multiple attic zones on complex Austin roofs?",
+        "answer": "Yes, where safe access exists. Structural photos should be tied to the correct roof areas so the engineer does not assume one attic condition applies to the entire home."
       },
       {
-        "question": "Do you cover Round Rock, Georgetown, and Leander?",
-        "answer": "Yes, those cities have their own dedicated survey pages and can be coordinated as part of a broader Central Texas pipeline, subject to address-level availability."
+        "question": "Do you use the same process for every Austin-area city?",
+        "answer": "No. Austin, Round Rock, Georgetown, Leander, and nearby communities can have different utilities and jurisdictional requirements. The field standards stay rigorous, but the administrative context is verified by address."
       }
     ]
   },
@@ -1330,100 +1412,139 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
     "slug": "corpus-christi",
     "name": "Corpus Christi",
     "title": "Solar Site Surveyors in Corpus Christi, TX",
-    "description": "Solar site surveys in Corpus Christi, Texas for EPCs and installers. Coastal Bend roof, structural, electrical, corrosion-context, battery, and exterior field documentation.",
+    "description": "Solar site surveys in Corpus Christi, TX for EPCs and installers. Coastal roof, attic, electrical, AEP Texas, battery, exterior-equipment, and permit-ready field documentation.",
     "h1": "Solar Site Surveyors in Corpus Christi, TX",
-    "hubSummary": "Coastal Bend surveys emphasizing roof/framing evidence, exterior equipment condition, windstorm-aware documentation, and reliable solar design handoffs.",
+    "hubSummary": "Corpus Christi solar site surveys for Coastal Bend roof and framing evidence, AEP Texas interconnection context, exterior equipment condition, and permit-ready field data.",
     "intro": [
-      "Corpus Christi solar projects sit in a coastal environment where roof condition, structural evidence, exterior equipment, and property exposure deserve more attention than they would on an inland project. The field survey should make those conditions visible without pretending to replace structural or windstorm engineering.",
-      "We capture roof geometry, attic framing when accessible, electrical service, exterior equipment condition, proposed equipment areas, and wide property context so the EPC can apply the current Coastal Bend permitting, utility, and engineering requirements."
+      "Corpus Christi solar projects need a field record that reflects a coastal city without turning every observation into a windstorm claim. Roof condition, exterior equipment, attic framing, corrosion visibility, and property exposure all deserve careful documentation, but final structural and code decisions still belong to the engineer, utility, and authority having jurisdiction.",
+      "Our surveys focus on that boundary. We capture the physical facts a remote team can use: roof geometry, visible roofing condition, accessible framing, meter and service equipment, proposed solar or battery locations, and the routes installers would realistically use."
     ],
     "sections": [
       {
-        "type": "callout",
-        "kicker": "Coastal Bend principle",
-        "heading": "The survey should document the facts that windstorm engineering depends on",
-        "body": "Roof pitch, framing type, member dimensions, spacing, decking, roof material, visible condition, and equipment locations are valuable field facts. Wind-speed design, attachment engineering, TDI eligibility, and final structural conclusions belong to the applicable engineer, code, and current jurisdictional process."
+        "type": "resources",
+        "kicker": "Official Coastal Bend references",
+        "heading": "Current Corpus Christi and AEP Texas resources",
+        "intro": "The project team should confirm current permit and interconnection requirements from official sources rather than reusing notes from an older job.",
+        "links": [
+          {
+            "label": "City of Corpus Christi Building Permits",
+            "href": "https://www.corpuschristitx.gov/department-directory/development-services/applications-permits-and-guidance/building-permits/",
+            "note": "Official Development Services permit portal and building-permit guidance."
+          },
+          {
+            "label": "City of Corpus Christi Development Process",
+            "href": "https://www.corpuschristitx.gov/department-directory/development-services/applications-permits-and-guidance/understanding-the-development-process/",
+            "note": "City guidance on plan review, permits, construction, and inspections."
+          },
+          {
+            "label": "AEP Texas Solar and Interconnection",
+            "href": "https://www.aeptexas.com/clean-energy/renewable/solar/",
+            "note": "Current AEP Texas solar and distributed-generation interconnection information."
+          }
+        ]
       },
       {
-        "type": "table",
-        "kicker": "Coastal field record",
-        "heading": "What we document on Corpus Christi solar projects",
-        "rows": [
+        "type": "callout",
+        "kicker": "Coastal survey discipline",
+        "heading": "Document wind and weather exposure without pretending to engineer it",
+        "body": "A survey can show roof pitch, material, visible condition, framing type, member dimensions, spacing, decking, exterior enclosure condition, and how exposed the property appears. It should not invent a wind design value, certify structural capacity, diagnose hidden corrosion, or claim that a roof is compliant. Those conclusions require current code review and qualified professionals."
+      },
+      {
+        "type": "checklist",
+        "kicker": "Field evidence",
+        "heading": "What we prioritize on Corpus Christi solar surveys",
+        "items": [
           {
-            "label": "Roof geometry",
-            "detail": "Plane dimensions, pitch, ridges, hips, valleys, eaves, penetrations, and usable-area context."
+            "title": "Roof surface and geometry",
+            "body": "Plane dimensions, pitch, roof material, ridges, hips, valleys, penetrations, visible wear, flashing context, and usable-array areas."
           },
           {
-            "label": "Roof/attic condition",
-            "detail": "Visible roof condition plus accessible framing and decking documentation for engineering review."
+            "title": "Framing and decking",
+            "body": "Accessible rafters or trusses, member dimensions, spacing, framing direction, decking, and attic limitations that matter to structural review."
           },
           {
-            "label": "Electrical service",
-            "detail": "Meter, panel and service equipment, ratings, grounding, and wall-space context."
+            "title": "Service and utility equipment",
+            "body": "Meter, service equipment, main panel, ratings, breaker configuration, grounding context, and identifiers that help the EPC confirm the serving utility."
           },
           {
-            "label": "Exterior exposure",
-            "detail": "Visible enclosure condition, mounting surfaces, nearby salt-air exposure context, and equipment-route views."
-          },
-          {
-            "label": "Storage / backup",
-            "detail": "Candidate battery, gateway, disconnect, or generator-interface areas when included in the project scope."
+            "title": "Exterior solar and storage areas",
+            "body": "Candidate inverter, disconnect, battery, gateway, or backup-equipment locations with wall dimensions, nearby openings, utilities, and visible environmental exposure."
           }
         ]
       },
       {
         "type": "prose",
-        "kicker": "Do not overstate code",
-        "heading": "Coastal requirements change with the property, scope, and adopted standards",
+        "kicker": "Coastal property context",
+        "heading": "Why whole-property photos matter more near the coast",
         "paragraphs": [
-          "Corpus Christi projects may trigger windstorm, building-code, utility, or insurance-related requirements that differ by exact location and system scope. Those decisions should be made from current official requirements, not copied from an old city landing page.",
-          "Our role is to make the site itself unambiguous. When the engineer can clearly see the framing, roof, service equipment, and equipment locations, fewer assumptions have to survive into the plan set."
+          "A tight closeup can tell a designer the panel rating, but it cannot show whether the service wall is shaded, exposed, crowded by other utilities, or difficult to reach. In Corpus Christi, wide exterior views are especially useful because the condition and exposure of outdoor equipment can influence installation planning.",
+          "The same applies to roofing. A remote team should see both the individual detail and the entire roof plane. That makes it easier to separate normal weathering from a location issue, identify roof transitions, understand where penetrations sit, and recognize whether an addition or low-slope section needs separate treatment.",
+          "Coastal projects also benefit from clear access notes. Gates, fences, narrow side yards, pools, detached structures, and rear equipment can affect how crews move material and how conduit reaches the service point. Capturing those constraints during survey is cheaper than discovering them during installation."
+        ]
+      },
+      {
+        "type": "cards",
+        "kicker": "Design decisions",
+        "heading": "Three Corpus Christi issues that deserve early resolution",
+        "cards": [
+          {
+            "title": "Roof readiness",
+            "body": "If visible wear, patching, lifted material, or questionable roof condition is present, the survey documents it objectively so the EPC can decide whether a roofing review should happen before solar design advances."
+          },
+          {
+            "title": "AEP Texas interconnection data",
+            "body": "AEP Texas requires an interconnection process for solar and other DER systems operating with its grid. Clear meter, service, equipment, and system data helps the project team prepare that work accurately when AEP Texas is the serving utility."
+          },
+          {
+            "title": "Battery location exposure",
+            "body": "Battery and backup projects should document actual wall orientation, sun or shade, nearby openings and equipment, available working area, and route length rather than defaulting to the nearest open wall."
+          }
         ]
       },
       {
         "type": "nearby",
-        "kicker": "South and Gulf Coast Texas",
-        "heading": "Related survey markets",
-        "intro": "For EPCs operating across South Texas and the coast, these pages provide additional city-specific coverage.",
+        "kicker": "South Texas coverage",
+        "heading": "Related solar site survey markets",
+        "intro": "Corpus Christi projects are often managed alongside inland South Texas and Rio Grande Valley work, but the field emphasis changes as coastal exposure and utility context change.",
         "links": [
-          {
-            "slug": "brownsville",
-            "label": "Brownsville",
-            "note": "Lower Valley municipal-utility and coastal field documentation."
-          },
           {
             "slug": "laredo",
             "label": "Laredo",
-            "note": "Inland South Texas solar survey coordination."
+            "note": "Inland South Texas surveys with high-heat equipment and permit-specific field documentation."
+          },
+          {
+            "slug": "brownsville",
+            "label": "Brownsville",
+            "note": "Lower Valley surveys with municipal-utility and coastal equipment context."
           },
           {
             "slug": "san-antonio",
             "label": "San Antonio",
-            "note": "Bexar County and CPS Energy market surveys."
+            "note": "CPS Energy-area field surveys for one-line, site-plan, and storage planning inputs."
           }
         ]
       }
     ],
     "faqs": [
       {
-        "question": "Do Corpus Christi surveys include windstorm engineering?",
-        "answer": "No. We document field conditions used by engineering teams, such as roof pitch, framing, spacing, decking, and visible roof condition. Final windstorm or structural design is the responsibility of the qualified engineer and current jurisdictional process."
+        "question": "Do Corpus Christi site surveys include windstorm engineering?",
+        "answer": "No. We document field facts such as roof pitch, framing, spacing, decking, material, visible condition, and equipment locations. Final structural or windstorm conclusions belong to the appropriate engineer and current jurisdictional process."
       },
       {
-        "question": "Can you document salt-air or corrosion concerns?",
-        "answer": "We can photograph visible equipment and material condition. The survey does not certify corrosion resistance or remaining service life."
+        "question": "Can you document visible corrosion or coastal weathering?",
+        "answer": "Yes. Visible exterior-equipment and material condition can be photographed objectively. We do not diagnose hidden corrosion or certify remaining service life."
       },
       {
-        "question": "Do you capture attic framing?",
-        "answer": "Yes, where access is safe and available. We can document framing type, spacing, member dimensions, decking, and relevant contextual photos."
+        "question": "Can the survey support an AEP Texas interconnection package?",
+        "answer": "When AEP Texas serves the address, the survey can provide clear meter, service, equipment, and site information that helps the project team prepare the current interconnection application. The utility's latest requirements should still be checked before submission."
       },
       {
-        "question": "Can you survey battery-storage projects near the coast?",
-        "answer": "Yes. The field scope can include candidate equipment locations, surrounding openings and utilities, electrical-service relationships, wall dimensions, and routing context."
+        "question": "Do you capture attic framing in Corpus Christi?",
+        "answer": "Yes, where access is safe and available. We can document framing type, dimensions, spacing, decking, and the relationship between attic zones and proposed array areas."
       },
       {
-        "question": "Do you serve the wider Coastal Bend?",
-        "answer": "Coverage can extend beyond Corpus Christi depending on the address, project type, access requirements, and available field resources."
+        "question": "What if the roof appears to need repair before solar?",
+        "answer": "We document visible conditions clearly and avoid making unsupported roofing conclusions. The EPC can then request a dedicated roofing or engineering evaluation before final design if needed."
       }
     ]
   }
