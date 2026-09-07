@@ -5,7 +5,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
     "slug": "dallas",
     "name": "Dallas",
     "title": "Solar Site Surveyors in Dallas, TX",
-    "description": "Solar site surveys in Dallas, TX for EPCs and installers. Roof, attic, electrical, Oncor, battery, permit, and property documentation for residential solar design.",
+    "description": "Solar site surveys in Dallas, TX for EPCs and installers. Roof, attic, electrical, battery, Oncor-area, permit, and property documentation.",
     "h1": "Solar Site Surveyors in Dallas, TX",
     "hubSummary": "Dallas solar site surveys for mixed-age housing, Oncor-area interconnection inputs, roof and attic verification, electrical service, storage, and permit-ready field data.",
     "intro": [
@@ -377,7 +377,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
     "slug": "el-paso",
     "name": "El Paso",
     "title": "Solar Site Surveyors in El Paso, TX",
-    "description": "Solar site surveys in El Paso, TX for EPCs and installers. El Paso Electric, roof, electrical, attic, battery, desert-exposure, and permit-ready field documentation.",
+    "description": "Solar site surveys in El Paso, TX for EPCs and installers. El Paso Electric, roof, electrical, battery, desert-exposure, and permit-ready field data.",
     "h1": "Solar Site Surveyors in El Paso, TX",
     "hubSummary": "El Paso solar site surveys for El Paso Electric interconnection inputs, desert roof conditions, service equipment, battery placement, and remote-design-ready field documentation.",
     "intro": [
@@ -521,7 +521,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
     "slug": "fort-worth",
     "name": "Fort Worth",
     "title": "Solar Site Surveyors in Fort Worth, TX",
-    "description": "Solar site surveys in Fort Worth, TX for EPCs and installers. Roof, attic, electrical, battery, Oncor-area, large-lot, and installation-access field documentation.",
+    "description": "Solar site surveys in Fort Worth, TX for EPCs and installers. Roof, attic, electrical, battery, Oncor-area, large-lot, and access documentation.",
     "h1": "Solar Site Surveyors in Fort Worth, TX",
     "hubSummary": "Fort Worth solar site surveys for older neighborhoods, fast-growth suburbs, larger lots, roof and attic verification, electrical service, and storage-ready installation planning.",
     "intro": [
@@ -1120,7 +1120,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
     "slug": "houston",
     "name": "Houston",
     "title": "Solar Site Surveyors in Houston, TX",
-    "description": "Solar site surveys in Houston, TX for EPCs and installers. Greater Houston roof, attic, electrical, CenterPoint, battery, access, and permit-ready field documentation.",
+    "description": "Solar site surveys in Houston, TX for EPCs and installers. Roof, attic, electrical, CenterPoint-area, battery, access, and permit-ready field data.",
     "h1": "Solar Site Surveyors in Houston, TX",
     "hubSummary": "Houston solar site surveys for varied metro housing, CenterPoint-area interconnection inputs, roof and attic verification, electrical service, storage, and practical installation routes.",
     "intro": [
@@ -1264,7 +1264,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
     "slug": "irving",
     "name": "Irving",
     "title": "Solar Site Surveyors in Irving, TX",
-    "description": "Solar site surveys in Irving, TX for EPCs and installers. Roof, attic, electrical, SolarAPP+, battery, Oncor-area, and permit-ready field documentation.",
+    "description": "Solar site surveys in Irving, TX for EPCs and installers. Roof, attic, electrical, SolarAPP+, battery, Oncor-area, and permit-ready field data.",
     "h1": "Solar Site Surveyors in Irving, TX",
     "hubSummary": "Irving solar site surveys for established neighborhoods, newer development, SolarAPP+ permit context, roof and attic data, electrical service, and storage planning.",
     "intro": [
@@ -1344,7 +1344,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
         "paragraphs": [
           "Automated or streamlined permit tools can reduce administrative time, but they do not make inaccurate field information harmless. Roof geometry, service ratings, equipment locations, and system relationships still need to match the property.",
           "Irving's current Inspections resources reference SolarAPP+ for residential solar and backup power. That makes a complete site record useful before design enters the permitting workflow, especially when the project includes batteries, backup-load equipment, or unusual roof conditions.",
-          "For utility interconnection, many Irving projects are in Oncor territory. The serving utility should be confirmed by address, and the field package should include readable meter and service identifiers rather than relying on a city-level assumption."
+          "For utility interconnection, many Irving projects are in Oncor territory. The serving utility should be confirmed by address, and the field package should include readable meter and service identifiers rather than relying on a city-level assumption. That extra verification is especially useful on projects near utility boundaries or where the sales record does not clearly identify the service provider."
         ]
       },
       {
@@ -1518,7 +1518,7 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
     "slug": "laredo",
     "name": "Laredo",
     "title": "Solar Site Surveyors in Laredo, TX",
-    "description": "Solar site surveys in Laredo, TX for EPCs and installers. Roof, attic, electrical, AEP Texas, battery, high-heat equipment, and solar-permit field documentation.",
+    "description": "Solar site surveys in Laredo, TX for EPCs and installers. Roof, attic, electrical, AEP Texas, battery, high-heat, and solar-permit field data.",
     "h1": "Solar Site Surveyors in Laredo, TX",
     "hubSummary": "Laredo solar site surveys for City solar-permit inputs, AEP Texas interconnection context, high-heat equipment placement, roof and attic data, and practical routes.",
     "intro": [
