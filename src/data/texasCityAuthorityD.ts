@@ -336,109 +336,143 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
     "slug": "plano",
     "name": "Plano",
     "title": "Solar Site Surveyors in Plano, TX",
-    "description": "Solar site surveys in Plano, Texas for EPCs and installers. Detailed roof, attic, electrical, battery, mature-tree, and property documentation for North DFW projects.",
+    "description": "Solar site surveys in Plano, TX for EPCs and installers. Roof, attic, electrical, battery, mature-tree, Oncor-area, and permit-ready field documentation.",
     "h1": "Solar Site Surveyors in Plano, TX",
-    "hubSummary": "North DFW field surveys for established large homes, mature tree cover, complex roof planes, service-equipment verification, and storage-ready design handoffs.",
+    "hubSummary": "Plano solar site surveys for established large homes, mature tree cover, roof and attic verification, electrical service, battery retrofits, and Oncor-area project data.",
     "intro": [
-      "Plano is largely built out compared with newer North DFW suburbs, which means many solar projects involve established homes with mature landscaping, prior roof work, electrical changes, and increasingly complex storage upgrades.",
-      "A useful Plano survey should make those existing conditions clear enough that the design team can work confidently without sending repeated requests for another meter photo, another attic angle, or one missing roof measurement."
+      "Plano is a mature North DFW solar market, not a blank-slate suburb. Many homes have decades of ownership, re-roofs, HVAC changes, electrical upgrades, mature landscaping, and remodels behind them. A project can look straightforward from aerial imagery while hiding exactly the conditions that matter most to engineering.",
+      "Our Plano surveys focus on proving the current property. We document roof planes, visible roof condition, attic framing where accessible, meter and service equipment, storage locations, and installation routes so the design team can work from what exists today rather than from the home's original construction."
     ],
     "sections": [
       {
-        "type": "prose",
-        "kicker": "Established North DFW",
-        "heading": "Plano projects are often less 'new' than the roofline suggests",
-        "paragraphs": [
-          "Large suburban homes may have gone through re-roofs, HVAC changes, electrical upgrades, additions, or multiple ownership cycles. Satellite imagery can show roof area but not the history that affects electrical and structural design.",
-          "We capture current roof condition, accessible framing, service equipment, equipment walls, and route context so the plan set reflects the property as it exists today."
-        ]
-      },
-      {
         "type": "cards",
-        "kicker": "Design friction",
-        "heading": "Three Plano conditions that commonly create clarification requests",
+        "kicker": "Established North DFW",
+        "heading": "Plano projects often hide their biggest design questions in existing conditions",
         "cards": [
           {
             "title": "Mature tree canopy",
-            "body": "Tree-to-roof relationships are documented so the EPC can decide whether shade modeling or vegetation planning is needed."
+            "body": "Large trees can reduce usable roof area, complicate access, and affect production assumptions. We document their relationship to specific roof planes so the EPC can decide whether formal shade modeling or vegetation planning is needed."
           },
           {
-            "title": "Large segmented roofs",
-            "body": "Multiple planes, hips, valleys, dormers, and penetrations require careful plane identification and structural correspondence."
+            "title": "Multiple roof and attic zones",
+            "body": "Large homes can have additions, roof-level changes, and separate attic spaces. Structural photos need to be tied to the correct array zones instead of assuming one framing condition applies everywhere."
           },
           {
             "title": "Solar-plus-storage retrofits",
-            "body": "Existing panels, service equipment, garage walls, doors, windows, and homeowner storage can make battery placement more complex than the sales concept suggests."
+            "body": "Older electrical layouts, garage doors, panels, utilities, homeowner storage, and finished walls can make battery placement harder than the sales concept suggests."
           }
         ]
       },
       {
-        "type": "steps",
-        "kicker": "Quality-first handoff",
-        "heading": "How we structure a Plano survey for remote engineering",
-        "steps": [
+        "type": "resources",
+        "kicker": "Official Plano references",
+        "heading": "Plano permit and utility resources to check before final design",
+        "intro": "The field record should stay durable while permit and utility requirements are verified from current official sources.",
+        "links": [
           {
-            "title": "Start with the project concept",
-            "body": "We identify solar-only, storage, backup, service-sensitive, or custom requirements before the field visit."
+            "label": "City of Plano Development Services",
+            "href": "https://www.plano.gov/development-services",
+            "note": "Official City resources for building permits, codes, inspections, planning, and development."
           },
           {
-            "title": "Capture every relevant zone",
-            "body": "Roof, attic, service equipment, equipment walls, and routes are documented with both detail and context."
+            "label": "City of Plano Building Inspections",
+            "href": "https://www.plano.gov/building-inspections",
+            "note": "Official building-inspection and permit information for Plano projects."
           },
           {
-            "title": "Tie structure to roof",
-            "body": "Attic photos are organized so engineering can understand which framing applies to which array areas."
-          },
-          {
-            "title": "Release a coherent package",
-            "body": "The designer receives a property record, not a random sequence of phone photos."
+            "label": "Oncor Solar Resources for Installers",
+            "href": "https://www.oncor.com/content/oncorwww/us/en/home/smart-energy/renewables-solar-and-more/for-installers.html",
+            "note": "Current Oncor distributed-generation and interconnection resources where Oncor serves the address."
           }
+        ]
+      },
+      {
+        "type": "table",
+        "kicker": "Existing-condition record",
+        "heading": "What a Plano survey should make clear to the engineering team",
+        "rows": [
+          {
+            "label": "Roof",
+            "detail": "Plane dimensions, pitch, material, ridges, valleys, penetrations, visible condition, tree relationships, and enough context to distinguish additions or reworked roof sections."
+          },
+          {
+            "label": "Attic and framing",
+            "detail": "Accessible framing type, member dimensions, spacing, decking, framing direction, and notes showing which attic areas correspond to proposed array planes."
+          },
+          {
+            "label": "Electrical service",
+            "detail": "Meter, service equipment, panel ratings, labels, breaker configuration, grounding context, and wide views showing the full equipment relationship."
+          },
+          {
+            "label": "Storage retrofit",
+            "detail": "Candidate battery, gateway, disconnect, or backup-equipment areas with real wall dimensions, nearby openings and utilities, garage conditions, and access."
+          },
+          {
+            "label": "Installation route",
+            "detail": "Side yards, fences, garage paths, visible elevations, possible attic or exterior conduit routes, and any condition likely to force a field change."
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "kicker": "Retrofit discipline",
+        "heading": "A newer-looking roof does not mean the rest of the property is new",
+        "body": "Plano homes often have improvements from different periods. A re-roof can sit above older framing, a newer main panel can coexist with legacy subpanels, and a remodeled garage can reduce usable battery space. The survey should separate those facts instead of letting one recent improvement create a false sense that the entire site is uniform."
+      },
+      {
+        "type": "prose",
+        "kicker": "Oncor-area project context",
+        "heading": "Electrical verification matters as much as roof measurement in Plano",
+        "paragraphs": [
+          "Many Plano properties are served by Oncor, which maintains a distributed-generation interconnection process for rooftop solar and battery systems. The serving utility should still be confirmed for the exact address, and the survey should provide readable meter and service identifiers rather than assume territory from the city name alone.",
+          "For retrofit projects, the full service wall is especially important. A designer needs more than the main breaker rating. Wide context should show meter location, panel relationships, existing disconnects, nearby utilities, wall space, and the route between proposed equipment and the service.",
+          "That same level of context reduces homeowner-facing changes. In established neighborhoods, conduit visibility and equipment placement can become sensitive late in the project. Documenting preferred and practical routes early gives the design team more control before the installer is onsite."
         ]
       },
       {
         "type": "nearby",
-        "kicker": "North DFW",
-        "heading": "Related dedicated survey pages",
-        "intro": "Plano project pipelines frequently overlap with these neighboring Collin County markets.",
+        "kicker": "North DFW coverage",
+        "heading": "Related solar site survey pages near Plano",
+        "intro": "Plano projects are often dispatched with neighboring Collin County work, but each city keeps its own housing and project context.",
         "links": [
           {
             "slug": "allen",
             "label": "Allen",
-            "note": "Dense suburban roof and battery-ready field documentation."
+            "note": "Dense suburban surveys for multi-plane roofs, modern service equipment, and battery-ready design."
           },
           {
             "slug": "mckinney",
             "label": "McKinney",
-            "note": "Historic and fast-growth housing survey coverage."
+            "note": "Mixed historic and fast-growth housing with varied electrical and structural conditions."
           },
           {
             "slug": "frisco",
             "label": "Frisco",
-            "note": "Complex new-roof and storage-focused project surveys."
+            "note": "New-growth surveys for complex roof geometry, multiple attic zones, and storage placement."
           }
         ]
       }
     ],
     "faqs": [
       {
-        "question": "Do you document mature tree shading in Plano?",
-        "answer": "We capture tree-to-roof context so your EPC can decide whether a formal shade or production analysis is needed."
+        "question": "Do Plano solar surveys document mature tree cover?",
+        "answer": "Yes. We capture major tree-to-roof relationships so the EPC can decide whether formal shade modeling, production analysis, or vegetation planning is needed."
       },
       {
         "question": "Can you document multiple attic zones?",
-        "answer": "Yes, where safe access is available. Structural photos are organized to correspond with the relevant roof sections."
+        "answer": "Yes, where safe access is available. Structural photos are organized so the engineering team can associate framing with the correct roof sections."
       },
       {
-        "question": "Do you survey battery retrofit projects?",
-        "answer": "Yes. Existing service, panels, candidate battery walls, nearby openings and utilities, and route context can all be included."
+        "question": "Do you survey battery retrofit projects in Plano?",
+        "answer": "Yes. We can document candidate battery walls, openings, utilities, panel relationships, garage conditions, backup equipment, and route options."
       },
       {
-        "question": "Can you follow a custom engineering photo order?",
-        "answer": "Yes. Provide the required checklist, file naming, or folder structure before dispatch."
+        "question": "Do you assume every Plano home is served by Oncor?",
+        "answer": "No. Many Plano projects are in Oncor territory, but the exact provider should be confirmed for the service address. We capture meter and service identifiers to support that verification."
       },
       {
-        "question": "Do you cover Allen, McKinney, and Frisco?",
-        "answer": "Yes. All three have dedicated pages and can be coordinated with Plano projects."
+        "question": "Can you follow a custom EPC or engineering checklist?",
+        "answer": "Yes. Provide the current field form, photo order, naming convention, or project-specific requirements before dispatch so the survey aligns with your internal workflow."
       }
     ]
   },
@@ -787,113 +821,160 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
     "slug": "san-antonio",
     "name": "San Antonio",
     "title": "Solar Site Surveyors in San Antonio, TX",
-    "description": "Solar site surveys in San Antonio, Texas for EPCs and installers. Field data for CPS Energy projects, including roof, attic, electrical, site-plan, battery, and equipment documentation.",
+    "description": "Solar site surveys in San Antonio, TX for EPCs and installers. CPS Energy, roof, attic, electrical, one-line, site-plan, battery, and permit-ready field documentation.",
     "h1": "Solar Site Surveyors in San Antonio, TX",
-    "hubSummary": "Bexar County surveys aligned with CPS Energy project workflows, including service equipment, roof/attic data, one-line/site-plan inputs, and storage locations.",
+    "hubSummary": "San Antonio solar site surveys aligned with CPS Energy distributed-generation inputs, including service equipment, roof and attic data, one-line, site-plan, and storage documentation.",
     "intro": [
-      "San Antonio solar projects operate in a clearly defined municipal-utility environment. CPS Energy's current distributed-generation guidance calls for project documents such as a one-line diagram and site plan that reflect existing and new electrical service, so inaccurate field data can flow directly into the submission package.",
-      "Our San Antonio surveys focus on the facts those documents depend on: meter and service equipment, panel information, roof and structural conditions, proposed equipment areas, and property relationships."
+      "San Antonio solar projects have a clear local utility layer. CPS Energy's distributed-generation process asks for technical project documents that reflect the existing and proposed electrical system, including a one-line diagram, site plan, and equipment layout information. If the field record is wrong, that error can travel directly into the submission package.",
+      "Our San Antonio surveys are built to prevent that. We document the roof, accessible structure, meter and service equipment, panel information, proposed solar and storage locations, and property routes so the design team can prepare utility and permit documents from verified site conditions."
     ],
     "sections": [
       {
+        "type": "resources",
+        "kicker": "Official San Antonio references",
+        "heading": "Current CPS Energy and City resources for solar projects",
+        "intro": "CPS Energy and the City of San Antonio maintain their own current processes. These official sources should be checked during design and submission.",
+        "links": [
+          {
+            "label": "CPS Energy Distributed Generation",
+            "href": "https://www.cpsenergy.com/en/construction-and-renovation/distributed-generation.html",
+            "note": "Current CPS Energy DG process, application requirements, one-line, site-plan, and equipment documentation guidance."
+          },
+          {
+            "label": "City of San Antonio Development Services",
+            "href": "https://www.sa.gov/Directory/Departments/DSD",
+            "note": "Official City resource for permits, residential and commercial construction, codes, and inspections."
+          },
+          {
+            "label": "BuildSA Online Services",
+            "href": "https://www.sa.gov/Directory/Departments/DSD/BuildSA",
+            "note": "City portal resources for online permit applications and development-service workflows."
+          }
+        ]
+      },
+      {
         "type": "table",
         "kicker": "CPS Energy project inputs",
-        "heading": "Field data that supports San Antonio design and interconnection work",
+        "heading": "Field data that supports a stronger one-line and site plan",
         "rows": [
           {
-            "label": "Existing electrical service",
-            "detail": "Meter, service equipment, panel ratings, labels, grounding, and the physical relationship among existing components."
+            "label": "Existing service",
+            "detail": "Meter, service equipment, main panel, ratings, labels, breaker configuration, grounding context, and the physical relationship among existing electrical components."
           },
           {
             "label": "Roof and array areas",
-            "detail": "Plane dimensions, pitch, roof type, obstructions, visible condition, and usable-array context."
+            "detail": "Plane dimensions, pitch, roof type, ridges, valleys, obstructions, visible condition, and enough orientation to map the proposed array accurately."
           },
           {
             "label": "Structural information",
-            "detail": "Accessible attic framing, dimensions, spacing, decking, and notes needed for engineering review."
+            "detail": "Accessible attic framing, member dimensions, spacing, decking, framing direction, and notes where additions or separate attic zones differ."
           },
           {
-            "label": "Site-plan context",
-            "detail": "Exterior elevations, equipment locations, property routes, and spatial relationships that help the design team prepare accurate plans."
+            "label": "Proposed equipment",
+            "detail": "Inverter, disconnect, meter-related equipment, battery, gateway, or backup-load areas with wall dimensions, openings, utilities, and access context."
           },
           {
-            "label": "Storage / backup",
-            "detail": "Candidate battery, gateway, disconnect, and backup-equipment locations when included in the project."
+            "label": "Site-plan relationships",
+            "detail": "Exterior elevations, property access, routes between roof and service, detached structures, fences, and other spatial information that helps the design match the property."
           }
         ]
       },
       {
         "type": "prose",
-        "kicker": "Current CPS Energy context",
-        "heading": "CPS Energy requires project-specific technical documentation",
+        "kicker": "Bexar County housing variety",
+        "heading": "San Antonio projects span very different building eras and site conditions",
         "paragraphs": [
-          "CPS Energy's current distributed-generation materials list a DG application and technical documents that can include a one-line diagram, a site plan showing the property and electrical service, and equipment information. The exact process and review requirements should be checked again when the project is submitted.",
-          "A complete site survey reduces the chance that those documents are built from outdated sales notes or assumptions about the existing service."
+          "Older central neighborhoods can involve mature trees, additions, older service equipment, roof changes, compact lots, and attic access that is less straightforward than newer construction. On those homes, the survey should spend more effort establishing existing conditions than repeating generic rooftop photos.",
+          "Newer suburban development creates a different set of questions. Large homes may have many roof planes, several attic zones, multiple garage bays, and limited open wall space once batteries, panels, doors, windows, gas equipment, and homeowner storage are considered.",
+          "At the edge of the metro, larger lots and detached structures can introduce long equipment routes, secondary roofs, gates, or ground-area possibilities. The survey should expand to the actual system concept rather than stop at the main house."
+        ]
+      },
+      {
+        "type": "steps",
+        "kicker": "From site visit to DG package",
+        "heading": "How San Antonio field data moves into design",
+        "steps": [
+          {
+            "title": "Confirm the system concept",
+            "body": "We review solar-only, storage, backup, detached-structure, and service-related requirements before the field visit so the right areas are documented."
+          },
+          {
+            "title": "Map existing conditions",
+            "body": "Roof, framing, meter, panels, and service equipment are captured with both readable detail and wider context."
+          },
+          {
+            "title": "Map proposed equipment",
+            "body": "Candidate inverter, disconnect, battery, gateway, and route locations are measured and photographed so the site plan reflects real space."
+          },
+          {
+            "title": "Flag anything uncertain",
+            "body": "Blocked attic access, unreadable equipment labels, roof concerns, or location conflicts are called out before the design package is finalized."
+          }
         ]
       },
       {
         "type": "cards",
-        "kicker": "Bexar County housing",
-        "heading": "San Antonio projects span very different residential conditions",
+        "kicker": "Where survey quality matters",
+        "heading": "Three San Antonio design problems that should be solved in the field",
         "cards": [
           {
-            "title": "Older central neighborhoods",
-            "body": "Mature trees, additions, older electrical services, and mixed roof conditions can make existing-condition documentation the main design challenge."
+            "title": "One-line accuracy",
+            "body": "The electrical designer needs the actual meter, service, panel, ratings, and equipment relationships. A clean field record reduces the risk of drawing a system around a service configuration that does not exist."
           },
           {
-            "title": "Large suburban expansion",
-            "body": "Newer homes can have complex multi-plane roofs, multiple attic zones, and storage-heavy garage walls."
+            "title": "Battery and backup placement",
+            "body": "Storage projects can become crowded quickly. Real wall dimensions, nearby openings and utilities, service relationships, and route options help the designer compare workable locations."
           },
           {
-            "title": "Edge-of-metro properties",
-            "body": "Larger lots, detached structures, long routes, and changing service context can require a broader field scope."
+            "title": "Mixed roof and framing conditions",
+            "body": "Additions, separate attic zones, or different roof sections should be documented independently so one framing assumption is not applied across the entire array."
           }
         ]
       },
       {
         "type": "nearby",
-        "kicker": "South Central Texas",
-        "heading": "Related dedicated survey pages",
-        "intro": "San Antonio pipelines often extend north along I-35 and into nearby Central Texas markets.",
+        "kicker": "South Central Texas coverage",
+        "heading": "Related solar site survey markets",
+        "intro": "San Antonio projects are often scheduled with I-35 corridor and South Texas work, but each city has a different utility and permit environment.",
         "links": [
           {
             "slug": "new-braunfels",
             "label": "New Braunfels",
-            "note": "NBU-area field surveys and local interconnection context."
+            "note": "NBU-area surveys with local interconnection and fast-growth housing context."
           },
           {
             "slug": "austin",
             "label": "Austin",
-            "note": "Austin Energy project documentation farther north."
+            "note": "Austin Energy surveys for meter, service, storage, and inspection-ready field data."
           },
           {
             "slug": "laredo",
             "label": "Laredo",
-            "note": "South Texas field surveys and hot-climate equipment context."
+            "note": "South Texas surveys for local solar permits, AEP-area interconnection, and high-heat equipment planning."
           }
         ]
       }
     ],
     "faqs": [
       {
-        "question": "What current CPS Energy documents can depend on field survey data?",
-        "answer": "CPS Energy's current distributed-generation guidance includes project technical documentation such as a one-line diagram and site plan reflecting existing and new service. Your team should verify the latest application requirements at submission."
+        "question": "What CPS Energy project documents depend on accurate site-survey data?",
+        "answer": "CPS Energy's current distributed-generation guidance references a DG application plus technical documents such as an electrical one-line diagram, site plan showing existing and new service equipment, and elevation or equipment-layout information. The latest requirements should be verified at submission."
       },
       {
-        "question": "Can you capture information for a one-line diagram?",
-        "answer": "Yes. We document the existing meter, service equipment, panels, ratings, labels, and proposed equipment relationships that the electrical designer can use. The survey itself is not the engineered one-line."
+        "question": "Can the survey provide inputs for a CPS Energy one-line diagram?",
+        "answer": "Yes. We document the existing meter, service equipment, panels, ratings, labels, and proposed equipment relationships that the electrical designer can use when preparing the one-line."
       },
       {
         "question": "Do you survey battery-storage projects in San Antonio?",
-        "answer": "Yes. Candidate battery, gateway, disconnect, or backup-equipment areas, surrounding openings and utilities, and route context can be included."
+        "answer": "Yes. Battery, gateway, disconnect, backup-load equipment, openings, utilities, wall dimensions, service relationships, and route context can be included."
       },
       {
-        "question": "Can you document multiple attic zones?",
-        "answer": "Yes, where safely accessible. Structural photos are organized so engineering can tie them to the correct roof areas."
+        "question": "Can you document multiple attic zones or additions?",
+        "answer": "Yes, where safe access exists. We organize structural evidence by the relevant roof area so engineering teams can distinguish different framing conditions."
       },
       {
-        "question": "Do you cover New Braunfels?",
-        "answer": "Yes. New Braunfels has its own dedicated page because its utility and project context differ from San Antonio."
+        "question": "Do you use the same utility assumptions for New Braunfels and San Antonio?",
+        "answer": "No. San Antonio and New Braunfels have different utility contexts. The field standards remain rigorous, but the project team should verify the serving utility and current requirements for each address."
       }
     ]
   },
