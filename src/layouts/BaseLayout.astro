@@ -12,6 +12,8 @@ interface Props {
   ogImage?: string;
   schemaType?: string;
   schemaData?: Record<string, any>;
+  preloadImage?: string;
+  preloadImageMobile?: string;
 }
 
 const {
@@ -21,7 +23,9 @@ const {
   canonical = Astro.url.href,
   ogImage = '/images/hero_surveyor_field.webp',
   schemaType = 'ProfessionalService',
-  schemaData = {}
+  schemaData = {},
+  preloadImage = '',
+  preloadImageMobile = ''
 } = Astro.props;
 
 const siteUrl = 'https://solarsitesurveyors.com';
@@ -61,19 +65,41 @@ const baseSchema = {
     <meta name="description" content={description} />
     <link rel="canonical" href={fullCanonicalUrl} />
 
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-GXSFB3FHHS"></script>
+    <!-- Google tag (gtag.js) - Non-blocking Deferred Initialization -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-GXSFB3FHHS');
+
+      function initGtag() {
+        if (window._gtagLoaded) return;
+        window._gtagLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-GXSFB3FHHS';
+        document.head.appendChild(s);
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() { setTimeout(initGtag, 1500); });
+      } else {
+        window.addEventListener('load', function() { setTimeout(initGtag, 1500); });
+      }
+      ['scroll', 'touchstart', 'pointerdown', 'keydown'].forEach(function(e) {
+        window.addEventListener(e, initGtag, { once: true, passive: true });
+      });
     </script>
 
     <!-- Favicon & Brand Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#102A43" />
+
+    {preloadImageMobile && (
+      <link rel="preload" as="image" href={preloadImageMobile} type="image/webp" media="(max-width: 900px)" fetchpriority="high" />
+    )}
+    {preloadImage && (
+      <link rel="preload" as="image" href={preloadImage} type="image/webp" media={preloadImageMobile ? "(min-width: 901px)" : undefined} fetchpriority="high" />
+    )}
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
@@ -90,10 +116,14 @@ const baseSchema = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={fullOgImageUrl} />
 
-    <!-- Typography Fonts: Plus Jakarta Sans (Headings) + Instrument Sans (Body) -->
+    <!-- Typography Fonts: Preconnect & Asynchronous Non-blocking Load -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" />
+    </noscript>
 
     <!-- JSON-LD Structured Data Schema -->
     <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />

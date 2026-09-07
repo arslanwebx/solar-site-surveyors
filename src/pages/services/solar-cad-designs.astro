@@ -86,6 +86,7 @@ const serviceSchema = {
   activeNav="services"
   canonical={canonicalUrl}
   ogImage="/images/solar_cad_designs.webp"
+  preloadImage="/images/solar_cad_designs.webp"
   schemaData={serviceSchema}
 >
   <!-- Section 1: Hero (Two-Column Layout) -->
@@ -125,6 +126,7 @@ const serviceSchema = {
               height="400" 
               class="hero-img"
               loading="eager"
+              fetchpriority="high"
             />
             <div class="floating-media-badge">
               <span class="badge-dot-blue"></span>

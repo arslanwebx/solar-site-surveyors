@@ -6,16 +6,19 @@ interface Props {
 }
 
 const { isDark = false, height = 58, class: className = '' } = Astro.props;
-const logoSrc = isDark ? '/images/logo-white.png' : '/images/logo.png';
+const logoSrc = isDark ? '/images/logo-white.webp' : '/images/logo.webp';
+const width = Math.round(height * (439 / 116));
 ---
 
 <div class={`brand-logo-img-wrap ${className}`} style={`--logo-h: ${height}px;`}>
   <img 
     src={logoSrc} 
     alt="Solar Site Surveys" 
+    width={width}
     height={height}
     class="brand-logo-img"
     loading="eager"
+    decoding="async"
   />
 </div>
 

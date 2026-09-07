@@ -1,10 +1,8 @@
 /* ==========================================================================
    SOLARSITE OPERATIONS - LUXURY ARCHITECTURAL DESIGN SYSTEM
-   Typography: Plus Jakarta Sans 700/800 for Headings + Instrument Sans 400/500 for Body
+   Typography: Plus Jakarta Sans (Headings) + Instrument Sans (Body)
    Palette: Deep Navy (#102A43), Warm White (#FAFAF7), Solar Gold (#F4B942)
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
   /* Core Theme Tokens */
