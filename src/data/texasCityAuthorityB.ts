@@ -377,113 +377,143 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
     "slug": "el-paso",
     "name": "El Paso",
     "title": "Solar Site Surveyors in El Paso, TX",
-    "description": "Solar site surveys in El Paso, Texas for EPCs and installers. Roof, electrical, meter, structural, battery, and site documentation for El Paso Electric solar projects.",
+    "description": "Solar site surveys in El Paso, TX for EPCs and installers. El Paso Electric, roof, electrical, attic, battery, desert-exposure, and permit-ready field documentation.",
     "h1": "Solar Site Surveyors in El Paso, TX",
-    "hubSummary": "Far West Texas surveys with El Paso Electric interconnection context, desert roof conditions, service-equipment detail, and remote-design-ready field packages.",
+    "hubSummary": "El Paso solar site surveys for El Paso Electric interconnection inputs, desert roof conditions, service equipment, battery placement, and remote-design-ready field documentation.",
     "intro": [
-      "El Paso is not just another Texas utility market. El Paso Electric maintains its own distributed-generation interconnection process, and its current Texas guidance calls for utility review, AHJ permitting, final inspection, and utility field inspection before the system is energized.",
-      "The site survey gives that process reliable physical inputs. We document the roof, structure, meter and service equipment, equipment locations, and exterior pathways so the design team can prepare its one-line, site information, and installation plan from verified conditions."
+      "El Paso is a distinct Texas solar market. It sits outside the ERCOT grid, El Paso Electric manages its own distributed-generation interconnection process, and the local building environment includes intense sun, exposed exterior equipment, tile and low-slope roof systems, and long distances between service areas and equipment locations on some properties.",
+      "A useful El Paso survey should turn those conditions into verified design inputs. We document roof geometry, visible roof condition, accessible framing, meter and service equipment, proposed solar or storage areas, and practical routing so the EPC can prepare plans and interconnection documents from the actual site."
     ],
     "sections": [
       {
         "type": "prose",
-        "kicker": "Current EPE context",
-        "heading": "El Paso Electric expects the design and the installed site to match",
+        "kicker": "Far West Texas context",
+        "heading": "Why El Paso field data should be especially complete on the first visit",
         "paragraphs": [
-          "El Paso Electric's current Texas interconnection guidance says installation follows utility design approval and applicable building permits, then a final electrical inspection and EPE field inspection occur before energization. The utility's online application also requires a one-line diagram.",
-          "That makes accurate field data especially valuable. If the service equipment, meter arrangement, or proposed equipment location is misunderstood at survey, the error can travel into the one-line and site plan."
+          "El Paso is geographically separated from the state's central solar markets, so a return trip for one missing panel label or an unmeasured equipment wall can be disproportionately expensive. A complete first visit matters more when travel time and dispatch distance are larger.",
+          "The desert environment also changes what the remote designer needs to see. Tile roofs, flat or low-slope sections, bright membrane surfaces, rooftop equipment, and sun-exposed exterior walls should be documented with enough context to understand the installation area, not just the individual component.",
+          "The survey does not decide how equipment should be rated for heat or what structural attachment design is required. It provides the measurements, visible conditions, and relationships the qualified design team needs to make those decisions."
         ]
       },
       {
-        "type": "cards",
-        "kicker": "Desert market",
-        "heading": "El Paso field conditions that deserve their own survey emphasis",
-        "cards": [
+        "type": "resources",
+        "kicker": "Official El Paso references",
+        "heading": "Current El Paso Electric and City resources",
+        "intro": "These official sources should be checked during design and submission because utility and permit requirements can change.",
+        "links": [
           {
-            "title": "Roof materials and exposure",
-            "body": "Flat or low-slope areas, tile systems, reflective membranes, and sun-exposed roofing each need clear documentation of material, penetrations, and accessible structural context."
+            "label": "El Paso Electric Texas Distributed Generation Interconnection",
+            "href": "https://www.epelectric.com/residential/rooftop-solar/texas-interconnection-of-facilities-up-to-10-mw",
+            "note": "Current EPE Texas guidance covering design approval, AHJ permits, inspection, meter work, and authorization."
           },
           {
-            "title": "Exterior equipment heat",
-            "body": "Wide views of sun exposure, shade, wall orientation, service equipment, and candidate battery areas help the design team evaluate practical equipment locations."
+            "label": "El Paso Electric DG Application",
+            "href": "https://solarium3.epelectric.com/DGInterconnection/",
+            "note": "EPE distributed-generation application portal, including one-line diagram submission."
           },
           {
-            "title": "Long-distance coordination",
-            "body": "Because El Paso is geographically separated from the state's central metros, a complete first visit is more valuable than a package that triggers a return trip for one missing panel label or roof measurement."
+            "label": "City of El Paso Planning and Inspections",
+            "href": "https://www.elpasotexas.gov/planning-and-inspections",
+            "note": "Official City permitting, plan review, inspection, and Citizen Access Portal information."
           }
         ]
       },
       {
+        "type": "callout",
+        "kicker": "Interconnection accuracy",
+        "heading": "The field survey should match what the one-line and site plan will show",
+        "body": "El Paso Electric's current process requires project review before installation and references final electrical inspection and EPE field inspection before energization. A survey that clearly documents the meter, service equipment, panel ratings, proposed equipment areas, and routing reduces the chance that the electrical drawing is built around an incorrect service assumption."
+      },
+      {
         "type": "table",
-        "kicker": "Field handoff",
-        "heading": "What an El Paso survey can document",
+        "kicker": "El Paso field record",
+        "heading": "What the remote design team should be able to verify",
         "rows": [
           {
-            "label": "Service",
-            "detail": "Meter, main service equipment, panels, ratings, labels, grounding, and equipment relationships."
-          },
-          {
             "label": "Roof",
-            "detail": "Plane dimensions, pitch, roof type, penetrations, visible condition, and array-space context."
+            "detail": "Plane dimensions, pitch, roof type, penetrations, parapets or low-slope areas, visible condition, and enough orientation to understand array placement."
           },
           {
             "label": "Structure",
-            "detail": "Accessible framing or structural observations within the agreed survey scope."
+            "detail": "Accessible framing or attic observations, member dimensions, spacing, decking, and clear limitations where roof structure cannot be safely inspected."
           },
           {
-            "label": "Equipment",
-            "detail": "Inverter, disconnect, battery, gateway, and other candidate locations with surrounding dimensions and obstructions."
+            "label": "Electrical service",
+            "detail": "Meter, service equipment, panel ratings and labels, breaker configuration, grounding context, and the physical relationship among components."
           },
           {
-            "label": "Routing",
-            "detail": "Exterior and interior pathway context between roof, proposed equipment, and service point."
+            "label": "Storage and equipment",
+            "detail": "Candidate battery, inverter, disconnect, or gateway locations with wall dimensions, nearby openings and utilities, sun exposure, shade, and working-area context."
+          },
+          {
+            "label": "Routes and access",
+            "detail": "Exterior paths, garages, walls, fences, detached structures, and practical routes between the roof, equipment, and service point."
+          }
+        ]
+      },
+      {
+        "type": "cards",
+        "kicker": "Desert design pressure",
+        "heading": "Three El Paso conditions that are easy to underestimate remotely",
+        "cards": [
+          {
+            "title": "Heat-exposed equipment walls",
+            "body": "A wall can look open in a listing photo while being fully exposed to afternoon sun, crowded by utilities, or difficult to access. Wide field photos and dimensions give the designer real options."
+          },
+          {
+            "title": "Roof material transitions",
+            "body": "Tile, low-slope sections, additions, and different roof surfaces can require separate attachment or structural treatment. The survey identifies the transitions rather than treating the roof as one uniform surface."
+          },
+          {
+            "title": "EPE-specific utility workflow",
+            "body": "El Paso Electric has its own interconnection process and should not be treated as an Oncor or CenterPoint project. The survey supports the utility-specific design by documenting the actual service and system context."
           }
         ]
       },
       {
         "type": "nearby",
-        "kicker": "West Texas",
-        "heading": "Other western Texas survey pages",
-        "intro": "For EPCs managing a broader West Texas pipeline, these dedicated pages cover separate operating markets.",
+        "kicker": "West Texas coverage",
+        "heading": "Related solar site survey markets",
+        "intro": "El Paso is operationally separate from most Texas metros, but EPCs with wider western pipelines may also need these dedicated pages.",
         "links": [
           {
             "slug": "midland",
             "label": "Midland",
-            "note": "Permian Basin residential survey coordination."
+            "note": "Permian Basin surveys for open-site exposure, electrical service, and larger-property routes."
           },
           {
             "slug": "odessa",
             "label": "Odessa",
-            "note": "Ector County roof and electrical field documentation."
+            "note": "Ector County surveys for established housing, legacy service equipment, and equipment placement."
           },
           {
             "slug": "lubbock",
             "label": "Lubbock",
-            "note": "South Plains surveys and utility-context verification."
+            "note": "South Plains surveys with local permit and interconnection requirements."
           }
         ]
       }
     ],
     "faqs": [
       {
-        "question": "Does El Paso Electric require an interconnection application?",
-        "answer": "Yes. El Paso Electric currently publishes a distributed-generation interconnection process for Texas customers. Your project team should use the utility's latest forms and technical requirements."
+        "question": "Does El Paso Electric require utility approval before a solar system is energized?",
+        "answer": "El Paso Electric's current Texas guidance includes design approval, applicable AHJ permits, final electrical inspection, EPE field inspection, and utility authorization before energization. The project team should verify the latest process when submitting."
       },
       {
-        "question": "Does EPE inspect the system before energization?",
-        "answer": "Current EPE guidance says the contractor requests utility field inspection and meter installation after final electrical inspection, and the system should not be energized before EPE completes its process."
+        "question": "Can the survey provide field data for an EPE one-line diagram?",
+        "answer": "Yes. We document the existing meter, service equipment, panels, ratings, labels, proposed solar or storage areas, and route context that the electrical designer can use when preparing the one-line."
       },
       {
-        "question": "Can the survey support a one-line diagram?",
-        "answer": "We capture the existing service, meter, panels, ratings, equipment locations, and routing context that the electrical designer can use when preparing the one-line. The survey itself is not the engineered one-line."
+        "question": "Do you survey tile and low-slope roofs in El Paso?",
+        "answer": "Yes. Roof type, geometry, pitch, penetrations, visible condition, and accessible structural information can be documented. Intrusive roof investigation requires a separately agreed scope."
       },
       {
-        "question": "Can you document flat or tile roofs?",
-        "answer": "Yes. The field scope can document roof material, geometry, penetrations, visible condition, and accessible structural information. Intrusive roof investigation requires a separate scope."
+        "question": "Can battery locations be evaluated for sun and wall exposure?",
+        "answer": "We can document orientation, shade, nearby openings and utilities, wall dimensions, service relationships, and access so the design team can compare candidate equipment locations."
       },
       {
-        "question": "Do you cover battery projects in El Paso?",
-        "answer": "Yes. Battery scopes can include candidate locations, wall measurements, nearby openings and utilities, service relationships, shade/exposure context, and routing information."
+        "question": "What happens if a roof or attic area is unsafe to access?",
+        "answer": "The limitation is documented directly. We do not invent structural data. Your team can then decide whether another verification method or return visit is justified."
       }
     ]
   },
@@ -1234,123 +1264,156 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
     "slug": "irving",
     "name": "Irving",
     "title": "Solar Site Surveyors in Irving, TX",
-    "description": "Solar site surveys in Irving, Texas for EPCs and installers. Roof, attic, electrical, battery, and property documentation for central DFW residential and commercial projects.",
+    "description": "Solar site surveys in Irving, TX for EPCs and installers. Roof, attic, electrical, SolarAPP+, battery, Oncor-area, and permit-ready field documentation.",
     "h1": "Solar Site Surveyors in Irving, TX",
-    "hubSummary": "Central DFW surveys covering established neighborhoods, newer Las Colinas-area development, electrical-service verification, roof/attic data, and equipment planning.",
+    "hubSummary": "Irving solar site surveys for established neighborhoods, newer development, SolarAPP+ permit context, roof and attic data, electrical service, and storage planning.",
     "intro": [
-      "Irving contains very different site types within one city: established residential neighborhoods, newer master-planned areas, townhomes, and commercial-heavy corridors. That makes generic location copy particularly weak and makes scope-specific field work more important.",
-      "Our Irving survey process starts with the property type and project scope, then documents the roof, structure, electrical service, equipment locations, and access conditions the downstream team actually needs."
+      "Irving combines established single-family neighborhoods, newer planned development, townhome communities, and commercial-heavy corridors in one central DFW city. That mix makes scope selection important. The field needs of a 1960s house are not the same as a newer Las Colinas-area project or a flat-roof commercial site.",
+      "Our Irving surveys start with the building and project type, then document roof, structure, electrical service, equipment locations, and access in a way that the remote team can use without guessing."
     ],
     "sections": [
       {
+        "type": "resources",
+        "kicker": "Official Irving references",
+        "heading": "Current permit and utility resources for Irving solar projects",
+        "intro": "Irving's Inspections Department specifically references residential solar and SolarAPP+ resources. Utility interconnection should still be verified for the serving address.",
+        "links": [
+          {
+            "label": "City of Irving Inspections",
+            "href": "https://cityofirving.org/Inspections",
+            "note": "Official Irving permit, inspection, residential guidance, and SolarAPP+ information."
+          },
+          {
+            "label": "City of Irving Permit Portal",
+            "href": "https://cityofirving.org/",
+            "note": "Official city access point for permits, inspections, and residential construction resources."
+          },
+          {
+            "label": "Oncor Solar Resources for Installers",
+            "href": "https://www.oncor.com/content/oncorwww/us/en/home/smart-energy/renewables-solar-and-more/for-installers.html",
+            "note": "Current Oncor interconnection process and installer requirements where Oncor serves the property."
+          }
+        ]
+      },
+      {
         "type": "cards",
-        "kicker": "Irving property mix",
-        "heading": "A survey in Irving should match the building in front of us",
+        "kicker": "Building-type differences",
+        "heading": "Irving surveys should change with the property in front of us",
         "cards": [
           {
             "title": "Established single-family homes",
-            "body": "Older panels, tree cover, roof changes, and additions can create design risk that is invisible from aerial imagery."
+            "body": "Roof replacements, additions, mature trees, older service equipment, and attic modifications can matter more than system size. Existing-condition verification is the priority."
           },
           {
             "title": "Newer planned communities",
-            "body": "Complex rooflines, constrained exterior equipment walls, and storage-ready systems require more emphasis on geometry and equipment placement."
+            "body": "Modern service equipment can simplify one part of the design while complex rooflines, homeowner-visible equipment walls, and battery placement create new constraints."
           },
           {
-            "title": "Commercial-adjacent sites",
-            "body": "Flat roofs, larger electrical equipment, access restrictions, and site safety requirements can change the survey scope completely."
+            "title": "Townhome and commercial-adjacent sites",
+            "body": "Shared roofs, ownership boundaries, access rules, flat or low-slope roofs, and larger service equipment can require a different scope before the surveyor is dispatched."
           }
         ]
       },
       {
         "type": "steps",
-        "kicker": "Scope-driven workflow",
-        "heading": "How we keep Irving surveys from becoming a generic photo set",
+        "kicker": "Scope before photos",
+        "heading": "How we avoid treating Irving as one generic residential market",
         "steps": [
           {
-            "title": "Classify the project",
-            "body": "Residential rooftop, storage, detached structure, commercial, or another custom scope is confirmed first."
+            "title": "Classify the site",
+            "body": "We identify whether the project is a detached home, attached property, storage retrofit, detached structure, or commercial-related scope before the field visit."
           },
           {
-            "title": "Capture the decision points",
-            "body": "We focus on the roof, service, structure, and equipment areas most likely to affect design."
+            "title": "Prioritize the unknowns",
+            "body": "Older homes receive deeper electrical and modification context, while newer homes often need more roof-plane, attic-zone, and equipment-wall detail."
           },
           {
-            "title": "Pair closeups with context",
-            "body": "Labels and measurements are accompanied by wider views so remote teams know where each item sits."
+            "title": "Capture permit-relevant facts",
+            "body": "Roof layout, service equipment, structural access, and equipment locations are documented so the design team can prepare the current permit and utility documents."
           },
           {
-            "title": "Release an organized record",
-            "body": "Photos and notes are grouped to support design and engineering rather than simply proving the technician visited."
+            "title": "Record access and ownership limits",
+            "body": "Shared areas, locked equipment, HOA-related access, tenant coordination, or unsafe zones are documented instead of assumed away."
           }
         ]
       },
       {
-        "type": "table",
-        "kicker": "Irving field data",
-        "heading": "Typical documentation categories",
-        "rows": [
+        "type": "prose",
+        "kicker": "SolarAPP+ and local review",
+        "heading": "Fast permitting still depends on accurate field inputs",
+        "paragraphs": [
+          "Automated or streamlined permit tools can reduce administrative time, but they do not make inaccurate field information harmless. Roof geometry, service ratings, equipment locations, and system relationships still need to match the property.",
+          "Irving's current Inspections resources reference SolarAPP+ for residential solar and backup power. That makes a complete site record useful before design enters the permitting workflow, especially when the project includes batteries, backup-load equipment, or unusual roof conditions.",
+          "For utility interconnection, many Irving projects are in Oncor territory. The serving utility should be confirmed by address, and the field package should include readable meter and service identifiers rather than relying on a city-level assumption."
+        ]
+      },
+      {
+        "type": "checklist",
+        "kicker": "Field evidence",
+        "heading": "Irving survey details we want the designer to see clearly",
+        "items": [
           {
-            "label": "Roof / structure",
-            "detail": "Geometry, material, visible condition, penetrations, and attic framing where accessible."
+            "title": "Roof and structure",
+            "body": "Plane geometry, pitch, material, obstructions, visible condition, accessible framing, member dimensions, spacing, and attic-zone relationships."
           },
           {
-            "label": "Electrical",
-            "detail": "Meter, service equipment, panel ratings and labels, grounding, and surrounding work area."
+            "title": "Electrical service",
+            "body": "Meter, service equipment, main panel, ratings, labels, breaker configuration, grounding context, and surrounding work area."
           },
           {
-            "label": "Storage / equipment",
-            "detail": "Candidate walls, dimensions, nearby openings and utilities, and relationships to the service."
+            "title": "Storage and backup",
+            "body": "Candidate battery, gateway, disconnect, or backup-load areas with openings, utilities, wall dimensions, and route options."
           },
           {
-            "label": "Site logistics",
-            "detail": "Gates, fences, access points, route options, commercial access constraints, or detached structures."
+            "title": "Property and access",
+            "body": "Fences, garages, shared areas, townhome limitations, commercial access rules, detached structures, and realistic installation pathways."
           }
         ]
       },
       {
         "type": "nearby",
-        "kicker": "Central DFW",
-        "heading": "Related survey pages",
-        "intro": "Irving's central location makes it a common routing partner with several other DFW cities.",
+        "kicker": "Central DFW coverage",
+        "heading": "Related solar site survey pages near Irving",
+        "intro": "Irving's location makes it a common routing partner with several DFW markets that still deserve their own local content and permit context.",
         "links": [
+          {
+            "slug": "dallas",
+            "label": "Dallas",
+            "note": "Large-metro survey coordination across mixed housing and current Dallas permit requirements."
+          },
           {
             "slug": "carrollton",
             "label": "Carrollton",
-            "note": "Northwest Dallas County and multi-county field surveys."
+            "note": "Multi-county North DFW surveys with address-level utility verification."
           },
           {
             "slug": "grand-prairie",
             "label": "Grand Prairie",
-            "note": "Mid-Cities and cross-county project documentation."
-          },
-          {
-            "slug": "dallas",
-            "label": "Dallas",
-            "note": "Metro-scale survey coordination for varied housing and project types."
+            "note": "Mid-Cities field documentation across mixed residential development."
           }
         ]
       }
     ],
     "faqs": [
       {
-        "question": "Do you survey commercial properties in Irving?",
-        "answer": "Commercial surveys can be coordinated based on roof access, electrical scope, property rules, safety requirements, and requested deliverables."
+        "question": "Does Irving use SolarAPP+ for residential solar?",
+        "answer": "The City of Irving Inspections Department currently references SolarAPP+ in its residential solar and backup-power resources. Your permitting team should confirm the latest process for the specific project before submission."
       },
       {
-        "question": "Can you document townhomes or attached properties?",
-        "answer": "Potentially. Ownership boundaries, shared roofs, access rights, and common electrical areas need to be understood before dispatch."
+        "question": "Can you survey townhomes in Irving?",
+        "answer": "Potentially. Ownership boundaries, shared roofs, common electrical areas, access rights, and project scope should be confirmed before dispatch."
       },
       {
-        "question": "Do you capture both main panel and meter information?",
-        "answer": "Yes. We document the service relationship with readable labels and wider equipment context whenever accessible."
+        "question": "Do you assume every Irving project is served by Oncor?",
+        "answer": "No. Many Irving projects are in Oncor territory, but the exact serving utility should be verified by service address. We capture meter and service identifiers to support that check."
       },
       {
-        "question": "Can the survey include battery-storage planning?",
-        "answer": "Yes. Candidate battery and backup-equipment locations, nearby openings and utilities, wall dimensions, and routes can be included."
+        "question": "Can you document battery and backup equipment?",
+        "answer": "Yes. The field scope can include battery walls, gateway or disconnect areas, openings, utilities, service relationships, and route context."
       },
       {
-        "question": "Do you cover nearby Dallas and Grand Prairie?",
-        "answer": "Yes. Both have dedicated pages and can be routed with Irving projects."
+        "question": "What is different about surveying an older Irving home?",
+        "answer": "Older homes often need more attention on panel history, additions, roof changes, tree cover, and framing access. We document the current property rather than assume the original construction still describes it."
       }
     ]
   },
@@ -1455,113 +1518,143 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
     "slug": "laredo",
     "name": "Laredo",
     "title": "Solar Site Surveyors in Laredo, TX",
-    "description": "Solar site surveys in Laredo, Texas for EPCs and installers. Roof, attic, electrical, heat-exposure, battery, and property documentation across Webb County.",
+    "description": "Solar site surveys in Laredo, TX for EPCs and installers. Roof, attic, electrical, AEP Texas, battery, high-heat equipment, and solar-permit field documentation.",
     "h1": "Solar Site Surveyors in Laredo, TX",
-    "hubSummary": "South Texas survey coordination for high-heat conditions, varied roof materials, service equipment, storage locations, and complete field-to-design handoffs.",
+    "hubSummary": "Laredo solar site surveys for City solar-permit inputs, AEP Texas interconnection context, high-heat equipment placement, roof and attic data, and practical routes.",
     "intro": [
-      "Laredo is a high-sun, high-heat South Texas market where equipment exposure and roof material deserve practical field attention. At the same time, the fundamentals remain simple: the design team needs accurate roof, electrical, structural, and property information instead of assumptions based on climate alone.",
-      "We document the roof and attic, meter and panel, proposed inverter or battery areas, and exterior pathways with enough context for remote engineering and installation planning."
+      "Laredo is a South Texas market where local solar permitting is specific enough that field accuracy matters early. The City of Laredo publishes a dedicated solar-panel permit process, while many projects may also require AEP Texas interconnection review depending on the serving address.",
+      "Our Laredo surveys focus on the information those downstream teams need to trust: roof layout, structural access, meter and service equipment, proposed solar or battery locations, and the real installation path through walls, gates, side yards, and exterior equipment areas."
     ],
     "sections": [
       {
-        "type": "cards",
-        "kicker": "South Texas conditions",
-        "heading": "Laredo field details that affect design quality",
-        "cards": [
+        "type": "resources",
+        "kicker": "Official Laredo references",
+        "heading": "Use the current City and utility requirements, not recycled project notes",
+        "intro": "Laredo has explicit solar-permit guidance. These official sources should be checked at the time of design and submission.",
+        "links": [
           {
-            "title": "Heat-exposed equipment walls",
-            "body": "Sun orientation, shade, wall material, nearby openings, utilities, and service equipment are captured so the designer can assess practical equipment locations."
+            "label": "City of Laredo Solar Panel Permit Requirements",
+            "href": "https://www.cityoflaredo.com/departments/building-development-services/permit-applications-requirements",
+            "note": "Official City guidance stating that solar-panel permits require project documentation before work begins."
           },
           {
-            "title": "Roof variety",
-            "body": "Low-slope sections, tile, asphalt shingles, additions, and patio structures can change array placement and attachment assumptions."
+            "label": "City of Laredo Solar Permit Application",
+            "href": "https://www.cityoflaredo.com/home/showpublisheddocument/17723/638717632722730000",
+            "note": "City solar permit application and plan information, including site and roof-plan requirements."
           },
           {
-            "title": "Property access",
-            "body": "Walls, gates, narrow side yards, rear service equipment, and long runs should be documented early so installation routes are not improvised in the field."
+            "label": "AEP Texas Solar and Interconnection",
+            "href": "https://www.aeptexas.com/clean-energy/renewable/solar/",
+            "note": "Current AEP Texas solar and interconnection process where AEP Texas serves the property."
           }
         ]
       },
       {
         "type": "table",
-        "kicker": "Design inputs",
-        "heading": "Laredo survey documentation categories",
+        "kicker": "Permit-ready field data",
+        "heading": "Laredo survey information that supports a complete design package",
         "rows": [
           {
-            "label": "Roof",
-            "detail": "Geometry, pitch, material, penetrations, visible condition, and usable-plane context."
+            "label": "Roof plan inputs",
+            "detail": "Plane dimensions, pitch, material, ridges, valleys, penetrations, visible condition, and clear context showing where modules could be placed."
           },
           {
-            "label": "Attic / structure",
-            "detail": "Accessible framing, spacing, dimensions, decking, and limitations."
+            "label": "Structural inputs",
+            "detail": "Accessible framing type, member dimensions, spacing, decking, and notes where roof sections or additions appear structurally different."
           },
           {
-            "label": "Electrical",
-            "detail": "Meter and service equipment, panels, ratings, labels, grounding, and available equipment area."
+            "label": "Electrical inputs",
+            "detail": "Meter, service equipment, panel ratings, labels, breakers, grounding context, and physical relationships among the electrical components."
           },
           {
-            "label": "Equipment exposure",
-            "detail": "Candidate battery, inverter, disconnect, and gateway locations with sun/shade and surrounding-clearance context."
+            "label": "Equipment inputs",
+            "detail": "Candidate inverter, disconnect, battery, or gateway areas with wall dimensions, nearby openings, utilities, shade, and heat exposure."
           },
           {
-            "label": "Routes / access",
-            "detail": "Exterior pathway views, gates, walls, fences, and other installation logistics."
+            "label": "Site-plan context",
+            "detail": "Exterior elevations, gates, walls, fences, side yards, detached structures, and practical routes between array, equipment, and service."
           }
         ]
       },
       {
+        "type": "callout",
+        "kicker": "City-specific value",
+        "heading": "Laredo should not be treated as a generic South Texas landing page",
+        "body": "The City of Laredo maintains a solar-specific permit process and asks for defined project documentation. That makes accurate roof, site, and equipment information more useful than broad statements about sunshine or climate. The survey should solve the real local documentation problem."
+      },
+      {
         "type": "prose",
-        "kicker": "Utility and AHJ accuracy",
-        "heading": "South Texas design should still start with the exact service address",
+        "kicker": "High-heat equipment planning",
+        "heading": "Exterior wall conditions deserve more attention in Laredo",
         "paragraphs": [
-          "The serving utility, permitting authority, and current interconnection requirements should be verified for each Laredo-area property. Those details can change over time and should not be frozen into marketing copy.",
-          "The survey gives those teams a dependable physical record: meter identifiers, service configuration, roof and structure, and proposed equipment locations."
+          "A battery or inverter wall that looks acceptable on a plan can be a poor real-world choice if it faces strong afternoon sun, is crowded by gas or electrical equipment, sits beside doors or windows, or is difficult for installers to access. Wide wall photos and measurements help the designer compare actual options.",
+          "Roof material also varies across Laredo. Asphalt shingles, tile, low-slope sections, additions, and covered patios can all appear on the same property. The survey should identify those transitions so the structural and attachment strategy is not based on one assumed roof type.",
+          "For utility work, AEP Texas requires an interconnection process for DER systems operating in parallel with its grid. Where AEP Texas serves the address, accurate meter, service, equipment, and system information can reduce avoidable clarification during application review."
+        ]
+      },
+      {
+        "type": "cards",
+        "kicker": "Installation reality",
+        "heading": "Three Laredo constraints worth resolving before permit drawings",
+        "cards": [
+          {
+            "title": "Walls and gated side yards",
+            "body": "Property walls, gates, narrow routes, rear service equipment, and neighboring structures can change how crews reach the roof and how conduit reaches the service."
+          },
+          {
+            "title": "Mixed roof additions",
+            "body": "Patio structures, room additions, or different roof materials can create separate design zones that need to be identified instead of blended into one roof measurement."
+          },
+          {
+            "title": "Storage placement under heat",
+            "body": "The field package should show actual exposure, shade, wall material, nearby openings, and electrical relationships so equipment placement follows current manufacturer and code requirements."
+          }
         ]
       },
       {
         "type": "nearby",
-        "kicker": "South Texas",
-        "heading": "Related survey markets",
-        "intro": "Laredo projects are often part of wider South Texas and Valley pipelines.",
+        "kicker": "South Texas coverage",
+        "heading": "Related solar site survey markets",
+        "intro": "Laredo projects may be managed with San Antonio, Corpus Christi, and Rio Grande Valley work, but each market has a different permit and utility context.",
         "links": [
           {
             "slug": "san-antonio",
             "label": "San Antonio",
-            "note": "Bexar County and CPS Energy market field surveys."
-          },
-          {
-            "slug": "mcallen",
-            "label": "McAllen",
-            "note": "Rio Grande Valley residential survey coordination."
+            "note": "CPS Energy-area surveys for one-line, site-plan, and equipment documentation."
           },
           {
             "slug": "corpus-christi",
             "label": "Corpus Christi",
-            "note": "Coastal Bend roof, structural, and exterior-equipment documentation."
+            "note": "Coastal Bend surveys with stronger roof, framing, and exterior-exposure context."
+          },
+          {
+            "slug": "mcallen",
+            "label": "McAllen",
+            "note": "Rio Grande Valley surveys for hot-climate equipment placement and service verification."
           }
         ]
       }
     ],
     "faqs": [
       {
-        "question": "Do Laredo surveys document heat exposure for batteries or inverters?",
-        "answer": "Yes. We can document candidate wall orientation, shade, nearby openings and utilities, wall dimensions, and service relationships. Final equipment placement follows current manufacturer and code requirements."
+        "question": "Does the City of Laredo require a solar-panel permit?",
+        "answer": "The City's current Building Development Services guidance states that a solar-panel permit is required for installations or alterations of electrical equipment before work starts. The project team should confirm the latest application documents at submission."
       },
       {
-        "question": "Can you survey tile roofs?",
-        "answer": "Yes. We document roof type, pitch, geometry, penetrations, and visible condition. Any intrusive tile lift or underlayment inspection requires a separate agreed scope."
+        "question": "What field information helps with the Laredo solar permit?",
+        "answer": "Roof and site-plan inputs, equipment locations, service information, structural context, and accurate project dimensions help the design team prepare the required permit documents."
       },
       {
-        "question": "Do you verify the electric provider?",
-        "answer": "We capture meter and service information to help your team confirm the current serving utility for the exact address."
+        "question": "Do you assume every Laredo project is served by AEP Texas?",
+        "answer": "No. The exact serving utility should be verified for the address. When AEP Texas serves the property, we capture meter and service information that supports the current interconnection process."
       },
       {
-        "question": "Can you document ground-mount opportunities?",
-        "answer": "Yes, if included in the scope. Open-area dimensions, service relationships, access, terrain context, and route considerations can be captured."
+        "question": "Can you survey tile roofs and patio additions?",
+        "answer": "Yes. We document roof material, geometry, transitions, penetrations, visible condition, and accessible structural information. Intrusive roof investigation requires a separate scope."
       },
       {
-        "question": "Do you cover Webb County outside Laredo?",
-        "answer": "Coverage may extend beyond the city depending on the address, travel requirements, project type, and field availability."
+        "question": "Can you document battery locations for high-heat conditions?",
+        "answer": "We can document shade, wall orientation, openings, utilities, dimensions, service relationships, and access. Final equipment placement should follow current code and manufacturer requirements."
       }
     ]
   }
