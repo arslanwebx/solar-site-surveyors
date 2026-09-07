@@ -47,6 +47,13 @@ export type CitySection =
       heading: string;
       intro: string;
       links: { slug: string; label: string; note: string }[];
+    }
+  | {
+      type: 'resources';
+      kicker?: string;
+      heading: string;
+      intro?: string;
+      links: { label: string; href: string; note: string }[];
     };
 
 export interface TexasCityAuthorityPage {
