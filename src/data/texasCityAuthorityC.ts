@@ -457,100 +457,143 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
     "slug": "lubbock",
     "name": "Lubbock",
     "title": "Solar Site Surveyors in Lubbock, TX",
-    "description": "Solar site surveys in Lubbock, Texas for EPCs and installers. Roof, attic, electrical, wind-exposure, battery, and property documentation across the South Plains.",
+    "description": "Solar site surveys in Lubbock, TX for EPCs and installers. Local solar-permit, LP&L or SPEC, roof, attic, electrical, battery, and South Plains field documentation.",
     "h1": "Solar Site Surveyors in Lubbock, TX",
-    "hubSummary": "South Plains surveys for open-wind exposure, low-tree-cover neighborhoods, service-equipment verification, roof/attic data, and complete design handoffs.",
+    "hubSummary": "Lubbock solar site surveys for local solar-permit and interconnection requirements, South Plains roof exposure, service equipment, structure, storage, and design-ready field data.",
     "intro": [
-      "Lubbock's open South Plains environment changes the visual character of a solar site: fewer mature trees in many neighborhoods, strong weather exposure, broad roof visibility, and properties where exterior equipment can be highly exposed.",
-      "The survey still needs to stay disciplined. We document roof geometry and condition, attic framing, meter and service equipment, proposed solar or storage locations, and property-wide context without turning field observations into unsupported engineering claims."
+      "Lubbock has a more specific local solar permitting workflow than many Texas cities, so the site survey should be built with those downstream requirements in mind. The City of Lubbock publishes a dedicated residential solar-panel permit application and states that projects in LP&L or South Plains Electric Cooperative service areas require an interconnection agreement as part of the process.",
+      "That makes field accuracy important before plans are submitted. We document roof geometry, accessible framing, meter and service equipment, panel information, proposed solar or battery areas, and site routes so the design team has the physical facts needed for permit and interconnection preparation."
     ],
     "sections": [
       {
-        "type": "callout",
-        "kicker": "South Plains principle",
-        "heading": "Wind exposure increases the value of clear structural field evidence",
-        "body": "A survey can document roof pitch, framing type, member dimensions, spacing, decking, material, and visible condition. Structural capacity, attachment design, and wind engineering remain with the qualified engineer and current code requirements."
-      },
-      {
-        "type": "table",
-        "kicker": "Lubbock field package",
-        "heading": "What we document for design and engineering",
-        "rows": [
+        "type": "resources",
+        "kicker": "Official Lubbock references",
+        "heading": "Current solar permit and interconnection resources",
+        "intro": "Lubbock requirements are specific enough that official local sources should be checked on every project instead of relying on an old West Texas checklist.",
+        "links": [
           {
-            "label": "Roof geometry",
-            "detail": "Plane dimensions, pitch, ridges, valleys, eaves, penetrations, and usable-area context."
+            "label": "City of Lubbock Residential Solar Panel Permit Application",
+            "href": "https://www.mylubbock.us/FormCenter/Building-Safety-10/Solar-Panel-Permit-Application-Fillable-56",
+            "note": "Official solar permit application with service-provider and interconnection requirements."
           },
           {
-            "label": "Roof condition",
-            "detail": "Material type and visible wear documented objectively without making a roofing-life prediction."
+            "label": "City of Lubbock Residential Permitting",
+            "href": "https://www.mylubbock.us/904/Residential-Permitting",
+            "note": "Current Building Safety guidance for residential solar panels and backup power systems."
           },
           {
-            "label": "Structure",
-            "detail": "Accessible attic framing, dimensions, spacing, decking, and access limitations."
-          },
-          {
-            "label": "Electrical",
-            "detail": "Meter, service equipment, panels, ratings, labels, grounding, and surrounding space."
-          },
-          {
-            "label": "Equipment exposure",
-            "detail": "Candidate inverter, disconnect, and battery areas with sun, wind, wall, and route context."
+            "label": "LP&L Interconnection Agreement Resources",
+            "href": "https://www.mylubbock.us/242/ResourcesForms",
+            "note": "City utility resources, including commercial and residential interconnection documents."
           }
         ]
       },
       {
+        "type": "callout",
+        "kicker": "Local workflow matters",
+        "heading": "In Lubbock, the permit and interconnection record should agree with the field site",
+        "body": "The City's current residential solar guidance states that LP&L and SPEC require an interconnection agreement for applicable addresses and that the renewable-generation installation goes through permitting and final inspection. A survey that misreads the service provider, panel configuration, roof area, or equipment location can create unnecessary revisions in both workflows."
+      },
+      {
         "type": "prose",
-        "kicker": "Utility context",
-        "heading": "Lubbock's electric market has changed, so address-level verification matters",
+        "kicker": "South Plains field reality",
+        "heading": "Open exposure changes what the designer needs to see",
         "paragraphs": [
-          "Lubbock's retail-electric environment has evolved in recent years. That makes it especially important for project teams to verify the current serving provider, transmission/distribution utility, and interconnection process for the service address rather than rely on older location-page language.",
-          "We keep the survey focused on durable site facts: meter identifiers, service configuration, roof and structural data, and equipment relationships."
+          "Lubbock's open South Plains environment often produces less tree obstruction than East Texas or older parts of DFW, but that does not make the roof survey simple. Roof material, visible weathering, attachment areas, penetrations, pitch, and framing still need to be documented clearly for engineering review.",
+          "Exterior equipment can also be highly exposed. Candidate inverter or battery walls should be photographed with enough context to show wall orientation, shade, nearby doors and windows, utilities, service equipment, and access. The design team can then apply current manufacturer and code requirements to the actual location.",
+          "The survey should avoid turning climate observations into engineering claims. We can document open exposure, visible roof condition, structural measurements, and equipment surroundings. Wind design, attachment engineering, and final equipment suitability remain with the qualified professionals and current code."
+        ]
+      },
+      {
+        "type": "checklist",
+        "kicker": "Permit-ready field evidence",
+        "heading": "What we prioritize on a Lubbock solar site survey",
+        "items": [
+          {
+            "title": "Service provider and electrical equipment",
+            "body": "Meter identifiers, service equipment, panel ratings and labels, breaker configuration, grounding context, and enough wide-angle photography to understand the full service arrangement."
+          },
+          {
+            "title": "Roof plan inputs",
+            "body": "Plane dimensions, pitch, roof type, ridges, valleys, penetrations, visible condition, and the relationship between usable roof areas and major obstructions."
+          },
+          {
+            "title": "Structural information",
+            "body": "Accessible rafters or trusses, spacing, member dimensions, framing direction, decking, and notes when an addition or separate attic zone differs from the main house."
+          },
+          {
+            "title": "Solar and storage locations",
+            "body": "Candidate inverter, disconnect, battery, or gateway areas with wall measurements, nearby openings and utilities, sun exposure, and practical access."
+          }
+        ]
+      },
+      {
+        "type": "steps",
+        "kicker": "Lubbock project workflow",
+        "heading": "How we build a survey that supports the next submission",
+        "steps": [
+          {
+            "title": "Confirm the serving address",
+            "body": "The project address and available utility information are reviewed before field work so the surveyor knows which service identifiers and equipment relationships are especially important."
+          },
+          {
+            "title": "Capture the roof and service together",
+            "body": "Roof measurements, framing evidence, meter information, panel details, and proposed equipment areas are documented as one system rather than separate photo groups."
+          },
+          {
+            "title": "Flag permit-sensitive gaps",
+            "body": "Unreadable labels, inaccessible attic zones, unclear roof sections, or equipment-location conflicts are called out so they can be resolved before the permit package is finalized."
+          },
+          {
+            "title": "Hand off to design",
+            "body": "The organized record gives CAD, engineering, permitting, and interconnection teams a common set of verified site facts."
+          }
         ]
       },
       {
         "type": "nearby",
-        "kicker": "West Texas",
-        "heading": "Related western Texas survey pages",
-        "intro": "Lubbock projects often sit in larger West Texas EPC pipelines.",
+        "kicker": "West Texas coverage",
+        "heading": "Related solar site survey markets",
+        "intro": "Lubbock projects can be managed alongside other western Texas work, but the local permit and utility context should not be copied between cities.",
         "links": [
           {
             "slug": "amarillo",
             "label": "Amarillo",
-            "note": "Panhandle roof, structural, and service documentation."
+            "note": "Panhandle surveys with structural and open-exposure field documentation."
           },
           {
             "slug": "midland",
             "label": "Midland",
-            "note": "Permian Basin field surveys and equipment-context capture."
+            "note": "Permian Basin surveys for service equipment, dust exposure, larger lots, and equipment routes."
           },
           {
             "slug": "abilene",
             "label": "Abilene",
-            "note": "Big Country residential survey coordination."
+            "note": "Big Country residential surveys for roof, attic, electrical, and storage design."
           }
         ]
       }
     ],
     "faqs": [
       {
-        "question": "Do you make wind-load engineering conclusions on a Lubbock survey?",
-        "answer": "No. We document field facts such as roof pitch, framing, spacing, decking, and visible condition. Final engineering belongs to the licensed engineer and current code."
+        "question": "Does Lubbock have a dedicated solar-panel permit application?",
+        "answer": "Yes. The City of Lubbock currently publishes a residential solar-panel permit application through Building Safety. Project teams should use the latest version when preparing the permit."
       },
       {
-        "question": "Can you help verify the current utility serving a Lubbock property?",
-        "answer": "We capture meter and service identifiers. Your project team should confirm the current provider and interconnection requirements for the exact address."
+        "question": "Does the City require an interconnection agreement for LP&L or SPEC projects?",
+        "answer": "Current City of Lubbock residential permitting guidance states that LP&L and South Plains Electric Cooperative require an interconnection agreement for applicable addresses before the renewable-generation project is completed through the local process."
       },
       {
-        "question": "Do you document roof condition after hail or storms?",
-        "answer": "Visible roof condition can be captured in overview and detail photos. The survey is not an insurance or roofing damage assessment unless separately scoped."
+        "question": "Can the survey identify which electrical provider serves the property?",
+        "answer": "We document meter and service identifiers so the project team can verify the current provider for the exact address. Final provider confirmation should be completed before submission."
       },
       {
-        "question": "Can you document battery locations?",
-        "answer": "Yes. We can capture candidate walls, nearby openings and utilities, service relationships, dimensions, and routing context."
+        "question": "Do you document battery and backup-power locations?",
+        "answer": "Yes. We can capture wall dimensions, openings, utilities, service relationships, shade and exposure, backup equipment, and likely routing paths."
       },
       {
-        "question": "Do you cover Amarillo and Midland?",
-        "answer": "Yes. Both have dedicated city pages and can be coordinated in wider West Texas pipelines."
+        "question": "Can you make structural or wind conclusions from the survey?",
+        "answer": "No. We document observable roof and framing facts. Final structural capacity, attachment design, and wind engineering belong to the qualified engineer and current adopted standards."
       }
     ]
   },
