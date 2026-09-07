@@ -4,6 +4,8 @@ export type CitySection =
       kicker?: string;
       heading: string;
       paragraphs: string[];
+      bullets?: string[];
+      afterParagraphs?: string[];
     }
   | {
       type: 'cards';

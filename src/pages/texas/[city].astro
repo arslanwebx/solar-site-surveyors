@@ -61,7 +61,7 @@ const faqSchema = {
     name: faq.question,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: faq.answer
+      text: faq.answer.replace(/<[^>]*>?/gm, '')
     }
   }))
 };
@@ -85,7 +85,7 @@ const sectionClass = (section: CitySection, index: number) => {
       <Breadcrumbs items={breadcrumbs} isDark={true} />
       <h1 class="page-title">{page.h1}</h1>
       <div class="hero-copy">
-        {page.intro.map((paragraph) => <p>{paragraph}</p>)}
+        {page.intro.map((paragraph) => <p set:html={paragraph} />)}
       </div>
       <div class="hero-actions">
         <a href={dispatchWhatsApp} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
@@ -104,7 +104,15 @@ const sectionClass = (section: CitySection, index: number) => {
 
         {section.type === 'prose' && (
           <div class="editorial-prose">
-            {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            {section.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
+            {section.bullets && (
+              <ul class="editorial-bullets">
+                {section.bullets.map((bullet) => <li set:html={bullet} />)}
+              </ul>
+            )}
+            {section.afterParagraphs && (
+              section.afterParagraphs.map((paragraph) => <p set:html={paragraph} />)
+            )}
           </div>
         )}
 
@@ -201,7 +209,7 @@ const sectionClass = (section: CitySection, index: number) => {
         {page.faqs.map((faq) => (
           <details class="faq-item">
             <summary class="faq-question">{faq.question}</summary>
-            <div class="faq-answer"><p>{faq.answer}</p></div>
+            <div class="faq-answer"><p set:html={faq.answer} /></div>
           </details>
         ))}
       </div>
@@ -316,6 +324,42 @@ const sectionClass = (section: CitySection, index: number) => {
 
   .editorial-prose p {
     margin-bottom: var(--space-5);
+  }
+
+  .editorial-prose ul.editorial-bullets {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: var(--space-4) 0 var(--space-5);
+  }
+
+  .editorial-prose ul.editorial-bullets li {
+    margin-bottom: var(--space-2);
+    line-height: 1.65;
+    font-size: 1.02rem;
+  }
+
+  .editorial-prose a,
+  .faq-answer a {
+    color: #0F4C81;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .editorial-prose a:hover,
+  .faq-answer a:hover {
+    color: var(--accent-gold-hover);
+  }
+
+  .hero-copy a {
+    color: var(--accent-gold);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .hero-copy a:hover {
+    color: #ffffff;
   }
 
   .editorial-prose p:last-child {

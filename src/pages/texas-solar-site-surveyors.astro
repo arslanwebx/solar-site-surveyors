@@ -33,8 +33,8 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
 ---
 
 <BaseLayout 
-  title="Texas Solar Site Surveyors | 52 City Service Pages"
-  description="Solar site survey coordination for Texas EPCs and installers, with 52 dedicated city pages covering roof, electrical, structural, battery, and field documentation needs."
+  title={`Texas Solar Site Surveyors | ${texasCityAuthorityPages.length} City Service Pages`}
+  description={`Solar site survey coordination for Texas EPCs and installers, with ${texasCityAuthorityPages.length} dedicated city pages covering roof, electrical, structural, battery, and field documentation needs.`}
   activeNav="service-areas"
   canonical="/texas-solar-site-surveyors/"
 >
@@ -47,7 +47,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
 
         <h1 class="page-title">Texas Solar Site Survey Coverage & City Directory</h1>
         <p class="lead" style="color: #9FB3C8; max-width: 924px;">
-          Texas solar projects do not share one utility, one permitting path, or one housing type. This directory connects EPCs and installers with 52 dedicated city pages plus our 500 priority Texas city markets for broader survey coordination.
+          Texas solar projects do not share one utility, one permitting path, or one housing type. This directory connects EPCs and installers with {texasCityAuthorityPages.length} dedicated city pages plus our 500 priority Texas city markets for broader survey coordination.
         </p>
       </div>
     </div>
@@ -60,7 +60,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
         <div class="kicker">Top 500 Texas Cities</div>
         <h2>Texas Solar Site Survey City Directory</h2>
         <p class="lead">
-          Browse our 500 priority Texas city markets. Start with one of the 52 published city guides for detailed local survey context, or search the directory to discuss coverage for another project address.
+          Browse our 500 priority Texas city markets. Start with one of the {texasCityAuthorityPages.length} published city guides for detailed local survey context, or search the directory to discuss coverage for another project address.
         </p>
 
         <!-- Live Instant Search Bar -->
