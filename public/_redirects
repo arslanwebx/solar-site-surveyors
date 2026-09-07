@@ -1,7 +1,2 @@
-# Consolidate every protocol/host variant on the HTTPS apex domain.
-http://solarsitesurveyors.com/* https://solarsitesurveyors.com/:splat 301!
-http://www.solarsitesurveyors.com/* https://solarsitesurveyors.com/:splat 301!
-https://www.solarsitesurveyors.com/* https://solarsitesurveyors.com/:splat 301!
-
-/texas /texas-solar-site-surveyors 301
-/texas/ /texas-solar-site-surveyors 301
+/texas /texas-solar-site-surveyors/ 301
+/texas/ /texas-solar-site-surveyors/ 301
