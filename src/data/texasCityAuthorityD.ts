@@ -336,7 +336,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
     "slug": "plano",
     "name": "Plano",
     "title": "Solar Site Surveyors in Plano, TX",
-    "description": "Solar site surveys in Plano, TX for EPCs and installers. Roof, attic, electrical, battery, mature-tree, Oncor-area, and permit-ready field documentation.",
+    "description": "Solar site surveys in Plano, TX for EPCs and installers. Roof, attic, electrical, battery, mature-tree, Oncor-area, and permit-ready field data.",
     "h1": "Solar Site Surveyors in Plano, TX",
     "hubSummary": "Plano solar site surveys for established large homes, mature tree cover, roof and attic verification, electrical service, battery retrofits, and Oncor-area project data.",
     "intro": [
@@ -821,7 +821,7 @@ export const texasCityAuthorityPagesD: TexasCityAuthorityPage[] = [
     "slug": "san-antonio",
     "name": "San Antonio",
     "title": "Solar Site Surveyors in San Antonio, TX",
-    "description": "Solar site surveys in San Antonio, TX for EPCs and installers. CPS Energy, roof, attic, electrical, one-line, site-plan, battery, and permit-ready field documentation.",
+    "description": "Solar site surveys in San Antonio, TX for EPCs and installers. CPS Energy, roof, attic, electrical, one-line, site-plan, battery, and permit field data.",
     "h1": "Solar Site Surveyors in San Antonio, TX",
     "hubSummary": "San Antonio solar site surveys aligned with CPS Energy distributed-generation inputs, including service equipment, roof and attic data, one-line, site-plan, and storage documentation.",
     "intro": [
