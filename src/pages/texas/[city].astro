@@ -197,6 +197,23 @@ const sectionClass = (section: CitySection, index: number) => {
             </div>
           </>
         )}
+
+        {section.type === 'resources' && (
+          <>
+            {section.intro && <p class="section-intro">{section.intro}</p>}
+            <div class="resource-list">
+              {section.links.map((link) => (
+                <a href={link.href} target="_blank" rel="noopener noreferrer" class="resource-link">
+                  <div>
+                    <strong>{link.label}</strong>
+                    <span>{link.note}</span>
+                  </div>
+                  <span class="resource-arrow" aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
   ))}
@@ -470,6 +487,52 @@ const sectionClass = (section: CitySection, index: number) => {
 
   .nearby-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .resource-list {
+    display: grid;
+    gap: var(--space-3);
+    max-width: 920px;
+  }
+
+  .resource-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+    padding: var(--space-5) var(--space-6);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    background: #fff;
+    text-decoration: none;
+  }
+
+  .resource-link:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-1px);
+  }
+
+  .resource-link div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .resource-link strong {
+    color: var(--primary);
+    font-size: 0.98rem;
+  }
+
+  .resource-link span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .resource-arrow {
+    flex: 0 0 auto;
+    color: var(--accent-gold) !important;
+    font-size: 1.1rem !important;
   }
 
   .nearby-card {
