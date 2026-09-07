@@ -5,124 +5,160 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
     "slug": "dallas",
     "name": "Dallas",
     "title": "Solar Site Surveyors in Dallas, TX",
-    "description": "Solar site surveys in Dallas, Texas for EPCs, installers, and engineering teams. Roof, attic, electrical, battery, and property documentation for DFW solar design.",
+    "description": "Solar site surveys in Dallas, TX for EPCs and installers. Roof, attic, electrical, Oncor, battery, permit, and property documentation for residential solar design.",
     "h1": "Solar Site Surveyors in Dallas, TX",
-    "hubSummary": "Dallas field surveys built for multi-jurisdiction DFW pipelines, with detailed roof, electrical, structural, equipment-location, and property documentation.",
+    "hubSummary": "Dallas solar site surveys for mixed-age housing, Oncor-area interconnection inputs, roof and attic verification, electrical service, storage, and permit-ready field data.",
     "intro": [
-      "Dallas solar projects often move through remote sales, design, engineering, permitting, and installation teams that may never stand at the property. The site survey is where those teams either gain a reliable record of the home or inherit a chain of assumptions.",
-      "Our Dallas surveys are built around the handoff. We capture roof geometry, attic framing where accessible, meter and service equipment, panel information, equipment areas, access conditions, and route context so the property can be understood without a second visit."
+      "Dallas solar projects often pass through sales, design, engineering, permitting, utility review, and installation teams that are working from different offices. The site survey is where those teams either receive one reliable version of the property or inherit assumptions that create revisions later.",
+      "Our Dallas surveys are built as a technical handoff, not a photo count. We document roof geometry, accessible structure, meter and service equipment, panel information, equipment walls, battery options, access conditions, and route context so the property can be understood without another person standing in the driveway."
     ],
     "sections": [
       {
-        "type": "cards",
-        "kicker": "Dallas project reality",
-        "heading": "Why DFW scale makes accurate site records more valuable",
-        "intro": "A Dallas address can sit inside a much larger operating pipeline, but each property still has its own design constraints.",
-        "cards": [
+        "type": "resources",
+        "kicker": "Current project references",
+        "heading": "Dallas and Oncor resources to verify before submission",
+        "intro": "Dallas permitting and utility requirements should be checked from current official sources. These references are more useful than carrying an old checklist forward from another DFW project.",
+        "links": [
           {
-            "title": "Mixed housing ages",
-            "body": "Older neighborhoods can have additions, panel changes, mature trees, and roof alterations, while newer subdivisions often have complex roof geometry and tightly planned equipment walls."
+            "label": "City of Dallas Development Forms and Checklists",
+            "href": "https://dallascityhall.com/departments/sustainabledevelopment/Pages/formsdept.aspx",
+            "note": "Official City of Dallas forms page, including solar and photovoltaic checklist resources."
           },
           {
-            "title": "Multiple AHJ workflows",
-            "body": "DFW EPCs routinely cross city lines. A clean survey lets the permitting team apply the right current jurisdictional requirements without carrying physical assumptions from one city to another."
+            "label": "Oncor Solar Resources for Installers",
+            "href": "https://www.oncor.com/content/oncorwww/us/en/home/smart-energy/renewables-solar-and-more/for-installers.html",
+            "note": "Current installer portal, interconnection guidance, and distributed-generation requirements."
           },
           {
-            "title": "Remote production teams",
-            "body": "When design is centralized or outsourced, photo order and context matter. A closeup of a panel label is useful only when the team also knows where that panel sits in relation to the meter, roof, and proposed equipment."
+            "label": "Oncor Residential and Small Commercial Solar",
+            "href": "https://www.oncor.com/content/oncorwww/us/en/home/smart-energy/renewables-solar-and-more/residential-small-commercial-thinking-about-solar.html",
+            "note": "Official Oncor overview of the interconnection process and meter handling."
           }
         ]
       },
       {
-        "type": "checklist",
-        "kicker": "Field package",
-        "heading": "Dallas site data we prioritize before design starts",
-        "items": [
+        "type": "cards",
+        "kicker": "Dallas property types",
+        "heading": "The field priority changes across Dallas neighborhoods",
+        "cards": [
           {
-            "title": "Roof and array space",
-            "body": "Plane dimensions, pitch, roof type, visible condition, ridges, valleys, eaves, and penetrations tied to usable roof areas."
+            "title": "Older urban housing",
+            "body": "Established neighborhoods can include additions, legacy panels, mature trees, changed roof sections, detached garages, and service equipment that no longer matches original construction. Existing-condition verification becomes the core of the visit."
           },
           {
-            "title": "Structure",
-            "body": "Accessible framing type, member dimensions, spacing, decking, and clear photos that can be associated with the correct roof zones."
+            "title": "Newer suburban-style development",
+            "body": "Modern electrical service can reduce one source of uncertainty while introducing another: large segmented roofs, multiple attic zones, storage-heavy garage walls, and limited uninterrupted array space."
           },
           {
-            "title": "Electrical service",
-            "body": "Meter, main service equipment, panels, ratings, directories, grounding context, and available equipment space."
+            "title": "Commercial-adjacent and mixed-use sites",
+            "body": "Some Dallas projects need more attention to access, flat or low-slope roof areas, larger electrical equipment, tenant coordination, or site logistics. The field scope should be set before dispatch rather than improvised onsite."
+          }
+        ]
+      },
+      {
+        "type": "prose",
+        "kicker": "Oncor-area accuracy",
+        "heading": "A Dallas address should not be treated as proof of the serving utility",
+        "paragraphs": [
+          "Oncor serves many Dallas-area properties and maintains an established distributed-generation interconnection process, but the project team should still confirm the serving utility for the exact address. The survey supports that verification by capturing readable meter identifiers, service equipment, and the wider electrical arrangement.",
+          "For Oncor projects, the installer submits technical project information through the utility process and receives permission to operate after the required review and agreement steps. A field package that clearly shows the meter, service equipment, panel ratings, proposed solar hardware, and route context gives the electrical designer a cleaner starting point.",
+          "The same discipline applies to permitting. The City of Dallas publishes solar and photovoltaic checklist resources, but the plan set still has to match the actual building. Roof, structural, and electrical information should be verified before those documents are finalized."
+        ]
+      },
+      {
+        "type": "table",
+        "kicker": "Design inputs",
+        "heading": "What a Dallas engineering team should be able to read from the survey",
+        "rows": [
+          {
+            "label": "Roof record",
+            "detail": "Plane dimensions, pitch, roof material, obstructions, visible condition, tree context, and enough orientation to place each array area correctly."
           },
           {
-            "title": "Installation path",
-            "body": "Exterior elevations, possible conduit routes, fences, gates, garages, battery walls, and access limitations."
+            "label": "Structural record",
+            "detail": "Accessible framing type, member dimensions, spacing, decking, attic-zone relationships, and clear notes where access is blocked."
+          },
+          {
+            "label": "Electrical record",
+            "detail": "Meter, service equipment, main panel, ratings, labels, breaker configuration, grounding context, and physical relationships among components."
+          },
+          {
+            "label": "Storage record",
+            "detail": "Candidate battery, gateway, disconnect, or backup-load areas with wall dimensions, nearby openings, utilities, and route options."
+          },
+          {
+            "label": "Installation record",
+            "detail": "Exterior elevations, fences, side-yard access, garages, detached structures, likely conduit routes, and constraints that installers need to understand."
           }
         ]
       },
       {
         "type": "steps",
-        "kicker": "QA before release",
-        "heading": "How a Dallas field package moves from address to design",
+        "kicker": "Remote-team workflow",
+        "heading": "How we reduce Dallas design clarification loops",
         "steps": [
           {
-            "title": "Project intake",
-            "body": "We review the service address, system scope, equipment assumptions, and your required field checklist."
+            "title": "Scope the real project",
+            "body": "We review the address, system concept, storage requirements, available sales notes, and the EPC field checklist before the visit."
           },
           {
-            "title": "On-site capture",
-            "body": "The surveyor documents the property in a logical sequence instead of returning an unordered image dump."
+            "title": "Document the property as a system",
+            "body": "Roof, structure, service, equipment walls, and routes are photographed in a sequence that preserves their relationship rather than as isolated details."
           },
           {
-            "title": "Completeness review",
-            "body": "Obvious missing labels, unclear equipment context, or scope gaps are checked before the package is released when possible."
+            "title": "Check the unknowns",
+            "body": "Unreadable labels, inaccessible attic zones, unusual additions, possible roof concerns, or route conflicts are called out before the package is released."
           },
           {
-            "title": "Design handoff",
-            "body": "Your team receives a record intended to support layout, electrical design, engineering, permitting, and install planning."
+            "title": "Hand off cleanly",
+            "body": "The final field record is organized so CAD, engineering, permitting, interconnection, and install teams can reference the same verified conditions."
           }
         ]
       },
       {
         "type": "nearby",
         "kicker": "DFW coverage",
-        "heading": "Dedicated survey pages around Dallas",
-        "intro": "Dallas projects are commonly dispatched with surrounding DFW cities, each with its own field and jurisdictional context.",
+        "heading": "Related Dallas-area solar site survey pages",
+        "intro": "Nearby cities can share field logistics while still having separate utilities, permit processes, and housing conditions.",
         "links": [
           {
             "slug": "garland",
             "label": "Garland",
-            "note": "Municipal-utility and East Dallas County project documentation."
+            "note": "Established East Dallas County housing and municipal-utility context."
           },
           {
             "slug": "irving",
             "label": "Irving",
-            "note": "Central DFW field surveys and equipment-location planning."
+            "note": "Central DFW surveys with SolarAPP+ and equipment-location considerations."
           },
           {
             "slug": "richardson",
             "label": "Richardson",
-            "note": "Established North Dallas housing, tree cover, and service verification."
+            "note": "North Dallas County surveys for mature tree cover, older services, and roof modifications."
           }
         ]
       }
     ],
     "faqs": [
       {
-        "question": "What does a Dallas solar site survey include?",
-        "answer": "Depending on your scope, it can include roof geometry and obstructions, attic framing, meter and service equipment, panel ratings and labels, battery or inverter locations, exterior routes, and an organized photo package."
+        "question": "What is included in a Dallas solar site survey?",
+        "answer": "A typical residential scope can include roof geometry and obstructions, attic framing where safely accessible, meter and service equipment, panel labels and ratings, battery or inverter locations, exterior routes, access conditions, and an organized photo package."
       },
       {
-        "question": "Can you use our EPC-specific survey checklist?",
-        "answer": "Yes. Send your required photos, measurements, forms, naming conventions, and equipment assumptions before dispatch so the visit fits your workflow."
+        "question": "Do you assume every Dallas project is in Oncor territory?",
+        "answer": "No. Oncor serves many Dallas-area projects, but the exact serving utility should be verified by address. We capture meter and service identifiers to support that check."
       },
       {
-        "question": "Do you identify the correct Dallas-area permitting jurisdiction?",
-        "answer": "The exact service address should be used by your permitting team to confirm the current AHJ and requirements. We document the physical site so those rules are applied to verified conditions."
+        "question": "Can the survey support City of Dallas permit preparation?",
+        "answer": "Yes. The survey provides roof, structural, electrical, and site information the design team can use when preparing plans and current permit documents. The City of Dallas checklist should still be checked at submission time."
       },
       {
-        "question": "Can you handle solar-plus-storage surveys?",
-        "answer": "Yes. Battery scopes can include wall dimensions, nearby openings and utilities, existing service equipment, possible gateway or disconnect areas, and route context."
+        "question": "Can you survey solar-plus-storage projects in Dallas?",
+        "answer": "Yes. Battery scopes can include candidate wall dimensions, nearby openings and utilities, service relationships, backup equipment, and practical routing context."
       },
       {
-        "question": "Do you cover the wider DFW Metroplex?",
-        "answer": "Yes. Dedicated pages cover Fort Worth, Arlington, Plano, Frisco, McKinney, Garland, Irving, and many other DFW cities."
+        "question": "What if the home has additions or multiple attic zones?",
+        "answer": "We document those areas separately where accessible so the engineering team does not assume one framing condition applies to every roof plane."
       }
     ]
   },
@@ -455,123 +491,156 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
     "slug": "fort-worth",
     "name": "Fort Worth",
     "title": "Solar Site Surveyors in Fort Worth, TX",
-    "description": "Solar site surveys in Fort Worth, Texas for EPCs and installers. Roof, attic, electrical, battery, and property field documentation across Tarrant County and western DFW.",
+    "description": "Solar site surveys in Fort Worth, TX for EPCs and installers. Roof, attic, electrical, battery, Oncor-area, large-lot, and installation-access field documentation.",
     "h1": "Solar Site Surveyors in Fort Worth, TX",
-    "hubSummary": "Western DFW field surveys for fast-growth subdivisions, established neighborhoods, large-lot properties, roof complexity, and electrical design handoffs.",
+    "hubSummary": "Fort Worth solar site surveys for older neighborhoods, fast-growth suburbs, larger lots, roof and attic verification, electrical service, and storage-ready installation planning.",
     "intro": [
-      "Fort Worth covers a broad range of residential site conditions, from older central neighborhoods to new master-planned subdivisions and larger properties toward the western edge of the metro. That variety makes a citywide template especially unreliable.",
-      "Our Fort Worth surveys are property-first. We document the specific roof, attic, electrical service, equipment walls, route options, and access conditions the design team needs for that address."
+      "Fort Worth is one of the Texas markets where the property type can change the survey more than the city name. A compact older home near the urban core, a new subdivision in a growth corridor, and a larger edge-of-metro property can all require different field priorities even when the proposed system size is similar.",
+      "We build the survey around those differences. The goal is to give the remote design team a reliable map of the roof, structure, electrical service, equipment areas, access, and route options before the project becomes a permit set."
     ],
     "sections": [
       {
-        "type": "cards",
-        "kicker": "Western DFW",
-        "heading": "Three Fort Worth project types that demand different field priorities",
-        "cards": [
-          {
-            "title": "Established neighborhoods",
-            "body": "Older service equipment, additions, mature trees, detached garages, and mixed roof ages can make electrical and structural verification more important than the initial satellite layout."
-          },
-          {
-            "title": "New-growth suburbs",
-            "body": "Newer homes often have modern service but more complex hips, valleys, multiple attic zones, and limited garage-wall space for storage equipment."
-          },
-          {
-            "title": "Larger edge-of-metro lots",
-            "body": "Longer conduit or trench paths, outbuildings, gates, and detached structures require property-wide context that a standard roof-only survey misses."
-          }
+        "type": "prose",
+        "kicker": "Western DFW field reality",
+        "heading": "Fort Worth projects need an adaptable survey, not one fixed photo script",
+        "paragraphs": [
+          "Established neighborhoods can hide the most important design facts at ground level. Panels may have been upgraded, roofs replaced, additions built, garages converted, or service equipment relocated. Aerial imagery does not show those changes clearly enough for electrical or structural design.",
+          "Newer Fort Worth suburbs create a different problem. Electrical equipment may be modern, but rooflines can be highly articulated, with many hips, valleys, dormers, levels, and attic zones. The survey needs enough geometry and framing context to keep a large roof from becoming a misleadingly simple layout.",
+          "Larger properties toward the edge of the metro can add detached structures, gates, long exterior runs, side-loaded garages, workshops, or possible ground areas. Whole-property documentation becomes more valuable because routing and access can affect installation cost and constructability."
         ]
       },
       {
         "type": "steps",
-        "kicker": "Field-to-design workflow",
-        "heading": "How we keep Fort Worth surveys useful after the technician leaves",
+        "kicker": "Property-first workflow",
+        "heading": "How a Fort Worth survey changes with the job",
         "steps": [
           {
-            "title": "Scope around the project",
-            "body": "We identify whether the job is solar-only, storage, service-upgrade-sensitive, detached structure, or another custom scope."
+            "title": "Identify the project type",
+            "body": "Solar-only, storage, detached structure, larger-lot, service-sensitive, or commercial-adjacent scope is confirmed before the visit so the field priorities are clear."
           },
           {
-            "title": "Document relationships",
-            "body": "Photos show not only labels and measurements but how roof, meter, panel, equipment wall, and access points relate to one another."
+            "title": "Capture the highest-risk unknowns",
+            "body": "Older homes receive more attention on electrical history and modifications, while newer homes often need deeper roof, attic-zone, and battery-wall documentation."
           },
           {
-            "title": "Record limitations",
-            "body": "Blocked attic access, unsafe roof areas, locked equipment, or homeowner restrictions are stated clearly."
+            "title": "Show installation logistics",
+            "body": "Gates, fences, garages, equipment walls, side yards, ladder access, long routes, and detached structures are documented with the technical measurements."
           },
           {
-            "title": "Release organized data",
-            "body": "The final package is structured for the remote design and engineering teams that must use it."
+            "title": "Release one coherent record",
+            "body": "The final package is organized so the designer understands how the roof, structure, electrical service, and equipment paths relate to each other."
+          }
+        ]
+      },
+      {
+        "type": "resources",
+        "kicker": "Official project references",
+        "heading": "Fort Worth permit and Oncor resources",
+        "intro": "Requirements should be checked from current official sources at the time of design and submission.",
+        "links": [
+          {
+            "label": "City of Fort Worth Permits",
+            "href": "https://www.fortworthtexas.gov/departments/development-services/permits",
+            "note": "Official Development Services permit information and online permit tools."
+          },
+          {
+            "label": "Fort Worth Residential Building Permit Guidance",
+            "href": "https://www.fortworthtexas.gov/departments/development-services/permits/residential-building-permit",
+            "note": "City guidance on residential permit submittal requirements and plan documentation."
+          },
+          {
+            "label": "Oncor Solar Resources for Installers",
+            "href": "https://www.oncor.com/content/oncorwww/us/en/home/smart-energy/renewables-solar-and-more/for-installers.html",
+            "note": "Current Oncor distributed-generation and interconnection resources."
           }
         ]
       },
       {
         "type": "checklist",
-        "kicker": "Core scope",
-        "heading": "Fort Worth site survey essentials",
+        "kicker": "Field package",
+        "heading": "Fort Worth survey details that reduce redesign risk",
         "items": [
           {
-            "title": "Roof geometry and condition",
-            "body": "Pitch, plane measurements, material, obstructions, and visible condition."
+            "title": "Roof and visible condition",
+            "body": "Plane dimensions, pitch, material, roof transitions, obstructions, visible wear, and enough context to separate main-roof areas from additions or secondary structures."
           },
           {
-            "title": "Attic structure",
-            "body": "Framing configuration, member dimensions, spacing, decking, and access notes where safe."
+            "title": "Attic and framing",
+            "body": "Accessible rafters or trusses, spacing, member dimensions, decking, framing direction, and clear notes when different attic zones serve different roof planes."
           },
           {
             "title": "Electrical service",
-            "body": "Meter, panels, labels, ratings, grounding context, and available equipment area."
+            "body": "Meter, main equipment, panel ratings, breaker configuration, grounding context, service identifiers, and wide views showing the full equipment wall."
           },
           {
-            "title": "Property logistics",
-            "body": "Equipment routes, gates, fences, garages, detached structures, and installation-access considerations."
+            "title": "Storage and routing",
+            "body": "Candidate battery or inverter walls, doors, windows, utilities, garage conditions, long runs, detached structures, fences, and installation access."
+          }
+        ]
+      },
+      {
+        "type": "cards",
+        "kicker": "Design judgment",
+        "heading": "Where Fort Worth surveys usually earn their keep",
+        "cards": [
+          {
+            "title": "Legacy conditions on older homes",
+            "body": "The survey verifies the current service, roof, and visible modifications so the design team does not rely on the construction year or homeowner memory."
+          },
+          {
+            "title": "Roof complexity on newer homes",
+            "body": "Detailed plane identification and attic correspondence helps prevent layouts that look possible in imagery but fail once setbacks, obstructions, and framing are applied."
+          },
+          {
+            "title": "Longer routes on larger properties",
+            "body": "Property-wide photos and measurements help designers compare practical conduit, trench, or equipment paths before crews arrive."
           }
         ]
       },
       {
         "type": "nearby",
-        "kicker": "Tarrant and Mid-Cities",
-        "heading": "Nearby dedicated survey pages",
-        "intro": "Fort Worth project pipelines frequently include these adjacent markets.",
+        "kicker": "Tarrant County network",
+        "heading": "Related solar site survey markets near Fort Worth",
+        "intro": "These cities can be routed efficiently with Fort Worth while keeping their own address-level utility and permit context.",
         "links": [
           {
             "slug": "arlington",
             "label": "Arlington",
-            "note": "Central Tarrant County and Mid-Cities survey coordination."
+            "note": "Mid-Cities surveys for mixed-age housing and dense suburban access."
           },
           {
             "slug": "mansfield",
             "label": "Mansfield",
-            "note": "South DFW suburban and larger-lot field surveys."
+            "note": "South DFW surveys for newer subdivisions, larger lots, and storage planning."
           },
           {
             "slug": "grand-prairie",
             "label": "Grand Prairie",
-            "note": "Cross-metro residential project documentation."
+            "note": "Cross-metro field documentation and service-address verification."
           }
         ]
       }
     ],
     "faqs": [
       {
-        "question": "Do you cover projects outside Fort Worth city limits?",
-        "answer": "Coverage can extend across surrounding Tarrant County and western DFW depending on the exact address and surveyor availability."
+        "question": "Do you cover Fort Worth properties outside dense urban neighborhoods?",
+        "answer": "Yes. Larger lots, detached structures, workshops, long routes, gates, and other edge-of-metro conditions can be included when identified in the scope before dispatch."
       },
       {
-        "question": "Can you document detached garages or shops?",
-        "answer": "Yes. Include all proposed array or equipment locations at intake so detached structures and their electrical relationships are included in the survey scope."
+        "question": "Can you document older electrical services?",
+        "answer": "Yes. We capture readable ratings, labels, breaker configuration, grounding context, service relationships, and surrounding equipment space without assuming an upgrade is required."
       },
       {
-        "question": "Do Fort Worth surveys include attic measurements?",
-        "answer": "They can. Where access is safe and available, we document framing type, member dimensions, spacing, decking, and contextual photos for engineering."
+        "question": "Do you verify Oncor service?",
+        "answer": "We capture meter and service identifiers so the EPC can confirm the current serving utility for the exact address. Many Fort Worth projects are in Oncor territory, but address-level verification is still important."
       },
       {
-        "question": "Can you survey a project that may need a main-panel upgrade?",
-        "answer": "Yes. We document the existing service and panel as found, including readable ratings, labels, breaker configuration, and surrounding equipment space. The upgrade decision belongs to the design/electrical team."
+        "question": "Can you survey battery-storage projects?",
+        "answer": "Yes. Candidate walls, dimensions, nearby openings and utilities, service equipment, garage conditions, and likely routing paths can be included."
       },
       {
-        "question": "Can you follow our install team's conduit preferences?",
-        "answer": "Yes. If you provide preferred routing rules or homeowner-approved equipment areas, the field visit can document those paths and constraints specifically."
+        "question": "What if a detached garage is part of the solar design?",
+        "answer": "Include it in the project scope before the visit. We can document the structure, roof, electrical relationship, access, and route between the detached building and the main service."
       }
     ]
   },
@@ -1021,109 +1090,143 @@ export const texasCityAuthorityPagesB: TexasCityAuthorityPage[] = [
     "slug": "houston",
     "name": "Houston",
     "title": "Solar Site Surveyors in Houston, TX",
-    "description": "Solar site surveys across Houston, Texas for EPCs and installers. Roof, attic, electrical, battery, and property documentation for Greater Houston solar projects.",
+    "description": "Solar site surveys in Houston, TX for EPCs and installers. Greater Houston roof, attic, electrical, CenterPoint, battery, access, and permit-ready field documentation.",
     "h1": "Solar Site Surveyors in Houston, TX",
-    "hubSummary": "Greater Houston survey coordination across dense urban neighborhoods and outer suburbs, with strong roof, electrical, storage, weather, and route documentation.",
+    "hubSummary": "Houston solar site surveys for varied metro housing, CenterPoint-area interconnection inputs, roof and attic verification, electrical service, storage, and practical installation routes.",
     "intro": [
-      "Houston is too large and too varied for a single set of neighborhood assumptions. A project inside the Loop can involve mature trees, older service equipment, tight side yards, and additions, while an outer-suburban project may have newer electrical equipment but a large multi-plane roof and battery-heavy scope.",
-      "Our Houston surveys are designed around the property rather than the ZIP code. We capture the roof, structure, electrical service, equipment walls, property access, and routes your remote teams need to turn field conditions into a buildable plan."
+      "Houston is too large and too varied for a solar site survey to rely on one metro-wide assumption. An older home near the urban core can have mature trees, additions, compact side yards, and legacy service equipment. A newer outer-suburban home may have a large roof and modern service but several attic zones, complex roof geometry, and a battery-heavy equipment plan.",
+      "Our Houston surveys are built around the address, not the ZIP code. We document the roof, structure, meter and service equipment, equipment walls, access, and route conditions so remote teams can design from what is actually present."
     ],
     "sections": [
       {
+        "type": "callout",
+        "kicker": "Greater Houston principle",
+        "heading": "The city name is not enough to determine the project workflow",
+        "body": "Greater Houston includes the City of Houston, neighboring incorporated cities, unincorporated areas, and different service-address conditions. Permitting authority and serving utility should be verified for the exact property. The survey's job is to make the physical site unambiguous so the correct current requirements can be applied."
+      },
+      {
         "type": "cards",
-        "kicker": "Greater Houston variety",
-        "heading": "Houston survey priorities change with the property type",
+        "kicker": "Metro-scale variety",
+        "heading": "Houston survey priorities change sharply by property type",
         "cards": [
           {
-            "title": "Older urban housing",
-            "body": "Additions, multiple roof ages, mature canopy, compact lots, and service-equipment changes can make structural and electrical verification the core of the visit."
+            "title": "Older urban neighborhoods",
+            "body": "Additions, re-roofs, mature canopy, compact lots, relocated service equipment, and difficult attic access make existing-condition verification the priority."
           },
           {
             "title": "Master-planned suburbs",
-            "body": "Large roofs can be heavily segmented, while garages may need to accommodate panels, batteries, gateways, doors, windows, and homeowner storage."
+            "body": "Large homes can have heavily segmented rooflines, multiple attic zones, crowded garage walls, and equipment routes that need to be resolved before storage design is finalized."
           },
           {
-            "title": "Coastal-transition areas",
-            "body": "Toward the southeast metro, visible exterior equipment and roof condition deserve clearer documentation because environmental exposure can be different from inland neighborhoods."
+            "title": "Southeast and coastal-transition properties",
+            "body": "Visible roof condition, outdoor enclosures, service equipment, wall exposure, and property access deserve stronger documentation where environmental exposure is more pronounced."
           }
         ]
       },
       {
-        "type": "checklist",
-        "kicker": "Remote design essentials",
+        "type": "resources",
+        "kicker": "Official Houston references",
+        "heading": "CenterPoint and City of Houston resources for current project requirements",
+        "intro": "These official sources help the design and operations team verify current permitting and interconnection steps instead of relying on an old Houston project.",
+        "links": [
+          {
+            "label": "CenterPoint Energy Solar Grid Interconnection",
+            "href": "https://www.centerpointenergy.com/en-us/residential/services/electric-utility/electric-technology/solar-energy/connecting-your-system-to-the-grid?sa=ho",
+            "note": "Current CenterPoint residential distributed-generation interconnection process for the Houston service area."
+          },
+          {
+            "label": "CenterPoint Distributed Generation FAQs",
+            "href": "https://www.centerpointenergy.com/en-us/Services/Pages/DGAP-FAQs.aspx?au=res&sa=HO",
+            "note": "Official answers on application approval, PTO, metering, and distributed-generation process."
+          },
+          {
+            "label": "City of Houston Permit Portal",
+            "href": "https://permits.houstontx.gov/",
+            "note": "Official City of Houston portal for permit applications, permit status, payments, and inspections."
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "kicker": "Remote design record",
         "heading": "What a Houston field package should make obvious",
-        "items": [
+        "rows": [
           {
-            "title": "Which roof planes are actually usable",
-            "body": "Dimensions, pitch, material, obstructions, visible condition, and tree context tied to each plane."
+            "label": "Usable roof areas",
+            "detail": "Plane dimensions, pitch, roof type, visible condition, obstructions, trees, roof transitions, and enough orientation to place each proposed array accurately."
           },
           {
-            "title": "How the service is configured",
-            "body": "Meter, main equipment, panel ratings, breakers, labels, grounding, and the physical relationship among electrical components."
+            "label": "Structural conditions",
+            "detail": "Accessible framing type, dimensions, spacing, decking, attic-zone relationships, and clear notes when access is limited."
           },
           {
-            "title": "What the attic tells engineering",
-            "body": "Framing type, dimensions, spacing, decking, and access limitations when safely observable."
+            "label": "Electrical service",
+            "detail": "Meter, service equipment, panels, ratings, labels, breaker configuration, grounding, and the physical arrangement of the service wall."
           },
           {
-            "title": "Where equipment can realistically go",
-            "body": "Battery, inverter, disconnect, gateway, or other areas with dimensions, openings, utilities, and route context."
+            "label": "Solar and storage equipment",
+            "detail": "Candidate inverter, disconnect, battery, gateway, or backup equipment areas with dimensions, openings, utilities, and access context."
+          },
+          {
+            "label": "Installation logistics",
+            "detail": "Fences, side yards, garages, pools, detached structures, rear equipment, possible conduit routes, and other conditions crews need to plan around."
           }
         ]
       },
       {
         "type": "prose",
-        "kicker": "Jurisdiction and utility discipline",
-        "heading": "Greater Houston projects should be verified by address, not by metro assumptions",
+        "kicker": "CenterPoint-area documentation",
+        "heading": "Why meter and service context matters on Houston projects",
         "paragraphs": [
-          "The Houston region includes the City of Houston, neighboring incorporated cities, unincorporated areas, and multiple utility-service contexts. That means permitting and interconnection rules should be confirmed against the actual service address.",
-          "The survey supports that process by documenting property facts cleanly. We avoid hard-coding claims such as a universal wind requirement, utility tariff, or permit workflow that may not apply to every Houston-area address."
+          "CenterPoint Energy manages distributed-generation interconnection for customers in its Houston electric service area, while retail electric providers handle billing arrangements. The survey does not need to explain the entire market structure, but it should give the interconnection team accurate service information to work from.",
+          "A meter closeup alone is not enough. Wide photos should show the meter, main service equipment, surrounding wall space, nearby gas equipment, openings, and the likely relationship to proposed solar hardware. That context is particularly valuable when storage, backup equipment, or a service modification is being considered.",
+          "The same idea applies to permit design. Houston-area projects can fall under different authorities having jurisdiction. By keeping field data factual and address-specific, the same high-quality survey remains useful even when the administrative path differs from one property to the next."
         ]
       },
       {
         "type": "nearby",
-        "kicker": "Greater Houston city pages",
-        "heading": "Dedicated survey coverage around the metro",
-        "intro": "These pages separate the local context for common Houston-area project markets.",
+        "kicker": "Greater Houston coverage",
+        "heading": "Dedicated solar site survey pages around Houston",
+        "intro": "Nearby cities have their own housing, utility, and permit context, so they are treated as separate markets rather than Houston copies.",
         "links": [
           {
             "slug": "pearland",
             "label": "Pearland",
-            "note": "South metro multi-county and utility-context survey work."
+            "note": "South Houston surveys for complex suburban roofs, storage layouts, and address-level service verification."
           },
           {
             "slug": "sugar-land",
             "label": "Sugar Land",
-            "note": "Fort Bend County large-home and equipment-layout documentation."
+            "note": "Fort Bend County surveys for larger homes, electrical service, and homeowner-visible equipment routes."
           },
           {
             "slug": "baytown",
             "label": "Baytown",
-            "note": "East metro and upper Gulf Coast field surveys."
+            "note": "East Houston and upper Gulf Coast surveys with stronger exterior-condition context."
           }
         ]
       }
     ],
     "faqs": [
       {
-        "question": "What areas around Houston do you cover?",
-        "answer": "Coverage can extend across Greater Houston, including dedicated city pages for Pearland, Sugar Land, Baytown, Pasadena, League City, and Conroe. Exact address availability is confirmed at intake."
+        "question": "What does a Houston solar site survey include?",
+        "answer": "A residential scope can include roof geometry and obstructions, attic framing where safe access is available, meter and service equipment, panel labels and ratings, proposed inverter or battery areas, exterior routes, access conditions, and an organized photo record."
       },
       {
-        "question": "Do you assume every Houston project has the same utility or AHJ?",
-        "answer": "No. The exact service address should be used to confirm the current utility, permitting authority, and applicable requirements."
+        "question": "Do you assume every Houston project is served by CenterPoint Energy?",
+        "answer": "No. CenterPoint serves a large part of the Houston electric market, but the exact serving utility should be verified by service address. We capture meter and service identifiers to support that verification."
       },
       {
-        "question": "Can you handle complex battery projects?",
-        "answer": "Yes. Storage scopes can document candidate locations, wall dimensions, openings and utilities, service relationships, backup-load equipment, and route context."
+        "question": "Can the survey support CenterPoint interconnection work?",
+        "answer": "When CenterPoint serves the property, clear service, meter, equipment, and site documentation can help the project team prepare current interconnection materials. The latest CenterPoint requirements should be checked before submission."
       },
       {
-        "question": "Do you document attic framing?",
-        "answer": "Yes, when safe access is available. We capture framing type, spacing, member dimensions, decking, and contextual photos for engineering review."
+        "question": "Do you survey battery and backup projects?",
+        "answer": "Yes. Storage scopes can document candidate battery walls, openings, utilities, garage conditions, service relationships, backup equipment, and practical routing paths."
       },
       {
         "question": "What happens if weather prevents safe roof access?",
-        "answer": "Safety takes priority. Accessible portions can be documented, and any missing roof scope should be identified clearly so the project team can determine whether a return visit is required."
+        "answer": "Safety comes first. Accessible areas can be documented, and any missing roof or structural scope is identified clearly so the EPC can decide whether another verification method or return visit is needed."
       }
     ]
   },
