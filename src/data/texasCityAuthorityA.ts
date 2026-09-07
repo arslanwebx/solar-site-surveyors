@@ -432,7 +432,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
           },
           {
             "title": "Release an organized record",
-            "body": "The final survey package is structured for remote design review so CAD, engineering, permitting, and installation teams can work from the same verified site information."
+            "body": "The final survey package is structured so CAD, engineering, permitting, and installation teams can work from the same verified site information."
           }
         ]
       },
