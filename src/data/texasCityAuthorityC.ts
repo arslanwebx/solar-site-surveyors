@@ -457,7 +457,7 @@ export const texasCityAuthorityPagesC: TexasCityAuthorityPage[] = [
     "slug": "lubbock",
     "name": "Lubbock",
     "title": "Solar Site Surveyors in Lubbock, TX",
-    "description": "Solar site surveys in Lubbock, TX for EPCs and installers. Local solar-permit, LP&L or SPEC, roof, attic, electrical, battery, and South Plains field documentation.",
+    "description": "Solar site surveys in Lubbock, TX for EPCs and installers. Local solar permit, LP&L or SPEC, roof, electrical, battery, and South Plains field data.",
     "h1": "Solar Site Surveyors in Lubbock, TX",
     "hubSummary": "Lubbock solar site surveys for local solar-permit and interconnection requirements, South Plains roof exposure, service equipment, structure, storage, and design-ready field data.",
     "intro": [
