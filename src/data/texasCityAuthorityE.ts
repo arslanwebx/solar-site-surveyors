@@ -538,5 +538,333 @@ export const texasCityAuthorityPagesE: TexasCityAuthorityPage[] = [
         answer: 'Yes. Send the checklist before dispatch so the field visit can match your design and engineering workflow.'
       }
     ]
+  },
+  {
+    slug: 'north-richland-hills',
+    name: 'North Richland Hills',
+    title: 'Solar Site Surveyors in North Richland Hills, TX',
+    description: 'Solar site surveys in North Richland Hills, TX for EPCs and installers, including roof framing, electrical service, solar equipment, battery locations, and permit-ready field documentation.',
+    h1: 'Solar Site Surveyors in North Richland Hills, TX',
+    hubSummary: 'Established Tarrant County coverage specializing in detailed roof-framing documentation, precise equipment locations, and city permit checklist alignment.',
+    intro: [
+      'North Richland Hills has one of the clearer municipal solar guidance sets in the DFW area, and that makes the site survey especially important. The City currently requires a building permit for solar panel installations and asks for detailed roof, electrical, equipment, and structural information with the permit application.',
+      'A complete field visit can gather much of the site-specific information the design and engineering teams need before those documents are produced.'
+    ],
+    sections: [
+      {
+        type: 'prose',
+        kicker: 'Municipal permit standards',
+        heading: 'NRH Solar Permits Depend on Accurate Field Details',
+        paragraphs: [
+          'The City of North Richland Hills currently states that solar panels are allowed on homes, permanent accessory buildings, and in certain ground-mounted backyard configurations. It also states that solar panel installations <a href="https://www.nrhtx.com/103/Building-Inspections-Permits" target="_blank" rel="noopener noreferrer">require a building permit</a>.',
+          'The City\'s published <a href="https://www.nrhtx.com/m/FAQ" target="_blank" rel="noopener noreferrer">solar FAQ</a> asks for a site plan, roof plan, equipment locations, building elevation, attachment and waterproofing details, an electrical design or diagram, and detailed roof-framing information for structural assessment.',
+          'That is a strong reason not to treat the survey as a simple roof measurement appointment. The field package should be organized around the information the downstream permit and engineering teams actually need.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Structural framing review',
+        heading: 'Roof Framing Is a Major Part of the NRH Survey',
+        paragraphs: [
+          'North Richland Hills has a large stock of established single-family homes, and roof structures can vary by age, remodel history, additions, and prior roofing work.',
+          'Where attic access is safe, we can document rafter or truss configuration, member size, spacing, direction, purlins, bracing, decking thickness where observable, and other structural details requested by your engineer.',
+          'The City\'s current solar guidance specifically calls for a detailed sketch of roof framing members, including rafter size, spacing, direction, purlin information, decking thickness, roof material, and shingle layers. A careful field survey gives the structural team a much stronger starting point for that requirement.',
+          'The survey itself does not certify structural capacity. It records observable conditions so the licensed engineer can make the appropriate determination.',
+          'That separation keeps the field package useful without overstating what a technician can verify during a non-invasive residential site visit.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Electrical and storage planning',
+        heading: 'Electrical Equipment Needs Both Close-Ups and Elevation Context',
+        paragraphs: [
+          'NRH\'s published permit guidance also asks applicants to show the electrical panel, meter, disconnecting devices, inverter, junction boxes, conduit, and required signage locations.',
+          'To support that work, we capture readable labels and ratings where available, but we also photograph the full exterior wall or garage area. The design team needs to know not only what the equipment is, but where it is and how it relates to the proposed solar system.',
+          'For battery projects, the same principle applies. Candidate walls should be measured and photographed with nearby doors, windows, gas equipment, plumbing, panels, and route options visible.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Mounting type considerations',
+        heading: 'Roof-Mounted and Ground-Mounted Projects Need Different Field Scopes',
+        paragraphs: [
+          'North Richland Hills currently allows roof-mounted solar and certain ground-mounted backyard systems under its zoning standards. That means the survey scope should be established before dispatch.',
+          'A roof-mounted system needs detailed roof and attic information. A ground-mounted concept may require open-area dimensions, setbacks context, accessory-building relationships, property access, and the route back to the electrical service.',
+          'If an EPC is considering both options, the field technician should know that before arriving so the property is documented broadly enough for a real comparison.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Standard field package',
+        heading: 'What Our North Richland Hills Survey Can Include',
+        paragraphs: [
+          'A typical residential package can include:'
+        ],
+        bullets: [
+          'Roof plane dimensions, pitch, material, and visible condition',
+          'Hips, valleys, ridges, eaves, and penetrations',
+          'Roof-framing details where attic access is safe',
+          'Rafter or truss spacing and direction',
+          'Purlin, bracing, and decking observations',
+          'Utility meter and service equipment',
+          'Main panel and subpanel labels and ratings',
+          'Junction-box, conduit, disconnect, and inverter location context',
+          'Battery or backup-equipment areas',
+          'Exterior elevations and possible equipment routes',
+          'Ground-mount area documentation when included in scope'
+        ],
+        afterParagraphs: [
+          'We can also follow the exact photo order or field form required by your EPC or engineering partner.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Permit submittal coordination',
+        heading: 'NRH E-Portal and Permit Workflow',
+        paragraphs: [
+          'North Richland Hills operates an online e-portal for permit applications, plan and document submittals, review, payments, and inspection requests. The City\'s current solar FAQ also gives detailed guidance on the information expected with a solar permit application.',
+          'Those requirements should still be checked before each submission because adopted codes, forms, and procedures may change. The site survey should remain focused on accurate, reusable field data. For adjacent Tarrant County projects, explore our <a href="/texas/fort-worth-solar-site-surveyors/">Fort Worth solar site survey page</a>, <a href="/texas/arlington-solar-site-surveyors/">Arlington solar site survey page</a>, and the statewide <a href="/texas-solar-site-surveyors/">Texas Solar Site Surveyors hub</a>.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Does NRH require a solar permit?',
+        answer: 'The City\'s current FAQ states that installation of solar panels requires a building permit. Project teams should confirm the latest requirements before filing.'
+      },
+      {
+        question: 'Can you document the roof-framing details NRH asks for?',
+        answer: 'Yes, where safely accessible. We can capture framing size, spacing, direction, purlins, bracing, decking, and related field observations for engineering use.'
+      },
+      {
+        question: 'Can you survey a ground-mount location?',
+        answer: 'Yes. Include the ground-mount concept at intake so property dimensions, access, setbacks context, and service routing can be captured.'
+      },
+      {
+        question: 'Do you prepare the sealed electrical or structural design?',
+        answer: 'No. We provide field documentation. Sealed engineering and final permit documents must be prepared by the appropriate licensed professionals.'
+      }
+    ]
+  },
+  {
+    slug: 'pflugerville',
+    name: 'Pflugerville',
+    title: 'Solar Site Surveyors in Pflugerville, TX',
+    description: 'Solar site surveys in Pflugerville, TX for EPCs and installers, including roof, attic, electrical, battery, equipment-location, and property documentation for design teams.',
+    h1: 'Solar Site Surveyors in Pflugerville, TX',
+    hubSummary: 'Northeast Austin growth market coverage verifying multi-plane suburban roofs, multiple service-provider contexts, and storage-ready garages.',
+    intro: [
+      'Pflugerville sits in a fast-growing part of the Austin metro where residential solar projects frequently involve newer subdivisions, complex roof geometry, modern electrical service, and growing interest in battery storage. New construction reduces some unknowns, but it does not eliminate the need for a careful field survey.',
+      'A design team still needs to know which roof planes are usable, how the attic is framed, what electrical equipment is actually installed, and where solar or storage equipment can fit without creating an awkward route.'
+    ],
+    sections: [
+      {
+        type: 'prose',
+        kicker: 'Suburban roof geometry',
+        heading: 'Newer Homes Can Still Be Difficult Solar Sites',
+        paragraphs: [
+          'One of the common mistakes in fast-growth suburbs is assuming a newer home will be easy to design. The service equipment may be modern, but the roof can include several hips, valleys, dormers, vents, and small planes that limit contiguous array space.',
+          'We document roof pitch, plane dimensions, material, penetrations, ridges, valleys, eaves, and visible condition. Wide photos show how the roof sections relate to one another so the designer can work from a coherent field record instead of isolated measurements.',
+          'A large roof is useful only when the usable planes are understood correctly.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Attic structural verification',
+        heading: 'Multiple Attic Zones Need Separate Documentation',
+        paragraphs: [
+          'Pflugerville homes with larger footprints may have more than one attic area or framing condition. When the proposed array crosses several roof sections, the structural team should know which framing information applies to which area.',
+          'Where access is safe, the survey can document framing type, member size, spacing, direction, decking, bracing, and access limitations. We organize those photos around the roof areas above rather than sending one generic attic image for the entire house.',
+          'The survey records visible conditions. Structural capacity and attachment design remain the responsibility of the appropriate engineer.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Service and utility verification',
+        heading: 'Electrical Service Should Be Verified at the Address',
+        paragraphs: [
+          'The broader northeast Austin market includes different utility-service contexts, so the serving provider and current interconnection process should be confirmed for the exact Pflugerville project address.',
+          'Our field work supports that verification by capturing meter identifiers, main service equipment, panels, labels, ratings, grounding, and the physical relationship between the service and proposed solar equipment.',
+          'This is more reliable than using the city name alone to assume a utility workflow.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Battery and backup layout',
+        heading: 'Battery Placement Is Often a Garage-Space Problem',
+        paragraphs: [
+          'Solar-plus-storage projects can turn an otherwise simple home into a more complicated design. Batteries, gateways, disconnects, and related equipment need real wall space, not conceptual wall space.',
+          'We measure candidate locations and photograph nearby doors, windows, panels, plumbing, gas equipment, shelving, and access areas. Wider garage or exterior views help the designer understand how the equipment would fit and how conductors could route back to the service.',
+          'This can prevent a common field problem: arriving for installation and discovering that the approved wall is not actually usable.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Municipal permit guidelines',
+        heading: 'Pflugerville Permit and Inspection Context',
+        paragraphs: [
+          'The City of Pflugerville maintains <a href="https://www.pflugervilletx.gov/building-inspections-permits" target="_blank" rel="noopener noreferrer">Building Inspections and Permits</a> resources through its Planning and Development Services department and provides <a href="https://www.pflugervilletx.gov/online-services" target="_blank" rel="noopener noreferrer">online services</a> to permit and licensing applications.',
+          'Project teams should confirm the current residential solar application requirements, adopted codes, permit type, and inspection steps before submission. The City\'s website is the appropriate place to verify the latest process because municipal requirements can change over time.',
+          'The site survey supports that process by supplying accurate roof, structural, electrical, equipment-location, and property information.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Deliverable specifications',
+        heading: 'What a Pflugerville Field Package Can Include',
+        paragraphs: [
+          'A residential solar survey can be customized to your EPC\'s requirements. Typical items include:'
+        ],
+        bullets: [
+          'Roof plane dimensions and pitch',
+          'Roof material and visible condition',
+          'Hips, valleys, ridges, eaves, vents, and penetrations',
+          'Attic framing and decking where safely accessible',
+          'Meter and main service-equipment photos',
+          'Main panel and subpanel information',
+          'Readable labels, ratings, and breaker context',
+          'Grounding and service-entry observations',
+          'Proposed inverter, disconnect, battery, or gateway locations',
+          'Garage and exterior wall measurements',
+          'Doors, windows, gas equipment, plumbing, and other nearby constraints',
+          'Fences, gates, side-yard access, and possible conduit routes'
+        ],
+        afterParagraphs: [
+          'The package can also follow your file naming, folder structure, CAD checklist, or engineering photo requirements.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Quality assurance handoff',
+        heading: 'The Survey Should Reduce Questions, Not Create More',
+        paragraphs: [
+          'For Pflugerville projects, the most useful field package is one that lets a designer understand the property without repeatedly asking what a photo shows or where a measurement came from.',
+          'That means close-ups for labels, wider photos for context, measurements tied to the correct roof or wall, and clear notes when something could not be verified.',
+          'A complete first visit helps the project move through design, engineering, permitting, and installation with fewer avoidable revisions. Coordinate your northeast Austin pipeline alongside our <a href="/texas/austin-solar-site-surveyors/">Austin solar site survey page</a>, <a href="/texas/round-rock-solar-site-surveyors/">Round Rock solar site survey page</a>, and the statewide <a href="/texas-solar-site-surveyors/">Texas Solar Site Surveyors hub</a>.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Do you verify the serving utility?',
+        answer: 'We capture meter and service identifiers so your project team can confirm the current provider and interconnection process for the exact address.'
+      },
+      {
+        question: 'Can you survey battery-storage projects?',
+        answer: 'Yes. Candidate battery walls, nearby openings and utilities, panel relationships, dimensions, and route context can be included.'
+      },
+      {
+        question: 'Do you document attic framing?',
+        answer: 'Yes, where access is safe. We can capture framing type, spacing, member dimensions, decking, and related structural observations for engineering review.'
+      },
+      {
+        question: 'Can you follow our own EPC checklist?',
+        answer: 'Yes. Send your required field form, photo list, file naming, and equipment assumptions before dispatch so the survey matches your workflow.'
+      }
+    ]
+  },
+  {
+    slug: 'san-marcos',
+    name: 'San Marcos',
+    title: 'Solar Site Surveyors in San Marcos, TX',
+    description: 'Solar site surveys in San Marcos, TX for EPCs and installers, including roof, attic, electrical, meter, battery, and site documentation for design and permitting workflows.',
+    h1: 'Solar Site Surveyors in San Marcos, TX',
+    hubSummary: 'Central Texas coverage aligning with San Marcos municipal utility rebate guidelines, MGO permit intake, and mixed rental/residential properties.',
+    intro: [
+      'San Marcos is a useful example of why a solar site survey should be written and performed around the local project environment instead of a statewide template. The city operates its own electric utility services, maintains a solar rebate program for eligible utility customers, and has its own permitting and development process.',
+      'At the property level, the housing mix is just as varied. Older central neighborhoods, student and rental properties, newer subdivisions, and homes on the edges of the city can all present different roof, electrical, access, and equipment-placement conditions.',
+      'Our job is to turn those conditions into clear field data for the teams that design and build the system.'
+    ],
+    sections: [
+      {
+        type: 'prose',
+        kicker: 'Municipal utility & rebate alignment',
+        heading: 'San Marcos Projects Need Accurate Service and Meter Documentation',
+        paragraphs: [
+          'The City of San Marcos provides electric service within its utility system and currently offers an <a href="https://www.sanmarcostx.gov/3720/Energy-Rebate-Programs" target="_blank" rel="noopener noreferrer">Energy Rebate Program</a> with solar PV incentives to qualifying SMTX Utility customers. The city\'s published program information states that pre-approval is required for the rebate and that the utility buys excess power returned to the grid under its current program terms.',
+          'That makes service-address verification and clear meter documentation important. A site survey can record meter identifiers, service equipment, panel information, and the physical relationship between the existing electrical system and proposed solar equipment.',
+          'The survey should not assume that every property with a San Marcos mailing address has the same program eligibility or exact utility requirements. Those details should be confirmed for the service address during project intake.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Roof & tree canopy analysis',
+        heading: 'Roof and Structural Conditions Can Vary Widely',
+        paragraphs: [
+          'San Marcos homes range from older structures with mature trees and modified roof sections to newer suburban houses with several roof planes and attic zones.',
+          'For the design team, the survey should identify roof pitch, dimensions, material, ridges, hips, valleys, eaves, penetrations, and visible condition. Tree-to-roof context is also useful where mature vegetation could affect array placement or production modeling.',
+          'Where attic access is safe, framing type, member size, spacing, decking, and bracing can be documented for engineering review. On renovated or rental properties, it is especially important to capture the home as it exists today rather than rely on listing information or homeowner memory.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Access logistics & coordination',
+        heading: 'Rental and Student Housing Requires Better Access Planning',
+        paragraphs: [
+          'San Marcos has a substantial rental market. That can complicate site survey coordination when the property owner, tenant, salesperson, and EPC are different people.',
+          'Before dispatch, the project team should confirm access to the attic, garage, electrical panels, fenced areas, and any location where proposed equipment needs to be documented. A field technician cannot produce a complete survey if the required area is locked or if the person on site was not told what access would be needed.',
+          'When an area cannot be reached, we document the limitation clearly so the design team knows what remains unverified.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Permit & fire marshal standards',
+        heading: 'Current San Marcos Permitting Context',
+        paragraphs: [
+          'The City of San Marcos uses MGO Connect through its <a href="https://sanmarcostx.gov/1000/Permits-Applications" target="_blank" rel="noopener noreferrer">Permits and Applications</a> portal for electronic permit intake, plan uploads, fee payment, status tracking, and applicable inspection scheduling. The city also publishes separate <a href="https://sanmarcostx.gov/DocumentCenter/View/35953/Solar-PV-Systems?bidId=" target="_blank" rel="noopener noreferrer">Fire Marshal guidance for solar PV systems</a>.',
+          'That Fire Marshal guidance currently states that its commercial PV permit applies to commercial installations and is not required for one- and two-family dwellings. Residential projects may still have other building, electrical, utility, or interconnection requirements, so the project team should verify the current scope with the Permit Center before submission.',
+          'This distinction matters because a high-quality city page should not tell every solar customer that the same permit process applies to every property type.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Field deliverable checklist',
+        heading: 'What a San Marcos Site Survey Can Include',
+        paragraphs: [
+          'Depending on your EPC standards, the field package can include:'
+        ],
+        bullets: [
+          'Roof measurements, pitch, roof material, and obstruction locations',
+          'Tree and shading context for design review',
+          'Attic framing and decking where safely accessible',
+          'Meter, service equipment, main panel, and subpanel photos',
+          'Readable electrical labels and ratings',
+          'Grounding and service-entry context',
+          'Proposed inverter, disconnect, battery, or gateway areas',
+          'Exterior elevations and possible conduit paths',
+          'Access notes for tenant-occupied or restricted areas'
+        ],
+        afterParagraphs: [
+          'The deliverable can be organized to your own CAD, engineering, or permit-preparation workflow.'
+        ]
+      },
+      {
+        type: 'prose',
+        kicker: 'Durable field facts',
+        heading: 'Site Surveys Should Support the Current Utility and Permit Process',
+        paragraphs: [
+          'A survey is most valuable when it provides durable facts. Utility programs, rebates, forms, and code requirements can change. Roof dimensions, panel ratings, wall measurements, framing observations, and equipment relationships are the physical inputs that remain useful to the project team.',
+          'For San Marcos EPCs, that means the field package should be accurate enough for design while leaving final utility, rebate, permit, and engineering decisions to the current official requirements. You can also coordinate surrounding I-35 corridor surveys with our <a href="/texas/kyle-solar-site-surveyors/">Kyle solar site survey page</a>, <a href="/texas/new-braunfels-solar-site-surveyors/">New Braunfels solar site survey page</a>, and the <a href="/texas-solar-site-surveyors/">Texas Solar Site Surveyors hub</a>.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Does San Marcos have a city electric utility?',
+        answer: 'Yes. The City of San Marcos provides electric utility services within its system. Project teams should still verify the exact service provider and current program eligibility for the property address.'
+      },
+      {
+        question: 'Can you document a project for the city\'s solar rebate process?',
+        answer: 'We can capture the field information used by the design team, including meter, service, roof, electrical, and equipment-location details. Rebate eligibility and pre-approval should be confirmed directly under the current utility program.'
+      },
+      {
+        question: 'Do you survey rental properties?',
+        answer: 'Yes, provided the required access has been coordinated with the owner or occupant before the visit.'
+      },
+      {
+        question: 'Can you include battery-storage locations?',
+        answer: 'Yes. Candidate battery areas, wall dimensions, nearby openings and utilities, service relationships, and routing context can be included.'
+      }
+    ]
   }
 ];
