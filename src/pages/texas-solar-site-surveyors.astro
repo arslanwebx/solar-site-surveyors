@@ -18,9 +18,10 @@ const active52SlugsList = texasCityAuthorityPages.map((page) => page.slug);
 const active52Set = new Set(active52SlugsList);
 const authorityBySlug = new Map(texasCityAuthorityPages.map((page) => [page.slug, page]));
 
-// Keep the full Texas directory, but replace generic summaries for the 52
-// published city pages with their individually written local summaries.
-const cityDirectory = allTexasCities.map((city) => ({
+// Keep only the top 500 Texas cities in the public directory.
+// The source dataset remains intact for future expansion, but cards/search
+// on this page are intentionally capped at the first 500 ranked entries.
+const cityDirectory = allTexasCities.slice(0, 500).map((city) => ({
   ...city,
   keyCoverageNotes: authorityBySlug.get(city.slug)?.hubSummary ?? city.keyCoverageNotes
 }));
@@ -46,7 +47,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
 
         <h1 class="page-title">Texas Solar Site Survey Coverage & City Directory</h1>
         <p class="lead" style="color: #9FB3C8; max-width: 924px;">
-          Texas solar projects do not share one utility, one permitting path, or one housing type. This directory connects EPCs and installers with 52 dedicated city pages built around the field conditions that matter locally, while the wider city list helps teams identify additional Texas coverage areas.
+          Texas solar projects do not share one utility, one permitting path, or one housing type. This directory connects EPCs and installers with 52 dedicated city pages plus our 500 priority Texas city markets for broader survey coordination.
         </p>
       </div>
     </div>
@@ -56,10 +57,10 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
   <section class="section section-warm" id="city-directory">
     <div class="container">
       <div class="section-header center">
-        <div class="kicker">Statewide Directory</div>
-        <h2>Active Texas City Dispatch Directory</h2>
+        <div class="kicker">Top 500 Texas Cities</div>
+        <h2>Texas Solar Site Survey City Directory</h2>
         <p class="lead">
-          Start with one of the 52 published city guides for detailed local survey context, or search the wider Texas directory to discuss coverage for another project address.
+          Browse our 500 priority Texas city markets. Start with one of the 52 published city guides for detailed local survey context, or search the directory to discuss coverage for another project address.
         </p>
 
         <!-- Live Instant Search Bar -->
@@ -190,7 +191,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
   />
 </BaseLayout>
 
-<!-- Client Script for Ultra-Fast Batch Loading and Full-Dataset Search -->
+<!-- Client Script for batch loading and search across the top 500 cities -->
 <script define:vars={{ remainingCities, initialCities, active52SlugsList }}>
   let currentLoadedCount = initialCities.length;
   const BATCH_SIZE = 100;
@@ -259,7 +260,7 @@ const defaultCustomSurveyWhatsApp = getWhatsAppLink('Hi, I would like to schedul
     loadMoreBtn.addEventListener('click', loadNextBatch);
   }
 
-  // Live Instant Search across whole dataset
+  // Live instant search across the capped 500-city directory
   const allDataset = [...initialCities, ...remainingCities];
 
   if (searchInput) {
