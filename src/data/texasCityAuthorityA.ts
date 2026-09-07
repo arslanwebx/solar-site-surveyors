@@ -334,7 +334,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
     "hubSummary": "Arlington solar site surveys for mixed-age DFW housing, roof and attic verification, service-equipment documentation, battery planning, and permit-ready field data.",
     "intro": [
       "A strong Arlington solar site survey should do more than confirm that a roof exists and a main panel is present. Arlington has decades of residential development, from older central neighborhoods to newer subdivisions near the southern and western edges of the city. That mix creates different roof framing, service equipment, attic access, tree cover, and equipment-placement questions from one address to the next.",
-      "We document the property so an EPC, designer, or engineer can understand the site without rebuilding the visit from scattered photos. Roof planes, attic framing, meter and service equipment, proposed equipment walls, access conditions, and route constraints are captured as one connected field record."
+      "We document the property so an EPC, designer, or engineer can understand the site without rebuilding the visit from scattered photos. Roof planes, attic framing, meter and service equipment, proposed equipment walls, access conditions, and route constraints are captured as a field record."
     ],
     "sections": [
       {
