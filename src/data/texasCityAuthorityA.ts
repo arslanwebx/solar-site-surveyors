@@ -329,7 +329,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
     "slug": "arlington",
     "name": "Arlington",
     "title": "Solar Site Surveyors in Arlington, TX",
-    "description": "Solar site surveys in Arlington, TX for EPCs and installers. Detailed roof, attic, electrical, battery, permit-ready, and Oncor-area field documentation for residential solar projects.",
+    "description": "Solar site surveys in Arlington, TX for EPCs and installers. Roof, attic, electrical, battery, Oncor-area, and permit-ready field documentation.",
     "h1": "Solar Site Surveyors in Arlington, TX",
     "hubSummary": "Arlington solar site surveys for mixed-age DFW housing, roof and attic verification, service-equipment documentation, battery planning, and permit-ready field data.",
     "intro": [
@@ -343,7 +343,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
         "heading": "Why Arlington projects need property-specific survey depth",
         "paragraphs": [
           "Aerial imagery can be useful for early layout work, but it does not show whether a roof plane is framed differently from an addition, whether the attic access reaches the proposed array zone, or whether the service equipment matches what was entered during sales. Those are the questions that cause design revisions when they are left unanswered.",
-          "In Arlington, a 1970s or 1980s home may have undergone a re-roof, panel replacement, patio conversion, or room addition. A newer home may have modern electrical service but a highly segmented roof with hips, valleys, vents, and several attic zones. The survey should respond to the actual property rather than force both homes through the same photo script.",
+          "In Arlington, an older home may have a re-roof, panel replacement, patio conversion, or room addition. A newer home may have modern electrical service but a segmented roof with hips, valleys, vents, and several attic zones. The survey should respond to the actual property rather than force both homes through the same photo script.",
           "The useful standard is simple: a remote designer should be able to tell where the meter is, what the main service equipment is, which roof planes are viable, how the structure is framed where accessible, and where proposed solar or storage equipment can physically fit."
         ]
       },
@@ -487,7 +487,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
     "slug": "austin",
     "name": "Austin",
     "title": "Solar Site Surveyors in Austin, TX",
-    "description": "Solar site surveys in Austin, TX for EPCs and installers. Austin Energy-aware roof, attic, meter, electrical, battery, equipment-location, and inspection-ready field documentation.",
+    "description": "Solar site surveys in Austin, TX for EPCs and installers. Austin Energy-aware roof, attic, electrical, battery, meter, and inspection-ready field data.",
     "h1": "Solar Site Surveyors in Austin, TX",
     "hubSummary": "Austin solar site surveys with Austin Energy-aware meter and service documentation, roof and attic verification, storage planning, and field data for permitting and inspections.",
     "intro": [
@@ -1412,7 +1412,7 @@ export const texasCityAuthorityPagesA: TexasCityAuthorityPage[] = [
     "slug": "corpus-christi",
     "name": "Corpus Christi",
     "title": "Solar Site Surveyors in Corpus Christi, TX",
-    "description": "Solar site surveys in Corpus Christi, TX for EPCs and installers. Coastal roof, attic, electrical, AEP Texas, battery, exterior-equipment, and permit-ready field documentation.",
+    "description": "Solar site surveys in Corpus Christi, TX for EPCs and installers. Coastal roof, framing, electrical, battery, AEP Texas, and permit-ready field data.",
     "h1": "Solar Site Surveyors in Corpus Christi, TX",
     "hubSummary": "Corpus Christi solar site surveys for Coastal Bend roof and framing evidence, AEP Texas interconnection context, exterior equipment condition, and permit-ready field data.",
     "intro": [
